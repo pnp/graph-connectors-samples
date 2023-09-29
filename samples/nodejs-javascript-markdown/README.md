@@ -4,7 +4,7 @@
 
 This samples contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
 
-![Microsoft 365 Developer Proxy simulating rate limiting on Microsoft Graph APIs](assets/screenshot.png)
+![Local markdown files displayed in Microsoft Search search results](assets/screenshot.png)
 
 ## Contributors
 
