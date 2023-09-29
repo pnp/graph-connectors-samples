@@ -1,0 +1,80 @@
+[
+  {
+    "name": "pnp-graph-connector-dotnet-csharp-markdown",
+    "source": "pnp",
+    "title": "Ingest local markdown content using .NET and C#",
+    "shortDescription": "This samples contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-markdown",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-markdown",
+    "longDescription": [
+      "This samples contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+    ],
+    "creationDateTime": "2023-09-29",
+    "updateDateTime": "2023-09-29",
+    "products": [
+      "Microsoft Graph connectors",
+      "Microsoft Graph"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": ".NET"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "C#"
+      },
+      {
+        "key": "SEARCH-RESULTS-CARD",
+        "value": "Yes"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-markdown/assets/screenshot.png",
+        "alt": "External content displayed in Microsoft Search search results, visualized using a custom Adaptive Card"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-markdown/assets/content.png",
+        "alt": "Markdown content with front matter metadata that's ingested with the sample Microsoft Graph connector"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Graph connectors overview",
+        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+      },
+      {
+        "name": "Build your first custom Microsoft Graph connector",
+        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+      },
+      {
+        "name": "Get started with the Microsoft 365 Developer Proxy",
+        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+      },
+      {
+        "name": "Change Microsoft 365 Developer Proxy mocks file",
+        "description": "Instructions on how to change the mocks file used by the Microsoft 365 Developer Proxy.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
+      }
+    ]
+  }
+]
