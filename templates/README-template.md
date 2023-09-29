@@ -43,6 +43,11 @@ Version|Date|Comments
 1.1|November 1, 2022|Update comment
 1.0|October 29, 2022|Initial release
 
+## Prerequisites
+
+* [Microsoft 365 Developer tenant](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Node@18](https://nodejs.org)
+
 ## Minimal path to awesome
 
 <!-- 
