@@ -20,7 +20,7 @@ const authProvider = new TokenCredentialAuthenticationProvider(credential, {
 
 const middleware = MiddlewareFactory.getDefaultMiddlewareChain(authProvider);
 // add as a second middleware to get access to the access token
-middleware.splice(1, 0, new CompleteJobWithDelayMiddleware(10000));
+middleware.splice(1, 0, new CompleteJobWithDelayMiddleware(60000));
 // add just before executing the request to get access to all headers
 // middleware.splice(-1, 0, new DebugMiddleware());
 
