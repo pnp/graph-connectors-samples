@@ -24,4 +24,4 @@ This repository has adopted the [Microsoft Open Source Code of Conduct](https://
 
 > Sharing is caring!
 
-![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/README.md)
+![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/README.md_)
