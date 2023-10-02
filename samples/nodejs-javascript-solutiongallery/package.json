@@ -1,0 +1,21 @@
+{
+  "name": "sample-solution-gallery-connector-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "createConnection": "node createConnection.js",
+    "loadContent": "node loadContent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/identity": "^3.3.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "log-symbols": "^5.1.0",
+    "ora": "^7.0.1",
+    "yargs": "^17.7.2"
+  }
+}
