@@ -31,6 +31,8 @@ Version|Date|Comments
 - Change the working directory: `cd bin/Debug/net7.0`
 - Create the external connection: `./connector create-connection` (this will take several minutes)
 - Ingest the content: `./connector load-content`
+- [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
+- Use the `resultLayout.json` file for the Adaptive Card code
 
 ## Features
 
