@@ -30,6 +30,8 @@ Version|Date|Comments
 - Restore dependencies: `npm install`
 - Create the external connection: `npm run createConnector` (this will take several minutes)
 - Ingest the content: `npm run loadContent`
+- [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
+- Use the `resultLayout.json` file for the Adaptive Card code
 
 ## Features
 
