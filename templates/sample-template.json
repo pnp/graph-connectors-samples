@@ -1,6 +1,6 @@
 [
   {
-    "name": "graph-connector-YOUR-SAMPLE-NAME",
+    "name": "pnp-graph-connector-YOUR-SAMPLE-NAME",
     "source": "pnp",
     "title": "YOUR-SAMPLE-TITLE",
     "shortDescription": "YOUR-SHORT-DESCRIPTION",
