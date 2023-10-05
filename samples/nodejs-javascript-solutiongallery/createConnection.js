@@ -25,7 +25,7 @@ async function createSchema() {
     const res = await client
       .api(`/external/connections/${id}/schema`)
       .header('content-type', 'application/json')
-      .post({
+      .patch({
         baseType: 'microsoft.graph.externalItem',
         properties: schema
       });
