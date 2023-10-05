@@ -14,23 +14,10 @@ static class ConnectionService
   {
     Console.Write("Creating schema...");
 
-    // workaround because there's no POST on schema
-    var requestInfo = GraphService.Client.External
+    await GraphService.Client.External
       .Connections[ConnectionConfiguration.ExternalConnection.Id]
       .Schema
-      .ToPatchRequestInformation(ConnectionConfiguration.Schema);
-    var requestMessage = await GraphService.Client.RequestAdapter
-      .ConvertToNativeRequestAsync<HttpRequestMessage>(requestInfo);
-    requestMessage!.Method = HttpMethod.Post;
-
-    await GraphService.HttpClient!.SendAsync(requestMessage);
-
-    // In the future, this should be possible:
-    // 
-    // await GraphClient.Client.External
-    //   .Connections[ConnectionConfiguration.ExternalConnection.Id]
-    //   .Schema
-    //   .PostAsync(ConnectionConfiguration.Schema);
+      .PatchAsync(ConnectionConfiguration.Schema);
 
     Console.WriteLine("DONE");
   }

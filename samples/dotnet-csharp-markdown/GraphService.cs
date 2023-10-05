@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 class GraphService
 {
   static GraphServiceClient? _client;
-  static HttpClient? _httpClient;
 
   public static GraphServiceClient Client
   {
@@ -28,22 +27,13 @@ class GraphService
         // add at the beginning to get all information about the response
         // and also have the response body decompressed
         // handlers.Insert(0, new DebugResponseHandler());
-        // _httpClient = GraphClientFactory.Create(handlers, proxy: new WebProxy("http://localhost:8000"));
-        _httpClient = GraphClientFactory.Create(handlers);
+        // var httpClient = GraphClientFactory.Create(handlers, proxy: new WebProxy("http://localhost:8000"));
+        var httpClient = GraphClientFactory.Create(handlers);
 
-        _client = new GraphServiceClient(_httpClient, credential);
+        _client = new GraphServiceClient(httpClient, credential);
       }
 
       return _client;
-    }
-  }
-
-  // needed as a workaround because there's no POST on schema
-  public static HttpClient? HttpClient
-  {
-    get
-    {
-      return _httpClient;
     }
   }
 }
