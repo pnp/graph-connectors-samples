@@ -14,6 +14,7 @@ This samples contains a Microsoft Graph connector that shows how to ingest sampl
 
 Version|Date|Comments
 -------|----|--------
+1.0|October 6, 2023|Updated local cache of samples
 1.0|October 2, 2023|Initial release
 
 ## Prerequisites
