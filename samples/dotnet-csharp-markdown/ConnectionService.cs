@@ -12,7 +12,7 @@ static class ConnectionService
 
   async static Task CreateSchema()
   {
-    Console.Write("Creating schema...");
+    Console.WriteLine("Creating schema...");
 
     await GraphService.Client.External
       .Connections[ConnectionConfiguration.ExternalConnection.Id]

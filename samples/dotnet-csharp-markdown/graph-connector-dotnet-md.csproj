@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ContentFiles Include="content\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="resultLayout.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <Target Name="CopyContentFolder" AfterTargets="Build">
