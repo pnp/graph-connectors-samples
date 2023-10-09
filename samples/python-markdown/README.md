@@ -14,6 +14,7 @@ This samples contains a Microsoft Graph connector built in Python that shows how
 
 Version|Date|Comments
 -------|----|--------
+1.1|October 09, 2023|Added configuring result layout
 1.0|October 09, 2023|Initial release
 
 ## Prerequisites
@@ -50,9 +51,6 @@ Version|Date|Comments
     # deactivate virtual environment
     deactivate
     ```
-
-- [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
-- Use the `resultLayout.json` file for the Adaptive Card code
 
 ## Features
 
