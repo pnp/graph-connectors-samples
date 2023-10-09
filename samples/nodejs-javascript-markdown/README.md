@@ -14,6 +14,7 @@ This samples contains a Microsoft Graph connector that shows how to ingest local
 
 Version|Date|Comments
 -------|----|--------
+1.1|October 09, 2023|Added configuring result layout
 1.0|September 29, 2023|Initial release
 
 ## Prerequisites
@@ -28,10 +29,8 @@ Version|Date|Comments
 - Make the setup script executable, by running `chmod +x ./setup.sh`
 - Run the setup script: `./setup.sh`. When finished, it will create a local `env.js` file with information about the AAD app, required to run the code
 - Restore dependencies: `npm install`
-- Create the external connection: `npm run createConnector` (this will take several minutes)
+- Create the external connection: `npm run createConnection` (this will take several minutes)
 - Ingest the content: `npm run loadContent`
-- [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
-- Use the `resultLayout.json` file for the Adaptive Card code
 
 ## Features
 
@@ -39,7 +38,7 @@ This sample shows how to ingest local markdown content with its front matter met
 
 The sample illustrates the following concepts:
 
-- script creating the Entra ID (Azure AD) application using CLI for Microsoft 365
+- script creating the Entra (Azure AD) app registration using CLI for Microsoft 365
 - create external connection including URL to item resolver to track activity when users share external links
 - create external connection schema
 - parse local markdown files to get their content and front matter metadata
