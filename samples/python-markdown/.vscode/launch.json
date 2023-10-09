@@ -1,0 +1,35 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Create connection",
+      "type": "python",
+      "request": "launch",
+      "args": ["create-connection"],
+      "program": "main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Load content",
+      "type": "python",
+      "request": "launch",
+      "args": ["load-content"],
+      "program": "main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Create connection with m365proxy",
+      "type": "python",
+      "request": "launch",
+      "args": ["--with-proxy", "create-connection"],
+      "program": "main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
