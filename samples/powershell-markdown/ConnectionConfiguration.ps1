@@ -1,7 +1,13 @@
+# Initialize to an empty hashtable to explicitly define the type as hashtable.
+# This is needed to avoid the breaking change introduced in PowerShell 7.3 - https://github.com/PowerShell/PowerShell/issues/18524.
+# https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2352
+[hashtable]$adaptiveCard = @{}
+$adaptiveCard += Get-Content -Path ".\resultLayout.json" -Raw | ConvertFrom-Json -AsHashtable
+
 $externalConnection = @{
-    userId = "9da37739-ad63-42aa-b0c2-06f7b43e3e9e"
+    userId     = "9da37739-ad63-42aa-b0c2-06f7b43e3e9e"
     connection = @{
-        id               = "waldekblogpowershellpersonal"
+        id               = "waldekblogpowershell"
         name             = "Waldek Mastykarz (blog); PowerShell"
         description      = "Tips and best practices for building applications on Microsoft 365 by Waldek Mastykarz - Microsoft 365 Cloud Developer Advocate"
         activitySettings = @{
@@ -16,6 +22,17 @@ $externalConnection = @{
                     }
                     itemId        = "{slug}"
                     priority      = 1
+                }
+            )
+        }
+        searchSettings   = @{
+            searchResultTemplates = @(
+                @{
+                    id       = "waldekblogpwsh"
+                    priority = 1
+                    layout   = @{
+                        additionalProperties = $adaptiveCard
+                    }
                 }
             )
         }
@@ -53,12 +70,12 @@ $externalConnection = @{
             )
         }
         @{
-            name = "date"
-            type = "DateTime"
-            isQueryable = "true"
+            name          = "date"
+            type          = "DateTime"
+            isQueryable   = "true"
             isRetrievable = "true"
-            isRefinable = "true"
-            labels = @(
+            isRefinable   = "true"
+            labels        = @(
                 "lastModifiedDateTime"
             )
         }
