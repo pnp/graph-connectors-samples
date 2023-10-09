@@ -19,6 +19,15 @@ export const config = {
         }
       ]
     },
+    searchSettings: {
+      searchResultTemplates: [
+        {
+          id: 'waldekblog',
+          priority: 1,
+          layout: {}
+        }
+      ]
+    },
     // https://learn.microsoft.com/graph/connecting-external-content-manage-schema
     schema: [
       {
