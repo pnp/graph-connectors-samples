@@ -1,7 +1,24 @@
+using System.Text.Json;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ExternalConnectors;
 
 static class ConnectionConfiguration
 {
+  private static Dictionary<string, object>? _layout;
+  private static Dictionary<string, object> Layout
+  {
+    get
+    {
+      if (_layout is null)
+      {
+        var adaptiveCard = File.ReadAllText("resultLayout.json");
+        _layout = JsonSerializer.Deserialize<Dictionary<string, object>>(adaptiveCard);
+      }
+
+      return _layout!;
+    }
+  }
+
   public static ExternalConnection ExternalConnection
   {
     get
@@ -22,6 +39,18 @@ static class ConnectionConfiguration
               },
               ItemId = "{slug}",
               Priority = 1
+            }
+          }
+        },
+        SearchSettings = new()
+        {
+          SearchResultTemplates = new() {
+            new() {
+              Id = "waldekblgdotnet",
+              Priority = 1,
+              Layout = new Json {
+                AdditionalData = Layout
+              }
             }
           }
         }
