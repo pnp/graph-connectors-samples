@@ -104,9 +104,13 @@ async def _load(content: Generator[ExternalItem, None, None]):
   for doc in content:
     try:
       print(f"Loading {doc.id}...", end="")
+
+      assert external_connection.id is not None
+      assert doc.id is not None
+      
       await graph_client.external.connections.by_external_connection_id(
-          external_connection.id # type: ignore
-        ).items.by_external_item_id(doc.id).put(doc) # type: ignore
+          external_connection.id
+        ).items.by_external_item_id(doc.id).put(doc)
       print("DONE")
     except Exception as e:
       print(f"Failed to load {doc.id}: {e}")

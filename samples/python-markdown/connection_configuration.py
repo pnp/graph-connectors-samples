@@ -1,6 +1,8 @@
 from msgraph.generated.models.external_connectors.activity_settings import ActivitySettings
+from msgraph.generated.models.external_connectors.display_template import DisplayTemplate
 from msgraph.generated.models.external_connectors.external_connection import ExternalConnection
 from msgraph.generated.models.external_connectors.item_id_resolver import ItemIdResolver
+from msgraph.generated.models.external_connectors.search_settings import SearchSettings
 from msgraph.generated.models.external_connectors.url_match_info import UrlMatchInfo
 from msgraph.generated.models.external_connectors.schema import Schema
 from msgraph.generated.models.external_connectors.property_ import Property_
@@ -27,6 +29,14 @@ external_connection = ExternalConnection(
                 )
             )
         ]
+    ),
+    search_settings=SearchSettings(
+      search_result_templates=[
+        DisplayTemplate(
+            id="waldekblogpython",
+            priority=1
+        )
+      ]
     )
 )
 
