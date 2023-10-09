@@ -14,6 +14,7 @@ This samples contains a Microsoft Graph connector that shows how to ingest sampl
 
 Version|Date|Comments
 -------|----|--------
+1.0|October 9, 2023|Added configuring result layout
 1.0|October 6, 2023|Updated local cache of samples
 1.0|October 2, 2023|Initial release
 
@@ -31,8 +32,6 @@ Version|Date|Comments
 - Restore dependencies: `npm install`
 - Create the external connection: `npm run createConnection` (this will take several minutes)
 - Ingest the content: `npm run loadContent`
-- [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
-- Use the `resultLayout.json` file for the Adaptive Card code
 
 ## Features
 
