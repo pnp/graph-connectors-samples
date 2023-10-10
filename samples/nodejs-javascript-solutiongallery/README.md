@@ -4,7 +4,7 @@
 
 This samples contains a Microsoft Graph connector that shows how to ingest sample solutions from the [Microsoft 365 and Power Platform community sample gallery](https://adoption.microsoft.com/sample-solution-gallery/?keyword=&sort-by=creationDateTime-true&page=1). It gives you a very convenient way to search for and reference community samples right from your tenant!
 
-![Microsoft 365 and Power Platform community rate limit samples displayed in Microsoft Search](assets/sample-rate-limit.png)
+![Microsoft 365 and Power Platform community rate limit samples displayed in Microsoft Search](assets/sample-rich.png)
 
 ## Contributors
 
@@ -14,8 +14,9 @@ This samples contains a Microsoft Graph connector that shows how to ingest sampl
 
 Version|Date|Comments
 -------|----|--------
-1.0|October 9, 2023|Added configuring result layout
-1.0|October 6, 2023|Updated local cache of samples
+1.3|October 12, 2023|Added rich result layout
+1.2|October 9, 2023|Added configuring result layout
+1.1|October 6, 2023|Updated local cache of samples
 1.0|October 2, 2023|Initial release
 
 ## Prerequisites
@@ -32,6 +33,8 @@ Version|Date|Comments
 - Restore dependencies: `npm install`
 - Create the external connection: `npm run createConnection` (this will take several minutes)
 - Ingest the content: `npm run loadContent`
+
+By default, the script will use the rich adaptive card to visualize the results. You can manually switch it to a compact view by configuring the result template in the Microsoft 365 Admin Center Search configuration, using the contents of the `resultLayout-compact.json`.
 
 ## Features
 
