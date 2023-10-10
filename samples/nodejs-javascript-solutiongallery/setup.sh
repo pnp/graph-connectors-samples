@@ -2,7 +2,7 @@
 
 # login
 echo "Sign in to Microsoft 365..."
-npx -p @pnp/cli-microsoft365 -- m365 login --authType browser
+npx -p @pnp/cli-microsoft365 -- m365 login
 
 # create AAD app
 echo "Creating AAD app..."

@@ -2,19 +2,19 @@ import fs from 'fs';
 import logSymbols from 'log-symbols';
 import ora from 'ora';
 import yargs from 'yargs';
+
 import { config } from './config.js';
 import { client } from './graphClient.js';
 
 function getLastCrawledSampleDate() {
   let lastCrawledSampleDate = new Date(0);
   try {
-    const lastCrawledSampleDateStr = fs.readFileSync('latestChange.txt', 'utf8');
+    const lastCrawledSampleDateStr = fs.readFileSync("latestChange.txt", "utf8");
     lastCrawledSampleDate = new Date(lastCrawledSampleDateStr);
     if (isNaN(lastCrawledSampleDate)) {
       lastCrawledSampleDate = new Date(0);
     }
-  }
-  catch (e) {
+  } catch (e) {
     // ignore
   }
   return lastCrawledSampleDate;
@@ -25,34 +25,33 @@ async function extract({ fromCache = false, sinceDate = new Date(0) }) {
 
   if (fromCache) {
     console.log(`Loading from cache, including samples since ${sinceDate}...`);
-    const cacheString = fs.readFileSync('cache.json', 'utf8');
+    const cacheString = fs.readFileSync("cache.json", "utf8");
     const cache = JSON.parse(cacheString);
-    samples.push(...cache.filter(sample => new Date(sample.updateDateTime) > sinceDate));
-  }
-  else {
+    samples.push(...cache.filter((sample) => new Date(sample.updateDateTime) > sinceDate));
+  } else {
     console.log(`Loading from API, including samples since ${sinceDate}...`);
 
     const pagination = {
       size: 50,
-      index: 1
+      index: 1,
     };
 
-    const api = 'https://m365-galleries.azurewebsites.net/Samples/searchSamples';
+    const api = "https://m365-galleries.azurewebsites.net/Samples/searchSamples";
     const payload = {
       sort: {
-        field: 'updateDateTime',
-        descending: true
+        field: "updateDateTime",
+        descending: true,
       },
       filter: {
-        search: '',
+        search: "",
         productId: [],
-        authorId: '',
-        categoryId: '',
+        authorId: "",
+        categoryId: "",
         featuredOnly: false,
-        metadata: []
+        metadata: [],
       },
-      pagination
-    }
+      pagination,
+    };
 
     let numSamplesRetrieved = 0;
     do {
@@ -60,27 +59,26 @@ async function extract({ fromCache = false, sinceDate = new Date(0) }) {
       numSamplesRetrieved = 0;
 
       const response = await fetch(api, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'content-type': 'application/json'
+          "content-type": "application/json",
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
       const data = await response.json();
-      
+
       if (data.items.length > 0) {
-        const samplesToInclude = data.items.filter(sample => new Date(sample.updateDateTime) > sinceDate);
+        const samplesToInclude = data.items.filter((sample) => new Date(sample.updateDateTime) > sinceDate);
         samples.push(...samplesToInclude);
         numSamplesRetrieved = samplesToInclude.length;
       }
 
       console.log(`  ${numSamplesRetrieved} samples retrieved`);
       pagination.index++;
-    }
-    while (numSamplesRetrieved > 0);
+    } while (numSamplesRetrieved > 0);
 
     // cache the results
-    fs.writeFileSync('cache.json', JSON.stringify(samples, null, 2));
+    fs.writeFileSync("cache.json", JSON.stringify(samples, null, 2));
   }
 
   console.log(`Extracted ${samples.length} samples`);
@@ -89,49 +87,59 @@ async function extract({ fromCache = false, sinceDate = new Date(0) }) {
 }
 
 function transform(samples) {
-  return samples.map(sample => {
+  return samples.map((sample) => {
     // Date must be in the ISO 8601 format
     const createdDateTime = new Date(sample.creationDateTime).toISOString();
     const lastModifiedDateTime = new Date(sample.updateDateTime).toISOString();
-    const imageUrl = sample.thumbnails.length > 0 ? sample.thumbnails[0].url : '';
+    const imageUrl = sample.thumbnails.length > 0 ? sample.thumbnails[0].url : "";
     return {
       id: sample.sampleId,
       properties: {
         title: sample.title,
         description: sample.shortDescription,
-        'authors@odata.type': 'Collection(String)',
-        authors: sample.authors.map(author => author.displayName),
-        'authorsPictures@odata.type': 'Collection(String)',
-        authorsPictures: sample.authors.map(author => author.pictureUrl),
+        "authors@odata.type": "Collection(String)",
+        authors: sample.authors.map((author) => {
+          const displayName = author.displayName;
+          const pictureUrl = author.pictureUrl;
+          return { name: displayName, pictureUrl: pictureUrl };
+        }),
+        /*  authors: sample.authors.map(author => author.displayName), */
+        "authorsPictures@odata.type": "Collection(String)",
+        /*   authorsPictures: sample.authors.map(author => author.pictureUrl), */
+        authorsPictures: [],
         imageUrl,
-        iconUrl: 'https://raw.githubusercontent.com/pnp/media/master/pnp-logos-generics/png/teal/300w/pnp-samples-teal-300.png',
+        iconUrl:
+          "https://raw.githubusercontent.com/pnp/media/master/pnp-logos-generics/png/teal/300w/pnp-samples-teal-300.png",
         url: `https://adoption.microsoft.com/sample-solution-gallery/sample/${sample.sampleId}/`,
         createdDateTime,
         lastModifiedDateTime,
-        'products@odata.type': 'Collection(String)',
-        products: sample.products,
-        'metadata@odata.type': 'Collection(String)',
-        metadata: sample.metadata.map(m => `${m.key}=${m.value}`)
+        "products@odata.type": "Collection(String)",
+        /*   products: sample.products, */
+        products: sample.products.map((product) => {
+          return { productName: product };
+        }),
+        "metadata@odata.type": "Collection(String)",
+        metadata: sample.metadata.map((m) => `${m.key}=${m.value}`),
       },
       content: {
         value: sample.shortDescription,
-        type: 'text'
+        type: "text",
       },
       acl: [
         {
-          accessType: 'grant',
-          type: 'everyone',
-          value: 'everyone'
-        }
-      ]
-    }
+          accessType: "grant",
+          type: "everyone",
+          value: "everyone",
+        },
+      ],
+    };
   });
 }
 
 function pushItem({ crawlInfo, id, sample, callback, errors }) {
   client
     .api(`/external/connections/${id}/items/${sample.id}`)
-    .header('content-type', 'application/json')
+    .header("content-type", "application/json")
     .put(sample)
     .then(() => {
       const sampleDate = new Date(sample.properties.lastModifiedDateTime);
@@ -139,17 +147,17 @@ function pushItem({ crawlInfo, id, sample, callback, errors }) {
         crawlInfo.latestChange = sampleDate;
       }
     })
-    .catch(error => {
+    .catch((error) => {
       errors.push({
         sample,
-        error
+        error,
       });
     })
     .finally(() => callback());
 }
 
 async function load(samples) {
-  const spinner = ora('Loading content...').start();
+  const spinner = ora("Loading content...").start();
   const { id } = config.connection;
 
   const queue = [...samples];
@@ -160,18 +168,21 @@ async function load(samples) {
   let activeRequests = 0;
   let completedRequests = 0;
   const crawlInfo = {
-    latestChange: new Date(0)
+    latestChange: new Date(0),
   };
 
   const printStatus = () => {
-    spinner.text = `Total: ${numSamples} | Processed: ${completedRequests} (${((completedRequests / numSamples) * 100).toFixed(1)}%) | Queued: ${queue.length} | Errors: ${errors.length} | Active: ${activeRequests}...`;
+    spinner.text = `Total: ${numSamples} | Processed: ${completedRequests} (${(
+      (completedRequests / numSamples) *
+      100
+    ).toFixed(1)}%) | Queued: ${queue.length} | Errors: ${errors.length} | Active: ${activeRequests}...`;
   };
 
   while (queue.length > 0) {
     printStatus();
 
     if (activeRequests >= maxConnections) {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
       continue;
     }
 
@@ -196,31 +207,30 @@ async function load(samples) {
         activeRequests--;
         completedRequests++;
       },
-      errors
+      errors,
     });
   }
 
   // wait for all requests to complete
   while (activeRequests > 0) {
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
     printStatus();
   }
 
-  fs.writeFileSync('latestChange.txt', crawlInfo.latestChange.toISOString());
+  fs.writeFileSync("latestChange.txt", crawlInfo.latestChange.toISOString());
 
   if (errors.length > 0) {
-    const errorFileName = `errors-${new Date().toISOString().replace(/[^\d\w]/g, '-')}.json`;
+    const errorFileName = `errors-${new Date().toISOString().replace(/[^\d\w]/g, "-")}.json`;
     fs.writeFileSync(errorFileName, JSON.stringify(errors, null, 2));
     spinner.warn(`Completed with ${errors.length} errors. See ${errorFileName} for details.`);
-  }
-  else {
+  } else {
     spinner.succeed();
   }
 }
 
 async function main() {
   const lastCrawledSampleDate = getLastCrawledSampleDate();
-  
+
   let fromCache = yargs(process.argv).argv.fromCache;
   if (fromCache === undefined) {
     fromCache = true;
