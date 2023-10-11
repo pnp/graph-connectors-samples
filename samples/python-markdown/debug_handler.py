@@ -2,8 +2,6 @@ from kiota_http.middleware import BaseMiddleware
 import httpx
 
 class DebugHandler(BaseMiddleware):
-    def __init__(self) -> None:
-        super().__init__()
 
     async def send(
         self, request: httpx.Request, transport: httpx.AsyncBaseTransport
