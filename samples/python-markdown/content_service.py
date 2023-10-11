@@ -1,6 +1,7 @@
 import frontmatter
 import os
 import re
+import logging
 from bs4 import BeautifulSoup
 from datetime import datetime
 from markdown import markdown
@@ -28,6 +29,9 @@ from msgraph.generated.models.external_connectors.properties import Properties
 
 from connection_configuration import external_connection, user_id
 from graph_service import graph_client
+
+logging.basicConfig()
+logger = logging.getLogger(__name__)
 
 
 def _markdown_to_text(markdown_string):
@@ -117,7 +121,7 @@ def _transform(content) -> Generator[ExternalItem, None, None]:
 async def _load(content: Generator[ExternalItem, None, None]):
     for doc in content:
         try:
-            print(f"Loading {doc.id}...", end="")
+            logger.info(f"Loading {doc.id}...")
 
             assert external_connection.id is not None
             assert doc.id is not None
@@ -125,9 +129,9 @@ async def _load(content: Generator[ExternalItem, None, None]):
             await graph_client.external.connections.by_external_connection_id(
                 external_connection.id
             ).items.by_external_item_id(doc.id).put(doc)
-            print("DONE")
+            logger.info("DONE loading")
         except Exception as e:
-            print(f"Failed to load {doc.id}: {e}")
+            logger.error(f"Failed to load {doc.id}: {e}")
             return
 
 
