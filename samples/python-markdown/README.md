@@ -14,8 +14,9 @@ This samples contains a Microsoft Graph connector built in Python that shows how
 
 Version|Date|Comments
 -------|----|--------
-1.1|October 09, 2023|Added configuring result layout
-1.0|October 09, 2023|Initial release
+1.2|October 11, 2023|Updated logging and formatting
+1.1|October 9, 2023|Added configuring result layout
+1.0|October 9, 2023|Initial release
 
 ## Prerequisites
 

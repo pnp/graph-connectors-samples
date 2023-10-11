@@ -10,7 +10,7 @@
       "This samples contains a Microsoft Graph connector built in Python that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2023-10-09",
-    "updateDateTime": "2023-10-09",
+    "updateDateTime": "2023-10-11",
     "products": [
       "Microsoft Graph connectors",
       "Microsoft Graph"
@@ -52,6 +52,11 @@
         "gitHubAccount": "waldekmastykarz",
         "pictureUrl": "https://github.com/waldekmastykarz.png",
         "name": "Waldek Mastykarz"
+      },
+      {
+        "gitHubAccount": "tonybaloney",
+        "pictureUrl": "https://github.com/tonybaloney.png",
+        "name": "Anthony Shaw"
       }
     ],
     "references": [
