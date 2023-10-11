@@ -98,15 +98,9 @@ function transform(samples) {
         title: sample.title,
         description: sample.shortDescription,
         "authors@odata.type": "Collection(String)",
-        authors: sample.authors.map((author) => {
-          const displayName = author.displayName;
-          const pictureUrl = author.pictureUrl;
-          return { name: displayName, pictureUrl: pictureUrl };
-        }),
-        /*  authors: sample.authors.map(author => author.displayName), */
+        authors: sample.authors.map((author) => author.displayName),
         "authorsPictures@odata.type": "Collection(String)",
-        /*   authorsPictures: sample.authors.map(author => author.pictureUrl), */
-        authorsPictures: [],
+        authorsPictures: sample.authors.map((author) => author.pictureUrl),
         imageUrl,
         iconUrl:
           "https://raw.githubusercontent.com/pnp/media/master/pnp-logos-generics/png/teal/300w/pnp-samples-teal-300.png",
@@ -114,10 +108,7 @@ function transform(samples) {
         createdDateTime,
         lastModifiedDateTime,
         "products@odata.type": "Collection(String)",
-        /*   products: sample.products, */
-        products: sample.products.map((product) => {
-          return { productName: product };
-        }),
+        products: sample.products,
         "metadata@odata.type": "Collection(String)",
         metadata: sample.metadata.map((m) => `${m.key}=${m.value}`),
       },
