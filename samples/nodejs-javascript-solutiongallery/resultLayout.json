@@ -4,259 +4,271 @@
   "version": "1.3",
   "body": [
       {
-          "type": "ColumnSet",
-          "columns": [
+          "type": "Container",
+          "items": [
               {
-                  "type": "Column",
-                  "width": "auto",
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "auto",
+                          "items": [
+                              {
+                                  "type": "Image",
+                                  "url": "${iconUrl}",
+                                  "width": "32px",
+                                  "height": "32px"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "${title}",
+                                  "style": "default",
+                                  "size": "Medium",
+                                  "weight": "Default",
+                                  "isSubtle": false,
+                                  "spacing": "Medium",
+                                  "horizontalAlignment": "Center",
+                                  "color": "Accent"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "auto",
+                          "spacing": "Small",
+                          "items": [
+                              {
+                                  "type": "ColumnSet",
+                                  "columns": [
+                                      {
+                                          "type": "Column",
+                                          "width": "auto",
+                                          "items": [
+                                              {
+                                                  "type": "Image",
+                                                  "url": "${authorsPictures[0]}",
+                                                  "size": "Small",
+                                                  "style": "Person",
+                                                  "altText": "Author",
+                                                  "$when": "${greaterOrEquals(count(authorsPictures), 1)}"
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "type": "Column",
+                                          "width": "auto",
+                                          "items": [
+                                              {
+                                                  "type": "TextBlock",
+                                                  "text": "${authors[0]}",
+                                                  "wrap": true,
+                                                  "isSubtle": true,
+                                                  "size": "Default",
+                                                  "horizontalAlignment": "Left"
+                                              }
+                                          ],
+                                          "verticalContentAlignment": "Center",
+                                          "horizontalAlignment": "Left"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "auto",
+                          "spacing": "Medium",
+                          "items": [
+                              {
+                                  "type": "ColumnSet",
+                                  "columns": [
+                                      {
+                                          "type": "Column",
+                                          "width": "auto",
+                                          "items": [
+                                              {
+                                                  "type": "Image",
+                                                  "url": "${authorsPictures[1]}",
+                                                  "size": "Small",
+                                                  "style": "Person",
+                                                  "altText": "Author",
+                                                  "$when": "${greaterOrEquals(count(authorsPictures), 2)}"
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "type": "Column",
+                                          "width": "auto",
+                                          "items": [
+                                              {
+                                                  "type": "TextBlock",
+                                                  "text": "${authors[1]}",
+                                                  "wrap": true,
+                                                  "isSubtle": true,
+                                                  "size": "Default",
+                                                  "horizontalAlignment": "Left",
+                                                  "fontType": "Default"
+                                              }
+                                          ],
+                                          "verticalContentAlignment": "Center",
+                                          "horizontalAlignment": "Left"
+                                      }
+                                  ]
+                              }
+                          ],
+                          "$when": "${greaterOrEquals(count(authors), 2)}"
+                      },
+                      {
+                          "type": "Column",
+                          "width": "auto",
+                          "spacing": "Medium",
+                          "items": [
+                              {
+                                  "type": "ColumnSet",
+                                  "columns": [
+                                      {
+                                          "type": "Column",
+                                          "width": "auto",
+                                          "items": [
+                                              {
+                                                  "type": "Image",
+                                                  "url": "${authorsPictures[2]}",
+                                                  "size": "Small",
+                                                  "style": "Person",
+                                                  "altText": "Author",
+                                                  "$when": "${greaterOrEquals(count(authorsPictures), 3)}"
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "type": "Column",
+                                          "width": "auto",
+                                          "items": [
+                                              {
+                                                  "type": "TextBlock",
+                                                  "text": "${authors[2]}",
+                                                  "wrap": true,
+                                                  "isSubtle": true,
+                                                  "size": "Default",
+                                                  "horizontalAlignment": "Left"
+                                              }
+                                          ],
+                                          "verticalContentAlignment": "Center"
+                                      }
+                                  ]
+                              }
+                          ],
+                          "$when": "${greaterOrEquals(count(authors), 3)}"
+                      }
+                  ],
+                  "separator": true,
+                  "spacing": "Medium",
+                  "style": "default"
+              },
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "auto",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "Modified:",
+                                  "wrap": true,
+                                  "isSubtle": true,
+                                  "size": "Small",
+                                  "weight": "Bolder"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "${formatDateTime(lastModifiedDateTime,\"MMMM dd, yyyy\")}",
+                                  "wrap": true,
+                                  "color": "Accent",
+                                  "size": "Small"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "type": "Container",
+                  "$when": "${length(imageUrl) != 0}",
                   "items": [
                       {
                           "type": "Image",
-                          "url": "${iconUrl}",
-                          "width": "32px",
-                          "height": "32px"
+                          "url": "${imageUrl}",
+                          "width": "574px",
+                          "spacing": "Large"
                       }
-                  ]
+                  ],
+                  "spacing": "Medium"
               },
               {
-                  "type": "Column",
-                  "width": "stretch",
+                  "type": "Container",
                   "items": [
                       {
                           "type": "TextBlock",
-                          "text": "${title}",
-                          "style": "default",
-                          "size": "Medium",
-                          "weight": "Default",
-                          "isSubtle": false,
-                          "spacing": "Medium",
-                          "horizontalAlignment": "Center",
-                          "color": "Accent"
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "type": "ColumnSet",
-          "columns": [
-              {
-                  "type": "Column",
-                  "width": "auto",
-                  "spacing": "Small",
-                  "items": [
-                      {
-                          "type": "ColumnSet",
-                          "columns": [
-                              {
-                                  "type": "Column",
-                                  "width": "auto",
-                                  "items": [
-                                      {
-                                          "type": "Image",
-                                          "url": "${authorsPictures[0]}",
-                                          "size": "Small",
-                                          "style": "Person",
-                                          "altText": "Author",
-                                          "$when": "${greaterOrEquals(count(authorsPictures), 1)}"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "type": "Column",
-                                  "width": "auto",
-                                  "items": [
-                                      {
-                                          "type": "TextBlock",
-                                          "text": "${authors[0]}",
-                                          "wrap": true,
-                                          "isSubtle": true,
-                                          "size": "Small",
-                                          "horizontalAlignment": "Left"
-                                      }
-                                  ],
-                                  "verticalContentAlignment": "Center",
-                                  "horizontalAlignment": "Left"
-                              }
-                          ]
-                      }
-                  ]
-              },
-              {
-                  "type": "Column",
-                  "width": "auto",
-                  "spacing": "Medium",
-                  "items": [
-                      {
-                          "type": "ColumnSet",
-                          "columns": [
-                              {
-                                  "type": "Column",
-                                  "width": "auto",
-                                  "items": [
-                                      {
-                                          "type": "Image",
-                                          "url": "${authorsPictures[1]}",
-                                          "size": "Small",
-                                          "style": "Person",
-                                          "altText": "Author",
-                                          "$when": "${greaterOrEquals(count(authorsPictures), 2)}"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "type": "Column",
-                                  "width": "auto",
-                                  "items": [
-                                      {
-                                          "type": "TextBlock",
-                                          "text": "${authors[1]}",
-                                          "wrap": true,
-                                          "isSubtle": true,
-                                          "size": "Small",
-                                          "horizontalAlignment": "Left"
-                                      }
-                                  ],
-                                  "backgroundImage": {
-                                      "verticalAlignment": "Center"
-                                  },
-                                  "verticalContentAlignment": "Center",
-                                  "horizontalAlignment": "Left"
-                              }
-                          ]
+                          "text": "${description}",
+                          "wrap": true,
+                          "spacing": "Large",
+                          "isSubtle": true,
+                          "maxLines": 4,
+                          "size": "Default",
+                          "$when": "${length(description) > 0}"
                       }
                   ],
-                  "$when": "${greaterOrEquals(count(authors), 2)}"
+                  "separator": true,
+                  "spacing": "Medium"
               },
               {
-                  "type": "Column",
-                  "width": "auto",
+                  "type": "Container",
+                  "separator": true,
                   "spacing": "Medium",
-                  "items": [
-                      {
-                          "type": "ColumnSet",
-                          "columns": [
-                              {
-                                  "type": "Column",
-                                  "width": "auto",
-                                  "items": [
-                                      {
-                                          "type": "Image",
-                                          "url": "${authorsPictures[2]}",
-                                          "size": "Small",
-                                          "style": "Person",
-                                          "altText": "Author",
-                                          "$when": "${greaterOrEquals(count(authorsPictures), 3)}"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "type": "Column",
-                                  "width": "auto",
-                                  "items": [
-                                      {
-                                          "type": "TextBlock",
-                                          "text": "${authors[2]}",
-                                          "wrap": true,
-                                          "isSubtle": true,
-                                          "size": "Small",
-                                          "horizontalAlignment": "Left"
-                                      }
-                                  ],
-                                  "backgroundImage": {
-                                      "verticalAlignment": "Center"
-                                  },
-                                  "verticalContentAlignment": "Center"
-                              }
-                          ]
-                      }
-                  ],
-                  "$when": "${greaterOrEquals(count(authors), 3)}"
-              }
-          ],
-          "separator": true,
-          "spacing": "Medium",
-          "style": "emphasis"
-      },
-      {
-          "type": "ColumnSet",
-          "columns": [
-              {
-                  "type": "Column",
-                  "width": "auto",
                   "items": [
                       {
                           "type": "TextBlock",
-                          "text": "Modified:",
+                          "text": "Products:",
                           "wrap": true,
                           "isSubtle": true,
-                          "size": "Small",
                           "weight": "Bolder"
                       }
                   ]
               },
               {
-                  "type": "Column",
-                  "width": "stretch",
-                  "items": [
-                      {
-                          "type": "TextBlock",
-                          "text": "${formatDateTime(lastModifiedDateTime,\"MMMM dd, yyyy\")}",
-                          "wrap": true,
-                          "color": "Accent",
-                          "size": "Small"
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "type": "Container",
-          "backgroundImage": {
-              "url": "${imageUrl}"
-          },
-          "height": "stretch",
-          "minHeight": "150px",
-          "$when": "${!empty(imageUrl)}"
-      },
-      {
-          "type": "Container",
-          "items": [
-              {
                   "type": "TextBlock",
-                  "text": "${description}",
+                  "text": "${join(products,\", \")}",
                   "wrap": true,
-                  "spacing": "Medium",
                   "isSubtle": true,
-                  "maxLines": 4,
-                  "size": "Default"
+                  "size": "Default",
+                  "color": "Accent",
+                  "$when": "${!empty(products)}",
+                  "style": "default",
+                  "fontType": "Default"
+              },
+              {
+                  "type": "Container",
+                  "spacing": "ExtraLarge"
               }
           ],
-          "separator": true,
-          "spacing": "Medium"
-      },
-      {
-          "type": "Container",
-          "separator": true,
-          "spacing": "Medium",
-          "items": [
-              {
-                  "type": "TextBlock",
-                  "text": "Products:",
-                  "wrap": true,
-                  "isSubtle": true,
-                  "weight": "Bolder"
-              }
-          ]
-      },
-      {
-          "type": "TextBlock",
-          "text": "${join(products,\", \")}",
-          "wrap": true,
-          "isSubtle": true,
-          "size": "Small",
-          "color": "Accent",
-          "$when": "${!empty(products)}"
+          "style": "emphasis"
       }
   ]
 }
