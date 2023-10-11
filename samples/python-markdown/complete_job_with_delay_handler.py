@@ -1,10 +1,16 @@
 import copy
 import httpx
 import time
+import logging
 from kiota_http.middleware import BaseMiddleware
 from kiota_abstractions.serialization.parse_node_factory_registry import ParseNodeFactoryRegistry
 from msgraph.generated.models.external_connectors.connection_operation import ConnectionOperation
 from msgraph.generated.models.external_connectors.connection_operation_status import ConnectionOperationStatus
+
+
+logging.basicConfig()
+logger = logging.getLogger(__name__)
+
 
 class CompleteJobWithDelayHandler(BaseMiddleware):
     def __init__(self, delayMs: int) -> None:
@@ -38,13 +44,13 @@ class CompleteJobWithDelayHandler(BaseMiddleware):
 
         location = response.headers.get("Location")
         if location:
-            print(f"Location: {location}")
+            logger.info("Location: %s", location)
 
             if "/operations/" not in location:
                 # not a job URL we should follow
                 return response
           
-            print(f"Waiting {self.delayMs}ms before following location {location}...")
+            logger.info(f"Waiting {self.delayMs}ms before following location {location}...")
             time.sleep(self.delayMs / 1000)
             
             new_request = self._create_new_request("GET", location, request_before)
@@ -55,7 +61,7 @@ class CompleteJobWithDelayHandler(BaseMiddleware):
             return response
         
         if not response.is_success:
-            print("Response is not OK")
+            logger.warning("Response is not OK")
             return response
 
         body_bytes = response.read()
@@ -63,7 +69,7 @@ class CompleteJobWithDelayHandler(BaseMiddleware):
         operation: ConnectionOperation = parse_node.get_object_value(ConnectionOperation.create_from_discriminator_value(parse_node)) # type: ignore
 
         if operation.status == ConnectionOperationStatus.Inprogress:
-            print(f"Waiting {self.delayMs}ms before trying again...")
+            logger.info("Waiting %sms before trying again...", self.delayMs)
             time.sleep(self.delayMs / 1000)
             new_request = self._create_new_request("GET", str(request_before.url), request_before)
             return await self.send(new_request, transport)
