@@ -1,8 +1,13 @@
 import configparser
 from azure.identity import ClientSecretCredential
 from httpx import AsyncClient, Timeout
-from kiota_authentication_azure.azure_identity_authentication_provider import AzureIdentityAuthenticationProvider
-from kiota_http.kiota_client_factory import DEFAULT_CONNECTION_TIMEOUT, DEFAULT_REQUEST_TIMEOUT
+from kiota_authentication_azure.azure_identity_authentication_provider import (
+    AzureIdentityAuthenticationProvider,
+)
+from kiota_http.kiota_client_factory import (
+    DEFAULT_CONNECTION_TIMEOUT,
+    DEFAULT_REQUEST_TIMEOUT,
+)
 from msgraph import GraphServiceClient, GraphRequestAdapter
 from msgraph_core import GraphClientFactory
 
@@ -26,17 +31,20 @@ if args.with_proxy:
         "http://": "http://0.0.0.0:8000",
         "https://": "http://0.0.0.0:8000",
     }
-    http_client = AsyncClient(proxies=_proxies, verify=False, timeout=timeout, http2=True) # type: ignore
+    http_client = AsyncClient(proxies=_proxies, verify=False, timeout=timeout, http2=True)  # type: ignore
 else:
     http_client = AsyncClient(timeout=timeout, http2=True)
 
 _middleware = GraphClientFactory.get_default_middleware(None)
 # _middleware.append(DebugHandler())
 _middleware.insert(0, CompleteJobWithDelayHandler(60000))
-http_client = GraphClientFactory.create_with_custom_middleware(_middleware, client=http_client)
+http_client = GraphClientFactory.create_with_custom_middleware(
+    _middleware, client=http_client
+)
 _adapter = GraphRequestAdapter(_auth_provider, http_client)
 
-graph_client = GraphServiceClient(_credential,
-                                  scopes=[
-                                      "https://graph.microsoft.com/.default"],
-                                  request_adapter=_adapter)
+graph_client = GraphServiceClient(
+    _credential,
+    scopes=["https://graph.microsoft.com/.default"],
+    request_adapter=_adapter,
+)
