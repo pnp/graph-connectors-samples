@@ -50,7 +50,7 @@ class CompleteJobWithDelayHandler(BaseMiddleware):
                 # not a job URL we should follow
                 return response
           
-            logger.info(f"Waiting {self.delayMs}ms before following location {location}...")
+            logger.info("Waiting %sms before following location %s...", self.delayMs, location)
             time.sleep(self.delayMs / 1000)
             
             new_request = self._create_new_request("GET", location, request_before)

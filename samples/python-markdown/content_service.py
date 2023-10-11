@@ -62,7 +62,7 @@ def _extract():
         ):
             return
 
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding='utf-8') as file:
             post = frontmatter.load(file)
             post.content = _markdown_to_text(post.content)
             post.url = urljoin(base_url, post.metadata["slug"])  # type: ignore
@@ -121,7 +121,7 @@ def _transform(content) -> Generator[ExternalItem, None, None]:
 async def _load(content: Generator[ExternalItem, None, None]):
     for doc in content:
         try:
-            logger.info(f"Loading {doc.id}...")
+            logger.info("Loading %s...", doc.id)
 
             assert external_connection.id is not None
             assert doc.id is not None
@@ -131,7 +131,7 @@ async def _load(content: Generator[ExternalItem, None, None]):
             ).items.by_external_item_id(doc.id).put(doc)
             logger.info("DONE loading")
         except Exception as e:
-            logger.error(f"Failed to load {doc.id}: {e}")
+            logger.error("Failed to load %s: %s", doc.id, e)
             return
 
 
