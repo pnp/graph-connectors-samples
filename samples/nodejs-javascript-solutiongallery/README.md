@@ -9,6 +9,7 @@ This samples contains a Microsoft Graph connector that shows how to ingest sampl
 ## Contributors
 
 - [Waldek Mastykarz](https://github.com/waldekmastykarz)
+- [João Mendes](https://github.com/joaojmendes)
 
 ## Version history
 
