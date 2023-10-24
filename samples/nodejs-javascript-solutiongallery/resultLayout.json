@@ -1,274 +1,274 @@
 {
-  "type": "AdaptiveCard",
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "version": "1.3",
-  "body": [
-    {
-      "type": "Container",
-      "items": [
-        {
-          "type": "ColumnSet",
-          "columns": [
-            {
-              "type": "Column",
-              "width": "auto",
-              "items": [
-                {
-                  "type": "Image",
-                  "url": "${iconUrl}",
-                  "width": "32px",
-                  "height": "32px"
-                }
-              ]
-            },
-            {
-              "type": "Column",
-              "width": "stretch",
-              "items": [
-                {
-                  "type": "TextBlock",
-                  "text": "${title}",
-                  "style": "default",
-                  "size": "Medium",
-                  "weight": "Default",
-                  "isSubtle": false,
-                  "spacing": "Medium",
-                  "horizontalAlignment": "Center",
-                  "color": "Accent"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "ColumnSet",
-          "columns": [
-            {
-              "type": "Column",
-              "width": "auto",
-              "spacing": "Small",
-              "items": [
-                {
-                  "type": "ColumnSet",
-                  "columns": [
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "Image",
-                          "url": "${authorsPictures[0]}",
-                          "size": "Small",
-                          "style": "Person",
-                          "altText": "Author",
-                          "$when": "${greaterOrEquals(count(authorsPictures), 1)}"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "TextBlock",
-                          "text": "${authors[0]}",
-                          "wrap": true,
-                          "isSubtle": true,
-                          "size": "Default",
-                          "horizontalAlignment": "Left"
-                        }
-                      ],
-                      "verticalContentAlignment": "Center",
-                      "horizontalAlignment": "Left"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "Column",
-              "width": "auto",
-              "spacing": "Medium",
-              "items": [
-                {
-                  "type": "ColumnSet",
-                  "columns": [
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "Image",
-                          "url": "${authorsPictures[1]}",
-                          "size": "Small",
-                          "style": "Person",
-                          "altText": "Author",
-                          "$when": "${greaterOrEquals(count(authorsPictures), 2)}"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "TextBlock",
-                          "text": "${authors[1]}",
-                          "wrap": true,
-                          "isSubtle": true,
-                          "size": "Default",
-                          "horizontalAlignment": "Left",
-                          "fontType": "Default"
-                        }
-                      ],
-                      "verticalContentAlignment": "Center",
-                      "horizontalAlignment": "Left"
-                    }
-                  ]
-                }
-              ],
-              "$when": "${greaterOrEquals(count(authors), 2)}"
-            },
-            {
-              "type": "Column",
-              "width": "auto",
-              "spacing": "Medium",
-              "items": [
-                {
-                  "type": "ColumnSet",
-                  "columns": [
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "Image",
-                          "url": "${authorsPictures[2]}",
-                          "size": "Small",
-                          "style": "Person",
-                          "altText": "Author",
-                          "$when": "${greaterOrEquals(count(authorsPictures), 3)}"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "TextBlock",
-                          "text": "${authors[2]}",
-                          "wrap": true,
-                          "isSubtle": true,
-                          "size": "Default",
-                          "horizontalAlignment": "Left"
-                        }
-                      ],
-                      "verticalContentAlignment": "Center"
-                    }
-                  ]
-                }
-              ],
-              "$when": "${greaterOrEquals(count(authors), 3)}"
-            }
-          ],
-          "separator": true,
-          "spacing": "Medium",
-          "style": "default"
-        },
-        {
-          "type": "ColumnSet",
-          "columns": [
-            {
-              "type": "Column",
-              "width": "auto",
-              "items": [
-                {
-                  "type": "TextBlock",
-                  "text": "Modified:",
-                  "wrap": true,
-                  "isSubtle": true,
-                  "size": "Small",
-                  "weight": "Bolder"
-                }
-              ]
-            },
-            {
-              "type": "Column",
-              "width": "stretch",
-              "items": [
-                {
-                  "type": "TextBlock",
-                  "text": "${formatDateTime(lastModifiedDateTime,\"MMMM dd, yyyy\")}",
-                  "wrap": true,
-                  "color": "Accent",
-                  "size": "Small"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Container",
-          "$when": "${length(imageUrl) != 0}",
-          "items": [
-            {
-              "type": "Image",
-              "url": "${imageUrl}",
-              "width": "574px",
-              "spacing": "Large"
-            }
-          ],
-          "spacing": "Medium"
-        },
-        {
-          "type": "Container",
-          "items": [
-            {
-              "type": "TextBlock",
-              "text": "${description}",
-              "wrap": true,
-              "spacing": "Large",
-              "isSubtle": true,
-              "maxLines": 4,
-              "size": "Default",
-              "$when": "${length(description) > 0}"
-            }
-          ],
-          "separator": true,
-          "spacing": "Medium"
-        },
-        {
-          "type": "Container",
-          "separator": true,
-          "spacing": "Medium",
-          "items": [
-            {
-              "type": "TextBlock",
-              "text": "Products:",
-              "wrap": true,
-              "isSubtle": true,
-              "weight": "Bolder"
-            }
-          ]
-        },
-        {
-          "type": "TextBlock",
-          "text": "${join(products,\", \")}",
-          "wrap": true,
-          "isSubtle": true,
-          "size": "Default",
-          "color": "Accent",
-          "$when": "${!empty(products)}",
-          "style": "default",
-          "fontType": "Default"
-        },
-        {
-          "type": "Container",
-          "spacing": "ExtraLarge"
-        }
-      ],
-      "style": "emphasis"
-    }
-  ]
-}
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+      {
+        "type": "Container",
+        "items": [
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "width": "auto",
+                "items": [
+                  {
+                    "type": "Image",
+                    "url": "${iconUrl}",
+                    "width": "32px",
+                    "height": "32px"
+                  }
+                ]
+              },
+              {
+                "type": "Column",
+                "width": "stretch",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "[${title}](${url})",
+                    "style": "default",
+                    "size": "Medium",
+                    "weight": "Default",
+                    "isSubtle": false,
+                    "spacing": "Medium",
+                    "horizontalAlignment": "Center",
+                    "color": "Accent"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "width": "auto",
+                "spacing": "Small",
+                "items": [
+                  {
+                    "type": "ColumnSet",
+                    "columns": [
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "Image",
+                            "url": "${authorsPictures[0]}",
+                            "size": "Small",
+                            "style": "Person",
+                            "altText": "Author",
+                            "$when": "${greaterOrEquals(count(authorsPictures), 1)}"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "TextBlock",
+                            "text": "${authors[0]}",
+                            "wrap": true,
+                            "isSubtle": true,
+                            "size": "Default",
+                            "horizontalAlignment": "Left"
+                          }
+                        ],
+                        "verticalContentAlignment": "Center",
+                        "horizontalAlignment": "Left"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Column",
+                "width": "auto",
+                "spacing": "Medium",
+                "items": [
+                  {
+                    "type": "ColumnSet",
+                    "columns": [
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "Image",
+                            "url": "${authorsPictures[1]}",
+                            "size": "Small",
+                            "style": "Person",
+                            "altText": "Author",
+                            "$when": "${greaterOrEquals(count(authorsPictures), 2)}"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "TextBlock",
+                            "text": "${authors[1]}",
+                            "wrap": true,
+                            "isSubtle": true,
+                            "size": "Default",
+                            "horizontalAlignment": "Left",
+                            "fontType": "Default"
+                          }
+                        ],
+                        "verticalContentAlignment": "Center",
+                        "horizontalAlignment": "Left"
+                      }
+                    ]
+                  }
+                ],
+                "$when": "${greaterOrEquals(count(authors), 2)}"
+              },
+              {
+                "type": "Column",
+                "width": "auto",
+                "spacing": "Medium",
+                "items": [
+                  {
+                    "type": "ColumnSet",
+                    "columns": [
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "Image",
+                            "url": "${authorsPictures[2]}",
+                            "size": "Small",
+                            "style": "Person",
+                            "altText": "Author",
+                            "$when": "${greaterOrEquals(count(authorsPictures), 3)}"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "TextBlock",
+                            "text": "${authors[2]}",
+                            "wrap": true,
+                            "isSubtle": true,
+                            "size": "Default",
+                            "horizontalAlignment": "Left"
+                          }
+                        ],
+                        "verticalContentAlignment": "Center"
+                      }
+                    ]
+                  }
+                ],
+                "$when": "${greaterOrEquals(count(authors), 3)}"
+              }
+            ],
+            "separator": true,
+            "spacing": "Medium",
+            "style": "default"
+          },
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "width": "auto",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Modified:",
+                    "wrap": true,
+                    "isSubtle": true,
+                    "size": "Small",
+                    "weight": "Bolder"
+                  }
+                ]
+              },
+              {
+                "type": "Column",
+                "width": "stretch",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "${formatDateTime(lastModifiedDateTime,\"MMMM dd, yyyy\")}",
+                    "wrap": true,
+                    "color": "Accent",
+                    "size": "Small"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Container",
+            "$when": "${length(imageUrl) != 0}",
+            "items": [
+              {
+                "type": "Image",
+                "url": "${imageUrl}",
+                "width": "574px",
+                "spacing": "Large"
+              }
+            ],
+            "spacing": "Medium"
+          },
+          {
+            "type": "Container",
+            "items": [
+              {
+                "type": "TextBlock",
+                "text": "${description}",
+                "wrap": true,
+                "spacing": "Large",
+                "isSubtle": true,
+                "maxLines": 4,
+                "size": "Default",
+                "$when": "${length(description) > 0}"
+              }
+            ],
+            "separator": true,
+            "spacing": "Medium"
+          },
+          {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+              {
+                "type": "TextBlock",
+                "text": "Products:",
+                "wrap": true,
+                "isSubtle": true,
+                "weight": "Bolder"
+              }
+            ]
+          },
+          {
+            "type": "TextBlock",
+            "text": "${join(products,\", \")}",
+            "wrap": true,
+            "isSubtle": true,
+            "size": "Default",
+            "color": "Accent",
+            "$when": "${!empty(products)}",
+            "style": "default",
+            "fontType": "Default"
+          },
+          {
+            "type": "Container",
+            "spacing": "ExtraLarge"
+          }
+        ],
+        "style": "emphasis"
+      }
+    ]
+  }
