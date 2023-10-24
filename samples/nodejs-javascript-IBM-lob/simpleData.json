@@ -1,0 +1,27 @@
+
+{
+  "custcode": "102",
+  "custname": "Fred Johnson",
+  "orders": [
+    "100002",
+    "100000"
+  ],
+  "ordersdates": [
+    "2008-01-14",
+    "2008-01-10"
+  ],
+  "ordertotals": [
+    "348.30",
+    "35.47"
+  ],
+  "orderstatus": [
+    "Shipped",
+    "Shipped"
+  ],
+  "country": "USA",
+  "city": "Santa Cruz",
+  "state": "CA",
+  "email": "plastic@doll.com",
+  "phone": "831-715-3322",
+  "address": "128 Skyline Road 95060"
+}
