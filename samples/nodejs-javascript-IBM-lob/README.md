@@ -2,21 +2,19 @@
 
 ## Summary
 
-This samples contains a Microsoft Graph connector that shows how to ingest sample solutions from the [Microsoft 365 and Power Platform community sample gallery](https://adoption.microsoft.com/sample-solution-gallery/?keyword=&sort-by=creationDateTime-true&page=1). It gives you a very convenient way to search for and reference community samples right from your tenant!
+This samples contains a Microsoft Graph connector that shows how to bring LOB data to Microsoft 365, this case use IBM DB2 SALES data located on the IBM Cloud.   It gives you a very convenient way to search  Client Orders right from your tenant!
 
-![Microsoft 365 and Power Platform community rate limit samples displayed in Microsoft Search](assets/sample-rate-limit.png)
+![IBMDB2](assets/preview01.png)
 
 ## Contributors
 
-- [Waldek Mastykarz](https://github.com/waldekmastykarz)
+- [João Mendes](https://github.com/joaojmendes)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|October 9, 2023|Added configuring result layout
-1.0|October 6, 2023|Updated local cache of samples
-1.0|October 2, 2023|Initial release
+1.0|October 23, 2023|Initial release
 
 ## Prerequisites
 
@@ -35,16 +33,13 @@ Version|Date|Comments
 
 ## Features
 
-This sample shows how to ingest samples from the Microsoft 365 and Power Platform community Sample Solution Gallery into your Microsoft 365 tenant.
+This sample shows how to use query LOB Data from IBM DB2 located on IBM Cloud (external) into your Microsoft 365 tenant.
 
 The sample illustrates the following concepts:
 
 - script creating the Entra ID (Azure AD) application using CLI for Microsoft 365
-- create external connection including URL to item resolver to track activity when users share external links
 - create external connection schema
-- retrieve data from a remote API and store it in a local cache for future use
-- support incremental ingestion by tracking the last modified date of the newest sample
-- ingesting items with up to 10 parallel connections to speed up the ingestion
+- retrieve data from a remote API and add to the index
 - logging errors for easy debugging
 - visualize the external content in search results using a custom Adaptive Card
 - extend Microsoft Graph JavaScript SDK with a [middleware to wait for a long-running operation to complete](https://blog.mastykarz.nl/easily-handle-long-running-operations-middleware-microsoft-graph-javascript-sdk/)
