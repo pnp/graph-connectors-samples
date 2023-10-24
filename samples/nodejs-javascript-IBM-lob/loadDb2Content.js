@@ -220,8 +220,8 @@ const addDataToConnector = async (data) => {
   const spinner = ora("Loading content...").start();
 
   const printStatus = () => {
-    spinner.text = `Total: ${clientData.length} | Processed: ${completed} (${(
-      (completed / clientData.length) *
+    spinner.text = `Total: ${numclientData} | Processed: ${completed} (${(
+      (completed / numclientData) *
       100
     ).toFixed(1)}%)   | Errors: ${errors.length} | Active: ${ running}...`;
   };
