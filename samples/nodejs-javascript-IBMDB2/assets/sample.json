@@ -1,0 +1,75 @@
+[
+  {
+    "name": "pnp-graph-connector-nodejs-javascript-IBMDB2",
+    "source": "pnp",
+    "title": "Ingest IBM DB2 sales data using JavaScript and Node.js",
+    "shortDescription": "This samples contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!",
+    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2",
+    "longDescription": [
+      "This samples contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!"
+    ],
+    "creationDateTime": "2023-10-25",
+    "updateDateTime": "2023-10-25",
+    "products": [
+      "Microsoft Graph connectors",
+      "Microsoft Graph",
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JavaScript"
+      },
+      {
+        "key": "SEARCH-RESULTS-CARD",
+        "value": "Yes"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 50,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-IBMDB2/assets/preview01.png",
+        "alt": "IBM DB2 sales information displayed in Microsoft Search results"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "joaojmendes",
+        "pictureUrl": "https://github.com/joaojmendes.png",
+        "name": "João Mendes"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Graph connectors overview",
+        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+      },
+      {
+        "name": "Build your first custom Microsoft Graph connector",
+        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+      },
+      {
+        "name": "Easily handle long-running operations using middleware in the Microsoft Graph JavaScript SDK",
+        "description": "Learn how to easily handle long-running operations using the Microsoft Graph JavaScript SDK.",
+        "url": "https://blog.mastykarz.nl/easily-handle-long-running-operations-middleware-microsoft-graph-javascript-sdk/"
+      },
+      {
+        "name": "Easily debug Microsoft Graph JavaScript SDK requests",
+        "description": "Learn how to easily debug Microsoft Graph JavaScript SDK requests.",
+        "url": "https://blog.mastykarz.nl/easily-debug-microsoft-graph-javascript-sdk-requests/"
+      }
+    ]
+  }
+]
