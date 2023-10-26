@@ -38,7 +38,7 @@
       {
         "type": "image",
         "order": 50,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-IBMDB2/assets/preview01.png",
+        "url": "https://raw.githubusercontent.com/pnp/graph-connectors-samples/main/samples/nodejs-javascript-IBMDB2/assets/preview01.png",
         "alt": "IBM DB2 sales information displayed in Microsoft Search results"
       }
     ],
