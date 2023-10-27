@@ -15,6 +15,7 @@ This samples contains a Microsoft Graph connector that shows how to ingest sampl
 
 Version|Date|Comments
 -------|----|--------
+1.5|October 27, 2023|Added PowerShell setup script
 1.4|October 24, 2023|Added link to the title
 1.3|October 12, 2023|Added rich result layout
 1.2|October 9, 2023|Added configuring result layout
@@ -31,7 +32,7 @@ Version|Date|Comments
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-solutiongallery) then unzip it)
 - Make the setup script executable, by running `chmod +x ./setup.sh`
-- Run the setup script: `./setup.sh`. When finished, it will create a local `env.js` file with information about the AAD app, required to run the code
+- Run the setup script: on macOS: `./setup.sh`, on Windows `.\setup.ps1`. When finished, it will create a local `env.js` file with information about the AAD app, required to run the code
 - Restore dependencies: `npm install`
 - Create the external connection: `npm run createConnection` (this will take several minutes)
 - Ingest the content: `npm run loadContent`
