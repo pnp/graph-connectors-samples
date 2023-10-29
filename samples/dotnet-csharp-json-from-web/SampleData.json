@@ -1,0 +1,7 @@
+{
+  "content": "The thought Having worked in SPFx for long enough, I&rsquo;m sure you&rsquo;ve seen imports like this:\nimport { IMyInterface } from &#39;../../../../../../common/models/IMyInterface....",
+  "date": "2019-09-25T06:08:39Z",
+  "url": "https://blog.dan-toft.dk/2023/10/simplify-spfx-imports/",
+  "title": "Simplify your SPFx imports",
+  "ResultSnippet": "what is this"
+}
