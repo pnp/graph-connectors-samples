@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace GraphConnectorDanToftBlog.Extensions {
     internal static class BlogpostToExternalItem {
-        private static string MyUserId = "1d29bd99-af71-447b-9f44-ce8e97ce28d3";
+        //Change this to a valid user in your tenant - ideally the user who created the content
+        private static string DanToft_Entra_Id = "1d29bd99-af71-447b-9f44-ce8e97ce28d3";
         public static ExternalItem ToExternalItem(this Blogpost post) {
             return new ExternalItem() {
                 Id = post.Id,
@@ -37,7 +38,7 @@ namespace GraphConnectorDanToftBlog.Extensions {
                         StartDateTime = post.dateParsed,
                         PerformedBy = new Identity {
                             Type = IdentityType.User,
-                            Id = MyUserId
+                            Id = DanToft_Entra_Id
                         }
                     }
                 }
