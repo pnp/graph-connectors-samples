@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GraphConnectorDanToftBlog": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "TenantID": "",
+        "ClientID": "",
+        "ClientSecret": ""
+      }
+    }
+  }
+}
