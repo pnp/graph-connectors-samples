@@ -10,7 +10,7 @@
       "This samples contains a Microsoft Graph connector that shows how to ingest sample solutions from the Microsoft 365 and Power Platform community sample gallery. It gives you a very convenient way to search for and reference community samples right from your tenant!"
     ],
     "creationDateTime": "2023-10-02",
-    "updateDateTime": "2023-10-27",
+    "updateDateTime": "2023-11-01",
     "products": [
       "Microsoft Graph connectors",
       "Microsoft Graph",
