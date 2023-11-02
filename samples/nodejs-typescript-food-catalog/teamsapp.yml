@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://aka.ms/teams-toolkit/1.0.0/yaml.schema.json
+# Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
+# Visit https://aka.ms/teamsfx-actions for details on actions
+version: 1.0.0
+
+environmentFolderPath: ./env
+
+provision:
+
+  - uses: arm/deploy
+    with:
+      subscriptionId: ${{AZURE_SUBSCRIPTION_ID}}
+      resourceGroupName: ${{AZURE_RESOURCE_GROUP_NAME}}
+      templates:
+        - path: ./infra/azure.bicep
+          parameters: ./infra/azure.parameters.json
+          deploymentName: Create-resources-for-food-catalog-graph-connector
+      bicepCliVersion: v0.9.1
+
+  - uses: script
+    name: Ensure tables and data
+    with:
+      run: node tables.js ${{SECRET_TABLE_STORAGE_CONNECTION_STRING}}
+      workingDirectory: scripts
+
+projectId: 3d1d7563-3a70-44ec-826a-1ed3e7fa2430
