@@ -1,0 +1,120 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TTK",
+      "dependsOn": [
+        "npm install",
+        "Ensure DevTunnel",
+        "Start Azurite emulator",
+        "Provision",
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "type": "shell",
+      "label": "npm install",
+      "command": "npm install --no-audit"
+    },
+    {
+      "type": "shell",
+      "label": "Run watch",
+      "command": "npm run watch",
+      "dependsOn": "npm install",
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch"
+    },
+    {
+      "type": "func",
+      "label": "func: host start",
+      "command": "host start",
+      "problemMatcher": "$func-node-watch",
+      "isBackground": true,
+      "dependsOn": [
+        "npm install",
+        "Run watch"
+      ]
+    },
+    {
+      "label": "Ensure DevTunnel",
+      "type": "shell",
+      "isBackground": true,
+      "windows": {
+        "command": ".\\scripts\\devtunnel.ps1"
+      },
+      "osx": {
+        "command": "./scripts/devtunnel.sh"
+      },
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": "^.*$",
+            "file": 0,
+            "location": 1,
+            "message": 2
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "No TUNNEL_ID found. Creating tunnel...|Connecting to host tunnel relay",
+          "endsPattern": "Ready to accept connections for tunnel"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "Start Azurite emulator",
+      "type": "shell",
+      "command": "npm run storage",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": "^.*$",
+            "file": 0,
+            "location": 1,
+            "message": 2
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Azurite",
+          "endsPattern": "successfully listening"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "Provision",
+      "type": "teamsfx",
+      "command": "provision",
+      "args": {
+        "env": "local"
+      }
+    },
+    {
+      "label": "Terminate All Tasks",
+      "command": "echo ${input:terminate}",
+      "type": "shell",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    }
+  ]
+}

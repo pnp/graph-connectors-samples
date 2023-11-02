@@ -1,0 +1,24 @@
+{
+  "id": "${{AAD_APP_OBJECT_ID}}",
+  "appId": "${{AAD_APP_CLIENT_ID}}",
+  "name": "${{APP_NAME}}-${{TEAMSFX_ENV}}",
+  "accessTokenAcceptedVersion": 2,
+  "signInAudience": "AzureADMultipleOrgs",
+  "requiredResourceAccess": [
+    {
+      "resourceAppId": "Microsoft Graph",
+      "resourceAccess": [
+        {
+          "id": "ExternalConnection.ReadWrite.OwnedBy",
+          "type": "Role"
+        },
+        {
+          "id": "ExternalItem.ReadWrite.OwnedBy",
+          "type": "Role"
+        }
+      ]
+    }
+  ],
+  "identifierUris": ["api://${{AAD_APP_CLIENT_ID}}"],
+  "replyUrlsWithType": []
+}
