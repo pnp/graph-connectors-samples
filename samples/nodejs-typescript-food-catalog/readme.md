@@ -106,7 +106,7 @@ The sample illustrates the following concepts:
 
 ## Architecture
 
-The following diagrams are based on the [C4 model](https://c4model.com/) concept for visualising software architecture.
+The following diagrams are based on the [C4 model](https://c4model.com/) concept for visualizing software architecture.
 
 ### System diagram
 
@@ -122,7 +122,7 @@ Boundary(bM365, "Microsoft Cloud") {
 }
 
 Boundary(bLOB, "Line of Business") {
-    System_Ext(externalContent, "Food Products DB", "Contains inforamtion about food products")
+    System_Ext(externalContent, "Food Products DB", "Contains information about food products")
 }
 
 Rel(admin, microsoft365, "Manages the Microsoft Graph connector")
