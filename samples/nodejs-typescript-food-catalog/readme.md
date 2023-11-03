@@ -126,13 +126,13 @@ Boundary(bLOB, "Line of Business") {
 }
 
 Rel(admin, microsoft365, "Manages the Microsoft Graph connector")
-UpdateRelStyle(admin, microsoft365, $offsetX-"-225", $offsetY-"-40")
+UpdateRelStyle(admin, microsoft365, $offsetX="-225", $offsetY="-40")
 Rel(user, microsoft365, "Uses Microsoft 365 to find relevant information")
-UpdateRelStyle(user, microsoft365, $offsetX-"80", $offsetY-"-40")
+UpdateRelStyle(user, microsoft365, $offsetX="80", $offsetY="-40")
 Rel(connector, externalContent, "Imports data from")
-UpdateRelStyle(connector, externalContent, $offsetY-"10", $offsetX-"-30")
+UpdateRelStyle(connector, externalContent, $offsetY="10", $offsetX="-30")
 Rel(connector, microsoft365, "Imports data to")
-UpdateRelStyle(connector, microsoft365, $offsetY-"10", $offsetX-"-40")
+UpdateRelStyle(connector, microsoft365, $offsetY="10", $offsetX="-40")
 ```
 
 ### Container diagram for Food Products DB connector
@@ -153,21 +153,21 @@ Boundary(c1, "Food Products DB connector") {
 }
 
 Rel(admin, microsoft365, "Toggles Microsoft Graph connector status", "Teams Admin Center")
-UpdateRelStyle(admin, microsoft365, $offsetY-"10", $offsetX-"-55")
+UpdateRelStyle(admin, microsoft365, $offsetY="10", $offsetX="-55")
 Rel(microsoft365, api, "Sends connector status notification", "HTTP")
-UpdateRelStyle(microsoft365, api, $offsetX-"-170")
+UpdateRelStyle(microsoft365, api, $offsetX="-170")
 Rel(api, queue, "Enqueues messages", "HTTP")
-UpdateRelStyle(api, queue, $offsetX-"-130")
+UpdateRelStyle(api, queue, $offsetX="-130")
 Rel(queue, fnQueue, "Triggers", "binding")
-UpdateRelStyle(queue, fnQueue, $offsetX-"10")
+UpdateRelStyle(queue, fnQueue, $offsetX="10")
 Rel(fnQueue, externalContent, "Reads products information", "HTTP")
-UpdateRelStyle(fnQueue, externalContent, $offsetX-"10", $offsetY-"-10")
+UpdateRelStyle(fnQueue, externalContent, $offsetX="10", $offsetY="-10")
 Rel(fnQueue, microsoft365, "Manages connection and data", "HTTP")
-UpdateRelStyle(fnQueue, microsoft365, $offsetX-"-180", $offsetY-"-30")
+UpdateRelStyle(fnQueue, microsoft365, $offsetX="-180", $offsetY="-30")
 Rel(fnTimer, queue, "Enqueues messages", "HTTP")
-UpdateRelStyle(fnTimer, queue, $offsetX-"-70", $offsetY-"-20")
+UpdateRelStyle(fnTimer, queue, $offsetX="-70", $offsetY="-20")
 Rel(fnQueue, table, "Reads and writes data", "HTTP")
-UpdateRelStyle(fnQueue, table, $offsetX-"-60", $offsetY-"20")
+UpdateRelStyle(fnQueue, table, $offsetX="-60", $offsetY="20")
 ```
 
 ### Activating connector
