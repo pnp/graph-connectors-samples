@@ -8,8 +8,8 @@ import { client } from './graphClient.js';
 const DB2HOST = "bpe61bfd0365e9u4psdglite.db2.cloud.ibm.com";
 const IBM_TENANT_ID =
   "crn:v1:bluemix:public:dashdb-for-transactions:us-south:a/ee4f3babde884fc48a5a48695d141c39:ae3e20d4-cb69-48e5-8101-6e5a5f1b4182::";
-const DB2_USER = "";
-const DB2_password = "";
+const DB2_USER = "dwh00649";
+const DB2_PASSWORD = "MctnYke5t2ND6KRi";
 const ACCESS_TOKEN_API = "/dbapi/v4/auth/tokens";
 const EXEC_SQL_JOB = "/dbapi/v4/sql_jobs";
 
@@ -27,7 +27,7 @@ const getDB2AccessToken = async () => {
     url: `https://${DB2HOST}${ACCESS_TOKEN_API}`,
     data: {
       userid: DB2_USER,
-      password: DB2_password,
+      password: DB2_PASSWORD,
     },
   };
 
