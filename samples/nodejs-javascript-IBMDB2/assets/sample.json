@@ -10,7 +10,7 @@
       "This samples contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!"
     ],
     "creationDateTime": "2023-10-25",
-    "updateDateTime": "2023-10-25",
+    "updateDateTime": "2023-11-06",
     "products": [
       "Microsoft Graph connectors",
       "Microsoft Graph",
