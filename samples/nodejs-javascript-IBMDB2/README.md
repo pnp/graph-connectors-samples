@@ -18,6 +18,8 @@ Version|Date|Comments
 
 ## Prerequisites
 
+#### This sample use IBM DB2 SALES data located on the IBM Cloud.  It gives you a very convenient way to search  Client Orders right from your tenant! This DB2 is Free for use (LITE Version) and has the SCHEMA and DATA already loaded.
+
 - [Microsoft 365 Developer tenant](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Node@18](https://nodejs.org)
 - Bash
