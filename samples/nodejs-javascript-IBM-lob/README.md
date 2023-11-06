@@ -24,6 +24,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
+## This sample use IBM DB2 SALES data located on the IBM Cloud.  It gives you a very convenient way to search  Client Orders right from your tenant! This DB2 is Free for use (LITE Version) and has the SCHEMA and DATA already loaded.
+
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-solutiongallery) then unzip it)
 - Make the setup script executable, by running `chmod +x ./setup.sh`
 - Run the setup script: `./setup.sh`. When finished, it will create a local `env.js` file with information about the AAD app, required to run the code
