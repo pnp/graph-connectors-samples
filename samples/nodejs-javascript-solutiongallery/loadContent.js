@@ -23,7 +23,7 @@ function getLastCrawledSampleDate() {
 async function extract({ fromCache = false, sinceDate = new Date(0) }) {
   const samples = [];
 
-  if (fromCache) {
+  if (fromCache === true) {
     console.log(`Loading from cache, including samples since ${sinceDate}...`);
     const cacheString = fs.readFileSync('cache.json', 'utf8');
     const cache = JSON.parse(cacheString);
