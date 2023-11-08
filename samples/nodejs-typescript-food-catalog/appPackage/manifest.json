@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
   "version": "1.0.18",
   "manifestVersion": "1.16",
-  "id": "${{TEAMS_APP_ID}}",
+  "id": "cda3f6a2-4b7e-4f9c-8c0a-3b5b7a9f1d0c",
   "packageName": "com.package.name",
   "name": {
     "short": "${{APP_NAME}}-${{TEAMSFX_ENV}}",
