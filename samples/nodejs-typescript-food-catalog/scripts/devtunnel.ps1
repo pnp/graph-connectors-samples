@@ -5,13 +5,11 @@ if ("" -eq $exe) {
 }
 
 $tunnnelId = ""
-$envFile = "env/.env.local"
+$envFile = "env\.env.local"
 $envFileContent = Get-Content $envFile
 $envFileContent | ForEach-Object {
-    $envFileContent | ForEach-Object {
-        if ($_ -like "TUNNEL_ID=*") {
-            $tunnelId = $_.Split("=")[1].Trim()
-        }
+    if ($_ -like "TUNNEL_ID=*") {
+        $tunnelId = $_.Split("=")[1].Trim()
     }
 }
 
@@ -19,7 +17,7 @@ if ("" -eq $tunnelId) {
     Write-Host "No TUNNEL_ID found. Creating tunnel..."
 
     Write-Host "Logging in to Dev Tunnels..."
-    $login = devtunnel user login
+    devtunnel user login > $null
     
     Write-Host "Creating tunnel..."
     $tunnel = devtunnel.exe create
@@ -27,8 +25,8 @@ if ("" -eq $tunnelId) {
     
     Write-Host "Creating port and access..."
     $port = 7071
-    $createPort = devtunnel port create $tunnelId -p $port
-    $createAccess = devtunnel access create $tunnelId -p $port -a
+    devtunnel port create $tunnelId -p $port > $null
+    devtunnel access create $tunnelId -p $port -a > $null
     
     Write-Host "Updating env\.env.local..."
 
@@ -39,16 +37,17 @@ if ("" -eq $tunnelId) {
     $endpoint = "https://$domain"
 
     $envFileContent | ForEach-Object {
-        if ($_ -like "NOTIFICATION_ENDPOINT=*") {
-            $_ = "NOTIFICATION_ENDPOINT=$endpoint"
+        $line = $_
+        if ($line -like "NOTIFICATION_ENDPOINT=*") {
+            $line = "NOTIFICATION_ENDPOINT=$endpoint"
         }
-        if ($_ -like "NOTIFICATION_DOMAIN=*") {
-            $_ = "NOTIFICATION_DOMAIN=$domain"
+        if ($line -like "NOTIFICATION_DOMAIN=*") {
+            $line = "NOTIFICATION_DOMAIN=$domain"
         }
-        if ($_ -like "TUNNEL_ID=*") {
-            $_ = "TUNNEL_ID=$tunnelId"
+        if ($line -like "TUNNEL_ID=*") {
+            $line = "TUNNEL_ID=$tunnelId"
         }
-        $_
+        $line
     } | Set-Content $envFile
 
     Write-Host "TUNNEL_ID: $tunnelId"

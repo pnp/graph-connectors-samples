@@ -14,22 +14,10 @@ provision:
       workingDirectory: scripts
 
   - uses: script
-    name: Ensure queues
-    with:
-      run: node queues.js
-      workingDirectory: scripts
-
-  - uses: script
     name: Increment manifest version
     with:
       run: node increment-version.js
       workingDirectory: scripts
-
-  - uses: teamsApp/create
-    with:
-      name: ${{APP_NAME}}-${{TEAMSFX_ENV}}
-    writeToEnvironmentFile:
-      teamsAppId: TEAMS_APP_ID
 
   - uses: aadApp/create
     with:
@@ -60,10 +48,6 @@ provision:
       outputJsonPath: ./appPackage/build/manifest.${{TEAMSFX_ENV}}.json
 
   - uses: teamsApp/validateAppPackage
-    with:
-      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
-
-  - uses: teamsApp/update
     with:
       appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
 

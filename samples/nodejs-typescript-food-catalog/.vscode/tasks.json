@@ -5,6 +5,7 @@
       "label": "TTK",
       "dependsOn": [
         "npm install",
+        "Ensure env files",
         "Ensure DevTunnel",
         "Start Azurite emulator",
         "Provision",
@@ -20,7 +21,6 @@
       "type": "shell",
       "label": "Run watch",
       "command": "npm run watch",
-      "dependsOn": "npm install",
       "isBackground": true,
       "problemMatcher": "$tsc-watch"
     },
@@ -31,7 +31,6 @@
       "problemMatcher": "$func-node-watch",
       "isBackground": true,
       "dependsOn": [
-        "npm install",
         "Run watch"
       ]
     },
@@ -63,9 +62,33 @@
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "presentation": {
-        "reveal": "silent"
-      }
+      "dependsOn":[
+        "Ensure env files"
+      ]
+    },
+    {
+      "label": "Ensure env files",
+      "type": "shell",
+      "command": "node ./scripts/env.js",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": "^.*$",
+            "file": 0,
+            "location": 1,
+            "message": 2
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Ensuring env files exist...",
+          "endsPattern": "Done!"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
     },
     {
       "label": "Start Azurite emulator",
@@ -89,9 +112,6 @@
       },
       "options": {
         "cwd": "${workspaceFolder}"
-      },
-      "presentation": {
-        "reveal": "silent"
       }
     },
     {
@@ -100,7 +120,10 @@
       "command": "provision",
       "args": {
         "env": "local"
-      }
+      },
+      "dependsOn":[
+        "Ensure DevTunnel"
+      ]
     },
     {
       "label": "Terminate All Tasks",
