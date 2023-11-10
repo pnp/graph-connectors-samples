@@ -1,0 +1,405 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Check_ServiceNowSearchConnector_exists": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "clientId": "",
+                        "secret": "",
+                        "tenant": "",
+                        "type": "ActiveDirectoryOAuth"
+                    },
+                    "method": "GET",
+                    "uri": "https://graph.microsoft.com/v1.0/external/connections/S4MSCSNow"
+                },
+                "runAfter": {},
+                "type": "Http"
+            },
+            "Check_schema_exists": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "clientId": "",
+                        "secret": "",
+                        "tenant": "",
+                        "type": "ActiveDirectoryOAuth"
+                    },
+                    "method": "GET",
+                    "uri": "https://graph.microsoft.com/v1.0/external/connections/S4MSCSNow/schema"
+                },
+                "runAfter": {
+                    "Update_schema_if_exists": [
+                        "Succeeded",
+                        "Skipped"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Create_S4MSC-ServiceNowSearchConnector_if_not_exist": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "clientId": "",
+                        "secret": "",
+                        "tenant": "",
+                        "type": "ActiveDirectoryOAuth"
+                    },
+                    "body": {
+                        "configuration": {
+                            "authorizedAppIds": [
+                                "b1a79309-6254-4a6d-bac2-54e00ad515c6"
+                            ],
+                            "authorizedApps": [
+                                "b1a79309-6254-4a6d-bac2-54e00ad515c6"
+                            ]
+                        },
+                        "description": "Connector for showing key tweets",
+                        "enabledContentExperiences": "search",
+                        "id": "S4MSCSNow",
+                        "name": "ServiceNow Connector",
+                        "searchSettings": {
+                            "searchResultTemplates": [
+                                {
+                                    "id": "S4MSCSNow",
+                                    "layout": {
+                                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                                        "body": [
+                                            {
+                                                "columns": [
+                                                    {
+                                                        "height": "stretch",
+                                                        "items": [
+                                                            {
+                                                                "description": "Thumbnail image",
+                                                                "horizontalAlignment": "Center",
+                                                                "size": "Small",
+                                                                "type": "Image",
+                                                                "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/DefaultMRTIcon.png"
+                                                            }
+                                                        ],
+                                                        "type": "Column",
+                                                        "width": "auto"
+                                                    },
+                                                    {
+                                                        "horizontalAlignment": "Center",
+                                                        "items": [
+                                                            {
+                                                                "color": "Accent",
+                                                                "maxLines": 3,
+                                                                "size": "Medium",
+                                                                "text": "https://dev165113.service-now.com/",
+                                                                "type": "TextBlock",
+                                                                "weight": "Bolder"
+                                                            },
+                                                            {
+                                                                "maxLines": 3,
+                                                                "spacing": "Medium",
+                                                                "text": "${description}",
+                                                                "type": "TextBlock",
+                                                                "wrap": true
+                                                            }
+                                                        ],
+                                                        "spacing": "Medium",
+                                                        "type": "Column",
+                                                        "width": 8
+                                                    },
+                                                    {
+                                                        "$when": "${image != ''}",
+                                                        "items": [
+                                                            {
+                                                                "description": "${description}",
+                                                                "horizontalAlignment": "Center",
+                                                                "type": "Image",
+                                                                "url": "${image}"
+                                                            }
+                                                        ],
+                                                        "type": "Column",
+                                                        "width": 2
+                                                    }
+                                                ],
+                                                "type": "ColumnSet"
+                                            }
+                                        ],
+                                        "type": "AdaptiveCard",
+                                        "version": "1.3"
+                                    },
+                                    "priority": 0
+                                }
+                            ]
+                        }
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/v1.0/external/connections"
+                },
+                "runAfter": {
+                    "Check_ServiceNowSearchConnector_exists": [
+                        "Failed"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Create_schema_if_it_not_exists": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "clientId": "",
+                        "secret": "",
+                        "tenant": "",
+                        "type": "ActiveDirectoryOAuth"
+                    },
+                    "body": {
+                        "baseType": "microsoft.graph.externalItem",
+                        "properties": [
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": false,
+                                "name": "price",
+                                "type": "double"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "productid",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "productlink",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "group",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": false,
+                                "name": "order",
+                                "type": "double"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "image",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "workflow",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "active",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "name",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "shortdescription",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "icon",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "description",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "vendor",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": true,
+                                "name": "sccatalogs",
+                                "type": "String"
+                            },
+                            {
+                                "isQueryable": true,
+                                "isRefinable": false,
+                                "isRetrievable": true,
+                                "isSearchable": false,
+                                "name": "cost",
+                                "type": "double"
+                            }
+                        ]
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/v1.0/external/connections/S4MSCSNow/schema"
+                },
+                "runAfter": {
+                    "Check_schema_exists": [
+                        "Failed"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Update_schema_if_exists": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "clientId": "",
+                        "secret": "",
+                        "tenant": "",
+                        "type": "ActiveDirectoryOAuth"
+                    },
+                    "body": {
+                        "configuration": {
+                            "authorizedAppIds": [
+                                "b1a79309-6254-4a6d-bac2-54e00ad515c6"
+                            ],
+                            "authorizedApps": [
+                                "b1a79309-6254-4a6d-bac2-54e00ad515c6"
+                            ]
+                        },
+                        "description": "Connector for showing key tweets",
+                        "enabledContentExperiences": "search",
+                        "id": "S4MSCSNow",
+                        "name": "ServiceNow Connector",
+                        "searchSettings": {
+                            "searchResultTemplates": [
+                                {
+                                    "id": "S4MSCSNow",
+                                    "layout": {
+                                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                                        "body": [
+                                            {
+                                                "columns": [
+                                                    {
+                                                        "height": "stretch",
+                                                        "items": [
+                                                            {
+                                                                "description": "Thumbnail image",
+                                                                "horizontalAlignment": "Center",
+                                                                "size": "Small",
+                                                                "type": "Image",
+                                                                "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/DefaultMRTIcon.png"
+                                                            }
+                                                        ],
+                                                        "type": "Column",
+                                                        "width": "auto"
+                                                    },
+                                                    {
+                                                        "horizontalAlignment": "Center",
+                                                        "items": [
+                                                            {
+                                                                "color": "Accent",
+                                                                "maxLines": 3,
+                                                                "size": "Medium",
+                                                                "text": "https://dev165113.service-now.com/",
+                                                                "type": "TextBlock",
+                                                                "weight": "Bolder"
+                                                            },
+                                                            {
+                                                                "maxLines": 3,
+                                                                "spacing": "Medium",
+                                                                "text": "${description}",
+                                                                "type": "TextBlock",
+                                                                "wrap": true
+                                                            }
+                                                        ],
+                                                        "spacing": "Medium",
+                                                        "type": "Column",
+                                                        "width": 8
+                                                    },
+                                                    {
+                                                        "$when": "${image != ''}",
+                                                        "items": [
+                                                            {
+                                                                "description": "${description}",
+                                                                "horizontalAlignment": "Center",
+                                                                "type": "Image",
+                                                                "url": "${image}"
+                                                            }
+                                                        ],
+                                                        "type": "Column",
+                                                        "width": 2
+                                                    }
+                                                ],
+                                                "type": "ColumnSet"
+                                            }
+                                        ],
+                                        "type": "AdaptiveCard",
+                                        "version": "1.3"
+                                    },
+                                    "priority": 0
+                                }
+                            ]
+                        }
+                    },
+                    "method": "PATCH",
+                    "uri": "https://graph.microsoft.com/v1.0/external/connections/S4MSCSNow"
+                },
+                "runAfter": {
+                    "Create_S4MSC-ServiceNowSearchConnector_if_not_exist": [
+                        "Skipped"
+                    ]
+                },
+                "type": "Http"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {},
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {}
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    },
+    "parameters": {}
+}

@@ -1,0 +1,1 @@
+The files in this folder are extracts of the created assets such as the Logic App JSON and the Schema JSON. These are for those who want to view the content but without running the deployment to Azure.
