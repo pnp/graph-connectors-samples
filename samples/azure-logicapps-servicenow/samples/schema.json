@@ -1,0 +1,20 @@
+{
+  "baseType": "microsoft.graph.externalItem",
+  "properties": [
+    { "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": false,"name": "price","type": "double"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "productid","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "productlink","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "group","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": false,"name": "order","type": "double"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "image","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "workflow","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "active","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "name","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "shortdescription","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "icon","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "description","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "vendor","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": true,"name": "sccatalogs","type": "String"},
+{ "isQueryable": true,"isRefinable": false,"isRetrievable": true,"isSearchable": false,"name": "cost","type": "double"}
+  ]
+}

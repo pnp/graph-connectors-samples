@@ -1,0 +1,111 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "For_each": {
+                "actions": {
+                    "Create_index_if_not_exists": {
+                        "inputs": {
+                            "authentication": {
+                                "audience": "https://graph.microsoft.com",
+                                "clientId": "",
+                                "secret": "",
+                                "tenant": "",
+                                "type": "ActiveDirectoryOAuth"
+                            },
+                            "body": {
+                                "acl": [
+                                    {
+                                        "accessType": "grant",
+                                        "identitySource": "azureActiveDirectory",
+                                        "type": "everyone",
+                                        "value": "43c5e796-f484-4157-8c93-73ac8b1cf7bf"
+                                    }
+                                ],
+                                "content": {
+                                    "type": "text",
+                                    "value": "@{items('For_each')?['sys_name']}"
+                                },
+                                "properties": {
+                                    "cost": "@float(items('For_each')?['cost'])",
+                                    "description": "@{items('For_each')?['description']}",
+                                    "group": "@{items('For_each')?['group']}",
+                                    "image": "@{items('For_each')?['image']}",
+                                    "name": "@{items('For_each')?['name']}",
+                                    "order": "@float(items('For_each')?['order'])",
+                                    "price": "@float(items('For_each')?['price'])",
+                                    "productid": "@{items('For_each')?['sys_id']}",
+                                    "productlink": "https://devXXXX.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D@{items('For_each')?['sys_id']}",
+                                    "shortdescription": "@{items('For_each')?['short_description']}"
+                                },
+                                "type": "microsoft.graph.externalItem"
+                            },
+                            "method": "PUT",
+                            "uri": "https://graph.microsoft.com/v1.0/external/connections/S4MSCSNow/items/@{items('For_each')?['sys_id']}"
+                        },
+                        "runAfter": {},
+                        "type": "Http"
+                    }
+                },
+                "foreach": "@body('List_Records')?['result']",
+                "runAfter": {
+                    "List_Records": [
+                        "Succeeded"
+                    ]
+                },
+                "runtimeConfiguration": {
+                    "concurrency": {
+                        "repetitions": 1
+                    }
+                },
+                "type": "Foreach"
+            },
+            "List_Records": {
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['service-now']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/api/now/v2/table/@{encodeURIComponent('pc_product_cat_item')}",
+                    "queries": {
+                        "sysparm_display_value": false,
+                        "sysparm_exclude_reference_link": true,
+                        "sysparm_query": "fields=price,product_id,sys_name,model,state,group,order,image,active,name,vendor_catalog_item,short_description,icon,description,availability,owner,list_price,recurring_price"
+                    }
+                },
+                "runAfter": {},
+                "type": "ApiConnection"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {}
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "value": {
+                "service-now": {
+                    "connectionId": "/subscriptions/SUBSCRIPTIONID/resourceGroups/S4MSCSNow/providers/Microsoft.Web/connections/service-now",
+                    "connectionName": "service-now",
+                    "id": "/subscriptions/SUBSCRIPTIONID/providers/Microsoft.Web/locations/uksouth/managedApis/service-now"
+                }
+            }
+        }
+    }
+}
