@@ -17,6 +17,7 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.2|November 10, 2023|Resolve error when disabling connection
 1.1|November 9, 2023|Updated F5 tasks
 1.0|November 2, 2023|Initial release
 
