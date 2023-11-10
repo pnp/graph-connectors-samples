@@ -1,4 +1,6 @@
-# Samples for Microsoft Search Connectors - ServiceNow
+# Azure Logic Apps Graph Connector Sample for ServiceNow
+
+## Summary
 
 Sample for creating Microsoft Search custom indexes from ServiceNow content (currently set for the catalogue but changeable to be what is required) using Azure Logic Apps.
 
@@ -22,6 +24,8 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 The code in this repo includes the individual Logic Apps as well as the ARM/Bicep Template for setting up the full resource group. The steps below detail how to set up using the Azure Cloud Shell. Manual details will be added later.
+
+If you do not have a ServiceNow tenant that you can use, you can set one up at https://developer.servicenow.com at no cost.
 
 - Connect to the Azure Portal
 - Open Azure Cloud Shell and select Bash
@@ -68,6 +72,7 @@ az group create --name $appName --location $region
 ```bash
 az deployment group create --name LaDeployment --resource-group $appName --template-uri "https://raw.githubusercontent.com/kevmcdonk/S4MSC-ServiceNow/main/template.json" --parameters connections_servicenow_name=$appName region=$region tenantId=$newTenantId clientId=$newAppId secret=$newSecret snowInstance=$snowInstance snowUsername=$snowUsername snowPassword=$snowPassword
 ```
+(Note that a bicep template is also included should you wish to deploy locally).
 
 - Go to Azure AD in the portal and consent the API permission
 - Go to the Resource Group and select the ServiceNow connector
@@ -75,6 +80,20 @@ az deployment group create --name LaDeployment --resource-group $appName --templ
 - Run the Setup Logic App
 - Confirm in the Search Settings that an index has been set up
 
+## Features
+
+Using this sample you can use the Microsoft Graph connector to:
+
+* Return Service Now Service Catalog entries
+* Keep this updated as low code solution in Logic Apps
+
+This graph connector will hook up to ServiceNow to return the Service Catalog entries as an external item in the Microsoft Graph which can be used for both Microsoft Search and Microsoft Copilot.
+
+Two Logic Apps are created by the template:
+- Setup - configures the External Connection to ServiceNow and the related schema for the Service Catalog entries
+- Search - returns the catalog entries and adds them to the index
+
+The search is manually triggered by default but can be updated easily to run on a timer. The logic is intentionally basic to allow the focus on the Graph Connectors but could be updated to add additional logic to ensure that not all items are updated on every run.
 
 ## Help
 
@@ -90,4 +109,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-powershell-markdown)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-azure-logicapps-servicenow)
