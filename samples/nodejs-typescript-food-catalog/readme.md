@@ -17,12 +17,15 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.3|November 15, 2023|Update prerequisites and result type creation step
+1.2|November 10, 2023|Resolve error when disabling connection
 1.1|November 9, 2023|Updated F5 tasks
 1.0|November 2, 2023|Initial release
 
 ## Prerequisites
 
 - [Teams Toolkit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
+- [Azure Functions Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 - [Microsoft 365 Developer tenant](https://developer.microsoft.com/microsoft-365/dev-program) with [uploading custom apps enabled](https://learn.microsoft.com/microsoftteams/platform/m365-apps/prerequisites#prepare-a-developer-tenant-for-testing)
 - [Dev Tunnels CLI](https://learn.microsoft.com/azure/developer/dev-tunnels/get-started#install)
 - [Node@18](https://nodejs.org)
@@ -65,7 +68,7 @@ When the process is complete you will see a table confirming that the connection
 - On the page, navigate to the [Data Sources](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
 - A table will display available connections. In the **Required actions** column, select the link to **Include Connector Results** and confirm the prompt
 
-### 4. Refresh the Result Type template
+### 4. Create the Result Type template
 
 > There is a known issue whereby applying a result type programmatically results in an empty adaptive card, so we need to apply the card in the user interface
 
@@ -73,11 +76,16 @@ When the process is complete you will see a table confirming that the connection
 - In the web browser, in the Microsoft 365 admin center, navigate to the [Settings > Search & Intelligence](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch) area
 - Activate the [Customizations](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
 - Select the [Result Types](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/resulttypes) page
-- Select the `foodstore` row to open the side panel with additional information
+- Select `Add` to open the side panel to create a new result type.
+- In the `Name` field, enter `foodstore`
+- Confirm the changes by selecting `Next`
+- In the `Content sources` field, select `Foodsie-local`
+- Confirm the changes by selecting `Next`
+- Skip the `Set rules for the result type` section by selecting `Next`
 - Under the `Result Layout` section, select `Edit`
 - In the `Paste the JSON script that you created with Layout Designer` field, paste the contents of the clipboard (<kbd>CTRL</kbd> + <kbd>V</kbd> on Windows, <kbd>CMD</kbd> + <kbd>V</kbd> on macOS)
 - Confirm the changes by selecting `Next`
-- Confirm the changes by selecting `Update Result Type`
+- Confirm the changes by selecting `Add Result Type`
 - Close the dialog by selecting `Done`
 - Wait a few minutes for the changes to be applied
 
