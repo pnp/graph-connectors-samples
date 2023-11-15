@@ -58,9 +58,7 @@ async function checkSchemaStatus(location: string, context: InvocationContext) {
 }
 
 async function deleteConnection() {
-    await this.graphClient
-        .api(`/external/connections/${config.connector.id}`)
-        .delete();
+    await client.api(`/external/connections/${config.connector.id}`).delete();
 }
 
 app.storageQueue("connectionQueue", {
