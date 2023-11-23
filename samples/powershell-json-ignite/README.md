@@ -13,7 +13,7 @@ https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-mar
 
 ## Contributors
 
-- [Paul Bullock](https://github.com/pkbullock)
+- [Paul Bullock](https://twitter.com/pkbullock)
 
 ## Version history
 
@@ -59,3 +59,5 @@ The sample illustrates the following concepts:
 ## Disclaimer
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-powershell-json-ignite)
