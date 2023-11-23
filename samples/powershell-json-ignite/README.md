@@ -2,7 +2,7 @@
 
 ## Summary
 
-This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.
+This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema based on the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.
 
 ![Local markdown files displayed in Microsoft Search search results](assets/screenshot.png)
 
@@ -39,9 +39,11 @@ Version|Date|Comments
     Get-SecretVault
     # If nothing shows up, run
     Register-SecretVault -Name LocalStore -ModuleName Microsoft.PowerShell.SecretStore -DefaultVault
-    # Create Entra app
+    # Run setup, alson contains the configuration settings
     .\Setup-GraphConnector.ps1
     ```
+```Functions.ps1``` contains supporting functions for the script, no changes are needed here to make the sample your own.
+
 
 - [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
 - Use the `resultLayout.json` file for the Adaptive Card code
