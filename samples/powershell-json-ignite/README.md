@@ -6,9 +6,9 @@ This samples contains a Microsoft Graph connector built in PowerShell that shows
 
 ![Local markdown files displayed in Microsoft Search search results](assets/screenshot.png)
 
-# Graph Connector to import markdown files into the Graph
+# Graph connector to import markdown files into the Graph
 
-This uses the sample from PnP Graph Connectors as a basis for importing the content into the Graph. The original sample is here:
+This uses the sample from PnP Graph connectors as a basis for importing the content into the Graph. The original sample is here:
 https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-markdown
 
 ## Contributors
@@ -39,11 +39,11 @@ Version|Date|Comments
     Get-SecretVault
     # If nothing shows up, run
     Register-SecretVault -Name LocalStore -ModuleName Microsoft.PowerShell.SecretStore -DefaultVault
-    # Run setup, alson contains the configuration settings
+    # Run setup, also contains the configuration settings
     .\Setup-GraphConnector.ps1
     ```
-```Functions.ps1``` contains supporting functions for the script, no changes are needed here to make the sample your own.
 
+`Functions.ps1` contains supporting functions for the script, no changes are needed here to make the sample your own.
 
 - [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
 - Use the `resultLayout.json` file for the Adaptive Card code
