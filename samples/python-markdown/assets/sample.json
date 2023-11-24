@@ -74,12 +74,12 @@
       {
         "name": "Get started with the Dev Proxy",
         "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started/installation"
       },
       {
         "name": "Change Dev Proxy mocks file",
         "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
       }
     ]
   }
