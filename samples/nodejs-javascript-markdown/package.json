@@ -9,7 +9,7 @@
     "createConnection:proxy": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node createConnection.js --with-proxy",
     "loadContent": "node loadContent.js",
     "loadContent:proxy": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node loadContent.js --with-proxy",
-    "start:proxy": "m365proxy --mocks-file connector-mocks.json"
+    "start:proxy": "devproxy --mocks-file connector-mocks.json"
   },
   "keywords": [],
   "author": "",

@@ -88,7 +88,7 @@
     "description": "Script will create an app catalog for that site.",
     "url": "\"https://adoption.microsoft.com/sample-solution-gallery/sample/pnp-add-app-catalog/\"",
     "products": [
-      "Microsoft 365 Developer Proxy",
+      "Dev Proxy",
       "Microsoft Graph"
     ],
     "imageUrl": "https://raw.githubusercontent.com/pnp/cli-microsoft365/main/docs/docs/sample-scripts/spo/add-app-catalog/assets/preview.png",

@@ -46,11 +46,11 @@ The sample illustrates the following concepts:
 - visualize the external content in search results using a custom Adaptive Card
 - extend Microsoft Graph JavaScript SDK with a middleware to wait for a long-running operation to complete
 - extend Microsoft Graph JavaScript SDK with a [debug middleware](https://blog.mastykarz.nl/easily-debug-microsoft-graph-javascript-sdk-requests/) to show information about outgoing requests and incoming responses
-- use Microsoft 365 Developer Proxy mocks to simulate creation of the external connection and its schema
+- use Dev Proxy mocks to simulate creation of the external connection and its schema
 
-If you want to use Microsoft 365 Developer Proxy to simulate API responses:
+If you want to use Dev Proxy to simulate API responses:
 
-- `NODE_TLS_REJECT_UNAUTHORIZED=0` is required to skip certificate validation errors when using the Microsoft 365 Developer Proxy
+- `NODE_TLS_REJECT_UNAUTHORIZED=0` is required to skip certificate validation errors when using the Dev Proxy
 - `NODE_NO_WARNINGS=1` suppresses Node.js warnings about skipping certificate validation
 
 These environment variables are included in the `:proxy`-suffixed scripts in `package.json`.

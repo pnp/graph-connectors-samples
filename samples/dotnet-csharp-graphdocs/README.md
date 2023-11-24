@@ -55,7 +55,7 @@ The sample illustrates the following concepts:
 - visualize the external content in search results using a custom Adaptive Card
 - extend Microsoft Graph .NET SDK with a middleware to wait for a long-running operation to complete
 - extend Microsoft Graph .NET SDK with a debug middleware to show information about outgoing requests and incoming responses
-- use Microsoft 365 Developer Proxy mocks to simulate creation of the external connection and its schema
+- use Dev Proxy mocks to simulate creation of the external connection and its schema
 
 ## Help
 

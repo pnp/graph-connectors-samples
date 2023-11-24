@@ -72,13 +72,13 @@
         "url": "https://blog.mastykarz.nl/easily-debug-microsoft-graph-javascript-sdk-requests/"
       },
       {
-        "name": "Get started with the Microsoft 365 Developer Proxy",
-        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
         "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
       },
       {
-        "name": "Change Microsoft 365 Developer Proxy mocks file",
-        "description": "Instructions on how to change the mocks file used by the Microsoft 365 Developer Proxy.",
+        "name": "Change Dev Proxy mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
         "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
       }
     ]

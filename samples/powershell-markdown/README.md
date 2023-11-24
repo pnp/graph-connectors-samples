@@ -58,7 +58,7 @@ The sample illustrates the following concepts:
 - parse local markdown files to get their content and front matter metadata
 - ingest content with initial activities
 - visualize the external content in search results using a custom Adaptive Card
-- use Microsoft 365 Developer Proxy mocks to simulate creation of the external connection and its schema
+- use Dev Proxy mocks to simulate creation of the external connection and its schema
 
 ## Help
 

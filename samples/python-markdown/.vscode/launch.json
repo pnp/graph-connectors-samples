@@ -23,7 +23,7 @@
       "justMyCode": true
     },
     {
-      "name": "Create connection with m365proxy",
+      "name": "Create connection with devproxy",
       "type": "python",
       "request": "launch",
       "args": ["--with-proxy", "create-connection"],
