@@ -1,6 +1,6 @@
 # Support Guidelines
 
-The Microsoft 365 Developer Proxy samples repository is maintained by the [Microsoft 365 and Power Platform community](https://aka.ms/m365pnp), who all volunteer their time.
+The Microsoft Graph connectors samples repository is maintained by the [Microsoft 365 and Power Platform community](https://aka.ms/m365pnp), who all volunteer their time.
 
 We track bugs, user questions, suggestions and sample requests through [GitHub issues](https://github.com/pnp/graph-connectors-samples/issues).
 
