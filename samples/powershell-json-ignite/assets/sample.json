@@ -3,11 +3,11 @@
     "name": "pnp-graph-connector-powershell-json-ignite",
     "source": "pnp",
     "title": "Ingest local json content using PowerShell with Ignite sessions",
-    "shortDescription": "This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.",
+    "shortDescription": "This sample contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.",
     "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-markdown",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-markdown",
     "longDescription": [
-      "This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization."
+      "This sample contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2023-11-23",
     "updateDateTime": "2023-11-23",

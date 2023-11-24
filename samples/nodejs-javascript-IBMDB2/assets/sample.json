@@ -3,11 +3,11 @@
     "name": "pnp-graph-connector-nodejs-javascript-IBMDB2",
     "source": "pnp",
     "title": "Ingest IBM DB2 sales data using JavaScript and Node.js",
-    "shortDescription": "This samples contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!",
+    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!",
     "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2",
     "longDescription": [
-      "This samples contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!"
+      "This sample contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!"
     ],
     "creationDateTime": "2023-10-25",
     "updateDateTime": "2023-11-06",

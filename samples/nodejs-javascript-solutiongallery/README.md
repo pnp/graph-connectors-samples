@@ -2,7 +2,7 @@
 
 ## Summary
 
-This samples contains a Microsoft Graph connector that shows how to ingest sample solutions from the [Microsoft 365 and Power Platform community sample gallery](https://adoption.microsoft.com/sample-solution-gallery/?keyword=&sort-by=creationDateTime-true&page=1). It gives you a very convenient way to search for and reference community samples right from your tenant!
+This sample contains a Microsoft Graph connector that shows how to ingest sample solutions from the [Microsoft 365 and Power Platform community sample gallery](https://adoption.microsoft.com/sample-solution-gallery/?keyword=&sort-by=creationDateTime-true&page=1). It gives you a very convenient way to search for and reference community samples right from your tenant!
 
 ![Microsoft 365 and Power Platform community rate limit samples displayed in Microsoft Search](assets/sample-rich.png)
 

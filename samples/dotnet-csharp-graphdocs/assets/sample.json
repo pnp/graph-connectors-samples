@@ -3,11 +3,11 @@
     "name": "pnp-graph-connector-dotnet-csharp-graphdocs",
     "source": "pnp",
     "title": "Ingest local Microsoft Graph docs content using C# and .NET",
-    "shortDescription": "This samples contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
     "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs",
     "longDescription": [
-      "This samples contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+      "This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2023-11-09",
     "updateDateTime": "2023-11-21",

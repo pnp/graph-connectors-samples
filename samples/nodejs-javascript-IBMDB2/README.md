@@ -2,7 +2,7 @@
 
 ## Summary
 
-This samples contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!
+This sample contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!
 
 ![IBMDB2](assets/preview01.png)
 

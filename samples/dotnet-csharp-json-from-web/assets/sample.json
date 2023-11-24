@@ -3,11 +3,11 @@
     "name": "pnp-graph-connector-dotnet-csharp-json-from-web",
     "source": "pnp",
     "title": "Ingest JSON content from the web using .NET and C#",
-    "shortDescription": "This samples contains a Microsoft Graph connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone.",
+    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone.",
     "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web",
     "longDescription": [
-      "This samples contains a Microsoft Graph connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone."
+      "This sample contains a Microsoft Graph connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone."
     ],
     "creationDateTime": "2023-10-29",
     "updateDateTime": "2023-10-29",

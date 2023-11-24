@@ -3,11 +3,11 @@
     "name": "pnp-graph-connector-nodejs-javascript-markdown",
     "source": "pnp",
     "title": "Ingest local markdown content using JavaScript and Node.js",
-    "shortDescription": "This samples contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
     "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-markdown",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-markdown",
     "longDescription": [
-      "This samples contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+      "This sample contains a Microsoft Graph connector that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2023-09-29",
     "updateDateTime": "2023-10-09",

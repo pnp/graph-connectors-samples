@@ -2,7 +2,7 @@
 
 ## Summary
 
-This samples contains a Microsoft Graph connector built in Python that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
+This sample contains a Microsoft Graph connector built in Python that shows how to ingest local markdown files. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
 
 ![Local markdown files displayed in Microsoft Search search results](assets/screenshot.png)
 

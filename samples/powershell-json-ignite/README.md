@@ -2,7 +2,7 @@
 
 ## Summary
 
-This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema based on the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.
+This sample contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema based on the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.
 
 ![Local markdown files displayed in Microsoft Search search results](assets/screenshot.png)
 
