@@ -1,0 +1,65 @@
+[
+  {
+    "name": "pnp-graph-connector-powershell-json-ignite",
+    "source": "pnp",
+    "title": "Ingest local json content using PowerShell with Ignite sessions",
+    "shortDescription": "This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization.",
+    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-markdown",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-markdown",
+    "longDescription": [
+      "This samples contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization."
+    ],
+    "creationDateTime": "2023-11-23",
+    "updateDateTime": "2023-11-23",
+    "products": [
+      "Microsoft Graph connectors",
+      "Microsoft Graph",
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "PowerShell"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "PowerShell"
+      },
+      {
+        "key": "SEARCH-RESULTS-CARD",
+        "value": "Yes"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/powershell-json-ignite/assets/screenshot.png",
+        "alt": "External content displayed in Microsoft Search search results, visualized using a custom Adaptive Card"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "pkbullock",
+        "pictureUrl": "https://github.com/pkbullock.png",
+        "name": "Paul Bullock"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Graph connectors overview",
+        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+      },
+      {
+        "name": "Build your first custom Microsoft Graph connector",
+        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+      }
+    ]
+  }
+]
