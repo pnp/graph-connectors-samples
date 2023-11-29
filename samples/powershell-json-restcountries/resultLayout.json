@@ -48,7 +48,7 @@
                       },
                       {
                           "type": "TextBlock",
-                          "text": "${languages} is/are the language(s) spoken on Christmas Island. When it comes to transactions, the ${currencies} is/are the accepted currency.",
+                          "text": "${languages} is/are the language(s) spoken at ${name}. When it comes to transactions, the ${currencies} is/are the accepted currency.",
                           "wrap": true,
                           "maxLines": 3,
                           "spacing": "Medium"
