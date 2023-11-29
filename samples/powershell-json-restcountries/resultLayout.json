@@ -1,0 +1,78 @@
+{
+  "type": "AdaptiveCard",
+  "version": "1.3",
+  "body": [
+      {
+          "type": "ColumnSet",
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                      {
+                          "type": "Image",
+                          "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/DefaultMRTIcon.png",
+                          "size": "Small",
+                          "horizontalAlignment": "Center",
+                          "altText": "Result logo"
+                      }
+                  ],
+                  "height": "stretch"
+              },
+              {
+                  "type": "Column",
+                  "width": 5,
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "[${name}](${mapUrl})",
+                          "color": "Accent",
+                          "size": "Medium",
+                          "weight": "Bolder",
+                          "maxLines": 3
+                      },
+                      {
+                          "type": "TextBlock",
+                          "text": "Located in ${region}'s ${subregion} subregion, ${name}'s capital is **${capital}**. Located at a latitude of ${latitude} and a longitude of ${longitude}, covers an area of ${areaInSqKm} square kilometers. \nIt is home to a population of ${population} people, residing in the ${timezone} time zone. ",
+                          "spacing": "Small",
+                          "wrap": true,
+                          "maxLines": 5
+                      },
+                      {
+                          "type": "TextBlock",
+                          "text": "${name} shares the borders with ${borders}.",
+                          "spacing": "Small",
+                          "wrap": true,
+                          "maxLines": 5,
+                          "$when": "${borders != ''}"
+                      },
+                      {
+                          "type": "TextBlock",
+                          "text": "${languages} is/are the language(s) spoken at ${name}. When it comes to transactions, the ${currencies} is/are the accepted currency.",
+                          "wrap": true,
+                          "maxLines": 3,
+                          "spacing": "Medium"
+                      }
+                  ],
+                  "horizontalAlignment": "Center",
+                  "spacing": "Medium"
+              },
+              {
+                  "type": "Column",
+                  "width": 2,
+                  "items": [
+                      {
+                          "type": "Image",
+                          "url": "${flagUrl}",
+                          "altText": "Result logo",
+                          "horizontalAlignment": "Right",
+                          "size": "Large"
+                      }
+                  ],
+                  "$when": "${flagUrl != ''}"
+              }
+          ]
+      }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
