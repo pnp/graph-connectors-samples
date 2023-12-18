@@ -8,7 +8,7 @@ This sample contains a Microsoft Graph connector built using Python & employing 
 
 as well as Copilot when asking in Natural Language.
 
-![Ingested files displayed in Copilot results](assets/copilot_security_format_asTable.png)
+![Ingested files displayed in Copilot results](assets/copilot_security_format_reg.png)
 
 ## Contributors
 
@@ -47,11 +47,17 @@ Version|Date|Comments
     source venv/bin/activate
     # restore dependencies
     pip install -r requirements.txt
+    # Make sure that ipykernel is installed
+    pip install --user ipykernel
+    # Add the new virtual environment to Jupyter
+    python3 -m ipykernel install --user --name='venv_name'
+    # Verify the environment is ready in Jupyter Notebook
+    jupyter kernelspec list
     # create connection
-    python3 main.py create-connection
+    use the Jupyter Notebook
     # load content
-    python3 main.py load-content
-    # deactivate virtual environment
+    use the Jupyter Notebook
+    # clean up and deactivate virtual environment
     deactivate
     ```
 
@@ -59,17 +65,39 @@ Version|Date|Comments
 
 ## Features
 
-This sample shows how to ingest local markdown content with its front matter metadata to Microsoft 365. The sample contains a content folder with several blog posts by [Waldek Mastykarz](https://blog.mastykarz.nl/). These files are parsed and ingested by the sample Microsoft Graph connector.
+This sample shows how to ingest items from an RSS feed into Microsoft 365. The sample refernces the site [Microsoft Graph ChangeLog](https://developer.microsoft.com/en-us/graph/changelog) specifically its [RSS Feed](https://developer.microsoft.com/en-us/graph/changelog/rss). These files are prepared, parsed and ingested by this sample Custom Microsoft Graph connector.
 
 The sample illustrates the following concepts:
 
 - script creating the Entra (Azure AD) app registration using the Microsoft Graph CLI
-- create external connection including URL to item resolver to track activity when users share external links
-- create external connection schema
-- parse local markdown files to get their content and front matter metadata
+- create external connection including the Jupyter Notebook
+- create external connection schema using the Jupyter Notebook
+- prepare the data with helper functions in the Jupyter Notebook
 - ingest content with initial activities
 - visualize the external content in search results using a custom Adaptive Card
-- use Dev Proxy mocks to simulate creation of the external connection and its schema
+- visualize the external content in Copilot eminating from a Natural Language prompt
+
+## Visuals
+
+- Admin Center Validation
+
+![Validation of Custom Connector](assets/admin_ctr_Verify.png)
+
+- Copilot responding to prompt on External data
+
+![Copilot in Teams](assets/copilot_security_format_asTable.png)
+
+- Prepare Data
+
+![Jupyter Notebook Preparing Data](assets/prepare_data.png)
+
+- Testing the Data to be injested
+
+![Jupyter Notebook Testing Data](assets/tester_narrative.png)
+
+- Injesting the Data
+
+![Jupyter Notebook Injesting Data](assets/injest_items.png)
 
 ## Help
 
