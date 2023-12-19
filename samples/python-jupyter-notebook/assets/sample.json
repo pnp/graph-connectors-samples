@@ -1,0 +1,81 @@
+[
+    {
+      "name": "pnp-graph-connector-python-jupyternotebook",
+      "source": "pnp",
+      "title": "Ingest Web/SaaS content using Python",
+      "shortDescription": "This sample contains a custom Microsoft Graph connector built in Python that shows how to ingest files from the Internet or any SaaS application. For each entry into the ChangeLog, it extracts several key elements as well as the summary, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+      "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/python-jupyter-notebook",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/python-jupyter-notebook",
+      "longDescription": [
+        "Our example uses the Microsoft Graph ChangeLog which captures the addition, updates, and deletions of properties and methods for the various Microsoft Graph endpoints.  For each entry into the ChangeLog, it extracts several key elements as well as the summary, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization through the various Search hubs in the M365 App, SharePoint, Viva Platform, and ContextIQ the latter two being in preview"
+      ],
+      "creationDateTime": "2023-12-17",
+      "updateDateTime": "2023-12-19",
+      "products": [
+        "Microsoft Graph connectors",
+        "Microsoft Graph",
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Python"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "Python"
+        },
+        {
+          "key": "SEARCH-RESULTS-CARD",
+          "value": "Yes"
+        },
+        {
+          "key": "TEAMS-PACKAGE",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/python-jupyter-notebook/assets/1_search_results.png",
+          "alt": "External content displayed in Microsoft Search search results, visualized using a custom Adaptive Card"
+        },
+        {
+          "type": "image",
+          "order": 200,
+          "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/python-jupyter-notebook/assets/copilot_security_format_reg.png",
+          "alt": "Copilot responding to user prompt displaying Microsoft Graph ChangeLog items ingested with the sample Microsoft Graph connector"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "fabianwilliams",
+          "pictureUrl": "https://avatars.githubusercontent.com/u/92543063?v=4",
+          "name": "Fabian Williams"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft Graph connectors overview",
+          "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+          "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+        },
+        {
+          "name": "Build your first custom Microsoft Graph connector",
+          "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+          "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+        },
+        {
+          "name": "Get started with the Dev Proxy",
+          "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+          "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started/installation"
+        },
+        {
+          "name": "Change Dev Proxy mocks file",
+          "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+          "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+        }
+      ]
+    }
+  ]
