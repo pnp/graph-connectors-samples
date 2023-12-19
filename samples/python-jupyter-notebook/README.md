@@ -18,7 +18,7 @@ as well as Copilot when asking in Natural Language.
 
 Version|Date|Comments
 -------|----|--------
-1.0|December XX, 2023|Initial Release
+1.0|December 19, 2023|Initial Release
 0.9|December 17, 2023|Draft
 
 ## Prerequisites
