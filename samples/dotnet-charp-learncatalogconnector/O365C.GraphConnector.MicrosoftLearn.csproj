@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <UserSecretsId>36d0f0b9-0035-43dc-a097-ce6ce81512e0</UserSecretsId>    
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.10.4" />
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="4.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Graph" Version="5.37.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.1" />        
+  </ItemGroup>
+  <ItemGroup>    
+    <None Update="appPackage\color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>    
+    <None Update="appPackage\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>    
+    <None Update="appPackage\outline.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>    
+    <None Update="Assets\resultLayout.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>    
+    <None Update="Assets\SampleData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>    
+    <None Update="host.json">      
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+    <None Update="resultLayout.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+</Project>

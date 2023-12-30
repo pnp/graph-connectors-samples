@@ -1,0 +1,19 @@
+{
+    "Summary": "Simplify your SPFx imports",
+    "Levels": "beginner, intermediate, advanced",
+    "Roles": "developer, architect",
+    "Products": "SharePoint, SharePoint Framework",
+    "Subjects": "SPFx, TypeScript, JavaScript",
+    "Uid": "SPFx-imports",
+    "Type": "module",
+    "Title": "SPFx imports",
+    "DurationInMinutes": 50,
+    "IconUrl": "https://learn.microsoft.com/en-us/training/achievements/csharp-if-elseif-else.svg",
+    "SocialImageUrl": "https://learn.microsoft.com/en-us/training/achievements/generic-social.png",
+    "LastModified": "2020-01-01",
+    "Url": "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/",
+    "Units": [
+        "introduction, demo, hands-on lab, wrap-up"
+    ],
+    "NumberOfUnits": 7
+}

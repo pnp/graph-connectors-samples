@@ -1,0 +1,85 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [{
+            "type": "TextBlock",
+            "text": "MODULE",
+            "size": "Medium",
+            "isSubtle": true,
+            "fontType": "Monospace"
+        },
+        {
+            "type": "TextBlock",
+            "text": "[${Title}](${Url})",
+            "size": "large",
+            "weight": "Bolder",
+            "color": "Accent",
+            "wrap": true
+
+        },
+        {
+            "type": "TextBlock",
+            "text": "${Summary}",
+            "size": "small",
+            "wrap": true,
+            "isSubtle": true,
+            "spacing": "none"
+
+        },
+        {
+            "type": "Container",
+            "separator": false
+        },
+        {
+            "type": "Container",
+            "separator": false
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "**Duration**: 🕒 ${Duration} mins",
+                            "size": "default"
+
+
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "**Roles**: ${Roles}",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "**Rating:** ⭐️⭐️⭐️⭐️",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                        "type": "Image",
+                        "url": "${IconUrl}",
+                        "horizontalAlignment": "Right"
+                    }],
+                    "width": "auto"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "[More info](${Url})",
+            "size": "small",
+            "spacing": "none",
+            "color": "Accent"
+        }
+    ]
+}
