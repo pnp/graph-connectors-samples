@@ -1,0 +1,54 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [{
+            "type": "TextBlock",
+            "text": "MODULE",
+            "size": "Large",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Course Heading",
+            "size": "Large",
+            "weight": "Bolder",
+            "color": "Accent"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "DurationInMinutes"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Role 1, Role 2, Role 3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "",
+                            "separator": true
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [{
+                                "type": "Action.OpenUrl",
+                                "title": "View",
+                                "url": "https://learn.microsoft.com/en-us/training/browse/"
+                            }]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
