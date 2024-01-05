@@ -1,0 +1,29 @@
+{
+    "id": "learnwwldeploy-device-data-protection",
+    "acl": [{
+        "type": "everyone",
+        "value": "everyone",
+        "accessType": "grant"
+    }],
+    "properties": {
+        "Summary": "This module describes how you can use Intune to create and manage WIP policies that manage this protection. The module also covers implementing BitLocker and Encrypting File System.",
+        "Levels": "intermediate",
+        "Roles": "Administrator",
+        "Products": "windows,configuration-manager,intune",
+        "Subjects": "",
+        "Uid": "learn.wwl.deploy-device-data-protection",
+        "Title": "Deploy device data protection",
+        "Duration": "48",
+        "Rating": "⭐️⭐️⭐️⭐️ ",
+        "IconUrl": "https://learn.microsoft.com/en-us/training/achievements/generic-badge.svg",
+        "SocialImageUrl": "https://learn.microsoft.com/en-us/training/achievements/generic-social.png",
+        "LastModified": "2024-01-04T17:59:00Z",
+        "Url": "https://learn.microsoft.com/training/modules/deploy-device-data-protection/",
+        "Units": "Introduction,Explore Windows Information Protection,Plan Windows Information Protection,Implement and use Windows Information Protection,Explore Encrypting File System in Windows client,Explore BitLocker,Knowledge check,Summary",
+        "NumberOfUnits": "8"
+    },
+    "content": {
+        "value": "This module describes how you can use Intune to create and manage WIP policies that manage this protection. The module also covers implementing BitLocker and Encrypting File System.",
+        "type": "text"
+    }
+}

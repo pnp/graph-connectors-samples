@@ -12,19 +12,32 @@ using Microsoft.Graph.Models.ExternalConnectors;
 using O365C.GraphConnector.MicrosoftLearn.Util;
 using System.Net.Http;
 using System.Linq;
-using System.Collections.Generic;
-using Microsoft.Extensions.Options;
-using Microsoft.Azure.WebJobs.Host.Bindings;
 using O365C.GraphConnector.MicrosoftLearn.Models;
 
 namespace O365C.GraphConnector.MicrosoftLearn.Services
 {
+
+    public interface IGraphAPIService
+    {
+        // public GraphServiceClient? GetUserGraphClient(string userAssertion);
+        // public GraphServiceClient? GetAppGraphClient();
+        Task<UserCollectionResponse> GetUsersAsync();
+        Task<ExternalConnection> CreateConnectionAsync();
+        Task UpdateConnectionAsync(string connectionId);
+        Task<ExternalConnection> GetConnectionAsync(string connectionId);
+        Task<ExternalConnectionCollectionResponse> GetExistingConnectionsAsync();
+        Task DeleteConnectionAsync(string connectionId);
+        Task RegisterSchemaAsync(string connectionId, Schema schema);
+        Task<Schema> GetSchemaAsync(string connectionId);
+        Task AddOrUpdateItemAsync(string connectionId, ExternalItem item);       
+
+    }
     public class GraphApiService : IGraphAPIService
     {
         private readonly AzureFunctionSettings _configSettings;
         private readonly IConfiguration _config;
         private readonly ILogger _logger;
-        private static HttpClient httpClient;
+        private static HttpClient _httpClient;
 
         private static GraphServiceClient _graphAppClient;
 
@@ -32,7 +45,7 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
         {
             _config = config;
             _logger = loggerFactory.CreateLogger<GraphApiService>();
-            httpClient = GraphClientFactory.Create();
+            _httpClient = GraphClientFactory.Create();
             _configSettings = settings;
         }
 
@@ -95,12 +108,11 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
             }
         }
 
-
         public async Task<UserCollectionResponse> GetUsersAsync()
         {
             try
             {
-                var graphClient = GetAppGraphClient();
+                var graphClient = GetAppGraphClient();                
                 _ = graphClient ?? throw new MemberAccessException("graphClient is null");
                 var result = await graphClient.Users.GetAsync();
 
@@ -111,14 +123,13 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
                 return null;
             }
 
-        }
-
-
+        }      
+        
         public async Task<ExternalConnection> CreateConnectionAsync()
-        {
+        {           
+            
             var graphClient = GetAppGraphClient();
             _ = graphClient ?? throw new MemberAccessException("graphClient is null");
-
             return await _graphAppClient.External.Connections.PostAsync(ConnectionConfiguration.ExternalConnection);
         }
         public async Task UpdateConnectionAsync(string connectionId)
@@ -128,8 +139,6 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
             _ = connectionId ?? throw new ArgumentException("connectionId is required");
             await _graphAppClient.External.Connections[connectionId].PatchAsync(ConnectionConfiguration.ExternalConnection);
         }
-
-
 
         public async Task<ExternalConnection> GetConnectionAsync(string connectionId)
         {
@@ -178,7 +187,7 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
 
             var graphClient = GetAppGraphClient();
             _ = graphClient ?? throw new MemberAccessException("graphClient is null");
-            _ = httpClient ?? throw new MemberAccessException("httpClient is null");
+            _ = _httpClient ?? throw new MemberAccessException("httpClient is null");
             _ = connectionId ?? throw new ArgumentException("connectionId is required");
             // Use the Graph SDK's request builder to generate the request URL
             var requestInfo = _graphAppClient.External
@@ -196,7 +205,7 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
             requestMessage.Headers.Add("Prefer", "respond-async");
 
             // Send the request
-            var responseMessage = await httpClient.SendAsync(requestMessage) ??
+            var responseMessage = await _httpClient.SendAsync(requestMessage) ??
                 throw new Exception("No response returned from API");
 
             if (responseMessage.IsSuccessStatusCode)

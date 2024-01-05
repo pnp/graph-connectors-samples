@@ -1,0 +1,17 @@
+{
+    "value": [{
+        "changeType": "updated",
+        "subscriptionId": "81b46bc9-1371-44de-a6e9-a975f07cbdbb",
+        "resource": "external",
+        "clientState": null,
+        "resourceData": {
+            "@odata.type": "#Microsoft.Graph.connector",
+            "@odata.id": "external",
+            "id": "8591932a-30cb-4843-a558-1c2c220c81b7",
+            "state": "enabled",
+            "connectorsTicket": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBpZCI6ImQ0NDcyNmZkLTVmNTQtNDVhZS05NGRmLTBlMGExYTAyOTFjYyIsIm5hbWUiOiJPMzY1QyBNTGVhcm4iLCJpY29uX3VybCI6Imh0dHBzOi8vdWstcHJvZC5hc3luY2d3LnRlYW1zLm1pY3Jvc29mdC5jb20vdjEvb2JqZWN0cy8wLXd1ay1kMi1hY2U3NTMzMDM4YWMxMTIyMTk4MWQxZTgxOGFkZjFiNS92aWV3cy9pbWdwc2hfZnVsbHNpemUiLCJuYmYiOjE3MDQyMTIyMzcsImV4cCI6MTczNTc0ODIzNywiaWF0IjoxNzA0MjEyMjM3LCJhdWQiOiJodHRwczovL3N1YnN0cmF0ZS5vZmZpY2UuY29tIn0.J0lpZelUZaJ66eSVw81lQkOo3wcwKAffhw6jiMk3doM"
+        },
+        "subscriptionExpirationDateTime": "2024-01-03T16:17:17.0858366+00:00",
+        "tenantId": "3f4d536c-9ebc-4eb1-8304-0f0f2f840b5d"
+    }]
+}

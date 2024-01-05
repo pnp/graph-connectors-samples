@@ -14,7 +14,7 @@ namespace O365C.GraphConnector.MicrosoftLearn.Util
     {
 
         private static Dictionary<string, object> _layout;
-        private static Dictionary<string, object> Layout
+        public static Dictionary<string, object> Layout
         {
             get
             {
@@ -28,7 +28,8 @@ namespace O365C.GraphConnector.MicrosoftLearn.Util
             }
         }
 
-        public static string ConnectionID = "MSFTLearnCatalogAPI";
+        public static string ConnectionID = "LearnConnector";
+
         public static ExternalConnection ExternalConnection
         {
             get
@@ -38,7 +39,6 @@ namespace O365C.GraphConnector.MicrosoftLearn.Util
                     Id = ConnectionID,
                     Name = "Microsoft Learn Catalog API",
                     Description = "The Microsoft Learn Catalog API is a REST-based Web API lets you send a web-based query to Microsoft Learn and get back details about the available training content and certification exams such as titles, products covered, levels, links to training, and other metadata and returns a JSON-encoded response with the information.",
-
                     ActivitySettings = new ActivitySettings()
                     {
                         UrlToItemResolvers = new() {
@@ -57,15 +57,14 @@ namespace O365C.GraphConnector.MicrosoftLearn.Util
                     {
                         SearchResultTemplates = new() {
                            new() {
-                               Id = "MSLearnCAPI",
+                               Id = "LearnAPISrc",
                                Priority = 1,
-                                Layout = new Json {
-                               AdditionalData = Layout
-                                }
-
+                               Layout = new Json {
+                                    AdditionalData = Layout
+                               }
                            }
                        }
-                    }
+                    }                    
                 };
             }
         }

@@ -6,15 +6,10 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System.Net;
 using O365C.GraphConnector.MicrosoftLearn.Services;
 using System.Collections.Generic;
 using Microsoft.Graph.Models.ExternalConnectors;
-using System.Linq;
 using O365C.GraphConnector.MicrosoftLearn.Util;
-using O365C.GraphConnector.MicrosoftLearn.Helpers;
-using Microsoft.Extensions.Configuration;
 using O365C.GraphConnector.MicrosoftLearn.Models;
 
 namespace O365C.GraphConnector.MicrosoftLearn
@@ -22,17 +17,24 @@ namespace O365C.GraphConnector.MicrosoftLearn
     public class OnDemandContent
     {
 
-        private readonly IGraphAPIService _graphAPIService;
+        private readonly IGraphHttpService _graphHttpService;
+
         private readonly ICatalogApiService _catalogApiService;
         private readonly ILogger _logger;
 
+        private readonly IAccessTokenProvider _accessTokenProvider;
+
         public OnDemandContent(
-            IGraphAPIService graphAPIService,
-            ILoggerFactory loggerFactory, ICatalogApiService catalogApiService)
+            ILoggerFactory loggerFactory,
+            ICatalogApiService catalogApiService,
+            IGraphHttpService graphHttpService,
+            IAccessTokenProvider accessTokenProvider)
         {
-            _graphAPIService = graphAPIService;
+
             _logger = loggerFactory.CreateLogger<OnDemandContent>();
             _catalogApiService = catalogApiService;
+            _graphHttpService = graphHttpService;
+            _accessTokenProvider = accessTokenProvider;
         }
 
 
@@ -41,19 +43,24 @@ namespace O365C.GraphConnector.MicrosoftLearn
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log, ExecutionContext context)
         {
-                        
+
             log.LogInformation($"OnDemandContent HTTP trigger function executed at: {DateTime.Now}");
 
-            CommonConstants.ResultLayoutFilePath = Path.Combine(context.FunctionAppDirectory, "Cards", "resultLayout.json");
+
+
+            //Delete connection
+            //await _graphAPIService.DeleteConnectionAsync(ConnectionConfiguration.ConnectionID);
+
+            CommonConstants.ResultLayoutFilePath = Path.Combine(context.FunctionAppDirectory, "Assets", "resultLayout.json");
 
             //Create connection
-            await CreateOrUpdateConnection(log);
+            //await CreateConnection(log);
 
             //Create schema
-            await CreateSchema(log);
+           // await CreateSchema(log);
 
             //Ingest content
-            await IngestContent(log);
+            //await IngestContent(log);
 
             //Return OK
             return new OkObjectResult("All steps are completed");
@@ -61,29 +68,23 @@ namespace O365C.GraphConnector.MicrosoftLearn
         }
 
 
-
-        public async Task CreateOrUpdateConnection(ILogger log)
+        public async Task CreateConnection(ILogger log)
         {
-
-            _ = _graphAPIService ?? throw new MemberAccessException("graphAPIService is null");
+            _ = _graphHttpService ?? throw new MemberAccessException("graphHttpService is null");
 
             try
             {
-                ExternalConnectionCollectionResponse existingConnections = await _graphAPIService.GetExistingConnectionsAsync();
-                ExternalConnection connection = existingConnections.Value.FirstOrDefault(x => x.Id == ConnectionConfiguration.ConnectionID);
+                ExternalConnection connection = await _graphHttpService.GetConnectionAsync(ConnectionConfiguration.ConnectionID);
 
                 if (connection == null)
                 {
-                    log.LogInformation("No connection was found, creating it");
-                    connection = await _graphAPIService.CreateConnectionAsync();
+                    log.LogInformation("No connection was found, creating it...");
+                    connection = await _graphHttpService.CreateConnectionAsync("", "");
                     log.LogInformation("Done");
                 }
                 else
                 {
                     log.LogInformation("Connection already exists, Skipping");
-                    // log.LogInformation("Connection already exists, updating it");
-                    // await _graphAPIService.UpdateConnectionAsync(ConnectionConfiguration.ConnectionID);
-                    // log.LogInformation("Updated");
                 }
             }
             catch (Exception ex)
@@ -91,25 +92,23 @@ namespace O365C.GraphConnector.MicrosoftLearn
                 log.LogError(ex, "Error creating connection");
                 throw;
             }
-
-
         }
 
         public async Task CreateSchema(ILogger log)
         {
-            _ = _graphAPIService ?? throw new MemberAccessException("graphAPIService is null");
+            _ = _graphHttpService ?? throw new MemberAccessException("graphAPIService is null");
 
             try
             {
                 //Get Schema    
                 log.LogInformation("Getting Schema");
-                Schema schema = await _graphAPIService.GetSchemaAsync(ConnectionConfiguration.ConnectionID);
+                Schema schema = await _graphHttpService.GetSchemaAsync(ConnectionConfiguration.ConnectionID);
                 log.LogInformation("Got Schema");
                 //Schema is null then provision schema  
                 if (schema == null)
                 {
                     log.LogInformation("Provisioning Schema, this will take a few minutes");
-                    await _graphAPIService.RegisterSchemaAsync(ConnectionConfiguration.ConnectionID, ConnectionConfiguration.Schema);
+                    await _graphHttpService.CreateSchemaAsync();
                     log.LogInformation("Provisioned");
                 }
                 else
@@ -130,21 +129,15 @@ namespace O365C.GraphConnector.MicrosoftLearn
             //load modules
             log.LogInformation("Loading modules...");
             List<Module> modules = await _catalogApiService.GetModulesAsync();
-            log.LogInformation("Loaded");
+            log.LogInformation("Loaded");          
 
-
-            //transform modules to external items
-            log.LogInformation("Transforming modules to external items...");
-            var transformedModules = GraphHelper.TransformModulesToExternalItems(modules);
-            log.LogInformation("Transformed");
-
-            foreach (var item in transformedModules)
+            foreach (var module in modules)
             {
-                log.LogInformation(string.Format("Loading item {0}...", item.Id));
+                log.LogInformation(string.Format("Loading item {0}...", module.Uid));
                 log.LogInformation($"--------------------------------------------------");
                 try
                 {
-                    await _graphAPIService.AddOrUpdateItemAsync(ConnectionConfiguration.ConnectionID, item);
+                    await _graphHttpService.CreateItemAsync(module);
                     log.LogInformation("DONE");
                 }
                 catch (Exception ex)
