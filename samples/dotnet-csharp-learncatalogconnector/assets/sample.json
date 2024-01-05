@@ -1,0 +1,71 @@
+[
+  {
+    "name": "pnp-graph-connector-dotnet-csharp-learncatalogconnector",
+    "source": "pnp",
+    "title": "Ingest Microsoft Learn Catalog API content using C# and .NET",
+    "shortDescription": "This example includes a Microsoft Graph connector demonstrating the ingestion of Microsoft Learn Catalog API modules into Microsoft 365. It retrieves details about each module and associated metadata using the Microsoft Learn Catalog API, aligns them with the external connection's schema, and ingests the content while preserving both the content itself and its metadata. The ingested content is configured to be accessible to all members within the organization.",
+    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-learncatalogconnector",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-learncatalogconnector",
+    "longDescription": [
+      "This example includes a Microsoft Graph connector demonstrating the ingestion of Microsoft Learn Catalog API modules into Microsoft 365. It retrieves details about each module and associated metadata using the Microsoft Learn Catalog API, aligns them with the external connection's schema, and ingests the content while preserving both the content itself and its metadata. The ingested content is configured to be accessible to all members within the organization."
+    ],
+    "creationDateTime": "2023-12-30",
+    "updateDateTime": "2023-12-30",
+    "products": [
+      "Microsoft Graph connectors",
+      "Microsoft Graph",
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": ".NET"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "C#"
+      },
+      {
+        "key": "SEARCH-RESULTS-CARD",
+        "value": "Yes"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-learncatalogconnector/assets/LearnCatalogConnector-results.png",
+        "alt": "Learn modules docs displayed in Microsoft Search search results"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-learncatalogconnector/assets/LearnCatalogConnector-architecture.png",
+        "alt": "Microsoft Learn Catalog API Connector"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ejazhussain",
+        "pictureUrl": "https://github.com/ejazhussain.png",
+        "name": "Ejaz Hussain"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Graph connectors overview",
+        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+      },
+      {
+        "name": "Build your first custom Microsoft Graph connector",
+        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+      }
+    ]
+  }
+]
