@@ -1,0 +1,36 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "version": "1.0.18",
+    "manifestVersion": "1.16",
+    "id": "7AB86239-6A7F-42E6-A348-588989294F75",
+    "packageName": "com.office365clinic.mlearn",
+    "name": {
+        "short": "O365C MLearn",
+        "full": "O365C Microsoft Learn Modules"
+    },
+    "developer": {
+        "name": "Office365Clinic",
+        "websiteUrl": "https://office365clinic.com",
+        "privacyUrl": "https://office365clinic.com",
+        "termsOfUseUrl": "https://office365clinic.com"
+    },
+    "description": {
+        "short": "Get instant access to Microsoft Learn modules and courses directly in Teams",
+        "full": "The Microsoft Learn Modules for Teams app brings the power of Microsoft Learn directly into your Teams channels. Access a vast library of modules and courses covering various Microsoft technologies, all designed for bite-sized learning and easy access. Stay up-to-date, build new skills, and boost your team's productivity, all without leaving Teams"
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#FFFFFF",
+    "validDomains": [
+        "https://graphlearnapifunc.azurewebsites.net"
+    ],
+    "webApplicationInfo": {
+        "id": "d44726fd-5f54-45ae-94df-0e0a1a0291cc",
+        "resource": "api://d44726fd-5f54-45ae-94df-0e0a1a0291cc"
+    },
+    "graphConnector": {
+        "notificationUrl": "https://graphlearnapifunc.azurewebsites.net/api/NotificationContent"
+    }
+}

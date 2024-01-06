@@ -11,6 +11,14 @@ using System.Net.Http;
 
 namespace O365C.GraphConnector.MicrosoftLearn.Services
 {
+     public interface ICatalogApiService
+    {
+
+        Task<LearnCatalog> GetCatalogAsync(string? locale = null, CatalogFilter? filters = null);
+        Task<List<Module>> GetModulesAsync(string? locale = null, CatalogFilter? filter = null);
+        // Task<List<Module>> GetModulesWithPopularityScoreAbove(double score);
+        // Task<List<Module>> GetAllModules();
+    }
     public class CatalogApiService : ICatalogApiService
     {
         private readonly HttpClient _client;
@@ -114,7 +122,7 @@ namespace O365C.GraphConnector.MicrosoftLearn.Services
                     };
                 }
             }
-            
+
             return catalog;
         }
 
