@@ -22,6 +22,7 @@ This example includes a Microsoft Graph connector demonstrating the ingestion of
 Version|Date|Comments
 -------|----|--------
 1.0|December 30, 2023|Initial release
+2.0|January 05, 2024 |Manage connector via Microsoft Teams Admin + Code refactoring 
 
 ## Prerequisites
   
@@ -45,46 +46,34 @@ Version|Date|Comments
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-learncatalogconnector) then unzip it)
 - Run the setup script: `./setup.ps1`. When finished, it will display ClientID, ClientSecret and TenantID. Copy these into local.settings.json file
 - Build the project: `dotnet build`  
+- Publish the Azure functions
+- Add ClientID, ClientSecret and TenantID under Azure function app configuration settings
 
-## Steps to run OnDemand function locally:
+## Creating connection connection and ingesting Microsoft Learn Catalog API content via Teams app
 
-1. Open project in Visual Studio 2022
-2. Ensure that `local.settings.json` file updated with ClientId, ClientSecret and TenantId
-3. Click the "Start Debugging" button (or press `F5`). This will build your project, start the Azure Functions runtime locally, and attach the debugger.
-4. Send a GET request to the OnDemandContent function URL
-`http://localhost:7248/api/OnDemandContent`
-5. This will create connection, schema and ingest the Microsoft Learn Catalog API modules content in Microsoft 365 
+1. Navigate to Microsoft Teams Admin Center.
 
-## Steps to publish an Azure Function from Visual Studio 2022
+2. Go to **Manage apps**.
 
-1. Right-click the Azure Functions project in Solution Explorer:
+3. Click on the **Upload** button.
 
-2. Select "Publish...":
+4. Select the Microsoft Teams app package(manifest.zip) under **appPackage** folder and upload it.
 
-3. Choose "Azure" as the target:
+5. In the app details, navigate to the **Permissions** section.
 
-4. Select "Azure Function App (Windows)" as the specific target:
+6. Under **Org-wide permissions**, find the **Review permissions and consent** button.
 
-5. Create a new Azure Function App or select an existing one:
+7. Click on the button to grant the necessary permissions.
 
-6. Click "Publish" to deploy the function app to Azure.
+8. Scroll down to the **Microsoft Graph Connector** section.
 
-## Making a GET Request Using Postman or Other HTTP Client
+9. Find the **Connection status** toggle.
 
-1. Obtain the function's URL:
+10. Toggle it to enable the connection.
 
-Access the Azure portal and navigate to your function app.
-Under "Functions," find the HTTP trigger function you want to test.
-Copy the function's URL, which will be in the format https://<function-app-name>.azurewebsites.net/api/<function-name>.
-2. Open Postman or your preferred HTTP client:
+11. This action will create a new Microsoft Graph external connection.
 
-3. Create a new GET request:
-
-4. Paste the function's URL into the request address bar:
-
-5. Click "Send" to execute the GET request.
-
-8. Inspect the response in the client to verify successful execution.
+12. The toggle will also trigger the creation of the schema and ingestion of data from Microsoft Learn Catalog API.
 
 
 ## Features
@@ -108,7 +97,7 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%dotnet-csharp-learncatalogconnector%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%dotnet-csharp-graphdocs%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
 
@@ -118,4 +107,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-dotnet-csharp-learncatalogconnector)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-dotnet-csharp-graphdocs)
