@@ -24,12 +24,12 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-markdown) then unzip it)
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap) then unzip it)
 - add the information about the Entra ID app in user secrets
-    - dotnet user-secrets init
-    - dotnet user-secrets set "AzureAd:ClientId" client-Id-value
-    - dotnet user-secrets set "AzureAd:ClientSecret" secret-Text-value
-    - dotnet user-secrets set "AzureAd:TenantId" Tenant-Id-value
+  - dotnet user-secrets init
+  - dotnet user-secrets set "AzureAd:ClientId" client-Id-value
+  - dotnet user-secrets set "AzureAd:ClientSecret" secret-Text-value
+  - dotnet user-secrets set "AzureAd:TenantId" Tenant-Id-value
 - Build the project: `dotnet build`
 - Change the working directory to the path to where the project file is present.
 - Create the external connection: `./connector create-connection` (this will take several minutes)
@@ -38,5 +38,7 @@ Version|Date|Comments
 - Use the `resultLayout.json` file for the Adaptive Card code
 
 ## Features
+
 This sample shows how to Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors using C# and .NET
 
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-dotnet-csharp-m365-roadmap)
