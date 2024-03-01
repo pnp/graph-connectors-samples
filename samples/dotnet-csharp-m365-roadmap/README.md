@@ -6,6 +6,7 @@ This sample contains a Microsoft Graph connector that shows how to Ingest M365 R
 
 ![M365 Roadmap Graph Connector](./assets/M365-Roadmap-Graph-Connector.png)
 
+
 ## Contributors
 
 - [Mohammad Amer](https://github.com/mohammadamer)
