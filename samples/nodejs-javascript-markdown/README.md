@@ -14,6 +14,7 @@ This sample contains a Microsoft Graph connector that shows how to ingest local 
 
 Version|Date|Comments
 -------|----|--------
+2.0|March 11, 2024|Added simulating handling Teams Admin Center notification
 1.1|October 09, 2023|Added configuring result layout
 1.0|September 29, 2023|Initial release
 
@@ -50,6 +51,8 @@ The sample illustrates the following concepts:
 
 If you want to use Dev Proxy to simulate API responses:
 
+- install Dev Proxy v0.16.0 or later
+- download the `graph-connector-notification` preset using `devproxy preset get graph-connector-notification`
 - `NODE_TLS_REJECT_UNAUTHORIZED=0` is required to skip certificate validation errors when using the Dev Proxy
 - `NODE_NO_WARNINGS=1` suppresses Node.js warnings about skipping certificate validation
 

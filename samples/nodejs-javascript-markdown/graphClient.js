@@ -1,9 +1,7 @@
 import { ClientSecretCredential } from '@azure/identity';
 import { Client, MiddlewareFactory } from '@microsoft/microsoft-graph-client';
 import { TokenCredentialAuthenticationProvider } from '@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials/index.js';
-import { HttpsProxyAgent } from 'https-proxy-agent';
-import 'isomorphic-fetch';
-import yargs from 'yargs';
+import { ProxyAgent } from 'undici';
 import { CompleteJobWithDelayMiddleware } from './completeJobWithDelayMiddleware.js';
 import { DebugMiddleware } from './debugMiddleware.js';
 import { appInfo } from './env.js';
@@ -20,16 +18,13 @@ const authProvider = new TokenCredentialAuthenticationProvider(credential, {
 
 const middleware = MiddlewareFactory.getDefaultMiddlewareChain(authProvider);
 // add as a second middleware to get access to the access token
-middleware.splice(1, 0, new CompleteJobWithDelayMiddleware(60000));
+middleware.splice(1, 0, new CompleteJobWithDelayMiddleware(5_000));
 // add just before executing the request to get access to all headers
 // middleware.splice(-1, 0, new DebugMiddleware());
 
-let fetchOptions = undefined;
-if (yargs().argv.withProxy) {
-  const proxyAgent = new HttpsProxyAgent('http://0.0.0.0:8000');
-  fetchOptions = {
-    agent: proxyAgent
-  };
-}
+const dispatcher = process.env.https_proxy ? new ProxyAgent(process.env.https_proxy) : undefined;
+const fetchOptions = {
+  dispatcher
+};
 
 export const client = Client.initWithMiddleware({ middleware, fetchOptions });

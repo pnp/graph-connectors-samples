@@ -2,25 +2,32 @@
   "name": "graph-connector-node-md",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=18.16"
+  },
   "main": "index.js",
   "type": "module",
   "scripts": {
     "createConnection": "node createConnection.js",
-    "createConnection:proxy": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node createConnection.js --with-proxy",
+    "createConnection:proxy": "https_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node createConnection.js",
     "loadContent": "node loadContent.js",
-    "loadContent:proxy": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node loadContent.js --with-proxy",
-    "start:proxy": "devproxy --mocks-file connector-mocks.json"
+    "loadContent:proxy": "https_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node loadContent.js",
+    "start:notification": "https_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node notification.js",
+    "start:proxy": "devproxy --config-file \"~appFolder/presets/graph-connector-notification/graph-connector-teams.json\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@azure/identity": "^3.3.0",
+    "@azure/identity": "^4.0.1",
     "@microsoft/microsoft-graph-client": "^3.0.6",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
     "gray-matter": "^4.0.3",
-    "https-proxy-agent": "^7.0.1",
-    "isomorphic-fetch": "^3.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.1.0",
+    "proxy-agent": "^6.4.0",
     "remove-markdown": "^0.5.0",
-    "yargs": "^17.7.2"
+    "undici": "^6.7.1"
   }
 }
