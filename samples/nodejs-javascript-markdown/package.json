@@ -13,7 +13,7 @@
     "loadContent": "node loadContent.js",
     "loadContent:proxy": "https_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node loadContent.js",
     "start:notification": "https_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node notification.js",
-    "start:proxy": "devproxy --config-file \"~appFolder/presets/graph-connector-notification/graph-connector-teams.json\""
+    "start:proxy": "devproxy --config-file \"~appFolder/presets/microsoft-graph-connector-notification/devproxyrc.json\""
   },
   "keywords": [],
   "author": "",
