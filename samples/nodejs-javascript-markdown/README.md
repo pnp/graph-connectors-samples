@@ -14,6 +14,7 @@ This sample contains a Microsoft Graph connector that shows how to ingest local 
 
 Version|Date|Comments
 -------|----|--------
+2.1|March 12, 2024|Fixed schema
 2.0|March 11, 2024|Added simulating handling Teams Admin Center notification
 1.1|October 09, 2023|Added configuring result layout
 1.0|September 29, 2023|Initial release

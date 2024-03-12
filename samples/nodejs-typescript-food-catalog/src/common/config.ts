@@ -40,9 +40,9 @@ export const config = {
       {
         name: 'name',
         type: 'String',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true',
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true,
         labels: [
           'title'
         ]
@@ -50,45 +50,45 @@ export const config = {
       {
         name: 'categories',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'ecoscore',
         type: 'String',
-        isQueryable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isRetrievable: true
       },
       {
         name: 'imageUrl',
         type: 'String',
-        isRetrievable: 'true'
+        isRetrievable: true
       },
       {
         name: 'ingredients',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'nutriscore',
         type: 'String',
-        isQueryable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isRetrievable: true
       },
       {
         name: 'traces',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'url',
         type: 'String',
-        isRetrievable: 'true',
+        isRetrievable: true,
         labels: [
           'url'
         ]

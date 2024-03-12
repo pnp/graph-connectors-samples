@@ -15,6 +15,7 @@ This sample contains a Microsoft Graph connector that shows how to ingest sample
 
 Version|Date|Comments
 -------|----|--------
+1.8|March 12, 2024|Fixed schema
 1.7|February 19, 2024|Updated local cache of samples. Updated dependencies
 1.6|November 7, 2023|Fixed bug in loading content
 1.5|October 27, 2023|Added PowerShell setup script
