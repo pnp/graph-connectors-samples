@@ -21,6 +21,10 @@ const envs = [
     name: ".env.dev.user",
     content: `SECRET_AAD_APP_CLIENT_SECRET=`,
   },
+  {
+    name: ".env.testtool",
+    content: `TEAMSFX_ENV=testtool`,
+  },
 ];
 
 envs.forEach((env) => {

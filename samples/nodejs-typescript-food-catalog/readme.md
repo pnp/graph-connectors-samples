@@ -17,6 +17,7 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.5|March 20, 2024|Add simulated debugging
 1.4|March 12, 2024|Fixed schema
 1.3|November 15, 2023|Update prerequisites and result type creation step
 1.2|November 10, 2023|Resolve error when disabling connection
@@ -32,6 +33,18 @@ Version|Date|Comments
 - [Node@18](https://nodejs.org)
 
 ## Minimal path to awesome
+
+## Simulated debugging with Dev Proxy
+
+- Clone repo
+- Open repo in VSCode
+- Install Dev Proxy
+- Get preset
+- Run proxy with preset
+- On sidebar, open `Run and Debug` panel
+- Change dropdown to `Debug (Simulated)`
+- Press `F5`
+- Press `W` in proxy to simulate webhook
 
 ### 1. Project setup
 

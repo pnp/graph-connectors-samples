@@ -26,6 +26,16 @@
         "order": 1
       },
       "stopAll": true
+    },
+    {
+      "name": "Debug (Simulated)",
+      "configurations": ["Attach to Node Functions"],
+      "preLaunchTask": "Simulated",
+      "presentation": {
+        "group": "all",
+        "order": 2
+      },
+      "stopAll": true
     }
   ]
 }
