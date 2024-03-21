@@ -1,0 +1,197 @@
+{
+    "$schema": "https://aka.ms/codetour-schema",
+    "title": "TTK",
+    "steps": [
+      {
+        "file": "appPackage/manifest.json",
+        "description": "To enable the simplified admin experience in the Teams admin center, you'll need an app manifest file. The app manifest is packaged and uploaded to Teams admin center then published.\r\n\r\nThis file contains the information required by the admin center to allow admins to enable, or disable a connector from the admin center from a Graph connector tab on the app screen.\r\n\r\n- `webApplicationInfo`\r\n- `graphConnector.notificationUrl`\r\n\r\nThe app manifest must use `v1.13` schema, or higher.",
+        "line": 1
+      },
+      {
+        "file": "appPackage/manifest.json",
+        "description": "The `webApplicationInfo` object refers to the Microsoft Entra app registration used to authenticate the connector with Microsoft Graph.",
+        "line": 29
+      },
+      {
+        "file": "appPackage/manifest.json",
+        "description": "The `graphConnector.notificationUrl` represents the endpoint which will receive a request when an admin either enables or disables a connection in the Teams admin center. As your endpoint is running locally during development, you'll need a Dev tunnel to open your localhost to the internet.\r\n\r\nNext, let's take a look at how Teams Toolkit handles all of this when you press `F5`.",
+        "line": 33
+      },
+      {
+        "file": ".vscode/launch.json",
+        "description": "This compound configuration represents the debug profile used when you press `F5`.",
+        "line": 21
+      },
+      {
+        "file": ".vscode/launch.json",
+        "description": "This configuration is used to start the Azure Function process and attach VSCode to the process so we can use breakpoints in VSCode to debug the code.",
+        "line": 4
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "description": "This task is executed when you start a debug session.",
+        "line": 4
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "description": "This task runs a script to ensure that a Dev tunnel is running.",
+        "line": 37
+      },
+      {
+        "file": "scripts/devtunnel.ps1",
+        "description": "This script ensures that a Dev tunnel is created and started to open the local endpoint to the internet.",
+        "line": 1
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "description": "This task executes a script to ensure that environment files are created and populated with default values.",
+        "line": 69
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "description": "This task starts the Azurite emulator to simulate Azure Table and Queue storage locally.",
+        "line": 93
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "description": "This task executes the `Provision` stage in the `teamsapp.local.yml` file.",
+        "line": 117
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This is a project file which is used to automate Microsoft 365 development tasks using Teams Toolkit.",
+        "line": 1
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This action executes a script that ensures the Azurite tables are populated with data so that we have content to ingest into Microsoft 365.",
+        "line": 10
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This action executes a script to increment the app manifest version each time we start a debug session, this ensures that we don't get conflicts when the app package is uploaded to Teams admin center.",
+        "line": 16
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This action creates the Microsoft Entra app registration and writes values to the `env\\.env.local` and `env\\.env.local.user` files.",
+        "line": 22
+      },
+      {
+        "file": "env/.env.local",
+        "description": "This file represents the environment variables for the local environment.",
+        "line": 1,
+        "selection": {
+          "start": {
+            "line": 1,
+            "character": 1
+          },
+          "end": {
+            "line": 1,
+            "character": 74
+          }
+        }
+      },
+      {
+        "file": "env/.env.local.user",
+        "description": "This file represents the environment variables for the local environment. It is specifically designed for storing secured credentials which are encrypted by Teams Toolkit.",
+        "line": 1
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This action update the app registration with the information from the manifest to apply the API permission scopes and configure the `Application ID URI`.",
+        "line": 35
+      },
+      {
+        "file": "aad.manifest.json",
+        "description": "This file represents the Microsoft Entra app registration used by the connector.",
+        "line": 1
+      },
+      {
+        "file": "aad.manifest.json",
+        "description": "The `requiredResourceAccess` array contains the permission scopes that are configured on the app registration.\r\n\r\nTo create a connection and ingest items, you'll need:\r\n\r\n- `ExternalConnection.ReadWrite.OwnedBy`\r\n- `ExternalItem.ReadWrite.OwnedBy`",
+        "line": 7
+      },
+      {
+        "file": "aad.manifest.json",
+        "description": "The `identifierUris` array represents the Application URI of the Microsoft Entra app registration and is used in the Teams app manifest.",
+        "line": 22
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This action creates the app package, which contains the app manifest file and icons.",
+        "line": 44
+      },
+      {
+        "file": "appPackage/build/manifest.local.json",
+        "description": "This is the output of the task that creates the app package.",
+        "line": 1
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This action writes values from the environment files to the `local.settings.json` file which enables the Azure Function to read these values at runtime.",
+        "line": 54
+      },
+      {
+        "file": "teamsapp.local.yml",
+        "description": "This task uploads the app package to the Teams admin center.\r\n\r\nYou'll need to navigate to the [Teams admin center](https://aka.ms/tac) and publish the app.",
+        "line": 68
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "When the connection is toggled in the Teams admin center a request is sent to the `notificationUrl`.\r\n\r\nThis notification endpoint is triggered and is responsible for handling the `enable` or `disable` event.",
+        "line": 13
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "A `202 Accepted` response is returned as soon as we receive the change notification and before its authenticity has been validated. You are acknowledging the receipt of the change notification and preventing unnecessary retries. \r\n\r\nThe current timeout is 30 seconds, if the notification URL doesn't reply within 30 seconds for more than 10% of the requests from Microsoft Graph over a 10-minute period, all subsequent notifications will be delayed and retried for a period of 4 hours.",
+        "line": 62
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "Here is an example payload sent in the request body.\r\n\r\n```json\r\n{\r\n  \"value\": [\r\n    {\r\n      \"changeType\": \"updated\",\r\n      \"subscriptionId\": \"79f3b611-7f15-4bdd-9422-9606a24e49f3\",\r\n      \"resource\": \"external\",\r\n      \"clientState\": null,\r\n      \"resourceData\": {\r\n        \"@odata.type\": \"#Microsoft.Graph.connector\",\r\n        \"@odata.id\": \"external\",\r\n        \"id\": \"{{connectorId}}\",\r\n        \"state\": \"enabled\" //e.g. enabled or disabled\r\n        \"connectorsTicket\":\"eyJhbGciOiJIUzI1…\"\r\n      },\r\n      \"subscriptionExpirationDateTime\": \"2021-06-26T12:40:26.4436785-07:00\",\r\n      \"tenantId\": \"9f4ebab6-520d-49c0-85cc-7b25c78d4a93\"\r\n    }\r\n  ],\r\n  \"validationTokens\": [ \"eyJ0eXAiOiJKV…\" ]\r\n}\r\n```\r\n\r\nThere are three properties to look out for:\r\n\r\n- `value[0].resourceData.state`\r\n- `value[0].resourceData.connectorsTicket`\r\n- `validationToken`",
+        "line": 18
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "This code is wrapped in an async immediately invoking function (IIFE) as we want this code to run but not block our response to the incoming request.\r\n\r\nThis code: \r\n\r\n- Validates the authenticity of the incoming notification\r\n- Creates a message to either create or disable a connection\r\n- Adds the message to a queue which will be sent in a request",
+        "line": 17
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "The payload in the request body contains a token that you can use to validate the authenticity of the notification.",
+        "line": 27
+      },
+      {
+        "file": "src/common/validateToken.ts",
+        "description": "This function validates the authenticity of the notification against Microsoft Entra.",
+        "line": 9
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "This code creates a message that describes the request to be sent to Microsoft Graph to create or disable the connection.\r\n\r\nAn example payload to enable a connection.\r\n\r\n```json\r\n{\r\n    \"action\": \"create\",\r\n    \"connectorId\": \"<id>\",\r\n    \"connectorTicket\": \"<ticketid>\"\r\n}\r\n```\r\n\r\nThe `connectorsTicket` is recieved from the incoming notification. You must send it back in the request body to enable or disable the connection otherwise it will fail.\r\n\r\n",
+        "line": 35
+      },
+      {
+        "file": "src/functions/http-notification.ts",
+        "description": "The message is transformed into a `base64` string and added to a queue.",
+        "line": 55
+      },
+      {
+        "file": "src/functions/queue-connection.ts",
+        "description": "This function is executed when a message lands in the queue.",
+        "line": 64
+      },
+      {
+        "file": "src/functions/queue-connection.ts",
+        "description": "When the action is set as `create` we call a function that creates the connection.",
+        "line": 74
+      },
+      {
+        "file": "src/functions/queue-connection.ts",
+        "description": "This function sends a POST request to Microsoft Graph to create the connection passing the `connectorTicket` in the `GraphConnectors-Ticket` header.\r\n\r\nOnce the connection is created, the Azure function will continue to create the schema and ingest data into Microsoft Graph.",
+        "line": 10
+      }
+    ],
+    "ref": "main"
+  }

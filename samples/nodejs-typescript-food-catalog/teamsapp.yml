@@ -22,3 +22,4 @@ provision:
     with:
       run: node tables.js ${{SECRET_TABLE_STORAGE_CONNECTION_STRING}}
       workingDirectory: scripts
+projectId: 7fc68028-4ba7-4af6-ad2a-da88875a6b89

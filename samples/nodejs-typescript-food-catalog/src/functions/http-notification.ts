@@ -12,49 +12,52 @@ enum TargetConnectorState {
 
 app.http('notification', {
     methods: ['POST'],
-    handler: async (request: HttpRequest, context: InvocationContext) => {
-        const body = await streamToJson(request.body);
-        context.log('Received notification');
-        context.log(JSON.stringify(body, null, 2));
+    handler: async (request: HttpRequest, console: InvocationContext) => {
 
-        const {
-            aadAppTenantId: tenantId,
-            aadAppClientId: clientId
-        } = config;
+        (async () => {
+            const body = await streamToJson(request.body);
+            console.log('Received notification');
+            console.log(JSON.stringify(body, null, 2));
 
-        const token = body?.validationTokens[0];
-        context.log(`Validating token: ${token}, tenantId: ${tenantId}, clientId: ${clientId}...`);
-        await validateToken(token, tenantId, clientId);
-        context.log('Token validated');
+            const {
+                aadAppTenantId: tenantId,
+                aadAppClientId: clientId
+            } = config;
 
-        const changeDetails = body?.value[0]?.resourceData;
-        const targetConnectorState = changeDetails?.state;
+            const token = body?.validationTokens[0];
+            console.log(`Validating token: ${token}, tenantId: ${tenantId}, clientId: ${clientId}...`);
+            await validateToken(token, tenantId, clientId);
+            console.log('Token validated');
 
-        const message: ConnectionMessage = {
-            connectorId: changeDetails?.id,
-            connectorTicket: changeDetails?.connectorsTicket
-        }
+            const changeDetails = body?.value[0]?.resourceData;
+            const targetConnectorState = changeDetails?.state;
 
-        if (targetConnectorState === TargetConnectorState.Enabled) {
-            message.action = 'create';
-        }
-        else if (targetConnectorState === TargetConnectorState.Disabled) {
-            message.action = 'delete';
-        }
+            const message: ConnectionMessage = {
+                connectorId: changeDetails?.id,
+                connectorTicket: changeDetails?.connectorsTicket
+            }
 
-        if (!message.action) {
-            context.error('Invalid action');
-            return;
-        }
+            if (targetConnectorState === TargetConnectorState.Enabled) {
+                message.action = 'create';
+            }
+            else if (targetConnectorState === TargetConnectorState.Disabled) {
+                message.action = 'delete';
+            }
 
-        context.log(JSON.stringify(message, null, 2));
+            if (!message.action) {
+                console.error('Invalid action');
+                return;
+            }
 
-        const queueClient = await getQueueClient('queue-connection');
-        const messageString = btoa(JSON.stringify(message));
-        context.log('Sending message to queue queue-connection: ${message}');
-        // must base64 encode
-        await queueClient.sendMessage(messageString);
-        context.log('Message sent');
+            console.log(JSON.stringify(message, null, 2));
+
+            const queueClient = await getQueueClient('queue-connection');
+            const messageString = btoa(JSON.stringify(message));
+            console.log('Sending message to queue queue-connection: ${message}');
+            // must base64 encode
+            await queueClient.sendMessage(messageString);
+            console.log('Message sent');
+        })();
 
         return {
             status: 202

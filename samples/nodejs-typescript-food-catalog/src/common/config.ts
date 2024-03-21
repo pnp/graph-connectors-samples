@@ -6,6 +6,7 @@ export const config = {
   aadAppClientSecret: process.env.AAD_APP_CLIENT_SECRET,
   storageAccountConnectionString: process.env.AzureWebJobsStorage,
   notificationEndpoint: process.env.NOTIFICATION_ENDPOINT,
+  graphSchemaStatusInterval: parseInt(process.env.GRAPH_SCHEMA_STATUS_INTERVAL) || 60,
   connector: {
     // 3-32 characters
     id: 'foodstore',

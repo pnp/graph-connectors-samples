@@ -12,12 +12,12 @@ export async function getQueueClient(queueName: string) {
 
 export async function enqueueCheckStatus(location: string) {
   const message: ConnectionMessage = {
-      action: 'status',
-      location
+    action: 'status',
+    location
   }
   const queueClient = await getQueueClient('queue-connection');
   // wait 60s before polling again for status
-  await queueClient.sendMessage(btoa(JSON.stringify(message)), { visibilityTimeout: 60 });
+  await queueClient.sendMessage(btoa(JSON.stringify(message)), { visibilityTimeout: config.graphSchemaStatusInterval });
 }
 
 export async function startCrawl(crawlType: CrawlType) {
