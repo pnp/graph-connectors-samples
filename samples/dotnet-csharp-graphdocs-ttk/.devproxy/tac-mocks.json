@@ -1,0 +1,105 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.16.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/servicePrincipals?$filter=appId%20eq%20%27ef1da9d4-ff77-4c3e-a005-840c3f830745%27&$select=id,appId"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"
+          }
+        ],
+        "body": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#servicePrincipals(id,appId)",
+          "value": [
+            {
+              "id": "c271888f-668c-483f-9cf2-9b439f4e3436",
+              "appId": "bae86882-0118-4e2e-ae1f-294cd2dc5938"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/servicePrincipals/c271888f-668c-483f-9cf2-9b439f4e3436/oauth2permissiongrants"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"
+          }
+        ],
+        "body": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#oauth2PermissionGrants",
+          "value": []
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/servicePrincipals/c271888f-668c-483f-9cf2-9b439f4e3436/appRoleAssignments"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"
+          }
+        ],
+        "body": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#servicePrincipals('c271888f-668c-483f-9cf2-9b439f4e3436')/appRoleAssignments",
+          "value": [
+            {
+              "id": "j4hxwoxmP0ic8ptDn040NkF3z3aI6btBmvvbBmUjxoA",
+              "deletedDateTime": null,
+              "appRoleId": "8116ae0f-55c2-452d-9944-d18420f5b2c8",
+              "createdDateTime": "2024-04-11T13:47:26.3775933Z",
+              "principalDisplayName": "GraphDocsConnector-local",
+              "principalId": "c271888f-668c-483f-9cf2-9b439f4e3436",
+              "principalType": "ServicePrincipal",
+              "resourceDisplayName": "Microsoft Graph",
+              "resourceId": "c9b744fa-88c1-4ea3-951a-c717cd79cf9d"
+            },
+            {
+              "id": "j4hxwoxmP0ic8ptDn040NjLvrE_svGRHlm0j3oMStW8",
+              "deletedDateTime": null,
+              "appRoleId": "f431331c-49a6-499f-be1c-62af19c34a9d",
+              "createdDateTime": "2024-04-11T13:47:26.3205892Z",
+              "principalDisplayName": "GraphDocsConnector-local",
+              "principalId": "c271888f-668c-483f-9cf2-9b439f4e3436",
+              "principalType": "ServicePrincipal",
+              "resourceDisplayName": "Microsoft Graph",
+              "resourceId": "c9b744fa-88c1-4ea3-951a-c717cd79cf9d"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*-admin.teams.microsoft.com/api/v1/GraphConnectedApp/*"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "state": "disabled",
+          "connections": []
+        }
+      }
+    }
+  ]
+}

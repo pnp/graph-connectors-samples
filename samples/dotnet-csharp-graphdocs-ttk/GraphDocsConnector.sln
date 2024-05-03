@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDocsConnector", "GraphDocsConnector.csproj", "{0E1EF0EC-E4F0-4120-A439-157B4FBC148B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E1EF0EC-E4F0-4120-A439-157B4FBC148B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1EF0EC-E4F0-4120-A439-157B4FBC148B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1EF0EC-E4F0-4120-A439-157B4FBC148B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1EF0EC-E4F0-4120-A439-157B4FBC148B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E57E0EC-3FA4-4A3D-8FEF-47B83CB54BFD}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,262 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.17.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://sts.windows.net/fa15d692-e9c7-4460-a743-29f29522229/.well-known/openid-configuration"
+      },
+      "response": {
+        "body": {
+          "token_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/token",
+          "token_endpoint_auth_methods_supported": [
+            "client_secret_post",
+            "private_key_jwt",
+            "client_secret_basic"
+          ],
+          "jwks_uri": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/discovery/keys",
+          "response_modes_supported": [
+            "query",
+            "fragment",
+            "form_post"
+          ],
+          "subject_types_supported": [
+            "pairwise"
+          ],
+          "id_token_signing_alg_values_supported": [
+            "RS256"
+          ],
+          "response_types_supported": [
+            "code",
+            "id_token",
+            "code id_token",
+            "token id_token",
+            "token"
+          ],
+          "scopes_supported": [
+            "openid"
+          ],
+          "issuer": "https://sts.windows.net/{tenantid}/",
+          "microsoft_multi_refresh_token": true,
+          "authorization_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/authorize",
+          "device_authorization_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/devicecode",
+          "http_logout_supported": true,
+          "frontchannel_logout_supported": true,
+          "end_session_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/logout",
+          "claims_supported": [
+            "sub",
+            "iss",
+            "cloud_instance_name",
+            "cloud_instance_host_name",
+            "cloud_graph_host_name",
+            "msgraph_host",
+            "aud",
+            "exp",
+            "iat",
+            "auth_time",
+            "acr",
+            "amr",
+            "nonce",
+            "email",
+            "given_name",
+            "family_name",
+            "nickname"
+          ],
+          "check_session_iframe": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/checksession",
+          "userinfo_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/openid/userinfo",
+          "kerberos_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/kerberos",
+          "tenant_region_scope": null,
+          "cloud_instance_name": "microsoftonline.com",
+          "cloud_graph_host_name": "graph.windows.net",
+          "msgraph_host": "graph.microsoft.com",
+          "rbac_url": "https://pas.windows.net"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/fa15d692-e9c7-4460-a743-29f29522229/discovery/keys"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "keys": [
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "q-23falevZhhD3hm9CQbkP5MQyU",
+              "x5t": "q-23falevZhhD3hm9CQbkP5MQyU",
+              "n": "-9dXkqvGEcIba_TAwmY_ezbn6kLFl6ZMyR7XFCacMf6bBQ0CLlOy9KrDYxI5bm2XAb7qHMKb40d1CyAtO40BV1MZQdrkmLay7RFjQBV6SB24TrC4P0nNXWJCchzzlyesb6S3mqvWVaxRkTS3FkFC8UMsqg2itVcKJW1S2qQCOwF3Sug5GBPYezM_F56_ZfLBpA2aRHzE4eboWoiFjjXN9NqUELACl-DyfWXiyqehRIjuX6hG7lT2erkwWwFgFApi3W4zRtjCx5kRzZtqjDBLWYypBdBBFF8teaCjOq09RF05ZMRlzQKIORb0MxJw_XxVCzXPkKsdchZMBbH3PIuB4Q",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/TCCAeWgAwIBAgIINKBA6Wcz+Q4wDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDAzMDYxNzAzMzJaFw0yOTAzMDYxNzAzMzJaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQD711eSq8YRwhtr9MDCZj97NufqQsWXpkzJHtcUJpwx/psFDQIuU7L0qsNjEjlubZcBvuocwpvjR3ULIC07jQFXUxlB2uSYtrLtEWNAFXpIHbhOsLg/Sc1dYkJyHPOXJ6xvpLeaq9ZVrFGRNLcWQULxQyyqDaK1VwolbVLapAI7AXdK6DkYE9h7Mz8Xnr9l8sGkDZpEfMTh5uhaiIWONc302pQQsAKX4PJ9ZeLKp6FEiO5fqEbuVPZ6uTBbAWAUCmLdbjNG2MLHmRHNm2qMMEtZjKkF0EEUXy15oKM6rT1EXTlkxGXNAog5FvQzEnD9fFULNc+Qqx1yFkwFsfc8i4HhAgMBAAGjITAfMB0GA1UdDgQWBBRRZhKrglETd/OCIUfwuGTRJkwNUTANBgkqhkiG9w0BAQsFAAOCAQEA46UCoAJlXMuxB/21GTP96KHx8zoYt2UnvCFxkLpRrkRThVBhTbd/txAYPb3eAGuhjJlNstKxfcCUaquKktQAdeGPA+Kn62DlksFaXjrcC0rGaiD+MiY2B/ATS0ebCYL3s3BJNmKKB9+1kbbcWCSQelcM2cNjJHJDqUhTyWMnTz4UK9RXwHFLq/T3yYP0qz/FZZR6RfCWzXz35SkZVObDMhPcyLgxy6CLMQotrtThsqn/2JZ7We/ehl6xCgVym6hfuv0Ju9WtZal+k46XDw2R3IoHJueB/vD0hLOqdZerwzD5OsCrTW2n3njN2nDHhCzlxGrhlleNDJhawFoxzSOuhQ=="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "V1Y09OFMBXAZUFfJ-vWjlrH-ZSc",
+              "x5t": "V1Y09OFMBXAZUFfJ-vWjlrH-ZSc",
+              "n": "qinPWt_43NIzlluP8oLBaKXBHMJ0pZWNOu5yxCD_UZ7B5yrdMdzgFhr0cpDcp3vkkE97MyyIN3a2tg8UhHCtphkShbKiO36uNjc0TC-jVnhwI_mLZ1piP0gkItm26YTLw71rY9JpS2dY4CxnsHH6V8vsVaaQAGQByM6BdwUiep-7-Cn69iWybZkga_8gZAy9O1hOyBV22mKVRuWsLwLeBcahlOEGJeP4tx8vVSjKTX8tV2HJlL01JjxBojGdwtiqwr7iEOoUAwMhC9b80ASkSRcb-mU-SfGhmSP-DVgD1nXzFcu-v2bVDr4-OpLuOljzJVEz0r4W4tmf3KwToAQNcQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/TCCAeWgAwIBAgIIdZL3187SZ0EwDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDAzMDYyMTA4MDdaFw0yOTAzMDYyMTA4MDdaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCqKc9a3/jc0jOWW4/ygsFopcEcwnSllY067nLEIP9RnsHnKt0x3OAWGvRykNyne+SQT3szLIg3dra2DxSEcK2mGRKFsqI7fq42NzRML6NWeHAj+YtnWmI/SCQi2bbphMvDvWtj0mlLZ1jgLGewcfpXy+xVppAAZAHIzoF3BSJ6n7v4Kfr2JbJtmSBr/yBkDL07WE7IFXbaYpVG5awvAt4FxqGU4QYl4/i3Hy9VKMpNfy1XYcmUvTUmPEGiMZ3C2KrCvuIQ6hQDAyEL1vzQBKRJFxv6ZT5J8aGZI/4NWAPWdfMVy76/ZtUOvj46ku46WPMlUTPSvhbi2Z/crBOgBA1xAgMBAAGjITAfMB0GA1UdDgQWBBQxCpcti/aMWYbvhjLCL5sKhcQ1pjANBgkqhkiG9w0BAQsFAAOCAQEAK+rZEgIu+e7ARr9IIYxMXSxJ9gy6Wnw0ZMtchoDvUufFmWnwHtj15zByNpaNRvojHWaWrfqQsk+bKzazPWXTOiM7yoLxKfzM4fYI3QP5TRizGvz5p4COLBiDB7XvOiFsm0SxJzhhba5+3J0CmDhsURfzhw7AX+OCL7arF5gPv4PMIQ8GiTlukVzWN7EhQ2DZbm74jVOYwTN74+ECynB/NZvprn0MOWmDMxD7ysi2Wv459tg1nGSMGkcIHOo2DSj18nm25QHzUjjbmkma36uw2lM/Lsjd0HsueD2nS+4eiVYqsuC4cDO/LvlRdMteuZLgvdqX35Xm608VGUPoDaFDUQ=="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "L1KfKFI_jnXbwWc22xZxw1sUHH0",
+              "x5t": "L1KfKFI_jnXbwWc22xZxw1sUHH0",
+              "n": "ojzOLoPAa8DykJWn0dz9vB_lPTkwtCyw1oR8WFpszoBaG-hKmBhYLCuyyOWIoIgmxETI5-bulQzsCTR79WWxq6sNxXPTlBy4i1ihjwhnD7CrgRu0U_O8GPzMMPlQXYs_C-tt0OdPPYEYv_ZzbNkgMTNaR5WWe-d3L4nDMWrSP70Sz-8_kcmA1qaap_MT_N9a5QidD20bfOvdXttNxu6_azAVN5UYeBevrTaJHO2HRVicw_zKwJSZV26jljpsmGMiNUu2anARS2C4KM_HCIfX7cwE9A89pJ1Uh58bBL98b1NDzGkt0hVCBTilPakhR4RHP0U9dvHFo3pUJd1Qrl9AQQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/TCCAeWgAwIBAgIIOdwuMdHVGkEwDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDA0MTExNjA0MjZaFw0yOTA0MTExNjA0MjZaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCiPM4ug8BrwPKQlafR3P28H+U9OTC0LLDWhHxYWmzOgFob6EqYGFgsK7LI5YigiCbERMjn5u6VDOwJNHv1ZbGrqw3Fc9OUHLiLWKGPCGcPsKuBG7RT87wY/Mww+VBdiz8L623Q5089gRi/9nNs2SAxM1pHlZZ753cvicMxatI/vRLP7z+RyYDWppqn8xP831rlCJ0PbRt8691e203G7r9rMBU3lRh4F6+tNokc7YdFWJzD/MrAlJlXbqOWOmyYYyI1S7ZqcBFLYLgoz8cIh9ftzAT0Dz2knVSHnxsEv3xvU0PMaS3SFUIFOKU9qSFHhEc/RT128cWjelQl3VCuX0BBAgMBAAGjITAfMB0GA1UdDgQWBBTXp9LEVP2CZiM0hEP5t18l/sDAfzANBgkqhkiG9w0BAQsFAAOCAQEAH5vIhhDC8d+31sm9Lo5Ohlsabmv7eA3JgXKw7x4VDFoQxrZHMw0qsQOk9bTrwJHa09o0CQkO8VZG5zJ0ZpXplRtrN8FaKCLb1qstF2P6wuZIZR1EJTJb4L5VvhaSUiFWkBfQPBDMVJd9g2CEOhW+1jIKEea0wt3AC2zUvNybhbSzDMyPNSwu0EiZLJsUMdbOxdGmCZjvIWMaddDu9GVT+KtPWYDDKs2POZoYPDGCp6ftd2+L+ma2gZCL3HvFBWjCIctsu20aHP8retkEOiVzMVbt68gDyT61VTlhBM/pxlcHMO6wfA1nQzY2qDwMCEOocmsYt3mrITolYxxyBjSVnA=="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "UxyGE-ffaoAkooUxUFn0ar7fvDM",
+              "x5t": "UxyGE-ffaoAkooUxUFn0ar7fvDM",
+              "n": "2fVfr9fJb8m5eDwVp6WhzO7-ezI9OfeQPTpHKB8j2wlBJNu6oYGPC4McDysfNyKtUaYQpyckupAquEjAcP8CDjcv4B7pjdlgR25JLXuemMl8LD5bOu4s55EwmPewoHlBInWDK5rgRryoApZNQGVuI4u7Q56DNNsXo7I1qS13MmXKrwO1rp0PIetHesDNT2nnY6xjHlTGPkc-aydV8QNulStdiXOnbiV7wQzQmtqjK3AWE_oJHIuTaGwdVeqSqNaJKSCGEPb9G8J1Q-tFh0TOgqPjk5Qb_uO5X_0Fw_4OI1xeGqoMuOROi_StRXv4IvfbGnZgbsV4dOUL0kJEBRPglQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC6jCCAdKgAwIBAgIJAOnFoXSbn2jjMA0GCSqGSIb3DQEBCwUAMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czAeFw0yNDAzMjQyMTQyMzJaFw0yOTAzMjQyMTQyMzJaMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANn1X6/XyW/JuXg8Faeloczu/nsyPTn3kD06RygfI9sJQSTbuqGBjwuDHA8rHzcirVGmEKcnJLqQKrhIwHD/Ag43L+Ae6Y3ZYEduSS17npjJfCw+WzruLOeRMJj3sKB5QSJ1gyua4Ea8qAKWTUBlbiOLu0OegzTbF6OyNaktdzJlyq8Dta6dDyHrR3rAzU9p52OsYx5Uxj5HPmsnVfEDbpUrXYlzp24le8EM0JraoytwFhP6CRyLk2hsHVXqkqjWiSkghhD2/RvCdUPrRYdEzoKj45OUG/7juV/9BcP+DiNcXhqqDLjkTov0rUV7+CL32xp2YG7FeHTlC9JCRAUT4JUCAwEAAaMhMB8wHQYDVR0OBBYEFOBFoFzi/Txj04qIPOx5PFEPf8WFMA0GCSqGSIb3DQEBCwUAA4IBAQCKdwSHnxHX2KZv63dhMugnBXR0qA6gVIOL3d60Nh7TReEhJ98DsSYtxSM9vrdMac+4m6Yg/slvRZD4jet/cH/qCjA+I+LUkrU0MEWqhf03BsEwlSY9ZGbOtWdgPwobFK7Y+M7wuPKSSrwPiBUgrG4UFpZbDVr3VYMljgYfXu3WwtshqdgslvQFQZugKLsoAaR9v1SlNRyOL6qDaqN9x3cHbIniApRjBJFrVijhZm5JRE/vyMgKl6EaBLDoQtvSIOARi8NwZi5LFB0361MR0eE18i87rvPO6cF4Vz2kg+cC9N54wf+gbINHREkbO70B1Q+QbbtlkfWR7y9Q1HMrnA3O"
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "@dynamic.devProxyKeyId",
+              "x5t": "@dynamic.devProxyKeyId",
+              "n": "vRIL3aZt-xVqOZgMOr71ltWe9YY2Wf_B28C4Jl2nBSTEcFnf_eqOHZ8yzUBbLc4Nti2_ETcCsTUNuzS368BWkSgxc45JBH1wFSoWNFUSXaPt8mRwJYTF0H32iNhw_tBb9mvdQVgVs4Ci0dVJRYiz-ilk3PeO8wzlwRuwWIsaKFYlMyOKG9DVFbg93DmP5Tjq3C3oJlATyhAiJJc1T2trEP8960an33dDEaWwVAHh3c_34meAO4R6kLzIq0JnSsZMYB9O_6bMyIlzxmdZ8F442SynCUHxhnIh3yZew-xDdeHr6Ofl7KeVUcvSiZP9X44CaVJvknXQbBYNl-H7YF5RgQ",
+              "e": "AQAB",
+              "x5c": [
+                "@dynamic.devProxyCertificateChain"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/discovery/keys"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "keys": [
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "q-23falevZhhD3hm9CQbkP5MQyU",
+              "x5t": "q-23falevZhhD3hm9CQbkP5MQyU",
+              "n": "-9dXkqvGEcIba_TAwmY_ezbn6kLFl6ZMyR7XFCacMf6bBQ0CLlOy9KrDYxI5bm2XAb7qHMKb40d1CyAtO40BV1MZQdrkmLay7RFjQBV6SB24TrC4P0nNXWJCchzzlyesb6S3mqvWVaxRkTS3FkFC8UMsqg2itVcKJW1S2qQCOwF3Sug5GBPYezM_F56_ZfLBpA2aRHzE4eboWoiFjjXN9NqUELACl-DyfWXiyqehRIjuX6hG7lT2erkwWwFgFApi3W4zRtjCx5kRzZtqjDBLWYypBdBBFF8teaCjOq09RF05ZMRlzQKIORb0MxJw_XxVCzXPkKsdchZMBbH3PIuB4Q",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/TCCAeWgAwIBAgIINKBA6Wcz+Q4wDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDAzMDYxNzAzMzJaFw0yOTAzMDYxNzAzMzJaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQD711eSq8YRwhtr9MDCZj97NufqQsWXpkzJHtcUJpwx/psFDQIuU7L0qsNjEjlubZcBvuocwpvjR3ULIC07jQFXUxlB2uSYtrLtEWNAFXpIHbhOsLg/Sc1dYkJyHPOXJ6xvpLeaq9ZVrFGRNLcWQULxQyyqDaK1VwolbVLapAI7AXdK6DkYE9h7Mz8Xnr9l8sGkDZpEfMTh5uhaiIWONc302pQQsAKX4PJ9ZeLKp6FEiO5fqEbuVPZ6uTBbAWAUCmLdbjNG2MLHmRHNm2qMMEtZjKkF0EEUXy15oKM6rT1EXTlkxGXNAog5FvQzEnD9fFULNc+Qqx1yFkwFsfc8i4HhAgMBAAGjITAfMB0GA1UdDgQWBBRRZhKrglETd/OCIUfwuGTRJkwNUTANBgkqhkiG9w0BAQsFAAOCAQEA46UCoAJlXMuxB/21GTP96KHx8zoYt2UnvCFxkLpRrkRThVBhTbd/txAYPb3eAGuhjJlNstKxfcCUaquKktQAdeGPA+Kn62DlksFaXjrcC0rGaiD+MiY2B/ATS0ebCYL3s3BJNmKKB9+1kbbcWCSQelcM2cNjJHJDqUhTyWMnTz4UK9RXwHFLq/T3yYP0qz/FZZR6RfCWzXz35SkZVObDMhPcyLgxy6CLMQotrtThsqn/2JZ7We/ehl6xCgVym6hfuv0Ju9WtZal+k46XDw2R3IoHJueB/vD0hLOqdZerwzD5OsCrTW2n3njN2nDHhCzlxGrhlleNDJhawFoxzSOuhQ=="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "V1Y09OFMBXAZUFfJ-vWjlrH-ZSc",
+              "x5t": "V1Y09OFMBXAZUFfJ-vWjlrH-ZSc",
+              "n": "qinPWt_43NIzlluP8oLBaKXBHMJ0pZWNOu5yxCD_UZ7B5yrdMdzgFhr0cpDcp3vkkE97MyyIN3a2tg8UhHCtphkShbKiO36uNjc0TC-jVnhwI_mLZ1piP0gkItm26YTLw71rY9JpS2dY4CxnsHH6V8vsVaaQAGQByM6BdwUiep-7-Cn69iWybZkga_8gZAy9O1hOyBV22mKVRuWsLwLeBcahlOEGJeP4tx8vVSjKTX8tV2HJlL01JjxBojGdwtiqwr7iEOoUAwMhC9b80ASkSRcb-mU-SfGhmSP-DVgD1nXzFcu-v2bVDr4-OpLuOljzJVEz0r4W4tmf3KwToAQNcQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/TCCAeWgAwIBAgIIdZL3187SZ0EwDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDAzMDYyMTA4MDdaFw0yOTAzMDYyMTA4MDdaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCqKc9a3/jc0jOWW4/ygsFopcEcwnSllY067nLEIP9RnsHnKt0x3OAWGvRykNyne+SQT3szLIg3dra2DxSEcK2mGRKFsqI7fq42NzRML6NWeHAj+YtnWmI/SCQi2bbphMvDvWtj0mlLZ1jgLGewcfpXy+xVppAAZAHIzoF3BSJ6n7v4Kfr2JbJtmSBr/yBkDL07WE7IFXbaYpVG5awvAt4FxqGU4QYl4/i3Hy9VKMpNfy1XYcmUvTUmPEGiMZ3C2KrCvuIQ6hQDAyEL1vzQBKRJFxv6ZT5J8aGZI/4NWAPWdfMVy76/ZtUOvj46ku46WPMlUTPSvhbi2Z/crBOgBA1xAgMBAAGjITAfMB0GA1UdDgQWBBQxCpcti/aMWYbvhjLCL5sKhcQ1pjANBgkqhkiG9w0BAQsFAAOCAQEAK+rZEgIu+e7ARr9IIYxMXSxJ9gy6Wnw0ZMtchoDvUufFmWnwHtj15zByNpaNRvojHWaWrfqQsk+bKzazPWXTOiM7yoLxKfzM4fYI3QP5TRizGvz5p4COLBiDB7XvOiFsm0SxJzhhba5+3J0CmDhsURfzhw7AX+OCL7arF5gPv4PMIQ8GiTlukVzWN7EhQ2DZbm74jVOYwTN74+ECynB/NZvprn0MOWmDMxD7ysi2Wv459tg1nGSMGkcIHOo2DSj18nm25QHzUjjbmkma36uw2lM/Lsjd0HsueD2nS+4eiVYqsuC4cDO/LvlRdMteuZLgvdqX35Xm608VGUPoDaFDUQ=="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "L1KfKFI_jnXbwWc22xZxw1sUHH0",
+              "x5t": "L1KfKFI_jnXbwWc22xZxw1sUHH0",
+              "n": "ojzOLoPAa8DykJWn0dz9vB_lPTkwtCyw1oR8WFpszoBaG-hKmBhYLCuyyOWIoIgmxETI5-bulQzsCTR79WWxq6sNxXPTlBy4i1ihjwhnD7CrgRu0U_O8GPzMMPlQXYs_C-tt0OdPPYEYv_ZzbNkgMTNaR5WWe-d3L4nDMWrSP70Sz-8_kcmA1qaap_MT_N9a5QidD20bfOvdXttNxu6_azAVN5UYeBevrTaJHO2HRVicw_zKwJSZV26jljpsmGMiNUu2anARS2C4KM_HCIfX7cwE9A89pJ1Uh58bBL98b1NDzGkt0hVCBTilPakhR4RHP0U9dvHFo3pUJd1Qrl9AQQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/TCCAeWgAwIBAgIIOdwuMdHVGkEwDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDA0MTExNjA0MjZaFw0yOTA0MTExNjA0MjZaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCiPM4ug8BrwPKQlafR3P28H+U9OTC0LLDWhHxYWmzOgFob6EqYGFgsK7LI5YigiCbERMjn5u6VDOwJNHv1ZbGrqw3Fc9OUHLiLWKGPCGcPsKuBG7RT87wY/Mww+VBdiz8L623Q5089gRi/9nNs2SAxM1pHlZZ753cvicMxatI/vRLP7z+RyYDWppqn8xP831rlCJ0PbRt8691e203G7r9rMBU3lRh4F6+tNokc7YdFWJzD/MrAlJlXbqOWOmyYYyI1S7ZqcBFLYLgoz8cIh9ftzAT0Dz2knVSHnxsEv3xvU0PMaS3SFUIFOKU9qSFHhEc/RT128cWjelQl3VCuX0BBAgMBAAGjITAfMB0GA1UdDgQWBBTXp9LEVP2CZiM0hEP5t18l/sDAfzANBgkqhkiG9w0BAQsFAAOCAQEAH5vIhhDC8d+31sm9Lo5Ohlsabmv7eA3JgXKw7x4VDFoQxrZHMw0qsQOk9bTrwJHa09o0CQkO8VZG5zJ0ZpXplRtrN8FaKCLb1qstF2P6wuZIZR1EJTJb4L5VvhaSUiFWkBfQPBDMVJd9g2CEOhW+1jIKEea0wt3AC2zUvNybhbSzDMyPNSwu0EiZLJsUMdbOxdGmCZjvIWMaddDu9GVT+KtPWYDDKs2POZoYPDGCp6ftd2+L+ma2gZCL3HvFBWjCIctsu20aHP8retkEOiVzMVbt68gDyT61VTlhBM/pxlcHMO6wfA1nQzY2qDwMCEOocmsYt3mrITolYxxyBjSVnA=="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "UxyGE-ffaoAkooUxUFn0ar7fvDM",
+              "x5t": "UxyGE-ffaoAkooUxUFn0ar7fvDM",
+              "n": "2fVfr9fJb8m5eDwVp6WhzO7-ezI9OfeQPTpHKB8j2wlBJNu6oYGPC4McDysfNyKtUaYQpyckupAquEjAcP8CDjcv4B7pjdlgR25JLXuemMl8LD5bOu4s55EwmPewoHlBInWDK5rgRryoApZNQGVuI4u7Q56DNNsXo7I1qS13MmXKrwO1rp0PIetHesDNT2nnY6xjHlTGPkc-aydV8QNulStdiXOnbiV7wQzQmtqjK3AWE_oJHIuTaGwdVeqSqNaJKSCGEPb9G8J1Q-tFh0TOgqPjk5Qb_uO5X_0Fw_4OI1xeGqoMuOROi_StRXv4IvfbGnZgbsV4dOUL0kJEBRPglQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC6jCCAdKgAwIBAgIJAOnFoXSbn2jjMA0GCSqGSIb3DQEBCwUAMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czAeFw0yNDAzMjQyMTQyMzJaFw0yOTAzMjQyMTQyMzJaMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANn1X6/XyW/JuXg8Faeloczu/nsyPTn3kD06RygfI9sJQSTbuqGBjwuDHA8rHzcirVGmEKcnJLqQKrhIwHD/Ag43L+Ae6Y3ZYEduSS17npjJfCw+WzruLOeRMJj3sKB5QSJ1gyua4Ea8qAKWTUBlbiOLu0OegzTbF6OyNaktdzJlyq8Dta6dDyHrR3rAzU9p52OsYx5Uxj5HPmsnVfEDbpUrXYlzp24le8EM0JraoytwFhP6CRyLk2hsHVXqkqjWiSkghhD2/RvCdUPrRYdEzoKj45OUG/7juV/9BcP+DiNcXhqqDLjkTov0rUV7+CL32xp2YG7FeHTlC9JCRAUT4JUCAwEAAaMhMB8wHQYDVR0OBBYEFOBFoFzi/Txj04qIPOx5PFEPf8WFMA0GCSqGSIb3DQEBCwUAA4IBAQCKdwSHnxHX2KZv63dhMugnBXR0qA6gVIOL3d60Nh7TReEhJ98DsSYtxSM9vrdMac+4m6Yg/slvRZD4jet/cH/qCjA+I+LUkrU0MEWqhf03BsEwlSY9ZGbOtWdgPwobFK7Y+M7wuPKSSrwPiBUgrG4UFpZbDVr3VYMljgYfXu3WwtshqdgslvQFQZugKLsoAaR9v1SlNRyOL6qDaqN9x3cHbIniApRjBJFrVijhZm5JRE/vyMgKl6EaBLDoQtvSIOARi8NwZi5LFB0361MR0eE18i87rvPO6cF4Vz2kg+cC9N54wf+gbINHREkbO70B1Q+QbbtlkfWR7y9Q1HMrnA3O"
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "@dynamic.devProxyKeyId",
+              "x5t": "@dynamic.devProxyKeyId",
+              "n": "rV8eXna9NCyzvgVZvbz18NhLIAfo1Qzn-VQQCbQzyGi2KDe3RI2sLeHltv9mVI2sahcRjgvhYNSETyxqHaKw3w8L4jg0kJdfzhD8dvpl32hunOCzuY2WpyJVq6CkxzGN4iikWTEIe_GMGsu9qhdxybaTCBTAya8qyKL1sbEByk8FiY6nsm6BhuRUVCh_rzfAp3HY-U_58ORLF1tmZrmSljHMFwlxvYuOIlKHacXy9gen8HsT7PUSA4n2PdnT1XAmlKJG1mzvdqyG2L3iRQJ45tcmrERKcd1pYwhb7ZtTyKypkeR9lkKbaYiQUt1QhpeO12pH1bRB1_k9MMzOm8Ca1Q",
+              "e": "AQAB",
+              "x5c": [
+                "@dynamic.devProxyCertificateChain"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/fa15d692-e9c7-4460-a743-29f29522229/oauth2/v2.0/token",
+        "method": "POST",
+        "bodyFragment": "scope=https%3A%2F%2Fgraph.microsoft.com%2F.default"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "token_type": "Bearer",
+          "expires_in": 3599,
+          "ext_expires_in": 3599,
+          "access_token": "eyJ0eXAiOiJKV1QiLCJub25jZSI6ImQ0ODh0NVI3Ql9wQVdMMUtadEc5NWtxSjRuY2hhOVdCSkJld3JKWWdzOVEiLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mYTE1ZDY5Mi1lOWM3LTQ0NjAtYTc0My0yOWYyOTUyMjIyOS8iLCJpYXQiOjE3MTAxNDU1MDEsIm5iZiI6MTcxMDE0NTUwMSwiZXhwIjoxNzEwMTQ5NDAxLCJhaW8iOiJFMk5nWUlpelc3QlMrYlJtdmtuNW0vWjEvK1RUQUE9PSIsImFwcF9kaXNwbGF5bmFtZSI6Ik1pY3Jvc29mdCBHcmFwaCBjb25uZWN0b3IiLCJhcHBpZCI6ImVmMWRhOWQ0LWZmNzctNGMzZS1hMDA1LTg0MGMzZjgzMDc0NSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2ZhMTVkNjkyLWU5YzctNDQ2MC1hNzQzLTI5ZjI5NTIyMjI5LyIsImlkdHlwIjoiYXBwIiwib2lkIjoiNmFiNWE1OWYtZGI4Yi00YWYzLWFiMTgtZWNlNjI5YjNhYTgwIiwicmgiOiIwLkFVNEFqRHl3QWx5bEkwLVNoZFc5ajRHWG1nTUFBQUFBQUFBQXdBQUFBQUFBQUFBT0FRQS4iLCJyb2xlcyI6WyJFeHRlcm5hbENvbm5lY3Rpb24uUmVhZFdyaXRlLk93bmVkQnkiLCJFeHRlcm5hbEl0ZW0uUmVhZFdyaXRlLk93bmVkQnkiXSwic3ViIjoiNmFiNWE1OWYtZGI4Yi00YWYzLWFiMTgtZWNlNjI5YjNhYTgwIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkVVIiwidGlkIjoiZmExNWQ2OTItZTljNy00NDYwLWE3NDMtMjlmMjk1MjIyMjkiLCJ1dGkiOiIzcDRPeFlLZzNrbUJ6eDlYd3FCWEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyIwOTk3YTFkMC0wZDFkLTRhY2ItYjQwOC1kNWNhNzMxMjFlOTAiXSwieG1zX3RjZHQiOjE2MzQwNzg5NDIsInhtc190ZGJyIjoiRVUifQ.rdyLh7G_3qpXsYiYyB3sLHQ3qAQEl-o60n8gaDe-9yCLp_oVv8NVhaqF-OStrMbY2GxuDr8mvEnIyawr1mE60VaxjF0p6PDtpQV5EnEm44zuKuRO6qPmoP2ZUUmMjxDyKCnohSkiqNm_60cVDgAip8g42PhKKN_eY4wG5nwqYF3QQtlMSqMwVWtJyO76CpVrNjsnPx1-Eza6mlOZoVYPWNwnUA64poR7vXydsFkCANYKZpk4O0_pe-5JqXz5-L4zv2V3qU6aVVXdJ6f5HyYDEBp9qTcoVzjxSxLLBIeFMBs2KykiTGKpZGVtU0aXZHG5Hor5dkPgSlN2IWjISzp_uQ"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/fa15d692-e9c7-4460-a743-29f29522229/oauth2/v2.0/token",
+        "method": "POST",
+        "bodyFragment": "scope=https%3A%2F%2Fapi.contoso.com%2FDocuments.Read"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "token_type": "Bearer",
+          "expires_in": 3599,
+          "ext_expires_in": 3599,
+          "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiJodHRwczovL2FwaS5jb250b3NvLmNvbSIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2ZhMTVkNjkyLWU5YzctNDQ2MC1hNzQzLTI5ZjI5NTIyMjI5LyIsImlhdCI6MTcxMDE0NTUwMSwibmJmIjoxNzEwMTQ1NTAxLCJleHAiOjE3MTAxNDk0MDEsImFpbyI6IkUyTmdZSWl6VzdCUytiUm12a241bS9aMS8rVFRBQT09IiwiYXBwX2Rpc3BsYXluYW1lIjoiTWljcm9zb2Z0IEdyYXBoIGNvbm5lY3RvciIsImFwcGlkIjoiZWYxZGE5ZDQtZmY3Ny00YzNlLWEwMDUtODQwYzNmODMwNzQ1IiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvZmExNWQ2OTItZTljNy00NDYwLWE3NDMtMjlmMjk1MjIyMjkvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI2YWI1YTU5Zi1kYjhiLTRhZjMtYWIxOC1lY2U2MjliM2FhODAiLCJyaCI6IjAuQVU0QWpEeXdBbHlsSTAtU2hkVzlqNEdYbWdNQUFBQUFBQUFBd0FBQUFBQUFBQUFPQVFBLiIsInJvbGVzIjpbImh0dHBzOi8vYXBpLmNvbnRvc28uY29tL0RvY3VtZW50cy5SZWFkIl0sInN1YiI6IjZhYjVhNTlmLWRiOGItNGFmMy1hYjE4LWVjZTYyOWIzYWE4MCIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6ImZhMTVkNjkyLWU5YzctNDQ2MC1hNzQzLTI5ZjI5NTIyMjI5IiwidXRpIjoiM3A0T3hZS2cza21Ceng5WHdxQlhBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiMDk5N2ExZDAtMGQxZC00YWNiLWI0MDgtZDVjYTczMTIxZTkwIl0sInhtc190Y2R0IjoxNjM0MDc4OTQyLCJ4bXNfdGRiciI6IkVVIn0.rdyLh7G_3qpXsYiYyB3sLHQ3qAQEl-o60n8gaDe-9yCLp_oVv8NVhaqF-OStrMbY2GxuDr8mvEnIyawr1mE60VaxjF0p6PDtpQV5EnEm44zuKuRO6qPmoP2ZUUmMjxDyKCnohSkiqNm_60cVDgAip8g42PhKKN_eY4wG5nwqYF3QQtlMSqMwVWtJyO76CpVrNjsnPx1-Eza6mlOZoVYPWNwnUA64poR7vXydsFkCANYKZpk4O0_pe-5JqXz5-L4zv2V3qU6aVVXdJ6f5HyYDEBp9qTcoVzjxSxLLBIeFMBs2KykiTGKpZGVtU0aXZHG5Hor5dkPgSlN2IWjISzp_uQ"
+        }
+      }
+    }
+  ]
+}

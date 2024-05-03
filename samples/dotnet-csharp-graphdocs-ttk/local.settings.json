@@ -1,0 +1,17 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "GRAPH_SCHEMA_STATUS_INTERVAL": 5,
+    "DocumentsApi:Url": "https://api.contoso.com",
+    "DocumentsApi:Scopes": "https://api.contoso.com/Documents.Read",
+    // simulated
+    "Entra:TenantId": "fa15d692-e9c7-4460-a743-29f29522229",
+    "Entra:ClientId": "ef1da9d4-ff77-4c3e-a005-840c3f830745",
+    "Entra:ClientSecret": "abc",
+    // can't be the standard http_proxy because it would interfere
+    // with .net and break its startup
+    "CustomProxy": "http://127.0.0.1:8000"
+  }
+}

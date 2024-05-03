@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.16.0/mockrequestplugin.schema.json",
+  "request": {
+    "url": "http://localhost:7277/api/notification",
+    "method": "POST",
+    "body": {
+      "value": [
+        {
+          "changeType": "updated",
+          "subscriptionId": "79f3b611-7f15-4bdd-9422-9606a24e49f3",
+          "resource": "external",
+          "clientState": null,
+          "resourceData": {
+            "@odata.type": "#Microsoft.Graph.connector",
+            "@odata.id": "external",
+            "id": "35177924-33fc-444d-bd51-f059ce385ec2",
+            "state": "disabled",
+            "connectorsTicket":"eyJhbGciOiJIUzI1"
+          },
+          "subscriptionExpirationDateTime": "2021-06-26T12:40:26.4436785-07:00",
+          "tenantId": "fa15d692-e9c7-4460-a743-29f29522229"
+        }
+      ],
+      "validationTokens": [ "@dynamic.validationToken" ]
+    }
+  }
+}
