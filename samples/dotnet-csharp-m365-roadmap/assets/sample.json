@@ -38,7 +38,13 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector.png",
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector01.png",
+        "alt": "M365 Roadmap Graph Connector"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector02.png",
         "alt": "M365 Roadmap Graph Connector"
       }
     ],
