@@ -64,6 +64,9 @@ provision:
           AAD_APP_CLIENT_SECRET: ${{SECRET_AAD_APP_CLIENT_SECRET}}
           AAD_APP_TENANT_ID: ${{AAD_APP_TENANT_ID}}
           NOTIFICATION_ENDPOINT: ${{NOTIFICATION_ENDPOINT}}
+          https_proxy:
+          NODE_TLS_REJECT_UNAUTHORIZED:
+          GRAPH_SCHEMA_STATUS_INTERVAL:
 
   - uses: teamsApp/publishAppPackage
     with:

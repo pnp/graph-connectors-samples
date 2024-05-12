@@ -33,9 +33,9 @@ export const config = {
       {
         name: 'title',
         type: 'String',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true',
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true,
         labels: [
           'title'
         ]
@@ -43,19 +43,19 @@ export const config = {
       {
         name: 'excerpt',
         type: 'String',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'imageUrl',
         type: 'String',
-        isRetrievable: 'true'
+        isRetrievable: true
       },
       {
         name: 'url',
         type: 'String',
-        isRetrievable: 'true',
+        isRetrievable: true,
         labels: [
           'url'
         ]
@@ -63,9 +63,9 @@ export const config = {
       {
         name: 'date',
         type: 'DateTime',
-        isQueryable: 'true',
-        isRetrievable: 'true',
-        isRefinable: 'true',
+        isQueryable: true,
+        isRetrievable: true,
+        isRefinable: true,
         labels: [
           'lastModifiedDateTime'
         ]
@@ -73,9 +73,9 @@ export const config = {
       {
         name: 'tags',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isRetrievable: 'true',
-        isRefinable: 'true'
+        isQueryable: true,
+        isRetrievable: true,
+        isRefinable: true
       }
     ]
   }

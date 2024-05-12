@@ -14,6 +14,8 @@ This sample contains a Microsoft Graph connector that shows how to ingest local 
 
 Version|Date|Comments
 -------|----|--------
+2.1|March 12, 2024|Fixed schema
+2.0|March 11, 2024|Added simulating handling Teams Admin Center notification
 1.1|October 09, 2023|Added configuring result layout
 1.0|September 29, 2023|Initial release
 
@@ -50,10 +52,17 @@ The sample illustrates the following concepts:
 
 If you want to use Dev Proxy to simulate API responses:
 
-- `NODE_TLS_REJECT_UNAUTHORIZED=0` is required to skip certificate validation errors when using the Dev Proxy
-- `NODE_NO_WARNINGS=1` suppresses Node.js warnings about skipping certificate validation
-
-These environment variables are included in the `:proxy`-suffixed scripts in `package.json`.
+- install Dev Proxy v0.16.0 or later
+- download the [`microsoft-graph-connector-notification`](https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector-notification) preset using `devproxy preset get microsof-tgraph-connector-notification`
+- check out the sample readme for additional information and usage instructions
+  - `NODE_TLS_REJECT_UNAUTHORIZED=0` is required to skip certificate validation errors when using the Dev Proxy
+  - `NODE_NO_WARNINGS=1` suppresses Node.js warnings about skipping certificate validation
+  - These environment variables are included in the `:proxy`-suffixed scripts in `package.json`.
+- instead of running the `setup.sh` script, rename the `simulated.env.js` file to `env.js` to use the simulated environment
+- start Dev Proxy using the `npm start:proxy` script
+- you can simulate creating the connection, provisioning schema and ingesting content in two ways:
+  - on-demand, using the `createConnection:proxy` and `loadContent:proxy` scripts
+  - simulating the Teams Admin Center notification, using the `start:notification` script to start the API that handles the TAC notification, and simulating the notification from Dev Proxy, by pressing `w`
 
 ## Help
 

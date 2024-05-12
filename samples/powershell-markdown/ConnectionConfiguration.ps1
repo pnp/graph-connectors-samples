@@ -42,9 +42,9 @@ $externalConnection = @{
         @{
             name          = "title"
             type          = "String"
-            isQueryable   = "true"
-            isSearchable  = "true"
-            isRetrievable = "true"
+            isQueryable   = $true
+            isSearchable  = $true
+            isRetrievable = $true
             labels        = @(
                 "title"
             )
@@ -52,19 +52,19 @@ $externalConnection = @{
         @{
             name          = "excerpt"
             type          = "String"
-            isQueryable   = "true"
-            isSearchable  = "true"
-            isRetrievable = "true"
+            isQueryable   = $true
+            isSearchable  = $true
+            isRetrievable = $true
         }
         @{
             name          = "imageUrl"
             type          = "String"
-            isRetrievable = "true"
+            isRetrievable = $true
         }
         @{
             name          = "url"
             type          = "String"
-            isRetrievable = "true"
+            isRetrievable = $true
             labels        = @(
                 "url"
             )
@@ -72,9 +72,9 @@ $externalConnection = @{
         @{
             name          = "date"
             type          = "DateTime"
-            isQueryable   = "true"
-            isRetrievable = "true"
-            isRefinable   = "true"
+            isQueryable   = $true
+            isRetrievable = $true
+            isRefinable   = $true
             labels        = @(
                 "lastModifiedDateTime"
             )
@@ -82,9 +82,9 @@ $externalConnection = @{
         @{
             name          = "tags"
             type          = "StringCollection"
-            isQueryable   = "true"
-            isRetrievable = "true"
-            isRefinable   = "true"
+            isQueryable   = $true
+            isRetrievable = $true
+            isRefinable   = $true
         }
     )
 }

@@ -6,6 +6,7 @@ export const config = {
   aadAppClientSecret: process.env.AAD_APP_CLIENT_SECRET,
   storageAccountConnectionString: process.env.AzureWebJobsStorage,
   notificationEndpoint: process.env.NOTIFICATION_ENDPOINT,
+  graphSchemaStatusInterval: parseInt(process.env.GRAPH_SCHEMA_STATUS_INTERVAL) || 60,
   connector: {
     // 3-32 characters
     id: 'foodstore',
@@ -40,9 +41,9 @@ export const config = {
       {
         name: 'name',
         type: 'String',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true',
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true,
         labels: [
           'title'
         ]
@@ -50,45 +51,45 @@ export const config = {
       {
         name: 'categories',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'ecoscore',
         type: 'String',
-        isQueryable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isRetrievable: true
       },
       {
         name: 'imageUrl',
         type: 'String',
-        isRetrievable: 'true'
+        isRetrievable: true
       },
       {
         name: 'ingredients',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'nutriscore',
         type: 'String',
-        isQueryable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isRetrievable: true
       },
       {
         name: 'traces',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true'
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true
       },
       {
         name: 'url',
         type: 'String',
-        isRetrievable: 'true',
+        isRetrievable: true,
         labels: [
           'url'
         ]

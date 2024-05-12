@@ -16,15 +16,19 @@
     "@microsoft/microsoft-graph-types": "^2.38.0",
     "@types/node": "18.17.18",
     "azure-functions-core-tools": "4.0.5413",
-    "azurite": "3.26.0",
+    "azurite": "^3.29.0",
     "typescript": "5.2.2"
   },
   "dependencies": {
+    "@azure/core-client": "^1.7.3",
+    "@azure/core-rest-pipeline": "1.14",
     "@azure/data-tables": "13.2.2",
-    "@azure/identity": "^3.3.2",
+    "@azure/identity": "^4.0.1",
     "@azure/storage-queue": "^12.15.0",
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "jsonwebtoken": "^9.0.2",
-    "jwks-rsa": "^3.1.0"
+    "jwks-rsa": "^3.1.0",
+    "proxy-agent": "^6.4.0",
+    "undici": "^6.9.0"
   }
 }

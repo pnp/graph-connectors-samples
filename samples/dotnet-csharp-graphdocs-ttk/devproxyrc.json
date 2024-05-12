@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.16.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "documentsApi",
+      "urlsToWatch": [
+        "https://api.contoso.com/*"
+      ]
+    },
+    {
+      "name": "GraphConnectorGuidancePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+    },
+    {
+      "name": "GraphConnectorNotificationPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "graphConnectorNotificationEnabled"
+    },
+    {
+      "name": "GraphConnectorNotificationPlugin",
+      "enabled": false,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "graphConnectorNotificationDisabled"
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "graphConnectorMocks"
+    },
+    {
+      "name": "EntraMockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "entraMocks",
+      "urlsToWatch": [
+        "https://sts.windows.net/fa15d692-e9c7-4460-a743-29f29522229/*",
+        "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/*",
+        "https://login.microsoftonline.com/fa15d692-e9c7-4460-a743-29f29522229/*"
+      ]
+    }
+  ],
+  "documentsApi": {
+    "apiFile": ".devproxy/documents-api.json"
+  },
+  "graphConnectorNotificationEnabled": {
+    "mockFile": ".devproxy/graph-connector-notification-enabled.json",
+    "tenant": "fa15d692-e9c7-4460-a743-29f29522229",
+    "audience": "ef1da9d4-ff77-4c3e-a005-840c3f830745"
+  },
+  "graphConnectorNotificationDisabled": {
+    "mockFile": ".devproxy/graph-connector-notification-disabled.json",
+    "tenant": "fa15d692-e9c7-4460-a743-29f29522229",
+    "audience": "ef1da9d4-ff77-4c3e-a005-840c3f830745"
+  },
+  "graphConnectorMocks": {
+    "mocksFile": ".devproxy/graph-connector-mocks.json"
+  },
+  "entraMocks": {
+    "mocksFile": ".devproxy/entra-mocks.json"
+  },
+  "urlsToWatch": [
+    "https://graph.microsoft.com/*"
+  ]
+}

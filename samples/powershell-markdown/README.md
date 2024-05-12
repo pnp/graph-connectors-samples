@@ -14,6 +14,7 @@ This sample contains a Microsoft Graph connector built in PowerShell that shows 
 
 Version|Date|Comments
 -------|----|--------
+1.2|March 12, 2024|Fixed schema
 1.1|October 11, 2023|Added configuring result layout
 1.0|October 09, 2023|Initial release
 

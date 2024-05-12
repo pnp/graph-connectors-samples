@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.16.0/crudapiplugin.schema.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getMany",
+      "url": "?$filter=lastModified gt {lastModified}",
+      "query": "$.[?(@.lastModified > '{lastModified}')]"
+    },
+    {
+      "action": "getOne",
+      "url": "/{id}",
+      "query": "$.[?(@.id == '{id}')]"
+    }
+  ],
+  "baseUrl": "https://api.contoso.com/documents",
+  "dataFile": "documents.json",
+  "auth": "entra",
+  "entraAuthConfig": {
+    "audience": "https://api.contoso.com"
+  }
+}

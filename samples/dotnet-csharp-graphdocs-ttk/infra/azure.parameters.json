@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "functionAppName": {
+        "value": "func-graphdocs-prod-${{RESOURCE_SUFFIX}}"
+      },
+      "appServicePlanName": {
+        "value": "asp-graphdocs-prod-${{RESOURCE_SUFFIX}}"
+      },
+      "storageAccountName": {
+        "value": "stgdc${{RESOURCE_SUFFIX}}"
+      },
+        "documentsApiUrl": {
+            "value": "${{DOCUMENTS_API_URL}}"
+        },
+        "documentsApiScopes": {
+            "value": "${{DOCUMENTS_API_SCOPES}}"
+        },
+        "entraTenantId": {
+            "value": "${{ENTRA_APP_TENANT_ID}}"
+        },
+        "entraClientId": {
+            "value": "${{ENTRA_APP_CLIENT_ID}}"
+        },
+        "entraClientSecret": {
+            "value": "${{SECRET_ENTRA_APP_CLIENT_SECRET}}"
+        }
+    }
+}

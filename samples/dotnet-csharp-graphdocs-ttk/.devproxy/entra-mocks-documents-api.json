@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.17.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/*/oauth2/v2.0/token",
+        "method": "POST",
+        "bodyFragment": "scope=https%3A%2F%2Fapi.contoso.com%2FDocuments.Read"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "token_type": "Bearer",
+          "expires_in": 3599,
+          "ext_expires_in": 3599,
+          "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiJodHRwczovL2FwaS5jb250b3NvLmNvbSIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2ZhMTVkNjkyLWU5YzctNDQ2MC1hNzQzLTI5ZjI5NTIyMjI5LyIsImlhdCI6MTcxMDE0NTUwMSwibmJmIjoxNzEwMTQ1NTAxLCJleHAiOjE3MTAxNDk0MDEsImFpbyI6IkUyTmdZSWl6VzdCUytiUm12a241bS9aMS8rVFRBQT09IiwiYXBwX2Rpc3BsYXluYW1lIjoiTWljcm9zb2Z0IEdyYXBoIGNvbm5lY3RvciIsImFwcGlkIjoiZWYxZGE5ZDQtZmY3Ny00YzNlLWEwMDUtODQwYzNmODMwNzQ1IiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvZmExNWQ2OTItZTljNy00NDYwLWE3NDMtMjlmMjk1MjIyMjkvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI2YWI1YTU5Zi1kYjhiLTRhZjMtYWIxOC1lY2U2MjliM2FhODAiLCJyaCI6IjAuQVU0QWpEeXdBbHlsSTAtU2hkVzlqNEdYbWdNQUFBQUFBQUFBd0FBQUFBQUFBQUFPQVFBLiIsInJvbGVzIjpbImh0dHBzOi8vYXBpLmNvbnRvc28uY29tL0RvY3VtZW50cy5SZWFkIl0sInN1YiI6IjZhYjVhNTlmLWRiOGItNGFmMy1hYjE4LWVjZTYyOWIzYWE4MCIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6ImZhMTVkNjkyLWU5YzctNDQ2MC1hNzQzLTI5ZjI5NTIyMjI5IiwidXRpIjoiM3A0T3hZS2cza21Ceng5WHdxQlhBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiMDk5N2ExZDAtMGQxZC00YWNiLWI0MDgtZDVjYTczMTIxZTkwIl0sInhtc190Y2R0IjoxNjM0MDc4OTQyLCJ4bXNfdGRiciI6IkVVIn0.rdyLh7G_3qpXsYiYyB3sLHQ3qAQEl-o60n8gaDe-9yCLp_oVv8NVhaqF-OStrMbY2GxuDr8mvEnIyawr1mE60VaxjF0p6PDtpQV5EnEm44zuKuRO6qPmoP2ZUUmMjxDyKCnohSkiqNm_60cVDgAip8g42PhKKN_eY4wG5nwqYF3QQtlMSqMwVWtJyO76CpVrNjsnPx1-Eza6mlOZoVYPWNwnUA64poR7vXydsFkCANYKZpk4O0_pe-5JqXz5-L4zv2V3qU6aVVXdJ6f5HyYDEBp9qTcoVzjxSxLLBIeFMBs2KykiTGKpZGVtU0aXZHG5Hor5dkPgSlN2IWjISzp_uQ"
+        }
+      }
+    }
+  ]
+}

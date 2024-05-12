@@ -13,6 +13,16 @@
       "dependsOrder": "sequence"
     },
     {
+      "label": "Simulated",
+      "dependsOn": [
+        "npm install",
+        "Ensure env files",
+        "Start Azurite emulator",
+        "Provision (sim)"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
       "type": "shell",
       "label": "npm install",
       "command": "npm install --no-audit"
@@ -124,6 +134,14 @@
       "dependsOn":[
         "Ensure DevTunnel"
       ]
+    },
+    {
+      "label": "Provision (sim)",
+      "type": "teamsfx",
+      "command": "provision",
+      "args": {
+        "env": "testtool"
+      }
     },
     {
       "label": "Terminate All Tasks",

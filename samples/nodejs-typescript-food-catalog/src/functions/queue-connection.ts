@@ -13,7 +13,6 @@ async function createConnection(connectorId: string, connectorTicket: string) {
 
     await client
         .api('/external/connections')
-        .version('beta')
         .header('GraphConnectors-Ticket', connectorTicket)
         .post({
             id,

@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://aka.ms/teams-toolkit/1.0.0/yaml.schema.json
+# Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
+# Visit https://aka.ms/teamsfx-actions for details on actions
+version: 1.0.0
+
+environmentFolderPath: ./env
+
+provision:
+
+  - uses: script
+    name: Ensure tables and data
+    with:
+      run: node tables.js
+      workingDirectory: scripts
+
+  - uses: file/createOrUpdateJsonFile
+    with:
+      target: ./local.settings.json
+      appsettings:
+        IsEncrypted: false
+        Values:
+          FUNCTIONS_WORKER_RUNTIME: node
+          AzureWebJobsStorage: UseDevelopmentStorage=true
+          AzureWebJobsFeatureFlags: EnableWorkerIndexing
+          AAD_APP_CLIENT_ID: ef1da9d4-ff77-4c3e-a005-840c3f830745
+          AAD_APP_CLIENT_SECRET: abc
+          AAD_APP_TENANT_ID: fa15d692-e9c7-4460-a743-29f29522229
+          https_proxy: http://127.0.0.1:8000
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
+          NOTIFICATION_ENDPOINT: http://localhost:7071
+          GRAPH_SCHEMA_STATUS_INTERVAL: 5

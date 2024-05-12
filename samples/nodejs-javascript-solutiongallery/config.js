@@ -33,9 +33,9 @@ export const config = {
       {
         name: 'title',
         type: 'String',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true',
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true,
         labels: [
           'title'
         ]
@@ -43,16 +43,16 @@ export const config = {
       {
         name: 'description',
         type: 'String',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true',
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true,
       },
       {
         name: 'authors',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isSearchable: 'true',
-        isRetrievable: 'true',
+        isQueryable: true,
+        isSearchable: true,
+        isRetrievable: true,
         labels: [
           'authors'
         ]
@@ -60,17 +60,17 @@ export const config = {
       {
         name: 'authorsPictures',
         type: 'StringCollection',
-        isRetrievable: 'true'
+        isRetrievable: true
       },
       {
         name: 'imageUrl',
         type: 'String',
-        isRetrievable: 'true'
+        isRetrievable: true
       },
       {
         name: 'iconUrl',
         type: 'String',
-        isRetrievable: 'true',
+        isRetrievable: true,
         labels: [
           'iconUrl'
         ]
@@ -78,7 +78,7 @@ export const config = {
       {
         name: 'url',
         type: 'String',
-        isRetrievable: 'true',
+        isRetrievable: true,
         labels: [
           'url'
         ]
@@ -86,9 +86,9 @@ export const config = {
       {
         name: 'createdDateTime',
         type: 'DateTime',
-        isQueryable: 'true',
-        isRetrievable: 'true',
-        isRefinable: 'true',
+        isQueryable: true,
+        isRetrievable: true,
+        isRefinable: true,
         labels: [
           'createdDateTime'
         ]
@@ -96,9 +96,9 @@ export const config = {
       {
         name: 'lastModifiedDateTime',
         type: 'DateTime',
-        isQueryable: 'true',
-        isRetrievable: 'true',
-        isRefinable: 'true',
+        isQueryable: true,
+        isRetrievable: true,
+        isRefinable: true,
         labels: [
           'lastModifiedDateTime'
         ]
@@ -106,17 +106,17 @@ export const config = {
       {
         name: 'products',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isRetrievable: 'true',
-        isRefinable: 'true'
+        isQueryable: true,
+        isRetrievable: true,
+        isRefinable: true
       },
       {
         name: 'metadata',
         type: 'StringCollection',
-        isQueryable: 'true',
-        isRetrievable: 'true',
-        isRefinable: 'true',
-        isExactMatchRequired: 'true'
+        isQueryable: true,
+        isRetrievable: true,
+        isRefinable: true,
+        isExactMatchRequired: true
       }
     ]
   }

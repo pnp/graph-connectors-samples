@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AzureFunctionsVersion>v4</AzureFunctionsVersion>
+		<OutputType>Exe</OutputType>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>GraphDocsConnector</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Azure.Data.Tables" Version="12.8.3" />
+		<PackageReference Include="Azure.Identity" Version="1.11.0" />
+		<PackageReference Include="Azure.Storage.Queues" Version="12.17.1" />
+		<PackageReference Include="Markdig" Version="0.36.2" />
+		<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.21.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.1.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="1.2.1" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.3.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.3.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.17.2" />
+		<PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="1.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Azure" Version="1.7.2" />
+		<PackageReference Include="Microsoft.Graph" Version="5.50.0" />
+		<PackageReference Include="YamlDotNet" Version="15.1.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="host.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="local.settings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</None>
+		<None Update="resultLayout.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<Content Include="content\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="documentsapirc.json" />
+	  <Content Include=".devproxy\documents-api.json" />
+	  <Content Include=".devproxy\entra-mocks-documents-api.json" />
+	  <Content Include=".devproxy\entra-mocks.json" />
+	  <Content Include=".devproxy\graph-connector-mocks.json" />
+	  <Content Include=".devproxy\graph-connector-notification-disabled.json" />
+	  <Content Include=".devproxy\graph-connector-notification-enabled.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<Using Include="System.Threading.ExecutionContext" Alias="ExecutionContext" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include=".devproxy\documents.json" />
+	  <None Include="env\samples\.env.dev.user" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectCapability Include="TeamsFx" />
+	</ItemGroup>
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties local_1settings_1json__JsonSchema="https://json.schemastore.org/local.settings.json" />
+		</VisualStudio>
+	</ProjectExtensions>
+</Project>

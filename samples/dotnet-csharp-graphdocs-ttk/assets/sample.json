@@ -1,0 +1,93 @@
+[
+    {
+      "name": "pnp-graph-connector-dotnet-csharp-graphdocs-ttk",
+      "source": "pnp",
+      "title": "Ingest markdown content from a custom API using C#, .NET and Teams Toolkit for Visual Studio",
+      "shortDescription": "This sample project uses Teams Toolkit to simplify the process of creating a Microsoft Graph connector that ingests markdown content from a custom API to Microsoft Graph",
+      "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs-ttk",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs-ttk",
+      "longDescription": [
+        "This sample project uses Teams Toolkit for Visual Studio to simplify the process of creating a Microsoft Graph connector that ingests markdown content from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the simplified admin experience which means that admins can toggle the connector on and off from the Microsoft Teams admin center."
+      ],
+      "creationDateTime": "2024-05-03",
+      "updateDateTime": "2024-05-03",
+      "products": [
+        "Microsoft Graph connectors",
+        "Microsoft Graph",
+        "Microsoft 365 Copilot",
+        "TeamsToolkit"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": ".NET"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "C#"
+        },
+        {
+          "key": "SEARCH-RESULTS-CARD",
+          "value": "Yes"
+        },
+        {
+          "key": "TEAMS-PACKAGE",
+          "value": "Yes"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 50,
+          "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-graphdocs-ttk/assets/content.png",
+          "alt": "Markdown content from custom API displayed in Microsoft Search"
+        },
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-graphdocs-ttk/assets/tac.png",
+          "alt": "Graph Connector connection status displayed in Microsoft Teams Admin Center"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "waldekmastykarz",
+          "pictureUrl": "https://github.com/waldekmastykarz.png",
+          "name": "Waldek Mastykarz"
+        },
+        {
+          "gitHubAccount": "garrytrinder",
+          "pictureUrl": "https://github.com/garrytrinder.png",
+          "name": "Garry Trinder"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft Graph connectors overview",
+          "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+          "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+        },
+        {
+          "name": "Build your first custom Microsoft Graph connector",
+          "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+          "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+        },
+        {
+          "name": "Teams Toolkit for Visual Studio",
+          "description": "Learn more about the Teams Toolkit for Visual Studio.",
+          "url": "https://learn.microsoft.com/microsoftteams/platform/toolkit/toolkit-v4/teams-toolkit-fundamentals-vs"
+        },
+        {
+          "name": "Mock Teams Admin Center notification for Microsoft Graph connectors",
+          "description": "Learn how to mock the Teams Admin Center notification for Microsoft Graph connectors.",
+          "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-teams-admin-center-notification-graph-connectors"
+        },
+        {
+          "name": "Get started with Dev Proxy",
+          "description": "Learn how to get started with Dev Proxy.",
+          "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started?tabs=automated&pivots=client-operating-system-windows"
+        }
+      ]
+    }
+  ]
+  

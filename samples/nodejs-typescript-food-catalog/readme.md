@@ -17,6 +17,8 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.5|March 20, 2024|Add simulated debugging with Dev Proxy and CodeTour
+1.4|March 12, 2024|Fixed schema
 1.3|November 15, 2023|Update prerequisites and result type creation step
 1.2|November 10, 2023|Resolve error when disabling connection
 1.1|November 9, 2023|Updated F5 tasks
@@ -32,11 +34,35 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
+## Simulated debugging with Dev Proxy
+
+### 1. Project setup
+
+- Clone repo
+
+### 2. Dev Proxy setup
+
+- [Install](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started?tabs=powershell&pivots=client-operating-system-macos#install-dev-proxy) Dev Proxy beta
+- Open a terminal, run `devproxy preset get microsoft-graph-connector-notification` to download the [Microsoft Graph connector notification](https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector-notification) preset
+- Run `devproxy --config-file "~appFolder/presets/microsoft-graph-connector-notification/devproxyrc.json"` to start Dev Proxy using the preset configuration
+
+### 3. Start debug session
+
+- Open repo in VSCode
+- On the sidebar, open `Run and Debug` panel and change the dropdown to select the `Debug (Simulated)` profile
+- Press <kbd>F5</kbd> to start a simulated debug session to start the Azure Functions host
+
+### 4. Simulate webhook notification
+
+- Go to the running Dev Proxy process in your terminal, press <kbd>w</kbd> to simulate a webhook notification
+
+## Debug against a real Microsoft 365 tenant
+
 ### 1. Project setup
 
 - Clone repo
 - Open repo in VSCode
-- Press `F5`, follow the sign in prompts
+- Press <kbd>F5</kbd>, follow the sign in prompts
 - Wait for all tasks to complete
 
 ### 2. Enable Graph connector
@@ -72,7 +98,7 @@ When the process is complete you will see a table confirming that the connection
 
 > There is a known issue whereby applying a result type programmatically results in an empty adaptive card, so we need to apply the card in the user interface
 
-- In Visual Studio Code, open the `resultType.json` file and copy its contents to clipboard (<kdb>CTRL</kdb>+ <kbd>A</kbd> then <kbd>CTRL</kbd> + <kbd>C</kbd> on Windows, <kbd>CMD</kbd> + <kbd>A</kbd> then <kbd>CMD</kbd> + <kbd>C</kbd> on macOS)
+- In Visual Studio Code, open the `resultLayout.json` file and copy its contents to clipboard (<kdb>CTRL</kdb>+ <kbd>A</kbd> then <kbd>CTRL</kbd> + <kbd>C</kbd> on Windows, <kbd>CMD</kbd> + <kbd>A</kbd> then <kbd>CMD</kbd> + <kbd>C</kbd> on macOS)
 - In the web browser, in the Microsoft 365 admin center, navigate to the [Settings > Search & Intelligence](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch) area
 - Activate the [Customizations](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
 - Select the [Result Types](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/resulttypes) page

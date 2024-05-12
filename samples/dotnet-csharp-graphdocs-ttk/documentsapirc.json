@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.16.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "documentsApi",
+      "urlsToWatch": [
+        "https://api.contoso.com/*"
+      ]
+    },
+    {
+      "name": "EntraMockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "entraMocks",
+      "urlsToWatch": [
+        "https://login.microsoftonline.com/*"
+      ]
+    }
+  ],
+  "documentsApi": {
+    "apiFile": ".devproxy/documents-api.json"
+  },
+  "entraMocks": {
+    "mocksFile": ".devproxy/entra-mocks-documents-api.json"
+  }
+}

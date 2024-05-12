@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://aka.ms/teams-toolkit/1.0.0/yaml.schema.json
+# Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
+# Visit https://aka.ms/teamsfx-actions for details on actions
+version: 1.0.0
+
+environmentFolderPath: ./env
+
+provision:
+
+  - uses: teamsApp/create
+    with:
+      name: ${{APP_NAME}}-${{TEAMSFX_ENV}}
+    writeToEnvironmentFile:
+      teamsAppId: TEAMS_APP_ID
+
+  - uses: aadApp/create
+    with:
+      name: ${{APP_NAME}}-${{TEAMSFX_ENV}}
+      generateClientSecret: true
+      signInAudience: AzureADMyOrg
+    writeToEnvironmentFile:
+      clientId: ENTRA_APP_CLIENT_ID
+      clientSecret: SECRET_ENTRA_APP_CLIENT_SECRET
+      objectId: ENTRA_APP_OBJECT_ID
+      tenantId: ENTRA_APP_TENANT_ID
+      authority: ENTRA_APP_OAUTH_AUTHORITY
+      authorityHost: ENTRA_APP_OAUTH_AUTHORITY_HOST
+
+  - uses: aadApp/update
+    with:
+      manifestPath: ./infra/entra/entra.manifest.json
+      outputFilePath: ./infra/entra/build/entra.manifest.${{TEAMSFX_ENV}}.json
+
+  - uses: arm/deploy
+    with:
+      subscriptionId: ${{AZURE_SUBSCRIPTION_ID}}
+      resourceGroupName: ${{AZURE_RESOURCE_GROUP_NAME}}
+      templates:
+        - path: ./infra/azure.bicep
+          parameters: ./infra/azure.parameters.json
+          deploymentName: ${{APP_NAME}}-${{TEAMSFX_ENV}}
+      bicepCliVersion: v0.9.1
+
+  - uses: teamsApp/validateManifest
+    with:
+      manifestPath: ./appPackage/manifest.json
+
+  - uses: teamsApp/zipAppPackage
+    with:
+      manifestPath: ./appPackage/manifest.json
+      outputZipPath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+      outputJsonPath: ./appPackage/build/manifest.${{TEAMSFX_ENV}}.json
+
+  - uses: teamsApp/validateAppPackage
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+
+  - uses: teamsApp/publishAppPackage
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+    writeToEnvironmentFile:
+      publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
+
+  - uses: script
+    name: "ACTION: Publish app in TAC"
+    with:
+      shell: powershell
+      run: Write-Host "Follow -> https://admin.teams.microsoft.com/policies/manage-apps/${{TEAMS_APP_PUBLISHED_APP_ID}}"
+
+deploy:
+
+  - uses: cli/runDotnetCommand
+    with:
+      args: publish --configuration Release --runtime win-x86 --self-contained
+
+  - uses: azureFunctions/zipDeploy
+    with:
+      artifactFolder: bin/Release/net8.0/win-x86/publish
+      resourceId: ${{FUNCTION_APP_ID}}
+
+projectId: 9088f848-6eb4-4b96-a6ee-4b2771171ede
