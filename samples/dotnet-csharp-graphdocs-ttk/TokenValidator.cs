@@ -34,6 +34,7 @@ namespace GraphDocsConnector
                             switch (version)
                             {
                                 case "1.0":
+                                case null:
                                     validIssuer = $"https://sts.windows.net/{_tenant}/";
                                     break;
                                 case "2.0":
