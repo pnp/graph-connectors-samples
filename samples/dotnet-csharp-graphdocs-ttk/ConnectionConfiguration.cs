@@ -20,7 +20,7 @@ namespace GraphDocsConnector
             }
         }
 
-        private static ExternalConnection _externalConnection = new ExternalConnection
+        public static ExternalConnection ExternalConnection => new ExternalConnection
         {
             Id = "msgraphdocs",
             Name = "Microsoft Graph documentation",
@@ -28,91 +28,86 @@ namespace GraphDocsConnector
             ActivitySettings = new()
             {
                 UrlToItemResolvers = new()
+                {
+                    new ItemIdResolver
+                    {
+                        UrlMatchInfo = new()
                         {
-                            new ItemIdResolver
-                            {
-                                UrlMatchInfo = new()
-                                {
-                                    BaseUrls = new() { "https://learn.microsoft.com" },
-                                    UrlPattern = "/[^/]+/graph/auth/(?<slug>[^/]+)",
-                                },
-                                ItemId = "auth__{slug}",
-                                Priority = 1
-                            },
-                            new ItemIdResolver
-                            {
-                                UrlMatchInfo = new()
-                                {
-                                    BaseUrls = new() { "https://learn.microsoft.com" },
-                                    UrlPattern = "/[^/]+/graph/sdks/(?<slug>[^/]+)",
-                                },
-                                ItemId = "sdks__{slug}",
-                                Priority = 2
-                            },
-                            new ItemIdResolver
-                            {
-                                UrlMatchInfo = new()
-                                {
-                                    BaseUrls = new() { "https://learn.microsoft.com" },
-                                    UrlPattern = "/[^/]+/graph/(?<slug>[^/]+)",
-                                },
-                                ItemId = "{slug}",
-                                Priority = 3
-                            }
-                        }
+                            BaseUrls = new() { "https://learn.microsoft.com" },
+                            UrlPattern = "/[^/]+/graph/auth/(?<slug>[^/]+)",
+                        },
+                        ItemId = "auth__{slug}",
+                        Priority = 1
+                    },
+                    new ItemIdResolver
+                    {
+                        UrlMatchInfo = new()
+                        {
+                            BaseUrls = new() { "https://learn.microsoft.com" },
+                            UrlPattern = "/[^/]+/graph/sdks/(?<slug>[^/]+)",
+                        },
+                        ItemId = "sdks__{slug}",
+                        Priority = 2
+                    },
+                    new ItemIdResolver
+                    {
+                        UrlMatchInfo = new()
+                        {
+                            BaseUrls = new() { "https://learn.microsoft.com" },
+                            UrlPattern = "/[^/]+/graph/(?<slug>[^/]+)",
+                        },
+                        ItemId = "{slug}",
+                        Priority = 3
+                    }
+                }
             },
             SearchSettings = new()
             {
                 SearchResultTemplates = new()
+                {
+                    new()
+                    {
+                        Id = "msgraphdocs",
+                        Priority = 1,
+                        Layout = new Json
                         {
-                            new()
-                            {
-                                Id = "msgraphdocs",
-                                Priority = 1,
-                                Layout = new Json
-                                {
-                                    AdditionalData = Layout
-                                }
-                            }
+                            AdditionalData = Layout
                         }
-            },
-            AdditionalData = new Dictionary<string, object>()
+                    }
+                }
+            }
         };
 
-        public static ExternalConnection ExternalConnection => _externalConnection;
-
-        private static Schema _schema = new Schema
+        public static Schema Schema => new Schema
         {
             BaseType = "microsoft.graph.externalItem",
             Properties = new()
-                    {
-                        new Property
-                        {
-                            Name = "title",
-                            Type = PropertyType.String,
-                            IsQueryable = true,
-                            IsSearchable = true,
-                            IsRetrievable = true,
-                            Labels = new() { Label.Title }
-                        },
-                        new Property
-                        {
-                            Name = "description",
-                            Type = PropertyType.String,
-                            IsQueryable = true,
-                            IsSearchable = true,
-                            IsRetrievable = true
-                        },
-                        new Property
-                        {
-                            Name = "url",
-                            Type = PropertyType.String,
-                            IsRetrievable = true,
-                            Labels = new() { Label.Url }
-                        }
-                    }
+            {
+                new Property
+                {
+                    Name = "title",
+                    Type = PropertyType.String,
+                    IsQueryable = true,
+                    IsSearchable = true,
+                    IsRetrievable = true,
+                    Labels = new() { Label.Title }
+                },
+                new Property
+                {
+                    Name = "description",
+                    Type = PropertyType.String,
+                    IsQueryable = true,
+                    IsSearchable = true,
+                    IsRetrievable = true
+                },
+                new Property
+                {
+                    Name = "url",
+                    Type = PropertyType.String,
+                    IsRetrievable = true,
+                    Labels = new() { Label.Url }
+                }
+            }
         };
-
-        public static Schema Schema => _schema;
     }
 }
