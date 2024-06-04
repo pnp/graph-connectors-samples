@@ -16,6 +16,7 @@ This sample contains a Microsoft Graph connector that shows how to Ingest M365 R
 Version|Date|Comments
 -------|----|--------
 1.0|February 18, 2024|Initial release
+1.1|May 12, 2024|Updated README.md, resultsLayout files
 
 ## Prerequisites
 
@@ -37,6 +38,10 @@ Version|Date|Comments
 - Ingest the content: `./connector load-content`
 - [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
 - Use the `resultLayout.json` file for the Adaptive Card code
+
+- 
+## Results Layout
+- Browse to the admin center then Search & intelligence then update the result layout with the resultLayout json file.
 
 ## Features
 
