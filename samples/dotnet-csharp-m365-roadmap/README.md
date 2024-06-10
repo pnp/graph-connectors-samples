@@ -44,7 +44,6 @@ Version|Date|Comments
 - [Create result type](https://learn.microsoft.com/microsoftsearch/manage-result-types) with default settings and the external connection you've just created
 - Use the `resultLayout.json` file for the Adaptive Card code
 
-
 ## Results Layout
 - Browse to the admin center then Search & intelligence then update the result layout with the resultLayout json file.
 

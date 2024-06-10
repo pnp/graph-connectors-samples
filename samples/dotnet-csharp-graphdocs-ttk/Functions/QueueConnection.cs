@@ -90,10 +90,11 @@ namespace GraphDocsConnector.Functions
 
         private async Task CreateConnection(ConnectionMessage connectionMessage)
         {
-            ConnectionConfiguration.ExternalConnection.ConnectorId = connectionMessage.ConnectorId;
+            var externalConnection = ConnectionConfiguration.ExternalConnection;
+            externalConnection.ConnectorId = connectionMessage.ConnectorId;
             
             await _graphClient.External.Connections
-                .PostAsync(ConnectionConfiguration.ExternalConnection, request =>
+                .PostAsync(externalConnection, request =>
                 {
                     request.Headers.Add("GraphConnectors-Ticket", connectionMessage.ConnectorTicket!);
                 });

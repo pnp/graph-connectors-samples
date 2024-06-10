@@ -15,6 +15,7 @@ This sample project uses Teams Toolkit for Visual Studio to simplify the process
 
 Version|Date|Comments
 -------|----|--------
+1.1|May 15, 2024|Updates connection configuration
 1.0|May 3, 2024|Initial release
 
 ## Prerequisites
