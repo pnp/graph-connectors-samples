@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.20.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "body": {
+          "id": "contosohr",
+          "name": "Contoso HR",
+          "description": "Connection to index Contoso HR system",
+          "state": "ready"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/schema",
+        "method": "PATCH"
+      },
+      "response": {
+        "statusCode": 202,
+        "headers": [
+          {
+            "name": "Location",
+            "value": "https://graph.microsoft.com/v1.0/external/connections/contosohr/operations/616bfeed-666f-4ce0-8cd9-058939010bfc"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
+        "method": "GET",
+        "nth": 0
+      },
+      "response": {
+        "statusCode": 200,
+        "body": {
+          "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
+          "status": "failed",
+          "error": {
+            "message": "Server error, something went wrong"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
+        "method": "GET",
+        "nth": 2
+      },
+      "response": {
+        "statusCode": 200,
+        "body": {
+          "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
+          "status": "completed",
+          "error": null
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "body": {
+          "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
+          "status": "inprogress",
+          "error": null
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/items/*",
+        "method": "PUT"
+      },
+      "response": {
+        "statusCode": 200
+      }
+    }
+  ]
+}

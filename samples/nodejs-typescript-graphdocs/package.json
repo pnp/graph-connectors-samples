@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-typescript-graphdocs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "start:createConnection": "node dist/createConnection.js",
+    "start:createConnection:proxy": "http_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node dist/createConnection.js",
+    "start:loadContent": "node dist/loadContent.js",
+    "start:loadContent:proxy": "http_proxy=http://127.0.0.1:8000 NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_NO_WARNINGS=1 node dist/loadContent.js",
+    "watch": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@microsoft/microsoft-graph-types": "^2.40.0",
+    "@types/node": "^20.14.10",
+    "@types/remove-markdown": "^0.3.4",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.3.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "gray-matter": "^4.0.3",
+    "remove-markdown": "^0.5.0",
+    "undici": "^6.19.2"
+  }
+}

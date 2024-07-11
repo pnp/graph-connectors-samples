@@ -1,0 +1,81 @@
+[
+  {
+    "name": "pnp-graph-connector-nodejs-typescript-graphdocs",
+    "source": "pnp",
+    "title": "Ingest local Microsoft Graph docs content using TypeScript on Node.js",
+    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs",
+    "longDescription": [
+      "This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+    ],
+    "creationDateTime": "2024-07-11",
+    "updateDateTime": "2024-07-11",
+    "products": [
+      "Microsoft Graph connectors",
+      "Microsoft Graph",
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeScript"
+      },
+      {
+        "key": "SEARCH-RESULTS-CARD",
+        "value": "Yes"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-graphdocs/assets/screenshot.png",
+        "alt": "Microsoft Graph docs displayed in Microsoft Search search results"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-graphdocs/assets/content.png",
+        "alt": "Markdown content with front matter metadata that's ingested with the sample Microsoft Graph connector"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Graph connectors overview",
+        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
+      },
+      {
+        "name": "Build your first custom Microsoft Graph connector",
+        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
+      },
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started/installation"
+      },
+      {
+        "name": "Change Dev Proxy mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      }
+    ]
+  }
+]

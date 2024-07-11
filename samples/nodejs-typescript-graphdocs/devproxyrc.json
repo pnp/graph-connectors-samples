@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.20.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "GraphMockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "graphConnectorMocks"
+    }
+  ],
+  "urlsToWatch": [
+    "https://graph.microsoft.com/v1.0/*",
+    "https://graph.microsoft.com/beta/*",
+    "https://graph.microsoft.us/v1.0/*",
+    "https://graph.microsoft.us/beta/*",
+    "https://dod-graph.microsoft.us/v1.0/*",
+    "https://dod-graph.microsoft.us/beta/*",
+    "https://microsoftgraph.chinacloudapi.cn/v1.0/*",
+    "https://microsoftgraph.chinacloudapi.cn/beta/*"
+  ],
+  "graphConnectorMocks": {
+    "mocksFile": ".devproxy/graph-connector-mocks.json"
+  }
+}
