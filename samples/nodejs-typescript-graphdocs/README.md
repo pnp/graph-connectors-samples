@@ -14,7 +14,7 @@ This sample contains a Microsoft Graph connector that shows how to ingest local 
 
 Version|Date|Comments
 -------|----|--------
-1.0|July 11, 2023|Initial release
+1.0|July 11, 2024|Initial release
 
 ## Prerequisites
 
