@@ -27,6 +27,7 @@ Version|Date|Comments
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs) then unzip it)
 - Run the setup script: `./setup.sh`. When finished, it creates information about the Entra app registration in the `src/env.js` file that's excluded from source control
 - Install dependencies: `npm i`
+- Build the project: `npm run build`
 - Create the external connection: `npm run start:createConnection` (this will take several minutes)
 - Ingest the content: `npm run start:loadContent`
 - Update the result layout:
@@ -38,6 +39,14 @@ Version|Date|Comments
   - copy the contents of the [result-layout.json](result-layout.json) file and paste them into the **Result layout** editor
   - apply the changes by selecting **Next**
   - confirm the changes by selecting **Update Result type**
+
+If you want to use mock Microsoft Graph API with Dev Proxy:
+
+- Start Dev Proxy: `devproxy`
+- In a separate terminal window
+  - Create the external connection: `npm run start:createConnection:proxy`
+  - Ingest the content: `npm run start:loadContent:proxy`
+- When finished, switch to the terminal window where Dev Proxy is running and stop it by pressing `Ctrl+C`
 
 ## Features
 
