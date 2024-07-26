@@ -12,14 +12,10 @@
   "devDependencies": {
     "@azure/identity": "^3.3.0",
     "@microsoft/microsoft-graph-client": "^3.0.6",
-    "cli-interact": "^0.1.9",
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
     "minimist": "^1.2.8",
-    "open": "^10.1.0",
-    "openurl": "^1.1.1",
     "ts-node": "^10.9.2",
-    "typescript": "5.2.2",
-    "wsl-open": "^2.2.1"
+    "typescript": "5.2.2"
   }
 }
