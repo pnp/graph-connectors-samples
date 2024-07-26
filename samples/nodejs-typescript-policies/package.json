@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-typescript-policies",
+  "version": "1.0.0",
+  "description": "## Build a basic declarative copilot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@azure/identity": "^3.3.0",
+    "@microsoft/microsoft-graph-client": "^3.0.6",
+    "dotenv": "^16.4.5",
+    "gray-matter": "^4.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "5.2.2",
+    "minimist": "^1.2.8"
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot-extensions/v1.0/declarative-copilot.schema.json",
+    "name": "${{ APP_NAME }} copilot",
+    "description": "${{ APP_NAME }} copilot created with Teams Toolkit",
+    "instructions": "You are a declarative copilot and were created with Team Toolkit. You are an expert at helping users with their questions about the ${{ APP_NAME }} connector and will help them in their quest to find the right information.",
+    "capabilities": [
+        { 
+            "name": "GraphConnectors", 
+            "connections": [ 
+                { "connection_id": "${{ CONNECTOR_ID }}" }
+        ]}
+    ]
+}
