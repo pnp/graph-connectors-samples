@@ -12,6 +12,7 @@ const schemaFile = fs.readFileSync(`${__dirname}/schema.json`, 'utf8');
 const schema = JSON.parse(schemaFile);
 
 export const config = {
+    debug: argv.debug ?? false,
     tenantId: process.env.AAD_APP_TENANT_ID,
     clientId: process.env.AAD_APP_CLIENT_ID,
     clientSecret: argv.secret,

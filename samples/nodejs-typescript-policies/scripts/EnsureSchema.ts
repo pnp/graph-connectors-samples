@@ -5,6 +5,11 @@ const { id, schema } = config.connector;
 
 async function createSchema() {
   try {
+    if(config.debug) {
+      console.log(`POST: /external/connections/${id}/schema`);
+      console.log(`Schema: ${JSON.stringify(schema, null, 2)}`);
+    }
+
     await client
       .api(`/external/connections/${id}/schema`)
       .header('content-type', 'application/json')
@@ -21,6 +26,10 @@ async function createSchema() {
 }
 
 async function getSchema(): Promise<any> {
+  if(config.debug) {
+    console.log(`GET: /external/connections/${id}/schema`);
+  }
+
   const connection = await client
     .api(`/external/connections/${id}/schema`)
     .get();

@@ -28,7 +28,7 @@ provision:
   - uses: script
     name: Deploy connection
     with:
-      run: npx ts-node DeployConnection.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}}
+      run: npx ts-node DeployConnection.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}} --debug true
       workingDirectory: scripts
 
   # Creates a Teams app

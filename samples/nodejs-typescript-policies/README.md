@@ -4,6 +4,15 @@
 
 With the declarative copilot, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative copilot can be used to create a grocery list based on a meal plan that you send to Copilot.
 
+## Quick getting started
+
+1. Clone the repository.
+2. npm i
+3. Run provision on Teams Toolkit
+4. Open edge at office.com/chat
+5. Select your declarative copilot
+6. Use one of the following prompts
+
 ## Get started with the template
 
 > **Prerequisites**
