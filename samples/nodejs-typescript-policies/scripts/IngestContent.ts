@@ -3,7 +3,6 @@ import { client } from './GraphClient';
 import fs from 'fs';
 import matter, { GrayMatterFile } from 'gray-matter';
 import path from 'path';
-import url from 'url';
 
 function extractContent(): GrayMatterFile<string>[] {
   var content = [];
@@ -60,7 +59,6 @@ async function loadContent(content) {
         .api(`/external/connections/${id}/items/${doc.id}`)
         .header('content-type', 'application/json')
         .put(doc);
-      console.log('  DONE');
     }
     catch (e) {
       console.error(`Failed to load ${doc.id}: ${e.message}`);
@@ -72,14 +70,7 @@ async function loadContent(content) {
   }
 }
 
-async function main() {
-  try {
-    const files = await extractContent();
-    await loadContent(files);
-  }
-  catch (e) {
-    console.error(e);
-  }
+export async function ensureIngestion() {
+  const files = await extractContent();
+  await loadContent(files);
 }
-
-main();

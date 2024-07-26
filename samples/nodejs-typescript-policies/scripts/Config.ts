@@ -1,13 +1,14 @@
 import dotenv from 'dotenv'; 
 import minimist from 'minimist';
 import fs from 'fs';
+
 const argv = minimist(process.argv.slice(2));
 
 dotenv.config({
-    path: [`./env/.env.${argv.env}`, `./env/.env.${argv.env}.user`]
+    path: [`${__dirname}/../env/.env.${argv.env}`, `${__dirname}/../env/.env.${argv.env}.user`]
 });
 
-const schemaFile = fs.readFileSync('./schema.json', 'utf8');
+const schemaFile = fs.readFileSync(`${__dirname}/schema.json`, 'utf8');
 const schema = JSON.parse(schemaFile);
 
 export const config = {

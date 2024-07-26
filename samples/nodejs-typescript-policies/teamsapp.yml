@@ -26,21 +26,9 @@ provision:
       outputFilePath: ./appPackage/build/aad.manifest.${{TEAMSFX_ENV}}.json
 
   - uses: script
-    name: Ensure connection
+    name: Deploy connection
     with:
-      run: npx ts-node EnsureConnection.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}}
-      workingDirectory: scripts
-
-  - uses: script
-    name: Ensure schema
-    with:
-      run: npx ts-node EnsureSchema.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}}
-      workingDirectory: scripts
-
-  - uses: script
-    name: Ingest content
-    with:
-      run: npx ts-node IngestContent.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}}
+      run: npx ts-node DeployConnection.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}}
       workingDirectory: scripts
 
   # Creates a Teams app
