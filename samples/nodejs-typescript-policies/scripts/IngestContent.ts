@@ -1,8 +1,10 @@
 import { config } from './Config';
-import { client } from './GraphClient';
+import { initClient } from './GraphClient';
 import fs from 'fs';
 import matter, { GrayMatterFile } from 'gray-matter';
 import path from 'path';
+
+const client = initClient();
 
 function extractContent(): GrayMatterFile<string>[] {
   var content = [];

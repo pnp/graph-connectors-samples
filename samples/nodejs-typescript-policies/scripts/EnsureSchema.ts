@@ -1,7 +1,8 @@
 import { config } from './Config';
-import { client } from './GraphClient';
+import { initClient } from './GraphClient';
 
 const { id, schema } = config.connector;
+const client = initClient();
 
 async function createSchema() {
   try {

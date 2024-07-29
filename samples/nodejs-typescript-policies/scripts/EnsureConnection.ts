@@ -1,7 +1,12 @@
 import { config } from './Config';
-import { client } from './GraphClient';
+import { initClient } from './GraphClient';
 
 const { id, name, description } = config.connector;
+let client = initClient();
+const timeout = 600000; // 10 minutes
+const retryInterval = 15000; // 15 seconds
+const initialTimestamp = Date.now();
+let consentRequested = false;
 
 async function createConnection() {  
   if(config.debug) {
@@ -40,15 +45,30 @@ async function getConnection(): Promise<any> {
 
 export async function ensureConnection(): Promise<boolean> {  
   try {
-    await getConnection();
-    console.log(`Connection ${id} already exists`);
-    return true;
+    // If time elapsed is less than 10 minutes, try again
+    if(Date.now() - initialTimestamp <= timeout) {
+      // We need to re-initialize the client because of granting the admin consent
+      client = initClient();
+      await getConnection();
+      console.log(`Connection ${id} already exists`);
+      return true;
+    } else {
+      console.error(`Could not create connection ${id} in under 10 minutes`);
+    }
   } catch (e) {
     if(e.statusCode === 404) {
       await createConnection();
       return true;
-    } else if (e.statusCode === 401) {
-      console.error(`\nYou need to grant tenant-wide admin consent to the application in Entra ID\nClick on this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false\nOnce done, please restart the "Publish" process in Teams Toolkit`);
+    } else if (e.statusCode === 401 || e.statusCode === 403) {
+      if(config.debug) {
+        console.warn(e);
+      }
+      if(!consentRequested) {
+        console.error(`\nYou need to grant tenant-wide admin consent to the application in Entra ID\nClick on this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false`);
+        consentRequested = true;
+      }
+      
+      setTimeout(ensureConnection, retryInterval);
     } else {
       console.error(e);
     }
