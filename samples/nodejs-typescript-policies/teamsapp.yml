@@ -25,12 +25,6 @@ provision:
       manifestPath: ./aad.manifest.json
       outputFilePath: ./appPackage/build/aad.manifest.${{TEAMSFX_ENV}}.json
 
-  - uses: script
-    name: Deploy connection
-    with:
-      run: npx ts-node DeployConnection.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}} --debug true
-      workingDirectory: scripts
-
   # Creates a Teams app
   - uses: teamsApp/create
     with:
@@ -65,6 +59,19 @@ provision:
     writeToEnvironmentFile:
       titleId: M365_TITLE_ID
       appId: M365_APP_ID
+
+deploy:
+  - uses: script
+    name: Install dependencies
+    with:
+      run: npm install --no-audit
+
+  # Deploys the Graph connector
+  - uses: script
+    name: Deploy connection
+    with:
+      run: npx ts-node DeployConnection.ts --env ${{TEAMSFX_ENV}} --secret ${{SECRET_AAD_APP_CLIENT_SECRET}} --debug true
+      workingDirectory: scripts
 
 # Triggered when 'teamsapp publish' is executed
 publish:

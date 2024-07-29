@@ -7,8 +7,8 @@ With the declarative copilot, you can build a custom version of Copilot that can
 ## Quick getting started
 
 1. Clone the repository.
-2. npm i
 3. Run provision on Teams Toolkit
+4. Run deploy on Teams Toolkit
 4. Open edge at office.com/chat
 5. Select your declarative copilot
 6. Use one of the following prompts

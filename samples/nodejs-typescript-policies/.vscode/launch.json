@@ -23,5 +23,17 @@
             },
             "internalConsoleOptions": "neverOpen"
         }
-    ]
+    ],
+    "compounds": [
+        {
+            "name": "Deploy",
+            "configurations": ["Preview in Copilot (Edge)"],
+            "preLaunchTask": "TTK",
+            "presentation": {
+              "group": "all",
+              "order": 1
+            },
+            "stopAll": true
+        }
+    ],
 }

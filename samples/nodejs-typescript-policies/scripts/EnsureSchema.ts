@@ -1,3 +1,4 @@
+import { delay } from './Common';
 import { config } from './Config';
 import { initClient } from './GraphClient';
 
@@ -31,20 +32,20 @@ async function getSchema(): Promise<any> {
     console.log(`GET: /external/connections/${id}/schema`);
   }
 
-  const connection = await client
+  await client
     .api(`/external/connections/${id}/schema`)
     .get();
-
-  return connection;
 }
 
-export async function ensureSchema(): Promise<boolean> {  
+export async function ensureSchema() {  
   try {
     await getSchema();
-    return true;
   } catch (e) {
     if(e.statusCode === 404) {
       await createSchema();
+    } else {
+      await delay(10000);
+      ensureSchema();
     }
   }
 }

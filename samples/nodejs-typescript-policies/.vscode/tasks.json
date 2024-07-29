@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "TTK",
+        "dependsOn": [
+          "npm install",
+          "Provision",
+          "Deploy"
+        ],
+        "dependsOrder": "sequence"
+      },
+      {
+        "type": "shell",
+        "label": "npm install",
+        "command": "npm install --no-audit"
+      },
+      {
+        "label": "Provision",
+        "type": "teamsfx",
+        "command": "provision",
+        "args": {
+          "env": "dev"
+        }
+      },
+      {
+        "label": "Deploy",
+        "type": "teamsfx",
+        "command": "deploy",
+        "args": {
+          "env": "dev"
+        }
+      },
+      {
+        "label": "Terminate All Tasks",
+        "command": "echo ${input:terminate}",
+        "type": "shell",
+        "problemMatcher": []
+      }
+    ],
+    "inputs": [
+      {
+        "id": "terminate",
+        "type": "command",
+        "command": "workbench.action.tasks.terminate",
+        "args": "terminateAll"
+      }
+    ]
+  }
