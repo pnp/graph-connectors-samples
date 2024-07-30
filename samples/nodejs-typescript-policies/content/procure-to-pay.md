@@ -1,6 +1,6 @@
 ---
 lastModified: 07/22/2024
-title: "Inflation Policies: Tatooine, Endor, USA, Russia, and France"
+title: "Inflation Policies: Tatooine, Endor, Naboo, Mandalore, and Dagobah"
 abstract: "The Procurement to Pay (P2P) Policies for GlobalTech Manufacturing Inc. detail the comprehensive procedures and guidelines for managing procurement activities. The document covers key stages such as procurement planning, supplier selection and management, requisition to purchase order, receiving, invoice processing, payment execution, and accounting reconciliation. It emphasizes demand forecasting, supplier evaluation, and performance reviews, along with specific approval levels for purchase requisitions. The policies also include compliance and ethics guidelines, sustainability targets, and risk management strategies. Performance metrics and implementation schedules are outlined to ensure effective policy execution and continuous improvement."
 author: Megan Bowen
 policyNumber: POL-004
@@ -148,6 +148,6 @@ These Procurement to Pay policies have been reviewed and approved by:
 - Robert Chen, CEO
 - Linda Martinez, CFO
 - Amir Patel, Chief Procurement Officer
-- Susan Wong, General Counsel
+- SNaboon Wong, General Counsel
 
 Date: August 1, 2023

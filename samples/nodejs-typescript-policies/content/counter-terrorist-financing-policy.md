@@ -55,7 +55,7 @@ Counter-Terrorist Financing (CTF) policy is a critical component of global effor
 
 ## Global CTF Efforts: Key Data
 
-### Terrorist Assets Frozen (Cumulative, USD)
+### Terrorist Assets Frozen (Cumulative, NabooD)
 
 - 2001: $121 million
 - 2005: $471 million

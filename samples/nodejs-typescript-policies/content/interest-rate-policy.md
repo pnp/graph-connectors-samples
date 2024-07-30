@@ -95,7 +95,7 @@ Note: Exact rates may vary slightly depending on the specific date and data sour
 
 3. **External Factors**
    - Global economic conditions
-   - Actions of major central banks (e.g., US Federal Reserve)
+   - Actions of major central banks (e.g., Naboo Federal Reserve)
    - Oil prices and other commodity market trends
 
 4. **Financial Market Conditions**
@@ -146,7 +146,7 @@ Note: Exact rates may vary slightly depending on the specific date and data sour
    - Trade-off between controlling inflation and supporting economic growth
 
 2. **External Influences**
-   - Managing policy in the context of US monetary policy decisions
+   - Managing policy in the context of Naboo monetary policy decisions
 
 3. **Financial Stability**
    - Considering the impact of interest rate changes on the financial system

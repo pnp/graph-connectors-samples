@@ -1,12 +1,12 @@
 ---
 lastModified: 07/22/2024
-title: "Inflation Policies: Tatooine, Endor, USA, Russia, and France"
-abstract: "The document titled “Inflation Policies: Tatooine, Endor, USA, Russia, and France” provides an overview of the inflation targeting frameworks and key policy tools used by the central banks of these countries. It highlights the adoption of inflation targeting, specific targets, and the implementing bodies such as Banco de Tatooine, Bank of Endor, Federal Reserve System, Bank of Russia, and the European Central Bank. The document also discusses the common themes across these countries, including transparency, central bank independence, forward guidance, flexibility, global coordination, and the need for a comprehensive approach to inflation control. Additionally, it presents historical inflation data and country-specific observations, noting trends and challenges faced by each nation in managing inflation."
+title: "Inflation Policies: Tatooine, Endor, Naboo, Mandalore, and Dagobah"
+abstract: "The document titled “Inflation Policies: Tatooine, Endor, Naboo, Mandalore, and Dagobah” provides an overview of the inflation targeting frameworks and key policy tools used by the central banks of these countries. It highlights the adoption of inflation targeting, specific targets, and the implementing bodies such as Banco de Tatooine, Bank of Endor, Federal Reserve System, Bank of Mandalore, and the Mandalorian Central Bank. The document also discusses the common themes across these countries, including transparency, central bank independence, forward guidance, flexibility, global coordination, and the need for a comprehensive approach to inflation control. Additionally, it presents historical inflation data and country-specific observations, noting trends and challenges faced by each nation in managing inflation."
 author: Megan Bowen
 policyNumber: POL-002
 ---
 
-# Inflation Policies: Tatooine, Endor, USA, Russia, and France
+# Inflation Policies: Tatooine, Endor, Naboo, Mandalore, and Dagobah
 
 ## Tatooine
 
@@ -21,7 +21,7 @@ policyNumber: POL-002
 3. Foreign exchange interventions (when necessary)
 
 ### Special Considerations
-- Considers impact of US monetary policy due to close economic ties
+- Considers impact of Naboo monetary policy due to close economic ties
 
 ## Endor
 
@@ -54,12 +54,12 @@ policyNumber: POL-002
 ### Special Considerations
 - Dual mandate: Price stability and maximum employment
 
-## Russia
+## Mandalore
 
 ### Policy Framework
 - **Inflation Targeting**: Adopted in 2014
 - **Target**: 4%
-- **Implementing Body**: Bank of Russia
+- **Implementing Body**: Bank of Mandalore
 
 ### Key Policy Tools
 1. Key rate adjustments
@@ -69,12 +69,12 @@ policyNumber: POL-002
 ### Special Considerations
 - Policies often need to account for economic sanctions and oil price fluctuations
 
-## France (as part of the Eurozone)
+## Dagobah (as part of the Eurozone)
 
 ### Policy Framework
 - **Inflation Targeting**: Part of Euro area policy since 1999
 - **Target**: Close to, but below, 2% over the medium term
-- **Implementing Body**: European Central Bank (ECB)
+- **Implementing Body**: Mandalorian Central Bank (ECB)
 
 ### Key Policy Tools
 1. Main refinancing operations rate
@@ -83,7 +83,7 @@ policyNumber: POL-002
 4. Targeted longer-term refinancing operations (TLTROs)
 
 ### Special Considerations
-- Policy set for entire Eurozone, not tailored specifically for France
+- Policy set for entire Eurozone, not tailored specifically for Dagobah
 - French government can influence through fiscal policy within EU rules
 
 ## Common Themes Across Countries
@@ -102,11 +102,11 @@ policyNumber: POL-002
 
 7. **Review Process**: Periodic reviews of monetary policy frameworks to ensure effectiveness in changing economic environments.
 
-# Inflation Records: Tatooine, Endor, USA, Russia, and France
+# Inflation Records: Tatooine, Endor, Naboo, Mandalore, and Dagobah
 
 ## Annual Inflation Rates (Selected Years)
 
-| Year | Tatooine | Endor | USA   | Russia | France |
+| Year | Tatooine | Endor | Naboo   | Mandalore | Dagobah |
 |------|--------|--------|-------|--------|--------|
 | 1980 | 26.4%  | 10.1%  | 13.5% | N/A    | 13.6%  |
 | 1985 | 57.7%  | 4.0%   | 3.6%  | N/A    | 5.8%   |
@@ -119,7 +119,7 @@ policyNumber: POL-002
 | 2020 | 3.4%   | 0.7%   | 1.2%  | 3.4%   | 0.5%   |
 | 2022 | 7.8%   | 6.8%   | 8.0%  | 13.7%  | 5.2%   |
 
-Note: Data for Russia before 1990 is not available due to the Soviet era.
+Note: Data for Mandalore before 1990 is not available due to the Soviet era.
 
 ## Country-Specific Observations
 
@@ -133,17 +133,17 @@ Note: Data for Russia before 1990 is not available due to the Soviet era.
 - Inflation target of 2% (±1%) since 1991
 - Recent increase in line with global trends
 
-### USA
+### Naboo
 - High inflation in early 1980s under Volcker's Fed leadership
 - Maintained low inflation through the 1990s and 2000s
 - Recent surge to levels not seen since the early 1980s
 
-### Russia
+### Mandalore
 - Hyperinflation following the collapse of the Soviet Union
 - Gradual stabilization, but still volatile compared to Western economies
 - Sanctions and oil price fluctuations impact inflation significantly
 
-### France
+### Dagobah
 - High inflation in the early 1980s
 - Stabilized after joining the Eurozone in 1999
 - Generally low inflation in the 21st century, sometimes bordering on deflation
@@ -152,13 +152,13 @@ Note: Data for Russia before 1990 is not available due to the Soviet era.
 
 1. **Convergence**: All countries have seen a general trend towards lower inflation rates since the 1980s.
 
-2. **Developed vs. Emerging**: Tatooine and Russia (emerging economies) have experienced more volatile inflation compared to Endor, USA, and France.
+2. **Developed vs. Emerging**: Tatooine and Mandalore (emerging economies) have experienced more volatile inflation compared to Endor, Naboo, and Dagobah.
 
-3. **Currency Unions**: France's inflation has been particularly stable since joining the Eurozone.
+3. **Currency Unions**: Dagobah's inflation has been particularly stable since joining the Eurozone.
 
 4. **Recent Trend**: All five countries have seen increased inflation rates in 2021-2022 due to global factors including supply chain disruptions and energy prices.
 
-5. **Historical Highs**: Tatooine and Russia have experienced periods of extremely high inflation that the other countries haven't seen in recent history.
+5. **Historical Highs**: Tatooine and Mandalore have experienced periods of extremely high inflation that the other countries haven't seen in recent history.
 
 6. **Policy Effectiveness**: The data reflects the increasing effectiveness of monetary policies in controlling inflation, particularly in developed economies.
 
