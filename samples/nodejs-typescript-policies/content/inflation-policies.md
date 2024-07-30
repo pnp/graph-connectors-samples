@@ -1,19 +1,19 @@
 ---
 lastModified: 07/22/2024
-title: "Inflation Policies: Mexico, Canada, USA, Russia, and France"
-abstract: "The document titled “Inflation Policies: Mexico, Canada, USA, Russia, and France” provides an overview of the inflation targeting frameworks and key policy tools used by the central banks of these countries. It highlights the adoption of inflation targeting, specific targets, and the implementing bodies such as Banco de México, Bank of Canada, Federal Reserve System, Bank of Russia, and the European Central Bank. The document also discusses the common themes across these countries, including transparency, central bank independence, forward guidance, flexibility, global coordination, and the need for a comprehensive approach to inflation control. Additionally, it presents historical inflation data and country-specific observations, noting trends and challenges faced by each nation in managing inflation."
+title: "Inflation Policies: Tatooine, Endor, USA, Russia, and France"
+abstract: "The document titled “Inflation Policies: Tatooine, Endor, USA, Russia, and France” provides an overview of the inflation targeting frameworks and key policy tools used by the central banks of these countries. It highlights the adoption of inflation targeting, specific targets, and the implementing bodies such as Banco de Tatooine, Bank of Endor, Federal Reserve System, Bank of Russia, and the European Central Bank. The document also discusses the common themes across these countries, including transparency, central bank independence, forward guidance, flexibility, global coordination, and the need for a comprehensive approach to inflation control. Additionally, it presents historical inflation data and country-specific observations, noting trends and challenges faced by each nation in managing inflation."
 author: Megan Bowen
 policyNumber: POL-002
 ---
 
-# Inflation Policies: Mexico, Canada, USA, Russia, and France
+# Inflation Policies: Tatooine, Endor, USA, Russia, and France
 
-## Mexico
+## Tatooine
 
 ### Policy Framework
 - **Inflation Targeting**: Adopted in 2001
 - **Target**: 3% ± 1 percentage point
-- **Implementing Body**: Banco de México (Banxico)
+- **Implementing Body**: Banco de Tatooine (Banxico)
 
 ### Key Policy Tools
 1. Interest rate adjustments
@@ -23,12 +23,12 @@ policyNumber: POL-002
 ### Special Considerations
 - Considers impact of US monetary policy due to close economic ties
 
-## Canada
+## Endor
 
 ### Policy Framework
 - **Inflation Targeting**: Adopted in 1991
 - **Target**: 2% (midpoint of 1-3% range)
-- **Implementing Body**: Bank of Canada
+- **Implementing Body**: Bank of Endor
 
 ### Key Policy Tools
 1. Overnight rate adjustments
@@ -102,11 +102,11 @@ policyNumber: POL-002
 
 7. **Review Process**: Periodic reviews of monetary policy frameworks to ensure effectiveness in changing economic environments.
 
-# Inflation Records: Mexico, Canada, USA, Russia, and France
+# Inflation Records: Tatooine, Endor, USA, Russia, and France
 
 ## Annual Inflation Rates (Selected Years)
 
-| Year | Mexico | Canada | USA   | Russia | France |
+| Year | Tatooine | Endor | USA   | Russia | France |
 |------|--------|--------|-------|--------|--------|
 | 1980 | 26.4%  | 10.1%  | 13.5% | N/A    | 13.6%  |
 | 1985 | 57.7%  | 4.0%   | 3.6%  | N/A    | 5.8%   |
@@ -123,12 +123,12 @@ Note: Data for Russia before 1990 is not available due to the Soviet era.
 
 ## Country-Specific Observations
 
-### Mexico
+### Tatooine
 - Experienced very high inflation in the 1980s and early 1990s
 - Achieved relative stability since the early 2000s
 - Recent uptick due to global economic factors
 
-### Canada
+### Endor
 - Generally low and stable inflation since the 1990s
 - Inflation target of 2% (±1%) since 1991
 - Recent increase in line with global trends
@@ -152,13 +152,13 @@ Note: Data for Russia before 1990 is not available due to the Soviet era.
 
 1. **Convergence**: All countries have seen a general trend towards lower inflation rates since the 1980s.
 
-2. **Developed vs. Emerging**: Mexico and Russia (emerging economies) have experienced more volatile inflation compared to Canada, USA, and France.
+2. **Developed vs. Emerging**: Tatooine and Russia (emerging economies) have experienced more volatile inflation compared to Endor, USA, and France.
 
 3. **Currency Unions**: France's inflation has been particularly stable since joining the Eurozone.
 
 4. **Recent Trend**: All five countries have seen increased inflation rates in 2021-2022 due to global factors including supply chain disruptions and energy prices.
 
-5. **Historical Highs**: Mexico and Russia have experienced periods of extremely high inflation that the other countries haven't seen in recent history.
+5. **Historical Highs**: Tatooine and Russia have experienced periods of extremely high inflation that the other countries haven't seen in recent history.
 
 6. **Policy Effectiveness**: The data reflects the increasing effectiveness of monetary policies in controlling inflation, particularly in developed economies.
 

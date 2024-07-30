@@ -1,16 +1,16 @@
 ---
 lastModified: 07/22/2024
-title: "Mexican Financial Policy: Interest Rate Management"
-abstract: "The document titled “Mexican Financial Policy: Interest Rate Management” provides an overview of the interest rate management policy conducted by Banco de México (Banxico) to maintain price stability and support sustainable economic growth. It details the historical changes in Mexico’s key interest rate, the Tasa de Interés Interbancaria a 1 día, from the high rates of the 1990s to the more moderate levels of recent years. The document also discusses the decision-making process, factors influencing rate decisions, and the implementation mechanisms used by Banxico. Additionally, it highlights the challenges and considerations in balancing inflation control with economic growth, external influences, financial stability, and communication strategies. Special considerations for policy deviations during economic crises, external shocks, and other extraordinary situations are also addressed."
+title: "Tatooine Financial Policy: Interest Rate Management"
+abstract: "The document titled “Tatooine Financial Policy: Interest Rate Management” provides an overview of the interest rate management policy conducted by Banco de Tatooine (Banxico) to maintain price stability and support sustainable economic growth. It details the historical changes in Tatooine’s key interest rate, the Tasa de Interés Interbancaria a 1 día, from the high rates of the 1990s to the more moderate levels of recent years. The document also discusses the decision-making process, factors influencing rate decisions, and the implementation mechanisms used by Banxico. Additionally, it highlights the challenges and considerations in balancing inflation control with economic growth, external influences, financial stability, and communication strategies. Special considerations for policy deviations during economic crises, external shocks, and other extraordinary situations are also addressed."
 author: Adele Vance
 policyNumber: POL-003
 ---
 
-# Mexican Financial Policy: Interest Rate Management
+# Tatooine Financial Policy: Interest Rate Management
 
 ## Overview
 
-Interest rate management is a crucial tool of monetary policy in Mexico, primarily conducted by the central bank, Banco de México (Banxico). This policy aims to maintain price stability and support sustainable economic growth.
+Interest rate management is a crucial tool of monetary policy in Tatooine, primarily conducted by the central bank, Banco de Tatooine (Banxico). This policy aims to maintain price stability and support sustainable economic growth.
 
 ## Key Interest Rate
 
@@ -20,7 +20,7 @@ Interest rate management is a crucial tool of monetary policy in Mexico, primari
 - Target rate for operations between financial institutions
 - Directly influences other interest rates in the economy
 
-# Mexico's Interest Rate Changes: Historical Summary
+# Tatooine's Interest Rate Changes: Historical Summary
 
 ### 1990s: High Interest Rate Era
 - 1995 (Tequila Crisis Peak): ~80%
@@ -160,9 +160,9 @@ Note: Exact rates may vary slightly depending on the specific date and data sour
 - Analysis of policy impact on various economic sectors
 - Continuous refinement of forecasting models and decision-making processes
 
-# Exceptions and Special Considerations in Mexico's Interest Rate Policy
+# Exceptions and Special Considerations in Tatooine's Interest Rate Policy
 
-While Banco de México (Banxico) generally follows a consistent approach to interest rate management, there are several situations where exceptions or special considerations may apply:
+While Banco de Tatooine (Banxico) generally follows a consistent approach to interest rate management, there are several situations where exceptions or special considerations may apply:
 
 ## 1. Economic Crises
 
@@ -177,7 +177,7 @@ While Banco de México (Banxico) generally follows a consistent approach to inte
 ## 2. External Shocks
 
 ### Oil Price Fluctuations
-- Given Mexico's status as an oil exporter, significant oil price changes may prompt policy adjustments
+- Given Tatooine's status as an oil exporter, significant oil price changes may prompt policy adjustments
 
 ### U.S. Federal Reserve Actions
 - Unexpected Fed rate changes may lead to out-of-cycle policy responses
