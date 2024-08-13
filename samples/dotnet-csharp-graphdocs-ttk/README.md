@@ -25,38 +25,10 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-You can run this sample in three ways:
+You can run this sample in two ways:
 
-1. **Simulated debugging with Dev Proxy** where you can test your code locally without deploying any resource to Azure and Microsoft 365.
 1. **Debug locally against a Microsoft 365 tenant** where you package the project as a Teams app and deploy it to Microsoft 365. You run the Graph connector locally and expose it across the internet using a dev tunnel.
 1. **Deploy to Azure and test against a Microsoft 365 tenant** which is what you'd do when you're ready to deploy your Graph connector to production.
-
-## Simulated debugging with Dev Proxy
-
-### 1. Project setup
-
-- Clone repo
-
-### 2. Dev Proxy setup
-
-- [Install](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started#install-dev-proxy) Dev Proxy
-
-### 3. Start a debug session
-
-- Open the solution in Visual Studio
-- Press <kbd>F5</kbd> to start a debug session
-- Wait for the Azure Functions host to start (you will see errors in the debug terminal, this is expected)
-
-### 4. Start Dev Proxy and simulate webhook notification
-
-- Open a command prompt and change the working directory to the project directory
-- Run `devproxy` to start Dev Proxy which will mock responses from Microsoft 365 and simulate the custom API
-- Press <kbd>w</kbd> to simulate a webhook notification from Microsoft 365 to simulate the setup process which includes:
-  - creating an external connection
-  - provisioning the schema
-  - importing external content
-
-> TIP: To monitor the activity check out the output of the Azure Functions host in the terminal window. You'll see the status of the different activities as they are completed.
 
 ## Debug locally against a real Microsoft 365 tenant
 

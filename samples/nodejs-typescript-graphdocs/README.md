@@ -14,13 +14,13 @@ This sample contains a Microsoft Graph connector that shows how to ingest local 
 
 Version|Date|Comments
 -------|----|--------
+1.1|August 13, 2024|Updates instructions
 1.0|July 11, 2024|Initial release
 
 ## Prerequisites
 
 - [Microsoft 365 Developer tenant](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Node.js LTS](https://nodejs.org)
-- [Dev Proxy](https://aka.ms/devproxy) (optional)
 
 ## Minimal path to awesome
 
@@ -39,14 +39,6 @@ Version|Date|Comments
   - copy the contents of the [result-layout.json](result-layout.json) file and paste them into the **Result layout** editor
   - apply the changes by selecting **Next**
   - confirm the changes by selecting **Update Result type**
-
-If you want to use mock Microsoft Graph API with Dev Proxy:
-
-- Start Dev Proxy: `devproxy`
-- In a separate terminal window
-  - Create the external connection: `npm run start:createConnection:proxy`
-  - Ingest the content: `npm run start:loadContent:proxy`
-- When finished, switch to the terminal window where Dev Proxy is running and stop it by pressing `Ctrl+C`
 
 ## Features
 
