@@ -1,5 +1,5 @@
 import minimist from 'minimist';
-import { schema } from '../schema';
+import schema from '../schema.json';
 
 const argv = minimist(process.argv.slice(2));
 

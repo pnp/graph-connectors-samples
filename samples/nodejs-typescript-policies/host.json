@@ -6,9 +6,7 @@
         "isEnabled": true,
         "excludedTypes": "Request"
       }
-    },
-    "Function.policies": "Information",
-    "default": "None"
+    }
   },
   "extensionBundle": {
     "id": "Microsoft.Azure.Functions.ExtensionBundle",

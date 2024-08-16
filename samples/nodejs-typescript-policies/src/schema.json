@@ -1,4 +1,4 @@
-export const schema = [
+[
   {
     "name": "title",
     "type": "String",
