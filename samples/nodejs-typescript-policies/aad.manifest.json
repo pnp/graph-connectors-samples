@@ -3,7 +3,7 @@
     "appId": "${{AAD_APP_CLIENT_ID}}",
     "name": "${{APP_NAME}}-${{TEAMSFX_ENV}}",
     "accessTokenAcceptedVersion": 2,
-    "signInAudience": "AzureADMultipleOrgs",
+    "signInAudience": "AzureADMyOrg",
     "requiredResourceAccess": [
       {
         "resourceAppId": "Microsoft Graph",

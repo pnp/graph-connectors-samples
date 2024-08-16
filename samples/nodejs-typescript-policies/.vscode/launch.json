@@ -2,6 +2,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Attach to Node Functions",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "preLaunchTask": "func: host start",
+            "presentation": {
+                "hidden": true,
+                "group": "",
+                "order": 1
+            },
+            "restart": true,
+            "postDebugTask": "Terminate All Tasks"
+        },
+        {
             "name": "Preview in Copilot (Edge)",
             "type": "msedge",
             "request": "launch",
@@ -26,8 +40,8 @@
     ],
     "compounds": [
         {
-            "name": "Deploy",
-            "configurations": ["Preview in Copilot (Edge)"],
+            "name": "Debug Connector",
+            "configurations": ["Attach to Node Functions"],
             "preLaunchTask": "TTK",
             "presentation": {
               "group": "all",

@@ -8,14 +8,14 @@ const client = initClient();
 
 function extractContent(): GrayMatterFile<string>[] {
   var content = [];
-  var contentFiles = fs.readdirSync('../content');
+  var contentFiles = fs.readdirSync('./content');
 
   contentFiles.forEach(f => {
     if (!f.endsWith('.md')) {
       return;
     }
 
-    const fileContents = fs.readFileSync(path.resolve('../content', f), 'utf-8');
+    const fileContents = fs.readFileSync(path.resolve('./content', f), 'utf-8');
     const doc = matter(fileContents);
     doc.data.url = new URL(doc.data.policyNumber, config.connector.baseUrl).href;
     content.push(doc);

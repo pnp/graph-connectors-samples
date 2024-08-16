@@ -19,7 +19,7 @@ async function createConnection() {
     }, null, 2)}`);
   }
 
-  console.log(`Creating connection ${id}. This should take under 10 minutes...`);
+  console.log(`Creating connection ${id}.`);
 
   await client
     .api('/external/connections')

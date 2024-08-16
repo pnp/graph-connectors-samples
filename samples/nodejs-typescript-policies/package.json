@@ -2,20 +2,36 @@
   "name": "nodejs-typescript-policies",
   "version": "1.0.0",
   "description": "## Build a basic declarative copilot",
-  "main": "index.js",
   "module": "esnext",
+  "main": "dist/src/functions/*.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\"",
+    "storage": "azurite --silent --location ./_storage_emulator --debug ./_storage_emulator/debug.log"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@azure/functions": "^4.5.0",
+    "@azure/identity": "^4.4.1",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "dotenv": "^16.4.5"
+  },
   "devDependencies": {
+    "azure-functions-core-tools": "^4.0.5907",
+    "@types/node": "18.x",
     "@azure/identity": "^3.3.0",
     "@microsoft/microsoft-graph-client": "^3.0.6",
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
     "minimist": "^1.2.8",
     "ts-node": "^10.9.2",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "rimraf": "^5.0.0",
+    "azurite": "^3.29.0"
   }
 }

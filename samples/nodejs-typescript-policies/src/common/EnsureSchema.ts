@@ -7,10 +7,8 @@ const client = initClient();
 
 async function createSchema() {
   try {
-    if(config.debug) {
-      console.log(`POST: /external/connections/${id}/schema`);
-      console.log(`Schema: ${JSON.stringify(schema, null, 2)}`);
-    }
+    
+    console.log(`Creating schema for connection ${id}. This should take under 10 minutes...`);
 
     await client
       .api(`/external/connections/${id}/schema`)
