@@ -17,7 +17,7 @@ export async function policies(
   await DeployConnections();
 }
 
-app.timer("polciesApp", {
+app.timer("policies", {
     schedule: '0 0 0 30 2 *',
     runOnStartup: true,
     handler: policies
