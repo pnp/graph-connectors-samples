@@ -3,6 +3,10 @@ import { Client, MiddlewareFactory } from '@microsoft/microsoft-graph-client';
 import { TokenCredentialAuthenticationProvider } from '@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials/index.js';
 import { LongRunningOperationMiddleware } from './LongRunningOperationMiddleware';
 
+/**
+ * Initializes a new instance of the Microsoft Graph client.
+ * @returns A new instance of the Microsoft Graph client.
+ */
 export const initClient = (): Client => { 
   const credential = new DefaultAzureCredential();
   

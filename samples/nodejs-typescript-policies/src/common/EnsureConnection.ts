@@ -9,16 +9,10 @@ const retryInterval = 15000; // 15 seconds
 const initialTimestamp = Date.now();
 let consentRequested = false;
 
+/**
+ * Creates a connection in Microsoft Graph.
+ */
 async function createConnection() {  
-  if(config.debug) {
-    console.log(`POST: /external/connections`);
-    console.log(`Connection: ${JSON.stringify({
-      id,
-      name,
-      description
-    }, null, 2)}`);
-  }
-
   console.log(`Creating connection ${id}.`);
 
   await client
@@ -32,11 +26,11 @@ async function createConnection() {
   console.log(`Connection ${id} was created`);
 }
 
+/**
+ * Retrieves a connection from Microsoft Graph.
+ * @returns The connection object.
+ */
 async function getConnection(): Promise<any> {
-  if(config.debug) {
-    console.log(`GET: /external/connections/${id}`);
-  }
-
   const connection = await client
     .api(`/external/connections/${id}`)
     .get();
@@ -44,6 +38,10 @@ async function getConnection(): Promise<any> {
   return connection;
 }
 
+/**
+ * Ensures that the connection exists in Microsoft Graph.
+ * @returns A boolean indicating if the connection was successfully created or already exists.
+ */
 export async function ensureConnection(): Promise<boolean> {  
   try {
     // If time elapsed is less than 10 minutes, try again
@@ -63,9 +61,6 @@ export async function ensureConnection(): Promise<boolean> {
       return true;
     // The authentication is failing, so we need to re-initialize the client as the developer is about grant tenant-wide admin consent
     } else if (e.statusCode === 401 || e.statusCode === 403 || (e.statusCode === -1 && e.code === "AuthenticationRequiredError")) {
-      if(config.debug) {
-        console.warn(e);
-      }
       if(!consentRequested) {
         console.warn(`\nYou need to grant tenant-wide admin consent to the application in Entra ID\nClick on this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false`);
         consentRequested = true;

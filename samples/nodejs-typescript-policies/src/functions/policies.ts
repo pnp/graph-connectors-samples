@@ -8,12 +8,8 @@ import { DeployConnections } from "../common/DeployConnection";
  * @param {InvocationContext} context - The Azure Functions context object.
  * @returns {Promise<HttpResponseInit>} - A promise that resolves with the HTTP response containing the repair information.
  */
-export async function policies(
-  timer: Timer,
-  context: InvocationContext
-): Promise<void> {
-  context.log("Starting policies function...");
-
+export async function policies(): Promise<void> {
+  // Starts the deployment of the Graph connector.
   await DeployConnections();
 }
 

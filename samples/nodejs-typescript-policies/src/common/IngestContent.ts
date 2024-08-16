@@ -3,9 +3,14 @@ import { initClient } from './GraphClient';
 import fs from 'fs';
 import matter, { GrayMatterFile } from 'gray-matter';
 import path from 'path';
+import removeMd from 'remove-markdown';
 
 const client = initClient();
 
+/**
+ * Extracts the content from the files in the content directory.
+ * @returns An array of GrayMatterFile objects.
+ */
 function extractContent(): GrayMatterFile<string>[] {
   var content = [];
   var contentFiles = fs.readdirSync('./content');
@@ -17,6 +22,7 @@ function extractContent(): GrayMatterFile<string>[] {
 
     const fileContents = fs.readFileSync(path.resolve('./content', f), 'utf-8');
     const doc = matter(fileContents);
+    doc.content = removeMd(doc.content.replace(/<[^>]+>/g, ' '));
     doc.data.url = new URL(doc.data.policyNumber, config.connector.baseUrl).href;
     content.push(doc);
   });
@@ -24,6 +30,11 @@ function extractContent(): GrayMatterFile<string>[] {
   return content;
 }
 
+/**
+ * Transforms the content into a format that can be ingested by the Graph API.
+ * @param content 
+ * @returns An array of objects that can be ingested by the Graph API.
+ */
 function transformContent(content) {
   return content.map(doc => {
     return {
@@ -51,7 +62,12 @@ function transformContent(content) {
   });
 }
 
-async function loadContent(content) {
+/**
+ * Loads the content into the Graph API.
+ * @param content 
+ * @returns A promise that resolves when the content has been loaded.
+ */
+async function loadContent(content): Promise<void> {
   const { id } = config.connector;
 
   for (const doc of transformContent(content)) {
@@ -72,6 +88,9 @@ async function loadContent(content) {
   }
 }
 
+/**
+ * Ensures that the content is ingested into the Graph API.
+ */
 export async function ensureIngestion() {
   const files = await extractContent();
   await loadContent(files);

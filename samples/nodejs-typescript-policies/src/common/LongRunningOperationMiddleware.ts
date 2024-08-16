@@ -11,7 +11,6 @@
 
 import { Context } from "@microsoft/microsoft-graph-client";
 import { Middleware } from "@microsoft/microsoft-graph-client";
-import { config } from "./Config";
 
 /**
  * @class
@@ -66,10 +65,6 @@ export class LongRunningOperationMiddleware implements Middleware {
                     // not a job URL we should follow
                     return;
                 }
-
-				if(config.debug) {
-					console.log(`Polling job status from ${location} in ${this.delay}ms`);
-				}
 				
 				await new Promise(resolve => setTimeout(resolve, this.delay));
 
@@ -92,9 +87,6 @@ export class LongRunningOperationMiddleware implements Middleware {
 
             const body: any = await res.json();
             if (body.status === 'inprogress') {
-				if(config.debug) {
-					console.log(`Polling new status in ${this.delay}ms`);
-				}
                 await new Promise(resolve => setTimeout(resolve, this.delay));
                 await this.execute(context);
             }
