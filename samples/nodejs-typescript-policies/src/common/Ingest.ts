@@ -40,7 +40,7 @@ function transformContent(content) {
     return {
       id: doc.data.policyNumber,
       properties: {
-        lastModified: new Date(doc.data.lastModified).toISOString(),
+        lastModified: new Date(doc.data.lastModified).toISOString().slice(0,-5)+"Z",
         title: doc.data.title,
         abstract: doc.data.abstract,
         author: doc.data.author,

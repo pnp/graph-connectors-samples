@@ -1,5 +1,6 @@
 import minimist from 'minimist';
 import schema from '../schema.json';
+import template from '../template.json';
 
 const argv = minimist(process.argv.slice(2));
 
@@ -10,6 +11,7 @@ export const config = {
     name: process.env.CONNECTOR_NAME,
     description: process.env.CONNECTOR_DESCRIPTION,
     schema: schema,
-    baseUrl: process.env.CONNECTOR_BASE_URL
+    baseUrl: process.env.CONNECTOR_BASE_URL,
+    template: template
   }
 }

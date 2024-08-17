@@ -27,6 +27,27 @@ async function createConnection() {
 }
 
 /**
+ * Updates a connection in Microsoft Graph.
+ */
+export async function setSearchSettings() {  
+  console.log(`Updating search settings of connection ${id}.`);
+
+  await client
+    .api(`/external/connections/${id}`)  
+    .patch({
+      searchSettings: {
+        searchResultTemplates: [{
+          id: config.connector.id,
+          layout: config.connector.template,
+          priority: 1
+        }]
+      }
+    });
+
+  console.log(`Connection ${id} was created`);
+}
+
+/**
  * Retrieves a connection from Microsoft Graph.
  * @returns The connection object.
  */
