@@ -1,9 +1,9 @@
-import minimist from 'minimist';
-import schema from '../schema.json';
-import template from '../template.json';
+import schema from './references/schema.json';
+import template from './references/template.json';
 
-const argv = minimist(process.argv.slice(2));
-
+/**
+ * Builds the configuration object based on environment variables.
+ */
 export const config = {
   clientId: process.env.AZURE_CLIENT_ID,
   connector: {
@@ -14,4 +14,4 @@ export const config = {
     baseUrl: process.env.CONNECTOR_BASE_URL,
     template: template
   }
-}
+};

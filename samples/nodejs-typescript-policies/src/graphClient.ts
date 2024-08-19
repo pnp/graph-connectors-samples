@@ -1,22 +1,24 @@
 import { DefaultAzureCredential } from '@azure/identity';
 import { Client, MiddlewareFactory } from '@microsoft/microsoft-graph-client';
 import { TokenCredentialAuthenticationProvider } from '@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials/index.js';
-import { LongRunningOperationMiddleware } from './LongRunningOperationMiddleware';
+import { LongRunningOperationMiddleware } from './longRunningOperationMiddleware';
+
+const delayInterval = 60_000; // 60 seconds
 
 /**
- * Initializes a new instance of the Microsoft Graph client.
+ * Returns a new instance of the Microsoft Graph client.
  * @returns A new instance of the Microsoft Graph client.
  */
-export const initClient = (): Client => { 
+export function getClient(): Client {
   const credential = new DefaultAzureCredential();
-  
+
   const authProvider = new TokenCredentialAuthenticationProvider(credential, {
-    scopes: ['https://graph.microsoft.com/.default'],
+    scopes: ['https://graph.microsoft.com/.default']
   });
-  
+
   const middleware = MiddlewareFactory.getDefaultMiddlewareChain(authProvider);
   // add as a second middleware to get access to the access token
-  middleware.splice(1, 0, new LongRunningOperationMiddleware(30000));
-  
-  return Client.initWithMiddleware({ middleware }) 
-}
+  middleware.splice(1, 0, new LongRunningOperationMiddleware(delayInterval));
+
+  return Client.initWithMiddleware({ middleware });
+};

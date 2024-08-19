@@ -1,18 +1,22 @@
 {
-    "debug.onTaskErrors": "abort",
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "/aad.*.json"
-            ],
-            "schema": {}
-        }
-    ],
-    "azureFunctions.deploySubpath": ".",
-    "azureFunctions.postDeployTask": "npm install (functions)",
-    "azureFunctions.projectLanguage": "TypeScript",
-    "azureFunctions.projectRuntime": "~4",
-    "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.projectLanguageModel": 4,
-    "azureFunctions.preDeployTask": "npm prune (functions)"
+  //"editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "json.format.enable": false,
+  "debug.onTaskErrors": "abort",
+  "json.schemas": [
+    {
+      "fileMatch": ["/aad.*.json"],
+      "schema": {}
+    }
+  ],
+  "azureFunctions.deploySubpath": ".",
+  "azureFunctions.postDeployTask": "npm install (functions)",
+  "azureFunctions.projectLanguage": "TypeScript",
+  "azureFunctions.projectRuntime": "~4",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.projectLanguageModel": 4,
+  "azureFunctions.preDeployTask": "npm prune (functions)"
 }

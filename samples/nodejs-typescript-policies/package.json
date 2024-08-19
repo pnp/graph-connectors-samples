@@ -11,7 +11,9 @@
     "prestart": "npm run clean && npm run build",
     "start": "func start",
     "test": "echo \"No tests yet...\"",
-    "storage": "azurite --silent --location ./_storage_emulator --debug ./_storage_emulator/debug.log"
+    "storage": "azurite --silent --location ./_storage_emulator --debug ./_storage_emulator/debug.log",
+    "prettier:check": "prettier --check \"./src/**/*.{ts,json}\"",
+    "prettier:write": "prettier --write \"./src/**/*.{ts,json}\""
   },
   "author": "",
   "license": "ISC",
@@ -21,17 +23,18 @@
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
-    "minimist": "^1.2.8",
     "remove-markdown": "^0.5.2"
   },
   "devDependencies": {
-    "azure-functions-core-tools": "^4.0.5907",
-    "@types/node": "18.x",
     "@azure/identity": "^3.3.0",
     "@microsoft/microsoft-graph-client": "^3.0.6",
-    "ts-node": "^10.9.2",
-    "typescript": "5.2.2",
+    "@microsoft/microsoft-graph-types": "^2.40.0",
+    "@types/node": "18.x",
+    "azure-functions-core-tools": "^4.0.5907",
+    "azurite": "^3.29.0",
+    "prettier": "3.3.3",
     "rimraf": "^5.0.0",
-    "azurite": "^3.29.0"
+    "ts-node": "^10.9.2",
+    "typescript": "5.2.2"
   }
 }

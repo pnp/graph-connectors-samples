@@ -5,9 +5,7 @@
     "isQueryable": "true",
     "isSearchable": "true",
     "isRetrievable": "true",
-    "labels": [
-      "title"
-    ]
+    "labels": ["title"]
   },
   {
     "name": "abstract",
@@ -22,17 +20,13 @@
     "isQueryable": "true",
     "isRetrievable": "true",
     "isSearchable": "true",
-    "labels": [
-      "createdBy"
-    ]
+    "labels": ["createdBy"]
   },
   {
     "name": "lastModified",
     "type": "dateTime",
     "isRetrievable": "true",
-    "labels": [
-      "lastModifiedDateTime"
-    ]
+    "labels": ["lastModifiedDateTime"]
   },
   {
     "name": "policyNumber",
@@ -45,8 +39,6 @@
     "name": "url",
     "type": "String",
     "isRetrievable": "true",
-    "labels": [
-      "url"
-    ]
+    "labels": ["url"]
   }
 ]
