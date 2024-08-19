@@ -1,57 +1,87 @@
-# Overview of the basic declarative copilot template
+# Ingest custom API data using TypeScript, Node.js and Teams Toolkit for Visual Studio Code
 
-## Build a basic declarative copilot
+## Summary
 
-With the declarative copilot, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative copilot can be used to create a grocery list based on a meal plan that you send to Copilot.
+This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule.
 
-## Quick getting started
+> ℹ️ Sample data was generated using Artificial Intelligence.
 
-1. Clone the repository.
-3. Run provision on Teams Toolkit
-4. Run deploy on Teams Toolkit
-4. Open edge at office.com/chat
-5. Select your declarative copilot
-6. Use one of the following prompts
+![Data from custom API displayed in Copilot for Microsoft 365](./assets/content.png)
 
-## Get started with the template
+## Contributors
 
-> **Prerequisites**
->
-> To run this app template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 16, 18
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
-> - [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Teams Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
-> - [Copilot for Microsoft 365 license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
+- [Sébastien Levert](https://github.com/sebastienlevert)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
-1. First, select the Teams Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Create Teams app by clicking `Provision` in "Lifecycle" section.
-4. Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown.
-5. Once the Copilot app is loaded in the browser, click on the "…" menu and select "Copilot chats". You will see your declarative copilot on the right rail. Clicking on it will change the experience to showcase the logo and name of your declarative copilot.
-6. Ask a question to your declarative copilot and it should respond based on the instructions provided.
+## Version History
 
-## What's included in the template
+Version|Date|Comments
+-------|----|--------
+1.0|August 19th, 2024|Initial release
 
-| Folder       | Contents                                                                                 |
-| ------------ | ---------------------------------------------------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                                                               |
-| `appPackage` | Templates for the Teams application manifest, the GPT manifest and the API specification |
-| `env`        | Environment files                                                                        |
+## Prerequisites
 
-The following files can be customized and demonstrate an example implementation to get you started.
+- [Teams Toolkit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
+- [Azure Functions Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+- [Microsoft 365 Developer tenant](https://developer.microsoft.com/microsoft-365/dev-program) with [uploading custom apps enabled](https://learn.microsoft.com/microsoftteams/platform/m365-apps/prerequisites#prepare-a-developer-tenant-for-testing)
+- [Node@18](https://nodejs.org)
 
-| File                                 | Contents                                                                       |
-| ------------------------------------ | ------------------------------------------------------------------------------ |
-| `appPackage/declarativeCopilot.json` | Define the behaviour and configurations of the declarative copilot.            |
-| `appPackage/manifest.json`           | Teams application manifest that defines metadata for your declarative copilot. |
+## Minimal path to awesome - Debug against a real Microsoft 365 tenant
 
-The following are Teams Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Teams Toolkit works.
+### 1. Project setup
 
-| File           | Contents                                                                                                                                  |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `teamsapp.yml` | This is the main Teams Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+- Clone repo
+- Open repo in VSCode
+- Press <kbd>F5</kbd>, follow the sign in prompts
+- When prompted, click on the link in the console to perform the tenant-wide admin consent
+- Wait for all tasks to complete
 
-## Addition information and references
+### 2. Test in your declarative copilot
 
-- [Extend Microsoft Copilot for Microsoft 365](https://aka.ms/teamsfx-copilot-plugin)
+- Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
+- Select the declarative copilot named `Policy Management`
+- Use the following prompt: `What is the inflation policy on Tatooine?`
+- A response from your declarative copilot will showcase the data ingested by the Graph connector.
+
+![Data from custom API displayed in Microsoft Search](./assets/content.png)
+
+### 3. Include data in results (Optional)
+
+> This step is only required if you need to include the data in the search results in Microsoft 365 and in the general Copilot for Microsoft 365 experience. If you only want to use the connector data from a declarative copilot, you can skip this step.
+
+- In the web browser navigate to the [Microsoft 365 admin center](https://admin.microsoft.com/)
+- From the side navigation, open [Settings > Search & Intelligence](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch)
+- On the page, navigate to the [Data Sources](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
+- A table will display available connections. In the **Required actions** column, select the link to **Include Connector Results** and confirm the prompt
+- Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
+- Use the following prompt: `What is the inflation policy on Tatooine?`
+- A response from Copilot for Microsoft 365 will showcase the data ingested by the Graph connector.
+
+## Features
+
+This sample shows how to ingest data from a custom API into your Microsoft 365 tenant.
+
+The sample illustrates the following concepts:
+
+- simplify debugging and provisioning of resources with Teams Toolkit for Visual Studio code
+- create external connection schema
+- support full ingestion of data
+- visualize the external content in the Policy Management declarative copilot
+- visualize the external content in Copilot for Microsoft 365
+- visualize the external content in search results using a custom Adaptive Card
+
+## Help
+
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-policies%22) to see if anybody else is having the same issues.
+
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-nodejs-typescript-policies)
