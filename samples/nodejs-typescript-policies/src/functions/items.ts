@@ -51,6 +51,6 @@ app.http('items', {
 
 app.timer('deployItems', {
   schedule: '0 0 0 30 2 *',
-  //runOnStartup: true,
+  runOnStartup: true,
   handler: deployItems
 });

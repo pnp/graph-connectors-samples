@@ -4,7 +4,8 @@
 
 This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule.
 
-> ℹ️ Sample data was generated using Artificial Intelligence.
+> [!NOTE]  
+> Sample data was generated using Artificial Intelligence. Any resemblance to real data is purely coincidental.
 
 ![Data from custom API displayed in Copilot for Microsoft 365](./assets/content.png)
 

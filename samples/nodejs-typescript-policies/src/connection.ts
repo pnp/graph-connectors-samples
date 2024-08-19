@@ -44,7 +44,7 @@ export async function setSearchSettings(config: Config) {
     }
   });
 
-  config.context.log(`Connection ${config.connector.id} was created`);
+  config.context.log(`Connection ${config.connector.id} was updated with search settings`);
 }
 
 /**
