@@ -1,14 +1,15 @@
 ---
+id: POL-004
 lastModified: 07/22/2024
 title: "Inflation Policies: Tatooine, Endor, Naboo, Mandalore, and Dagobah"
 abstract: "The Procurement to Pay (P2P) Policies for GlobalTech Manufacturing Inc. detail the comprehensive procedures and guidelines for managing procurement activities. The document covers key stages such as procurement planning, supplier selection and management, requisition to purchase order, receiving, invoice processing, payment execution, and accounting reconciliation. It emphasizes demand forecasting, supplier evaluation, and performance reviews, along with specific approval levels for purchase requisitions. The policies also include compliance and ethics guidelines, sustainability targets, and risk management strategies. Performance metrics and implementation schedules are outlined to ensure effective policy execution and continuous improvement."
 author: Megan Bowen
-policyNumber: POL-004
 ---
 
-# Procurement to Pay (P2P) Policies for GlobalTech Manufacturing Inc.
+# Procurement to Pay (P2P) Policies for GlobalTech Manufacturing Inc
 
 ## Company Overview
+
 - Name: GlobalTech Manufacturing Inc.
 - Industry: Electronics Manufacturing
 - Annual Revenue: $750 million
@@ -97,6 +98,7 @@ policyNumber: POL-004
 ## Cross-Functional Policies
 
 ### Technology and Automation
+
 - **Systems Integration**:
   - ERP: SAP S/4HANA
   - Procurement Platform: SAP Ariba
@@ -104,6 +106,7 @@ policyNumber: POL-004
   - Supplier Portal: Custom-built on SAP Cloud Platform
 
 ### Compliance and Ethics
+
 - **Anti-Corruption Policy**:
   - Annual training mandatory for all Procurement staff
   - Gift acceptance limit: $50 per instance, $150 annual total
@@ -113,11 +116,13 @@ policyNumber: POL-004
   - Immediate reporting of any potential conflicts
 
 ### Sustainability
+
 - **Green Procurement Policy**:
   - Target: 50% of suppliers to be ISO 14001 certified by 2025
   - Conduct annual sustainability audits for Strategic suppliers
 
 ### Risk Management
+
 - **Supplier Risk Assessment**:
   - Conduct annual risk assessments for all suppliers
   - Develop risk mitigation plans for high-risk suppliers
@@ -135,7 +140,7 @@ policyNumber: POL-004
 ## Implementation and Review
 
 - **Policy Effective Date**: September 1, 2023
-- **Training Schedule**: 
+- **Training Schedule**:
   - Procurement Team: August 15-31, 2023
   - All Employees: September 1-30, 2023
 - **First Quarterly Review**: December 15, 2023

@@ -77,6 +77,7 @@ provision:
           CONNECTOR_NAME: ${{CONNECTOR_NAME}}
           CONNECTOR_DESCRIPTION: ${{CONNECTOR_DESCRIPTION}}
           CONNECTOR_BASE_URL: ${{CONNECTOR_BASE_URL}}
+          API_BASE_URL: ${{API_BASE_URL}}
 
 # Triggered when 'teamsapp publish' is executed
 publish:

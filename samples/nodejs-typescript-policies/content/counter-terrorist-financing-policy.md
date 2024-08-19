@@ -1,9 +1,9 @@
 ---
+id: POL-001
 lastModified: 07/22/2024
 title: "Counter-Terrorist Financing (CTF) Policy"
 abstract: "The Counter-Terrorist Financing (CTF) Policy document outlines global efforts to combat terrorism by disrupting financial support for terrorist activities. It highlights the role of the Financial Action Task Force (FATF) in setting standards and promoting measures to combat money laundering and terrorist financing. Key measures include criminalizing terrorist financing, imposing targeted financial sanctions, regulating non-profit organizations, reporting suspicious transactions, and fostering international cooperation. The document also addresses challenges such as virtual assets, fintech, and balancing CTF measures with legitimate non-profit activities. Recent developments focus on the impact of COVID-19, proliferation financing, and the exploitation of climate finance by terrorist groups."
 author: Megan Bowen
-policyNumber: POL-001
 ---
 
 # Counter-Terrorist Financing (CTF) Policy
@@ -39,17 +39,21 @@ Counter-Terrorist Financing (CTF) policy is a critical component of global effor
 ## Historical Development and Milestones
 
 ### 1999
+
 - UN International Convention for the Suppression of the Financing of Terrorism
 
 ### 2001
+
 - UN Security Council Resolution 1373
   - Called on states to prevent and suppress terrorist financing
 
 ### 2005
+
 - UN International Convention for the Suppression of Acts of Nuclear Terrorism
   - Addressed financing of nuclear terrorism
 
 ### 2015
+
 - UN Security Council Resolution 2253
   - Expanded focus to include ISIL (Da'esh)
 
@@ -75,19 +79,24 @@ Counter-Terrorist Financing (CTF) policy is a critical component of global effor
 ## Challenges and Evolving Trends
 
 ### 1. Virtual Assets (2014-present)
+
 - FATF guidance on virtual assets and virtual asset service providers
 - Increasing focus on regulating cryptocurrencies
 
 ### 2. Fintech and Digital Payments (2010s-present)
+
 - Adapting CTF measures to new payment technologies
 
 ### 3. ISIS Financing (2014-2019)
+
 - Specific measures to combat ISIS funding sources
 
 ### 4. Non-Profit Organization (NPO) Risk (2000s-present)
+
 - Balancing CTF measures with maintaining legitimate NPO activities
 
 ### 5. Trade-Based Money Laundering (2010s-present)
+
 - Increased attention to complex schemes using trade transactions
 
 ## Recent Developments (2020-2023)

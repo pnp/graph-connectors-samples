@@ -29,13 +29,6 @@
     "labels": ["lastModifiedDateTime"]
   },
   {
-    "name": "policyNumber",
-    "type": "String",
-    "isQueryable": "true",
-    "isSearchable": "true",
-    "isRetrievable": "true"
-  },
-  {
     "name": "url",
     "type": "String",
     "isRetrievable": "true",
