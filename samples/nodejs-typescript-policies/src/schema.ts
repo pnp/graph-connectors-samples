@@ -1,51 +1,59 @@
 import { delay } from './utils';
-import { config } from './config';
 import { getClient } from './graphClient';
+import { ExternalConnectors } from '@microsoft/microsoft-graph-types';
+import { Config } from './models/Config';
 
-const { id, schema } = config.connector;
 const retryInterval = 15_000; // 15 seconds
 const client = getClient();
 
 /**
  * Creates a schema for the connection in Microsoft Graph.
+ * @param config - The configuration object.
+ * @param id - The ID of the connection.
+ * @param schema - The schema to create.
  */
-async function createSchema() {
+async function createSchema(config: Config) {
   try {
-    console.log(`Creating schema for connection ${id}. This should take under 10 minutes...`);
+    config.context.log(`Creating schema for connection ${config.connector.id}. This should take under 10 minutes...`);
 
-    await client.api(`/external/connections/${id}/schema`).header('content-type', 'application/json').post({
-      baseType: 'microsoft.graph.externalItem',
-      properties: schema
-    });
+    await client
+      .api(`/external/connections/${config.connector.id}/schema`)
+      .header('content-type', 'application/json')
+      .post({
+        baseType: 'microsoft.graph.externalItem',
+        properties: config.connector.schema
+      });
 
-    console.log(`Schema for connection ${id} was created`);
+    config.context.log(`Schema for connection ${config.connector.id} was created`);
   } catch (e) {
-    console.error(e);
+    config.context.error(e);
   }
 }
 
 /**
  * Retrieves the schema for the connection from Microsoft Graph.
+ * @param config - The configuration object.
  */
-async function getSchema(): Promise<any> {
-  await client.api(`/external/connections/${id}/schema`).get();
+async function getSchema(config: Config): Promise<any> {
+  await client.api(`/external/connections/${config.connector.id}/schema`).get();
 }
 
 /**
  * Ensures that the schema exists in Microsoft Graph.
+ * @param config - The configuration object.
  */
-export async function ensureSchema() {
+export async function ensureSchema(config: Config): Promise<void> {
   try {
     // Try to get the schema
-    await getSchema();
+    await getSchema(config);
   } catch (e) {
     if (e.statusCode === 404) {
       // If the schema does not exist, create it
-      await createSchema();
+      await createSchema(config);
     } else {
       // If the error is not 404, retry
       await delay(retryInterval);
-      ensureSchema();
+      ensureSchema(config);
     }
   }
 }

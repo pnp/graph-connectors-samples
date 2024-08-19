@@ -1,23 +1,31 @@
-import { app } from '@azure/functions';
+import { app, InvocationContext, Timer } from '@azure/functions';
 import { ensureConnection, setSearchSettings } from '../connection';
 import { ensureSchema } from '../schema';
 import { ingestContent } from '../ingest';
+import { initConfig } from '../config';
 
 /**
+ * The policies function is responsible for ensuring the connection, schema, and search settings are in place.
+ * It also starts the ingestion of the content.
+ * @param {Timer} timer - The timer object
+ * @param {InvocationContext} context - The context object of the current invocation
  * @returns {Promise<void>}
  */
-export async function policies(): Promise<void> {
+export async function policies(timer: Timer, context: InvocationContext): Promise<void> {
+  // Initializes the configuration for the current invocation
+  const config = initConfig(context);
+
   // Creates the connection
-  let connectionResult = await ensureConnection();
+  let connectionResult = await ensureConnection(config);
   if (connectionResult) {
     // Creates the schema
-    await ensureSchema();
+    await ensureSchema(config);
 
     // Updates the search settings with the result template
-    await setSearchSettings();
+    await setSearchSettings(config);
 
     // Starts the ingestion of the content
-    await ingestContent();
+    await ingestContent(config);
   }
 }
 

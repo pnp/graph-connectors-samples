@@ -1,18 +1,19 @@
 import { ExternalConnectors } from '@microsoft/microsoft-graph-types';
-import { config } from './config';
 import { getClient } from './graphClient';
 import fs from 'fs';
 import matter, { GrayMatterFile } from 'gray-matter';
 import path from 'path';
 import removeMd from 'remove-markdown';
+import { Config } from './models/Config';
 
 const client = getClient();
 
 /**
  * Extracts the content from the files in the content directory.
+ * @param config - The configuration object.
  * @returns An array of GrayMatterFile objects.
  */
-function extractContent(): GrayMatterFile<string>[] {
+function extractContent(config: Config): GrayMatterFile<string>[] {
   let content = [];
   let contentFiles = fs.readdirSync('./content');
 
@@ -65,22 +66,21 @@ function transformContent(content: GrayMatterFile<string>[]): ExternalConnectors
 
 /**
  * Loads the content into the Graph API.
- * @param content
+ * @param config - The configuration object.
+ * @param doc - The document to load.
  * @returns A promise that resolves when the content has been loaded.
  */
-async function loadContent(doc: ExternalConnectors.ExternalItem): Promise<void> {
-  const { id } = config.connector;
-
+async function loadContent(config: Config, doc: ExternalConnectors.ExternalItem): Promise<void> {
   try {
-    console.log(`Loading ${doc.id}...`);
+    config.context.log(`Loading ${doc.id}...`);
     await client
-      .api(`/external/connections/${id}/items/${doc.id}`)
+      .api(`/external/connections/${config.connector.id}/items/${doc.id}`)
       .header('content-type', 'application/json')
       .put(doc);
   } catch (e) {
-    console.error(`Failed to load ${doc.id}: ${e.message}`);
+    config.context.error(`Failed to load ${doc.id}: ${e.message}`);
     if (e.body) {
-      console.error(`${JSON.parse(e.body, null)?.innerError?.message}`);
+      config.context.error(`${JSON.parse(e.body, null)?.innerError?.message}`);
     }
     return;
   }
@@ -88,10 +88,11 @@ async function loadContent(doc: ExternalConnectors.ExternalItem): Promise<void> 
 
 /**
  * Ensures that the content is ingested into the Graph API.
+ * @param config - The configuration object.
  */
-export async function ingestContent() {
-  const files = await extractContent();
+export async function ingestContent(config: Config): Promise<void> {
+  const files = await extractContent(config);
   for (const doc of transformContent(files)) {
-    await loadContent(doc);
+    await loadContent(config, doc);
   }
 }

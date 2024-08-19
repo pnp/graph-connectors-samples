@@ -1,9 +1,8 @@
 import { delay } from './utils';
-import { config } from './config';
 import { getClient } from './graphClient';
-import { ExternalConnectors } from "@microsoft/microsoft-graph-types";
+import { ExternalConnectors } from '@microsoft/microsoft-graph-types';
+import { Config } from './models/Config';
 
-const { id, name, description } = config.connector;
 const timeout = 600_000; // 10 minutes
 const retryInterval = 15_000; // 15 seconds
 const initialTimestamp = Date.now();
@@ -12,26 +11,28 @@ let client = getClient();
 
 /**
  * Creates a connection in Microsoft Graph.
+ * @param config - The configuration object.
  */
-async function createConnection() {
-  console.log(`Creating connection ${id}.`);
+async function createConnection(config: Config) {
+  config.context.log(`Creating connection ${config.connector.id}.`);
 
   await client.api('/external/connections').post({
-    id,
-    name,
-    description
+    id: config.connector.id,
+    name: config.connector.name,
+    description: config.connector.description
   });
 
-  console.log(`Connection ${id} was created`);
+  config.context.log(`Connection ${config.connector.id} was created`);
 }
 
 /**
  * Updates a connection in Microsoft Graph.
+ * @param config - The configuration object.
  */
-export async function setSearchSettings() {
-  console.log(`Updating search settings of connection ${id}.`);
+export async function setSearchSettings(config: Config) {
+  config.context.log(`Updating search settings of connection ${config.connector.id}.`);
 
-  await client.api(`/external/connections/${id}`).patch({
+  await client.api(`/external/connections/${config.connector.id}`).patch({
     searchSettings: {
       searchResultTemplates: [
         {
@@ -43,15 +44,16 @@ export async function setSearchSettings() {
     }
   });
 
-  console.log(`Connection ${id} was created`);
+  config.context.log(`Connection ${config.connector.id} was created`);
 }
 
 /**
  * Retrieves a connection from Microsoft Graph.
+ * @param config - The configuration object.
  * @returns The connection object.
  */
-async function getConnection(): Promise<ExternalConnectors.ExternalConnection> {
-  const connection = await client.api(`/external/connections/${id}`).get();
+async function getConnection(config: Config): Promise<ExternalConnectors.ExternalConnection> {
+  const connection = await client.api(`/external/connections/${config.connector.id}`).get();
   return connection;
 }
 
@@ -59,22 +61,22 @@ async function getConnection(): Promise<ExternalConnectors.ExternalConnection> {
  * Ensures that the connection exists in Microsoft Graph.
  * @returns A boolean indicating if the connection was successfully created or already exists.
  */
-export async function ensureConnection(): Promise<boolean> {
+export async function ensureConnection(config: Config): Promise<boolean> {
   try {
     // If time elapsed is less than 10 minutes, try again
     if (Date.now() - initialTimestamp <= timeout) {
       // We need to re-initialize the client because of granting the admin consent
       client = getClient();
-      await getConnection();
-      console.log(`Connection ${id} already exists`);
+      await getConnection(config);
+      config.context.log(`Connection ${config.connector.id} already exists`);
       return true;
     } else {
-      console.error(`Could not create connection ${id} in under 10 minutes`);
+      config.context.error(`Could not create connection ${config.connector.id} in under 10 minutes`);
     }
   } catch (e) {
     // The connection does not exist, so we need to create it
     if (e.statusCode === 404) {
-      await createConnection();
+      await createConnection(config);
       return true;
       // The authentication is failing, so we need to re-initialize the client as the developer is about grant tenant-wide admin consent
     } else if (
@@ -83,16 +85,16 @@ export async function ensureConnection(): Promise<boolean> {
       (e.statusCode === -1 && e.code === 'AuthenticationRequiredError')
     ) {
       if (!consentRequested) {
-        console.warn(
+        config.context.warn(
           `\nYou need to grant tenant-wide admin consent to the application in Entra ID\nClick on this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false`
         );
         consentRequested = true;
       }
 
       await delay(retryInterval);
-      return await ensureConnection();
+      return await ensureConnection(config);
     } else {
-      console.error(e);
+      config.context.error(e);
     }
 
     return false;
