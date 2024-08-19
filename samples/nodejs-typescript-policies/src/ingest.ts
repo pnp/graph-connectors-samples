@@ -3,6 +3,7 @@ import { getClient } from './graphClient';
 import { Config } from './models/Config';
 import { getAllItems } from './services/itemsService';
 import { Item } from './models/Item';
+import { getExternalItemFromItem } from './custom/getExternalItemFromItem';
 
 const client = getClient();
 
@@ -13,27 +14,7 @@ const client = getClient();
  */
 function transformContent(items: Item[]): ExternalConnectors.ExternalItem[] {
   return items.map(item => {
-    return {
-      id: item.id,
-      properties: {
-        lastModified: item.lastModified.toISOString().slice(0, -5) + 'Z',
-        title: item.title,
-        abstract: item.abstract,
-        author: item.author,
-        url: item.url
-      },
-      content: {
-        value: item.content,
-        type: 'text'
-      },
-      acl: [
-        {
-          accessType: 'grant',
-          type: 'everyone',
-          value: 'everyone'
-        }
-      ]
-    };
+    return getExternalItemFromItem(item);
   });
 }
 
@@ -43,15 +24,15 @@ function transformContent(items: Item[]): ExternalConnectors.ExternalItem[] {
  * @param doc - The document to load.
  * @returns A promise that resolves when the content has been loaded.
  */
-async function loadContent(config: Config, doc: ExternalConnectors.ExternalItem): Promise<void> {
+async function loadContent(config: Config, item: ExternalConnectors.ExternalItem): Promise<void> {
   try {
-    config.context.log(`Loading ${doc.id}...`);
+    config.context.log(`Loading ${item.id}...`);
     await client
-      .api(`/external/connections/${config.connector.id}/items/${doc.id}`)
+      .api(`/external/connections/${config.connector.id}/items/${item.id}`)
       .header('content-type', 'application/json')
-      .put(doc);
+      .put(item);
   } catch (e) {
-    config.context.error(`Failed to load ${doc.id}: ${e.message}`);
+    config.context.error(`Failed to load ${item.id}: ${e.message}`);
     if (e.body) {
       config.context.error(`${JSON.parse(e.body, null)?.innerError?.message}`);
     }

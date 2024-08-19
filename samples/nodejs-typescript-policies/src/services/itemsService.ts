@@ -4,6 +4,7 @@ import path from 'path';
 import removeMd from 'remove-markdown';
 import { Config } from '../models/Config';
 import { Item } from '../models/Item';
+import { getItemFromDocument } from '../custom/getItemFromDocument';
 
 /**
  * Extracts the content from the files in the content directory.
@@ -29,18 +30,15 @@ function extractDocuments(config: Config): GrayMatterFile<string>[] {
   return content;
 }
 
+/**
+ * Gets all items from the repository.
+ * @param config - The configuration object.
+ * @returns An array of items.
+ */
 export function getAllItems(config: Config): Item[] {
   const content = extractDocuments(config);
 
   return content.map(doc => {
-    return {
-      id: doc.data.id,
-      lastModified: new Date(doc.data.lastModified),
-      title: doc.data.title,
-      abstract: doc.data.abstract,
-      author: doc.data.author,
-      content: doc.content,
-      url: doc.data.url
-    } as Item;
+    return getItemFromDocument(doc, config);
   });
 }
