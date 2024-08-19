@@ -41,10 +41,10 @@ Version|Date|Comments
 
 - Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
 - Select the declarative copilot named `Policy Management`
-- Use the following prompt: `What is the inflation policy on Tatooine?`
+- Use the following prompt: `What is the inflation rate policy on Tatooine?`
 - A response from your declarative copilot will showcase the data ingested by the Graph connector.
 
-![Data from custom API displayed in Microsoft Search](./assets/content.png)
+![Empty connector copilot](./assets/connector-copilot.png)
 
 ### 3. Include data in results (Optional)
 
@@ -55,8 +55,10 @@ Version|Date|Comments
 - On the page, navigate to the [Data Sources](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
 - A table will display available connections. In the **Required actions** column, select the link to **Include Connector Results** and confirm the prompt
 - Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
-- Use the following prompt: `What is the inflation policy on Tatooine?`
+- Use the following prompt: `What is the interest rate policy on Tatooine?`
 - A response from Copilot for Microsoft 365 will showcase the data ingested by the Graph connector.
+
+![Empty connector copilot](./assets/connector-copilot-results.png)
 
 ## Features
 
