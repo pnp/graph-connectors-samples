@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "## Build a basic declarative copilot",
   "module": "esnext",
-  "type": "module",
   "main": "dist/src/functions/*.js",
   "scripts": {
     "build": "tsc",
