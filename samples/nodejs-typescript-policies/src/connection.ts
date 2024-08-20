@@ -86,7 +86,7 @@ export async function ensureConnection(config: Config): Promise<boolean> {
     ) {
       if (!consentRequested) {
         config.context.warn(
-          `\nYou need to grant tenant-wide admin consent to the application in Entra ID\nClick on this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false`
+          `\nYou need to grant tenant-wide admin consent to the application in Entra ID\nUse this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false`
         );
         consentRequested = true;
       }

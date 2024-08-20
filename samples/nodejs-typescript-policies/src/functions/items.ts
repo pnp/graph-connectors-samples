@@ -50,7 +50,7 @@ app.http('items', {
 });
 
 app.timer('deployItems', {
-  schedule: '0 0 0 30 2 *',
+  schedule: process.env.AZURE_FUNCTIONS_ENVIRONMENT === 'Development' ? '0 0 0 30 2 *' : '0 */15 * * * *	',
   runOnStartup: true,
   handler: deployItems
 });
