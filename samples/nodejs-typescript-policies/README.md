@@ -7,7 +7,7 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 > [!NOTE]  
 > Sample data was generated using Artificial Intelligence. Any resemblance to real data is purely coincidental.
 
-![Data from custom API displayed in Copilot for Microsoft 365](./assets/content.png)
+![Data from custom API displayed in Copilot for Microsoft 365](./assets/connector-copilot-results.png.png)
 
 ## Contributors
 
