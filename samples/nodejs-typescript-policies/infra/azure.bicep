@@ -228,4 +228,4 @@ resource keyVaultFunctionAppPermissions 'Microsoft.Authorization/roleAssignments
   }
 }
 
-output API_FUNCTION_RESOURCE_ID string = functionApp.id
+output AZURE_FUNCTION_RESOURCE_ID string = functionApp.id

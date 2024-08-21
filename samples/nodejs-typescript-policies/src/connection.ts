@@ -30,21 +30,25 @@ async function createConnection(config: Config) {
  * @param config - The configuration object.
  */
 export async function setSearchSettings(config: Config) {
-  config.context.log(`Updating search settings of connection ${config.connector.id}.`);
+  const connection = await getConnection(config);
 
-  await client.api(`/external/connections/${config.connector.id}`).patch({
-    searchSettings: {
-      searchResultTemplates: [
-        {
-          id: config.connector.id,
-          layout: config.connector.template,
-          priority: 1
-        }
-      ]
-    }
-  });
+  if (!connection.searchSettings) {
+    config.context.log(`Updating search settings of connection ${config.connector.id}.`);
 
-  config.context.log(`Connection ${config.connector.id} was updated with search settings`);
+    await client.api(`/external/connections/${config.connector.id}`).patch({
+      searchSettings: {
+        searchResultTemplates: [
+          {
+            id: config.connector.id,
+            layout: config.connector.template,
+            priority: 1
+          }
+        ]
+      }
+    });
+
+    config.context.log(`Connection ${config.connector.id} was updated with search settings`);
+  }
 }
 
 /**
@@ -93,6 +97,55 @@ export async function ensureConnection(config: Config): Promise<boolean> {
 
       await delay(retryInterval);
       return await ensureConnection(config);
+    } else {
+      config.context.error(e);
+    }
+
+    return false;
+  }
+}
+
+/**
+ * Ensures that the connection exists in Microsoft Graph.
+ * @returns A boolean indicating if the connection was successfully created or already exists.
+ */
+export async function deleteConnection(config: Config): Promise<boolean> {
+  try {
+    if (Date.now() - initialTimestamp <= timeout) {
+      client = getClient();
+      const connection = await getConnection(config);
+
+      if (connection) {
+        config.context.log(`Deleting connection ${config.connector.id}`);
+        await client.api(`/external/connections/${config.connector.id}`).delete();
+        config.context.log(`Connection ${config.connector.id} was deleted`);
+        return true;
+      }
+
+      return false;
+    } else {
+      config.context.error(`Could not delete connection ${config.connector.id} in under 10 minutes`);
+    }
+  } catch (e) {
+    // The connection does not exist, so we need to create it
+    if (e.statusCode === 404) {
+      config.context.warn(`Connection ${config.connector.id} does not exist`);
+      return true;
+      // The authentication is failing, so we need to re-initialize the client as the developer is about grant tenant-wide admin consent
+    } else if (
+      e.statusCode === 401 ||
+      e.statusCode === 403 ||
+      (e.statusCode === -1 && e.code === 'AuthenticationRequiredError')
+    ) {
+      if (!consentRequested) {
+        config.context.warn(
+          `\nYou need to grant tenant-wide admin consent to the application in Entra ID\nUse this link to provide the consent\nhttps://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/CallAnAPI/appId/${config.clientId}/isMSAApp~/false`
+        );
+        consentRequested = true;
+      }
+
+      await delay(retryInterval);
+      return await deleteConnection(config);
     } else {
       config.context.error(e);
     }

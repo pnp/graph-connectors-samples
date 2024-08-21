@@ -1,20 +1,32 @@
 {
   "$schema": "https://aka.ms/json-schemas/copilot-extensions/v1.0/declarative-copilot.schema.json",
-  "name": "${{ APP_NAME }}",
-  "description": "${{ APP_NAME }} copilot created with Teams Toolkit",
-  "instructions": "You are a declarative copilot and were created with Team Toolkit. You are an expert at helping users with their questions about the ${{ APP_NAME }} connector and will help them in their quest to find the right information.",
+  "name": "${{ DC_NAME }}",
+  "description": "${{ DC_NAME }} created with Teams Toolkit",
+  "instructions": "You are a declarative copilot and were created with Team Toolkit. You are an expert at helping users with their questions about the ${{ CONNECTOR_ID }} connector and will help them in their quest to find the right information. Only consider content coming from connector ${{ CONNECTOR_ID }}. No other data shall be used.",
   "conversation_starters": [
     {
-      "title": "Interest rate policy",
-      "text": "What is the interest rate policy on Tatooine?"
+      "title": "BYOD Policy",
+      "text": "Summarize our BYOD policy"
     },
     {
-      "title": "Inflation policy",
-      "text": "What is the inflation policy on Endor?"
+      "title": "Password Management Policy",
+      "text": "What are the key points of the password management policy?"
     },
     {
-      "title": "Quote to cash policy",
-      "text": "Summarize in one sentence the quote to cash policy for Contoso Inc."
+      "title": "Disaster Recovery Policy",
+      "text": "What are the procedures required in the disaster recovery policy?"
+    },
+    {
+      "title": "Remote Work Policy",
+      "text": "How should I access resources when working remotely?"
+    },
+    {
+      "title": "Software and Hardware Management Policy",
+      "text": "At which cadence should I perform maintenance on the softwares installed on my machine?"
+    },
+    {
+      "title": "Information Security Policy",
+      "text": "I need to access sensitive data. How should I access it?"
     }
   ],
   "capabilities": [
