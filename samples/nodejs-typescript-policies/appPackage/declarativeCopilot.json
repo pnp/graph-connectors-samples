@@ -1,0 +1,42 @@
+{
+  "$schema": "https://aka.ms/json-schemas/copilot-extensions/v1.0/declarative-copilot.schema.json",
+  "name": "${{ DC_NAME }}",
+  "description": "${{ DC_NAME }} created with Teams Toolkit",
+  "instructions": "You are a declarative copilot and were created with Team Toolkit. You are an expert at helping users with their questions about the ${{ CONNECTOR_ID }} connector and will help them in their quest to find the right information. Only consider content coming from connector ${{ CONNECTOR_ID }}. No other data shall be used.",
+  "conversation_starters": [
+    {
+      "title": "BYOD Policy",
+      "text": "Summarize our BYOD policy"
+    },
+    {
+      "title": "Password Management Policy",
+      "text": "What are the key points of the password management policy?"
+    },
+    {
+      "title": "Disaster Recovery Policy",
+      "text": "What are the procedures required in the disaster recovery policy?"
+    },
+    {
+      "title": "Remote Work Policy",
+      "text": "How should I access resources when working remotely?"
+    },
+    {
+      "title": "Acceptable Use Policy",
+      "text": "Can I use my computer for personal purposes?"
+    },
+    {
+      "title": "Information Security Policy",
+      "text": "I need to access sensitive data. How should I access it?"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "GraphConnectors",
+      "connections": [
+        {
+          "connection_id": "${{ CONNECTOR_ID }}${{ TEAMSFX_ENV }}"
+        }
+      ]
+    }
+  ]
+}

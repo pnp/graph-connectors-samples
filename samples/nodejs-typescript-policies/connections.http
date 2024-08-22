@@ -1,0 +1,11 @@
+# Initates a request to deploy the connection
+POST http://localhost:7071/admin/functions/deployConnection
+Content-Type: application/json
+
+{ }
+
+# Initates a request to retract the connection
+POST http://localhost:7071/admin/functions/retractConnection
+Content-Type: application/json
+
+{ }
