@@ -1,13 +1,13 @@
-# Ingest custom API data using TypeScript, Node.js and Teams Toolkit for Visual Studio Code
+# Policy copilot
 
 ## Summary
 
-This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule.
+This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content. It also offers a declarative copilot to consume its content.
 
 > [!NOTE]  
 > Sample data was generated using Artificial Intelligence. Any resemblance to real data is purely coincidental.
 
-![Data from custom API displayed in Copilot for Microsoft 365](./assets/connector-copilot-results.png.png)
+![Data from custom API displayed in Copilot for Microsoft 365](./assets/connector-copilot-results.png)
 
 ## Contributors
 
@@ -40,8 +40,8 @@ Version|Date|Comments
 ### 2. Test in your declarative copilot
 
 - Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
-- Select the declarative copilot named `Policy Management`
-- Use the following prompt: `What is the inflation rate policy on Tatooine?`
+- Select the declarative copilot named `Policy copilot`
+- Use one of the suggested prompts
 - A response from your declarative copilot will showcase the data ingested by the Graph connector.
 
 ![Empty connector copilot](./assets/connector-copilot.png)
