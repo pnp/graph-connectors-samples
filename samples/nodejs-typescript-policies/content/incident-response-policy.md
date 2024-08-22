@@ -46,7 +46,7 @@ This policy applies to all employees, contractors, consultants, temporary and ot
 ### 3.6 Incident Documentation
 
 - Detailed records of all security incidents must be maintained, including incident reports, response actions, and mitigation efforts.
-- Incident documentation must be reviewed regularly to identify trends and improve the organization's incident response capabilities.
+- Incident documentation must be reviewed yearly to identify trends and improve the organization's incident response capabilities.
 
 ### 3.7 Training and Awareness
 
