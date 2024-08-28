@@ -18,6 +18,8 @@
           }
         ]
       }
-    ]
+    ],
+    "identifierUris": ["api://${{AAD_APP_CLIENT_ID}}"],
+    "replyUrlsWithType": []
   }
   

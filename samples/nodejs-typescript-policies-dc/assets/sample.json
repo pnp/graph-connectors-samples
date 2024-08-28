@@ -1,16 +1,16 @@
 [
   {
-    "name": "pnp-graph-connector-nodejs-typescript-policies",
+    "name": "pnp-graph-connector-nodejs-typescript-policies-dc",
     "source": "pnp",
-    "title": "Microsoft Graph connector that ingests policies using TypeScript on Node.js",
-    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest local policies into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-policies",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-policies",
+    "title": "Declarative copilot with a Microsoft Graph connector that ingests policies using TypeScript on Node.js",
+    "shortDescription": "This sample contains a Declarative copilot with a Microsoft Graph connector that shows how to ingest local policies into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-policies-dc",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-policies-dc",
     "longDescription": [
-      "This sample contains a Microsoft Graph connector that shows how to ingest local policies into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+      "This sample contains a Declarative copilot with a Microsoft Graph connector that shows how to ingest local policies into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
-    "creationDateTime": "2024-08-27",
-    "updateDateTime": "2024-08-27",
+    "creationDateTime": "2024-08-19",
+    "updateDateTime": "2024-08-19",
     "products": [
       "Microsoft Graph connectors",
       "Microsoft Graph",
@@ -32,19 +32,23 @@
       {
         "key": "TEAMS-PACKAGE",
         "value": "No"
+      },
+      {
+        "key": "DECLARATIVE-COPILOT",
+        "value": "Yes"
       }
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies/assets/connector-copilot.png",
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies-dc/assets/connector-copilot.png",
         "alt": "Empty connector copilot"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies/assets/connector-copilot-results.png",
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies-dc/assets/connector-copilot-results.png",
         "alt": "Data from custom API displayed in Copilot for Microsoft 365"
       }
     ],

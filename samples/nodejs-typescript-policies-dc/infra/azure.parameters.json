@@ -31,6 +31,9 @@
     },
     "teamsfxEnv": {
       "value": "${{TEAMSFX_ENV}}"
+    },
+    "apiBaseUrl": {
+      "value": "${{API_BASE_URL}}"
     }
   }
 }

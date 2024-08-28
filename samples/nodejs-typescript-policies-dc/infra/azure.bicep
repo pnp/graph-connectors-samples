@@ -13,6 +13,7 @@ param connectorName string
 param connectorDescription string
 param connectorBaseUrl string
 param teamsfxEnv string
+param apiBaseUrl string
 param location string = resourceGroup().location
 param appServiceName string = resourceBaseName
 param functionAppName string = resourceBaseName
@@ -131,6 +132,10 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'TEAMSFX_ENV'
           value: teamsfxEnv
+        }
+        {
+          name: 'API_BASE_URL'
+          value: apiBaseUrl
         }
       ]
       ftpsState: 'FtpsOnly'
