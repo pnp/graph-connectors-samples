@@ -17,6 +17,7 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.7|September 2, 2024|Updated instructions
 1.6|August 13, 2024|Updated instructions
 1.5|March 20, 2024|Added CodeTour
 1.4|March 12, 2024|Fixed schema
@@ -39,6 +40,7 @@ Version|Date|Comments
 
 - Clone repo
 - Open repo in VSCode
+- On macOS, make the devtunnel.sh script, executable, by running in command line: `chmod +x ./scripts/devtunnel.sh`
 - Press <kbd>F5</kbd>, follow the sign in prompts
 - Wait for all tasks to complete
 
