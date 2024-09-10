@@ -9,6 +9,19 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 ![Data from custom API displayed in Copilot for Microsoft 365](./assets/connector-copilot-results.png)
 
+## Features
+
+This sample shows how to ingest data from a custom API into your Microsoft 365 tenant.
+
+The sample illustrates the following concepts:
+
+- simplify debugging and provisioning of resources with Teams Toolkit for Visual Studio code
+- create external connection schema
+- support full ingestion of data
+- visualize the external content in the Policy Management declarative copilot
+- visualize the external content in Copilot for Microsoft 365
+- visualize the external content in search results using a custom Adaptive Card
+
 ## Contributors
 
 - [Sébastien Levert](https://github.com/sebastienlevert)
@@ -50,19 +63,6 @@ Version|Date|Comments
 - A response from Copilot for Microsoft 365 will showcase the data ingested by the Graph connector.
 
 ![Empty connector copilot](./assets/connector-copilot-results.png)
-
-## Features
-
-This sample shows how to ingest data from a custom API into your Microsoft 365 tenant.
-
-The sample illustrates the following concepts:
-
-- simplify debugging and provisioning of resources with Teams Toolkit for Visual Studio code
-- create external connection schema
-- support full ingestion of data
-- visualize the external content in the Policy Management declarative copilot
-- visualize the external content in Copilot for Microsoft 365
-- visualize the external content in search results using a custom Adaptive Card
 
 ## Help
 
