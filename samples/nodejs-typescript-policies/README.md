@@ -25,7 +25,7 @@ The sample illustrates the following concepts:
 ## Contributors
 
 - [Sébastien Levert](https://github.com/sebastienlevert)
-- [Gladys Jiminez Alvarez](https://github.com/gladysaj)
+- [Gladys Alvarez Jiminez](https://github.com/gladysaj)
 - [Fabian Williams](https://github.com/fabianwilliams)
 - [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
