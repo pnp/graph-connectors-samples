@@ -44,14 +44,18 @@ export async function retractConnection(timer: Timer, context: InvocationContext
   await deleteConnection(config);
 }
 
+const currentDate = new Date();
+const cronExpression = `0 0 0 ${currentDate.getUTCMonth()} ${currentDate.getUTCDay()} *`;
 app.timer('deployConnection', {
-  schedule: '0 0 0 30 2 *',
+  // Runs every year
+  schedule: cronExpression,	
   runOnStartup: process.env.AZURE_FUNCTIONS_ENVIRONMENT === 'Development',
   handler: deployConnection
 });
 
 app.timer('retractConnection', {
-  schedule: '0 0 0 30 2 *',
+  // Runs every year
+  schedule: cronExpression,	
   runOnStartup: false,
   handler: retractConnection
 });
