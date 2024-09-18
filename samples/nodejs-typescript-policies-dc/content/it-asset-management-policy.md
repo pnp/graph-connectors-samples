@@ -40,7 +40,14 @@ This policy applies to all employees, contractors, consultants, temporary and ot
 - Sensitive data must be securely erased from IT assets before disposal to prevent unauthorized access.
 - Records of asset disposal must be maintained, including details such as disposal date, method, and recipient.
 
-### 3.5 Security
+### 3.5 Asset Refresh
+
+To ensure that all employees have access to up-to-date and efficient technology, the following device refresh policy is established:
+
+- **Junior and Senior Roles**: Employees in junior and senior roles are eligible to refresh their devices every four years.
+- **Principal and Partner Roles**: Employees in principal roles are eligible to refresh their devices every two years.
+
+### 3.6 Security
 
 - Security measures must be implemented to protect IT assets from unauthorized access, theft, and damage.
 - Access controls must be established to restrict access to sensitive IT assets.
