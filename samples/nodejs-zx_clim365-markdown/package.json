@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-zx_clim365-markdown",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "zx index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "remove-markdown": "^0.5.5"
+  }
+}
