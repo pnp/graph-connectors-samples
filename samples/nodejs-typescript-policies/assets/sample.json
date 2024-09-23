@@ -10,7 +10,7 @@
       "This sample contains a Microsoft Graph connector that shows how to ingest local policies into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2024-08-27",
-    "updateDateTime": "2024-08-27",
+    "updateDateTime": "2024-09-23",
     "products": [
       "Microsoft Graph connectors",
       "Microsoft Graph",
@@ -27,7 +27,7 @@
       },
       {
         "key": "SEARCH-RESULTS-CARD",
-        "value": "Yes"
+        "value": "No"
       },
       {
         "key": "TEAMS-PACKAGE",
@@ -38,14 +38,8 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies/assets/connector-copilot.png",
-        "alt": "Empty connector copilot"
-      },
-      {
-        "type": "image",
-        "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies/assets/connector-copilot-results.png",
-        "alt": "Data from custom API displayed in Copilot for Microsoft 365"
+        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-policies/assets/search-results.png",
+        "alt": "External content in Microsoft 365 search results"
       }
     ],
     "authors": [
@@ -62,14 +56,14 @@
     ],
     "references": [
       {
+        "name": "Integrate external content with Copilot for Microsoft 365 using Microsoft Graph connectors built with TypeScript",
+        "description": "Build Microsoft Graph connectors using TypeScript to import external content to Microsoft 365.",
+        "url": "https://learn.microsoft.com/training/modules/copilot-graph-connectors-typescript/"
+      },
+      {
         "name": "Microsoft Graph connectors overview",
         "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
-      },
-      {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
-        "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       }
     ]
   }
