@@ -6,13 +6,13 @@
       "value": "connector${{RESOURCE_SUFFIX}}"
     },
     "appClientId": {
-      "value": "${{AAD_APP_CLIENT_ID}}"
+      "value": "${{ENTRA_APP_CLIENT_ID}}"
     },
     "appClientSecret": {
-      "value": "${{SECRET_AAD_APP_CLIENT_SECRET}}"
+      "value": "${{SECRET_ENTRA_APP_CLIENT_SECRET}}"
     },
     "appTenantId": {
-      "value": "${{AAD_APP_TENANT_ID}}"
+      "value": "${{ENTRA_APP_TENANT_ID}}"
     }
   }
 }

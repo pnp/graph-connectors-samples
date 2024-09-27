@@ -103,17 +103,17 @@
         "line": 35
       },
       {
-        "file": "aad.manifest.json",
+        "file": "infra/entra/entra.manifest.json",
         "description": "This file represents the Microsoft Entra app registration used by the connector.",
         "line": 1
       },
       {
-        "file": "aad.manifest.json",
+        "file": "infra/entra/entra.manifest.json",
         "description": "The `requiredResourceAccess` array contains the permission scopes that are configured on the app registration.\r\n\r\nTo create a connection and ingest items, you'll need:\r\n\r\n- `ExternalConnection.ReadWrite.OwnedBy`\r\n- `ExternalItem.ReadWrite.OwnedBy`",
         "line": 7
       },
       {
-        "file": "aad.manifest.json",
+        "file": "infra/entra/entra.manifest.json",
         "description": "The `identifierUris` array represents the Application URI of the Microsoft Entra app registration and is used in the Teams app manifest.",
         "line": 22
       },

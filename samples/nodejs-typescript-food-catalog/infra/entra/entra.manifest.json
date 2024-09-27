@@ -1,6 +1,6 @@
 {
-  "id": "${{AAD_APP_OBJECT_ID}}",
-  "appId": "${{AAD_APP_CLIENT_ID}}",
+  "id": "${{ENTRA_APP_OBJECT_ID}}",
+  "appId": "${{ENTRA_APP_CLIENT_ID}}",
   "name": "${{APP_NAME}}-${{TEAMSFX_ENV}}",
   "accessTokenAcceptedVersion": 2,
   "signInAudience": "AzureADMultipleOrgs",
@@ -19,6 +19,6 @@
       ]
     }
   ],
-  "identifierUris": ["api://${{AAD_APP_CLIENT_ID}}"],
+  "identifierUris": ["api://${{ENTRA_APP_CLIENT_ID}}"],
   "replyUrlsWithType": []
 }

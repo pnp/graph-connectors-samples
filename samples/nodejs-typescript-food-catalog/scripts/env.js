@@ -11,7 +11,7 @@ const envs = [
   },
   {
     name: ".env.local.user",
-    content: `SECRET_AAD_APP_CLIENT_SECRET=`,
+    content: `SECRET_ENTRA_APP_CLIENT_SECRET=`,
   },
   {
     name: ".env.dev",
@@ -19,7 +19,7 @@ const envs = [
   },
   {
     name: ".env.dev.user",
-    content: `SECRET_AAD_APP_CLIENT_SECRET=`,
+    content: `SECRET_ENTRA_APP_CLIENT_SECRET=`,
   },
 ];
 
