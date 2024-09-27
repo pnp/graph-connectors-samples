@@ -15,7 +15,7 @@ const envs = [
   },
   {
     name: ".env.dev",
-    content: `TEAMSFX_ENV=dev\nAPP_NAME=Foodsie\nTUNNEL_ID=\nNOTIFICATION_ENDPOINT=\nNOTIFICATION_DOMAIN=`,
+    content: `TEAMSFX_ENV=dev\nAPP_NAME=Foodsie\nRESOURCE_SUFFIX=`,
   },
   {
     name: ".env.dev.user",
