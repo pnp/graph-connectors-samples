@@ -17,6 +17,7 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.8|September 27, 2024|Added support for provisioning and deploying to Azure, and publishing to Teams Admin Center
 1.7|September 2, 2024|Updated instructions
 1.6|August 13, 2024|Updated instructions
 1.5|March 20, 2024|Added CodeTour
@@ -101,6 +102,31 @@ When the process is complete you will see a table confirming that the connection
 - Items will be shown from the data ingested by the Graph connector in the search results.
 
 ![Data from custom API displayed in Microsoft Search](./assets/content.png)
+
+## Provision and deploy to Azure
+
+You can also provision and deploy the resources to Azure and publish the app to the Teams Admin Center using the Teams Toolkit for Visual Studio Code.
+
+- In Visual Studio Code, open the Teams Toolkit sidebar
+- In the Lifecycle section, select `Provision`, follow the prompts to provision the resources in Azure
+
+> [!NOTE]
+> The following resources are provisioned in Azure:
+>
+> - Azure Storage Account
+> - Azure Function App (Consumption Plan)
+> - Azure Application Insights
+> - Azure Key Vault
+
+- In the Lifecycle section, select `Deploy`, follow the prompts to deploy the code to Azure
+- In the Lifecycle section, select `Publish`, when publishing is complete, navigate to the [Teams Admin Center](https://aka.ms/tac)
+- In the Teams Admin Center, open the [Manage apps](https://admin.teams.microsoft.com/policies/manage-apps) section and search for `Foodsie-dev`
+- Publish the app and grant permissions
+- Wait for the provisioning process, this may take several minutes
+- When the process is complete, the connection status will be toggled to on
+- In the Microsoft 365 admin center, navigate to the [Settings > Search & Intelligence](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch) area
+- On the page, navigate to the [Data Sources](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
+- In the **Required actions** column, select the link to **Include Connector Results** and confirm the prompt
 
 ## Features
 
