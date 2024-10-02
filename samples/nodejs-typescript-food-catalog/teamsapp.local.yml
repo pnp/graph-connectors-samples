@@ -23,7 +23,7 @@ provision:
     with:
       name: ${{APP_NAME}}-${{TEAMSFX_ENV}}
       generateClientSecret: true
-      signInAudience: AzureADMyOrg
+      signInAudience: AzureADMultipleOrgs
     writeToEnvironmentFile:
       clientId: ENTRA_APP_CLIENT_ID
       clientSecret: SECRET_ENTRA_APP_CLIENT_SECRET
