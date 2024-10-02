@@ -11,15 +11,15 @@ const envs = [
   },
   {
     name: ".env.local.user",
-    content: `SECRET_AAD_APP_CLIENT_SECRET=`,
+    content: `SECRET_ENTRA_APP_CLIENT_SECRET=`,
   },
   {
     name: ".env.dev",
-    content: `TEAMSFX_ENV=dev\nAPP_NAME=Foodsie\nTUNNEL_ID=\nNOTIFICATION_ENDPOINT=\nNOTIFICATION_DOMAIN=`,
+    content: `TEAMSFX_ENV=dev\nAPP_NAME=Foodsie\nRESOURCE_SUFFIX=`,
   },
   {
     name: ".env.dev.user",
-    content: `SECRET_AAD_APP_CLIENT_SECRET=`,
+    content: `SECRET_ENTRA_APP_CLIENT_SECRET=`,
   },
 ];
 
