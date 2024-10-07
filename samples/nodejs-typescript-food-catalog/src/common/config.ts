@@ -1,9 +1,9 @@
 import { resultLayout } from "./resultLayout";
 
 export const config = {
-  aadAppTenantId: process.env.ENTRA_APP_TENANT_ID,
-  aadAppClientId: process.env.ENTRA_APP_CLIENT_ID,
-  aadAppClientSecret: process.env.ENTRA_APP_CLIENT_SECRET,
+  entraAppTenantId: process.env.ENTRA_APP_TENANT_ID,
+  entraAppClientId: process.env.ENTRA_APP_CLIENT_ID,
+  entraAppClientSecret: process.env.ENTRA_APP_CLIENT_SECRET,
   storageAccountConnectionString: process.env.AzureWebJobsStorage,
   notificationEndpoint: process.env.NOTIFICATION_ENDPOINT,
   graphSchemaStatusInterval: parseInt(process.env.GRAPH_SCHEMA_STATUS_INTERVAL) || 60,

@@ -5,9 +5,9 @@ import { config } from './config';
 import { ProxyAgent } from 'undici';
 
 const credential = new ClientSecretCredential(
-  config.aadAppTenantId,
-  config.aadAppClientId,
-  config.aadAppClientSecret
+  config.entraAppTenantId,
+  config.entraAppClientId,
+  config.entraAppClientSecret
 );
 
 const dispatcher = process.env.https_proxy ? new ProxyAgent(process.env.https_proxy) : undefined;
