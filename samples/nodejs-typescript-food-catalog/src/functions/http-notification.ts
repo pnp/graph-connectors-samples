@@ -20,8 +20,8 @@ app.http('notification', {
             console.log(JSON.stringify(body, null, 2));
 
             const {
-                aadAppTenantId: tenantId,
-                aadAppClientId: clientId
+                entraAppTenantId: tenantId,
+                entraAppClientId: clientId
             } = config;
 
             const token = body?.validationTokens[0];
