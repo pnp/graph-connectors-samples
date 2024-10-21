@@ -13,14 +13,14 @@ import { getItemFromDocument } from '../custom/getItemFromDocument';
  */
 function extractDocuments(config: Config): GrayMatterFile<string>[] {
   let content = [];
-  let contentFiles = fs.readdirSync('./content');
+  let contentFiles = fs.readdirSync(`./content/${config.connector.scenario}`);
 
   contentFiles.forEach(f => {
     if (!f.endsWith('.md')) {
       return;
     }
 
-    const fileContents = fs.readFileSync(path.resolve('./content', f), 'utf-8');
+    const fileContents = fs.readFileSync(path.resolve(`./content/${config.connector.scenario}`, f), 'utf-8');
     const doc = matter(fileContents);
     doc.content = removeMd(doc.content.replace(/<[^>]+>/g, ' '));
     doc.data.url = new URL(doc.data.id, config.connector.baseUrl).href;

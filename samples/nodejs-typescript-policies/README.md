@@ -60,6 +60,22 @@ Version|Date|Comments
 > [!NOTE]  
 > It can take a moment for the search results to appear. If you don't see the results immediately, wait a few moments and try again.
 
+## Using another scenario
+
+The sample provides 3 scenarios to ingest data into Microsoft 365: `IT Policies`, `Financial Services` and `Healthcare`. To switch between scenarios, update the `CONNECTOR_SCENARIO` environment variable in the `.env.*` file to one of the following:
+
+- `IT Policies`: `CONNECTOR_SCENARIO=it-policies`
+- `Financial Services`: `CONNECTOR_SCENARIO=financial-services`
+- `Healthcare`: `CONNECTOR_SCENARIO=healthcare`
+
+## Providing your own scenario
+
+This sample is extensible and you can provide your own scenario. To do so, you need to:
+
+1. Create a new folder in the `content` folder
+2. Add your `md` files with the content you want to ingest
+3. Update the `CONNECTOR_SCENARIO` environment variable in the `.env.*` file to the name of the folder you created
+
 ## Help
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
