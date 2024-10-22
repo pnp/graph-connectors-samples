@@ -12,6 +12,7 @@ param connectorId string
 param connectorName string
 param connectorDescription string
 param connectorBaseUrl string
+param connectorScenario string
 param teamsfxEnv string
 param location string = resourceGroup().location
 param appServiceName string = resourceBaseName
@@ -127,6 +128,10 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'CONNECTOR_BASE_URL'
           value: connectorBaseUrl
+        }
+        {
+          name: 'CONNECTOR_SCENARIO'
+          value: connectorScenario
         }
         {
           name: 'TEAMSFX_ENV'

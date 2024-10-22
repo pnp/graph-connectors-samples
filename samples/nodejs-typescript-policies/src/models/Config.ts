@@ -11,5 +11,6 @@ export interface Config {
     schema: ExternalConnectors.Schema;
     baseUrl: string;
     template: any;
+    scenario: string;
   };
 }

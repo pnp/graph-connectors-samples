@@ -29,6 +29,9 @@
     "connectorBaseUrl": {
       "value": "${{CONNECTOR_BASE_URL}}"
     },
+    "connectorScenario": {
+      "value": "${{CONNECTOR_SCENARIO}}"
+    },
     "teamsfxEnv": {
       "value": "${{TEAMSFX_ENV}}"
     }

@@ -17,7 +17,8 @@ export function initConfig(context: InvocationContext): Config {
       description: process.env.CONNECTOR_DESCRIPTION,
       schema: schema as ExternalConnectors.Schema,
       baseUrl: process.env.CONNECTOR_BASE_URL,
-      template: template
+      template: template,
+      scenario: process.env.CONNECTOR_SCENARIO,
     }
   };
 
