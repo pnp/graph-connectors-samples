@@ -24,7 +24,7 @@ The session data was captured before the Ignite event, there maybe updates that 
 Version|Date|Comments
 -------|----|--------
 1.0|November 23, 2023|Initial release
-2.0|October 29, 2024 | Ignite 2024 Sessions
+2.0|October 30, 2024 | Ignite 2024 Sessions
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Version|Date|Comments
 - [Microsoft.PowerShell.SecretManagement](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.secretmanagement/?view=ps-modules)
 - [Microsoft.PowerShell.SecretStore](https://learn.microsoft.com/powershell/module/microsoft.powershell.secretstore/?view=ps-modules)
 
-> Note, this used Microsoft Graph PowerShell 2.9.1
+> Note, this used Microsoft Graph PowerShell 2.24.0
 
 ## Minimal path to awesome
 
