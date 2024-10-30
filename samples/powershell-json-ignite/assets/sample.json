@@ -10,7 +10,7 @@
       "This sample contains a Microsoft Graph connector built in PowerShell that shows how to ingest local json content. Each session is a row of data, mapped to external connection's schema and using the metadata from the JSON file. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2023-11-23",
-    "updateDateTime": "2023-11-24",
+    "updateDateTime": "2024-10-30",
     "products": [
       "Microsoft Graph connectors",
       "Microsoft Graph",

@@ -1,58 +1,65 @@
 {
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "version": "1.3",
-  "body": [
-      {
-          "columns": [
-              {
-                  "width": "auto",
-                  "height": "stretch",
-                  "items": [
-                      {
-                          "horizontalAlignment": "Center",
-                          "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/DefaultMRTIcon.png",
-                          "size": "Small",
-                          "altText": "Result logo",
-                          "type": "Image"
-                      }
-                  ],
-                  "type": "Column"
-              },
-              {
-                  "width": 8,
-                  "horizontalAlignment": "Center",
-                  "spacing": "Medium",
-                  "items": [
-                      {
-                          "weight": "Bolder",
-                          "color": "Accent",
-                          "size": "Medium",
-                          "text": "[${title}](${url})",
-                          "type": "TextBlock"
-                      },
-                      {
-                          "maxLines": 3,
-                          "wrap": true,
-                          "text": "${url}",
-                          "type": "TextBlock"
-                      },
-                      {
-                          "spacing": "Small",
-                          "text": "Modified on {{DATE(${date})}}",
-                          "type": "TextBlock"
-                      },
-                      {
-                          "text": "${excerpt}",
-                          "wrap": true,
-                          "type": "TextBlock",
-                          "maxLines": 3
-                      }
-                  ],
-                  "type": "Column"
-              }
-          ],
-          "type": "ColumnSet"
-      }
-  ],
-  "type": "AdaptiveCard"
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "columns": [
+                {
+                    "width": "auto",
+                    "height": "stretch",
+                    "items": [
+                        {
+                            "horizontalAlignment": "Center",
+                            "url": "https://pkbullock.com/images/samples/msignite24.png",
+                            "size": "Medium",
+                            "altText": "Result logo",
+                            "type": "Image"
+                        }
+                    ],
+                    "type": "Column"
+                },
+                {
+                    "width": 8,
+                    "horizontalAlignment": "Center",
+                    "spacing": "Medium",
+                    "items": [
+                        {
+                            "weight": "Bolder",
+                            "color": "Accent",
+                            "size": "Medium",
+                            "text": "[${title} (${sessionCode})](${url})",
+                            "type": "TextBlock",
+                            "style": "heading"
+                        },
+                        {
+                            "text": "${excerpt}",
+                            "wrap": true,
+                            "type": "TextBlock",
+                            "maxLines": 3
+                        },
+                        {
+                            "spacing": "Small",
+                            "text": "Speakers: ${speakerNames}",
+                            "size": "Small",
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "wrap": true,
+                            "maxLines": 3
+                        },
+                        {
+                            "spacing": "Small",
+                            "text": "Modified on {{DATE(${date})}}",
+                            "size": "Small",
+                            "type": "TextBlock",
+                            "wrap": true,
+                            "maxLines": 3
+                        }
+                    ],
+                    "type": "Column"
+                }
+            ],
+            "type": "ColumnSet"
+        }
+    ],
+    "type": "AdaptiveCard"
 }

@@ -6,20 +6,25 @@ This sample contains a Microsoft Graph connector built in PowerShell that shows 
 
 ![Local markdown files displayed in Microsoft Search search results](assets/screenshot.png)
 
-# Graph connector to import markdown files into the Graph
+## Graph connector to import markdown files into the Graph
 
 This uses the sample from PnP Graph connectors as a basis for importing the content into the Graph. The original sample is here:
 https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-markdown
 
+## Session Data
+
+The session data was captured before the Ignite event, there maybe updates that require an update to the external items.
+
 ## Contributors
 
-- [Paul Bullock](https://twitter.com/pkbullock)
+- [Paul Bullock](https://linkedin.com/in/pkbullock)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|November 23, 2023|Initial release
+2.0|October 29, 2024 | Ignite 2024 Sessions
 
 ## Prerequisites
 
@@ -55,8 +60,10 @@ The sample illustrates the following concepts:
 - script creating the Entra (Azure AD) app registration using the Microsoft Graph SDK
 - create external connection including URL to item resolver to track activity when users share external links
 - create external connection schema
-- ingest metadata from the ignite-session.json file into search
+- ingest metadata from the ignite-sessios-2024.json file into search
 - visualize the external content in search results using a custom Adaptive Card
+
+Note: after running this, you will need to manually add the search vertical to the Microsoft Search Admin Centre [Surface the data in Microsoft Search | Microsoft Learn](https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-search)
 
 ## Disclaimer
 
