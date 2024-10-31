@@ -6,7 +6,7 @@ npx -p @pnp/cli-microsoft365 -- m365 login --authType browser
 
 # create AAD app
 echo "Creating AAD app..."
-appInfo=$(npx -p @pnp/cli-microsoft365 -- m365 aad app add --name "Sample Solution Gallery - connector" --withSecret --apisApplication "https://graph.microsoft.com/ExternalConnection.ReadWrite.OwnedBy, https://graph.microsoft.com/ExternalItem.ReadWrite.OwnedBy" --grantAdminConsent --output json)
+appInfo=$(npx -p @pnp/cli-microsoft365 -- m365 entra app add --name "Sample Solution Gallery - connector" --withSecret --apisApplication "https://graph.microsoft.com/ExternalConnection.ReadWrite.OwnedBy, https://graph.microsoft.com/ExternalItem.ReadWrite.OwnedBy" --grantAdminConsent --output json)
 
 # write app to env.js
 echo "Writing app to env.js..."
