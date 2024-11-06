@@ -2,8 +2,7 @@
 ----------------------------------------------------------------------------
 
 Created:      Paul Bullock
-Copyright (c) 2023
-Date:         19/11/2023
+Date:         29/10/2024
 Disclaimer:   
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -36,24 +35,24 @@ begin{
     . .\Functions.ps1
 
     $baseExternalUrl = "https://ignite.microsoft.com/en-US/sessions/"
-    $jsonContent = Get-Content "content\ignite-sessions.json" -Raw | ConvertFrom-Json
-    $entraIdDisplayName = "Paul Bullock (Ignite 2023) - connector (PowerShell)"
-    $secretName = "pkbignite2023powershell"
+    $jsonContent = Get-Content "$(Get-Location)\content\ignite-sessions-2024.json" -Raw | ConvertFrom-Json
+    $entraIdDisplayName = "Paul Bullock (Ignite 2024) - connector (PowerShell)"
+    $secretName = "pkbignite2024powershell"
 }
 process {
 
     # Load the adaptive card file
     $adaptiveCard = Get-AdaptiveCard
-
+   
     # Define the external connection and the schema for search items structure
     $externalConnection = @{
         userId     = "d47e12f9-99f3-40ea-8870-7b39d2be92f7" # From Azure Entra ID
         # The name of the connection, as it will appear in the Microsoft Search admin center
         # Defines the details of the connection
         connection = @{
-            id               = "pkbignite2023sessions"
-            name             = "PKB Ignite 2023 Sessions"
-            description      = "Content and sessions for Ignite 2023, listing the session information from Ignite"
+            id               = "pkbignite2024sessions"
+            name             = "PKB Ignite 2024 Sessions"
+            description      = "Content and sessions for Ignite 2024, listing the session information from Ignite"
             activitySettings = @{
                 urlToItemResolvers = @(
                     @{
@@ -72,9 +71,9 @@ process {
             searchSettings   = @{
                 searchResultTemplates = @(
                     @{
-                        id       = "pkbignitepwsh"
+                        id       = "pkbignite24pwsh"
                         priority = 1
-                        layout   =  $adaptiveCard
+                        layout   = $adaptiveCard
                     }
                 )
             }
@@ -125,6 +124,13 @@ process {
                 )
             }
             @{
+                name          = "speakerNames"
+                type          = "String"
+                isQueryable   = "true"
+                isSearchable  = "true"
+                isRetrievable = "true"
+            }
+            @{
                 name          = "tags"
                 type          = "StringCollection"
                 isQueryable   = "true"
@@ -138,26 +144,34 @@ process {
 
     $jsonContent | ForEach-Object {
 
-        $startDate = $_.startDateTime
+        $startDate = $_.lastUpdate
         if ($startDate -eq $null) {
-            $startDate = "2023-11-15T00:00:00+00:00"
+            $startDate = "2024-11-19T00:00:00+00:00"
         }
 
         $sessionDate = Get-Date $startDate -Format "yyyy-MM-ddTHH:mm:ssZ"
+
+        $speakerNames = ""
+        if($_.speakerNames.length -gt 0){
+            $speakerNames = $_.speakerNames[0]
+        }else{
+            Write-Host "No Speakers" -foregroundColor Red
+        }
+        
 
         $externalItemsToAdd += @{
             id = $_.sessionId
             properties = @{
                 title = $_.title
                 excerpt = $_.description
-                url = [System.Uri]::new([System.Uri]$baseExternalUrl, $_.sessionId).ToString()
+                url = [System.Uri]::new([System.Uri]$baseExternalUrl, $_.sessionCode).ToString()
                 date = $sessionDate
                 sessionCode = $_.sessionCode
                 "tags@odata.type" = "Collection(String)"
                 tags = $_.contentArea
+                speakerNames = $speakerNames
             }
             content = @{
-                # TODO Future Enhancement, transcribe the video content to form part of the content, store as Markdown
                 value = $_.description
                 type = 'text'
             }
@@ -187,7 +201,7 @@ process {
     # Create Entra app
     SetupGraphConnectorEntraId -secretName $secretName -displayName $entraIdDisplayName
     
-    # Initialize Graph connection
+    # Initialize Graph connection i.e. connect to Microsoft Graph
     InitializeGraphConnection -secretName $secretName
     
     # Create external connection
@@ -195,6 +209,9 @@ process {
 
     # Import content
     Import-ExternalItems -ExternalConnection $externalConnection -ExternalItems $externalItemsToAdd
+
+    Write-Host "Please navigate to the Microsoft Search admin center to complete the setup for search verticals as a one-time task." -ForegroundColor Yellow
+    Write-Host "https://admin.microsoft.com/AdminPortal/Home#/MicrosoftSearch/verticals" -ForegroundColor DarkCyan
 }
 end{
 

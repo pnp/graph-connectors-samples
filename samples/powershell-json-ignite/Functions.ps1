@@ -39,7 +39,7 @@ function SetupGraphConnectorEntraId{
     )
 
     ##TODO Check Config file or display name exists for the connector
-    Write-Host "Checking Graph Connector for Entra ID..."
+    Write-Host "Checking Graph Connector for Entra ID..." -ForegroundColor Blue
 
     Connect-MgGraph -Scopes AppRoleAssignment.ReadWrite.All,Application.ReadWrite.All -NoWelcome
 
@@ -60,7 +60,7 @@ function SetupGraphConnectorEntraId{
     $result = Get-MgApplication -Filter "DisplayName eq '$($DisplayName)'"
 
     if(!$result){
-        Write-Host "Creating Graph Connector for Entra ID..." -NoNewline
+        Write-Host "Creating Graph Connector for Entra ID..." -NoNewline -ForegroundColor Blue
          # create the application
         $app = New-MgApplication -DisplayName $DisplayName -RequiredResourceAccess $requiredResourceAccess
 
@@ -95,7 +95,7 @@ function InitializeGraphConnection{
         [string]$secretName
     )
 
-    Write-Host "Initialise the Graph connection..."
+    Write-Host "Initialise the Graph connection..." -ForegroundColor Blue
 
     $config = Get-Content -Path $cfgFileName | ConvertFrom-StringData
     $credential = Get-Secret -Name $secretName
@@ -108,17 +108,14 @@ function InitializeGraphConnection{
 #-----------------------------------------------------------
 
 function Get-AdaptiveCard{
-    param(
-        [string]$path = ".\resultLayout.json"
-    )
-
-    Write-Host "Getting Adaptive Card from $path"
+    
+    Write-Host "Getting Adaptive Card from $(Get-Location)\resultLayout.json"
 
     # Initialize to an empty hashtable to explicitly define the type as hashtable.
     # This is needed to avoid the breaking change introduced in PowerShell 7.3 - https://github.com/PowerShell/PowerShell/issues/18524.
     # https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2352
     [hashtable]$adaptiveCard = @{}
-    $adaptiveCard += Get-Content -Path ".\resultLayout.json" -Raw | ConvertFrom-Json -AsHashtable
+    $adaptiveCard += Get-Content -Path "$(Get-Location)\resultLayout.json" -Raw | ConvertFrom-Json -AsHashtable
 
     return $adaptiveCard
 }
@@ -128,8 +125,8 @@ function CreateExternalConnection{
         [PSCustomObject] $externalConnection
     )
     
-    Write-Host "Creating external connection..." -NoNewLine
-    New-MgExternalConnection -BodyParameter $externalConnection.connection -ErrorAction Stop | Out-Null
+    Write-Host "Creating external connection..." -NoNewLine -ForegroundColor Blue
+    New-MgExternalConnection -BodyParameter $externalConnection.connection -ErrorAction Stop
     Write-Host "DONE" -ForegroundColor Green
 
     Write-Host "Creating schema..." -NoNewLine
@@ -167,9 +164,14 @@ function Import-ExternalItems {
     $i = 0
 
     $ExternalItems | ForEach-Object {
-        Set-MgExternalConnectionItem -ExternalConnectionId $externalConnection.connection.id -ExternalItemId $_.id -BodyParameter $_ -ErrorAction Stop | Out-Null
-        $complete = [math]::Round((++$i/$count)*100, 0)
-        Write-Progress -Activity "Importing items" -Status "$complete% Complete: $($_.id)" -PercentComplete $complete
+        try{
+            Set-MgExternalConnectionItem -ExternalConnectionId $externalConnection.connection.id -ExternalItemId $_.id -BodyParameter $_ -ErrorAction Stop | Out-Null
+            $complete = [math]::Round((++$i/$count)*100, 0)
+            Write-Progress -Activity "Importing items" -Status "$complete% Complete: $($_.id)" -PercentComplete $complete
+        }catch{
+            Write-Host "Error importing item: $($_.id) $_" -ForegroundColor Red
+        }
+        
     }
 }
 
