@@ -7,7 +7,7 @@ const envPath = path.join(__dirname, "..", "env");
 const envs = [
   {
     name: ".env.local",
-    content: `TEAMSFX_ENV=local\nAPP_NAME=Foodsie\nTUNNEL_ID=\nNOTIFICATION_ENDPOINT=\nNOTIFICATION_DOMAIN=`,
+    content: `TEAMSFX_ENV=local\nAPP_NAME=Foodsie\nTUNNEL_ID=\nNOTIFICATION_ENDPOINT=\nNOTIFICATION_DOMAIN=\n`,
   },
   {
     name: ".env.local.user",
