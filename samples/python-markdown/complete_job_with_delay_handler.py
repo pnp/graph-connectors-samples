@@ -64,7 +64,7 @@ class CompleteJobWithDelayHandler(BaseMiddleware):
             logger.warning("Response is not OK")
             return response
 
-        body_bytes = response.read()
+        body_bytes = await response.aread()
         parse_node = ParseNodeFactoryRegistry().get_root_parse_node("application/json", body_bytes) # type: ignore
         operation: ConnectionOperation = parse_node.get_object_value(ConnectionOperation.create_from_discriminator_value(parse_node)) # type: ignore
 
