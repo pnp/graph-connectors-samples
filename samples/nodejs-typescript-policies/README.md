@@ -52,6 +52,8 @@ Version|Date|Comments
 - From the side navigation, open [Settings > Search & Intelligence](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch)
 - On the page, navigate to the [Data Sources](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) tab
 - A table will display available connections. Locate the **Policy Management** connection. In the **Required actions** column, select the link to **Include Connector Results** and confirm the prompt
+![image](https://github.com/user-attachments/assets/f5667674-e1e9-4d54-a870-d40a2304b74f)
+
 - Navigate to [Microsoft365.com](https://www.microsoft365.com)
 - Using the search box on top, search for: `acceptable use policy`. You should see the following result:
 
