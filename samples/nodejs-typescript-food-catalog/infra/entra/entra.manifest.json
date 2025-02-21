@@ -1,9 +1,18 @@
 {
   "id": "${{ENTRA_APP_OBJECT_ID}}",
   "appId": "${{ENTRA_APP_CLIENT_ID}}",
-  "name": "${{APP_NAME}}-${{TEAMSFX_ENV}}",
-  "accessTokenAcceptedVersion": 2,
+  "displayName": "${{APP_NAME}}-${{TEAMSFX_ENV}}",
+  "identifierUris": [
+    "api://${{ENTRA_APP_CLIENT_ID}}"
+  ],
   "signInAudience": "AzureADMyOrg",
+  "api": {
+    "requestedAccessTokenVersion": 2
+  },
+  "info": {},
+  "publicClient": {
+    "redirectUris": []
+  },
   "requiredResourceAccess": [
     {
       "resourceAppId": "Microsoft Graph",
@@ -19,6 +28,11 @@
       ]
     }
   ],
-  "identifierUris": ["api://${{ENTRA_APP_CLIENT_ID}}"],
-  "replyUrlsWithType": []
+  "web": {
+    "redirectUris": [],
+    "implicitGrantSettings": {}
+  },
+  "spa": {
+    "redirectUris": []
+  }
 }

@@ -17,6 +17,7 @@ This sample project uses Teams Toolkit for Visual Studio Code to simplify the pr
 
 Version|Date|Comments
 -------|----|--------
+1.9|February 21, 2025|Fixed for using latest version of Teams Toolkit
 1.8|October 01, 2024|Added support for provisioning and deploying to Azure
 1.7|September 2, 2024|Updated instructions
 1.6|August 13, 2024|Updated instructions
