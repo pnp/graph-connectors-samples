@@ -2,12 +2,12 @@
   {
     "name": "pnp-graph-connector-nodejs-typescript-food-catalog",
     "source": "pnp",
-    "title": "Ingest custom API data using TypeScript, Node.js and Teams Toolkit for Visual Studio Code",
-    "shortDescription": "This sample project uses Teams Toolkit to simplify the process of creating a Microsoft Graph connector that ingests data from a custom API to Microsoft Graph",
+    "title": "Ingest custom API data using TypeScript, Node.js and Microsoft 365 Agents Toolkit for Visual Studio Code",
+    "shortDescription": "This sample project uses Microsoft 365 Agents Toolkit to simplify the process of creating a Microsoft Graph connector that ingests data from a custom API to Microsoft Graph",
     "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-food-catalog",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-food-catalog",
     "longDescription": [
-      "This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a Microsoft Graph connector that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the simplified admin experience which means that admins can toggle the connector on and off from the Microsoft Teams admin center."
+      "This sample project uses Microsoft 365 Agents Toolkit for Visual Studio Code to simplify the process of creating a Microsoft Graph connector that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the simplified admin experience which means that admins can toggle the connector on and off from the Microsoft Teams admin center."
     ],
     "creationDateTime": "2023-11-02",
     "updateDateTime": "2025-02-21",
@@ -83,8 +83,8 @@
         "url": "https://blog.mastykarz.nl/easily-debug-microsoft-graph-javascript-sdk-requests/"
       },
       {
-        "name": "Teams Toolkit for Visual Studio Code",
-        "description": "Learn more about the Teams Toolkit for Visual Studio Code.",
+        "name": "Microsoft 365 Agents Toolkit for Visual Studio Code",
+        "description": "Learn more about the Microsoft 365 Agents Toolkit for Visual Studio Code.",
         "url": "https://learn.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals?pivots=visual-studio-code-v5"
       }
     ]

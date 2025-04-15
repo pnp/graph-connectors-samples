@@ -14,7 +14,7 @@
       },
       {
         "file": "appPackage/manifest.json",
-        "description": "The `graphConnector.notificationUrl` represents the endpoint which will receive a request when an admin either enables or disables a connection in the Teams admin center. As your endpoint is running locally during development, you'll need a Dev tunnel to open your localhost to the internet.\r\n\r\nNext, let's take a look at how Teams Toolkit handles all of this when you press `F5`.",
+        "description": "The `graphConnector.notificationUrl` represents the endpoint which will receive a request when an admin either enables or disables a connection in the Teams admin center. As your endpoint is running locally during development, you'll need a Dev tunnel to open your localhost to the internet.\r\n\r\nNext, let's take a look at how Microsoft 365 Agents Toolkit handles all of this when you press `F5`.",
         "line": 33
       },
       {
@@ -59,7 +59,7 @@
       },
       {
         "file": "teamsapp.local.yml",
-        "description": "This is a project file which is used to automate Microsoft 365 development tasks using Teams Toolkit.",
+        "description": "This is a project file which is used to automate Microsoft 365 development tasks using Microsoft 365 Agents Toolkit.",
         "line": 1
       },
       {
@@ -94,7 +94,7 @@
       },
       {
         "file": "env/.env.local.user",
-        "description": "This file represents the environment variables for the local environment. It is specifically designed for storing secured credentials which are encrypted by Teams Toolkit.",
+        "description": "This file represents the environment variables for the local environment. It is specifically designed for storing secured credentials which are encrypted by Microsoft 365 Agents Toolkit.",
         "line": 1
       },
       {
