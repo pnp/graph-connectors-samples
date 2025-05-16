@@ -2,13 +2,12 @@ import { Config } from "../models/Config";
 import { Item } from "../models/Item";
 
 /**
- * Fetches issues from the GitHub API.
+ * Fetches repairs from Repairs Hub API.
  * @param config - The configuration object.
- * @param fetchUrl - The URL to fetch issues from.
- * @param repo - The repository name in the format 'owner/repo'.
+ * @param fetchUrl - The URL to fetch repairs from.
  * @returns A promise that resolves to the response.
  */
-async function fetchIssues(config: Config, fetchUrl: string, repo: string): Promise<Response> {
+async function fetchRepairs(config: Config, fetchUrl: string): Promise<Response> {
   // Use the access token from the config if available
   // to authenticate the request to the GitHub API if using a private repo
   // or to avoid rate limiting
@@ -20,7 +19,7 @@ async function fetchIssues(config: Config, fetchUrl: string, repo: string): Prom
     headers,
   });
   if (!response.ok) {
-    throw new Error(`Failed to fetch items in repo ${repo}: ${response.statusText}`);
+    throw new Error(`Failed to fetch repairs: ${response.statusText}`);
   }
   return response;
 }
@@ -28,7 +27,6 @@ async function fetchIssues(config: Config, fetchUrl: string, repo: string): Prom
 /**
  * Gets the URL for the next page of results from the response headers.
  * Parse the link header to find the next page URL.
- * @see https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api?apiVersion=2022-11-28#using-link-headers
  * @param response - The response object from the fetch request.
  * @returns The URL for the next page of results, or null if there are no more pages.
  */
@@ -64,32 +62,23 @@ async function mapItemsFromResponse(response: Response): Promise<Item[]> {
 }
 
 // [Customization point]
-// If you need additional logic to get all items from the repository, you can add it here
-// This function is used to get all items from the repository.
-// The items are filtered to exclude pull requests and only include issues.
-// See github API documentation for more details:
-// https://docs.github.com/en/rest/reference
-// The documentation for the issues endpoint is here:
-// https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-repository-issues
+// If you need additional logic to get all items from the repairs hub, you can add it here
+// This function is used to get all items from the repairs hub API.
 /**
- * Get all items for all repositories sequentially, yielding data as soon as it's available.
- * @param config - The configuration object containing connector details (e.g., access token, repos).
+ * Get all items for all repairs sequentially, yielding data as soon as it's available.
+ * @param config - The configuration object containing connector details
  * @param pageSize - Number of items per page. Defaults to 100.
- * @param since - Optional date to filter issues updated after this date.
  */
 export async function* getAllItemsFromAPI(
   config: Config,
-  since?: Date,
-  pageSize = 100
+  pageSize: number = 100
 ): AsyncGenerator<Item> {
-  const repos = config.connector.repos.split(",");
-  for (const repo of repos) {
     config.context.log(`Fetching repairs from CRM: RepairsHub`);
 
     // Url to fetch issues for the first page
     let fetchPageUrl = `https://repairshub.azurewebsites.net/repairs`;
     while (fetchPageUrl) {
-      const response = await fetchIssues(config, fetchPageUrl, repo);
+      const response = await fetchRepairs(config, fetchPageUrl);
       const issues = await mapItemsFromResponse(response);
       for (const item of issues) {
         yield item;
@@ -98,5 +87,4 @@ export async function* getAllItemsFromAPI(
       // If there are no more pages, null is returned to break the loop
       fetchPageUrl = getNextPageUrl(response);
     }
-  }
 }
