@@ -8,13 +8,7 @@ import { Item } from "../models/Item";
  * @returns A promise that resolves to the response.
  */
 async function fetchRepairs(config: Config, fetchUrl: string): Promise<Response> {
-  // Use the access token from the config if available
-  // to authenticate the request to the GitHub API if using a private repo
-  // or to avoid rate limiting
   const headers: HeadersInit = {};
-  if (config.connector.accessToken) {
-    headers["Authorization"] = `Bearer ${config.connector.accessToken}`;
-  }
   const response = await fetch(fetchUrl, {
     headers,
   });
