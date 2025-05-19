@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content.
+This sample project uses Microsoft 365 Agents Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content.
 
 > [!NOTE]  
 > Sample data was generated using Artificial Intelligence. Any resemblance to real data is purely coincidental.
@@ -15,7 +15,7 @@ This sample shows how to ingest data from a custom API into your Microsoft 365 t
 
 The sample illustrates the following concepts:
 
-- simplify debugging and provisioning of resources with Teams Toolkit for Visual Studio code
+- simplify debugging and provisioning of resources with Microsoft 365 Agents Toolkit for Visual Studio code
 - create external connection schema
 - support full ingestion of data
 - visualize the external content in Microsoft 365 search results
@@ -36,7 +36,7 @@ Version|Date|Comments
 
 ## Prerequisites
 
-- [Teams Toolkit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
+- [Microsoft 365 Agents Toolkit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
 - [Azure Functions Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 - [Microsoft 365 Developer tenant](https://developer.microsoft.com/microsoft-365/dev-program) with [uploading custom apps enabled](https://learn.microsoft.com/microsoftteams/platform/m365-apps/prerequisites#prepare-a-developer-tenant-for-testing)
 - [Node@18](https://nodejs.org)

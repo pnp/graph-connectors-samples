@@ -14,7 +14,7 @@
       },
       {
         "file": "appPackage/manifest.json",
-        "description": "The `graphConnector.notificationUrl` represents the endpoint which will receive a request when an admin either enables or disables a connection in the Teams admin center. As your endpoint is running locally during development, you'll need a Dev tunnel to open your localhost to the internet.\r\n\r\nNext, let's take a look at how Teams Toolkit handles all of this when you press `F5`.",
+        "description": "The `graphConnector.notificationUrl` represents the endpoint which will receive a request when an admin either enables or disables a connection in the Teams admin center. As your endpoint is running locally during development, you'll need a Dev tunnel to open your localhost to the internet.\r\n\r\nNext, let's take a look at how Microsoft 365 Agents Toolkit handles all of this when you press `F5`.",
         "line": 33
       },
       {
@@ -54,26 +54,26 @@
       },
       {
         "file": ".vscode/tasks.json",
-        "description": "This task executes the `Provision` stage in the `teamsapp.local.yml` file.",
+        "description": "This task executes the `Provision` stage in the `m365agents.local.yml` file.",
         "line": 117
       },
       {
-        "file": "teamsapp.local.yml",
-        "description": "This is a project file which is used to automate Microsoft 365 development tasks using Teams Toolkit.",
+        "file": "m365agents.local.yml",
+        "description": "This is a project file which is used to automate Microsoft 365 development tasks using Microsoft 365 Agents Toolkit.",
         "line": 1
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This action executes a script that ensures the Azurite tables are populated with data so that we have content to ingest into Microsoft 365.",
         "line": 10
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This action executes a script to increment the app manifest version each time we start a debug session, this ensures that we don't get conflicts when the app package is uploaded to Teams admin center.",
         "line": 16
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This action creates the Microsoft Entra app registration and writes values to the `env\\.env.local` and `env\\.env.local.user` files.",
         "line": 22
       },
@@ -94,11 +94,11 @@
       },
       {
         "file": "env/.env.local.user",
-        "description": "This file represents the environment variables for the local environment. It is specifically designed for storing secured credentials which are encrypted by Teams Toolkit.",
+        "description": "This file represents the environment variables for the local environment. It is specifically designed for storing secured credentials which are encrypted by Microsoft 365 Agents Toolkit.",
         "line": 1
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This action update the app registration with the information from the manifest to apply the API permission scopes and configure the `Application ID URI`.",
         "line": 35
       },
@@ -118,7 +118,7 @@
         "line": 22
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This action creates the app package, which contains the app manifest file and icons.",
         "line": 44
       },
@@ -128,12 +128,12 @@
         "line": 1
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This action writes values from the environment files to the `local.settings.json` file which enables the Azure Function to read these values at runtime.",
         "line": 54
       },
       {
-        "file": "teamsapp.local.yml",
+        "file": "m365agents.local.yml",
         "description": "This task uploads the app package to the Teams admin center.\r\n\r\nYou'll need to navigate to the [Teams admin center](https://aka.ms/tac) and publish the app.",
         "line": 68
       },

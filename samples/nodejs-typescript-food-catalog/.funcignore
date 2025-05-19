@@ -11,6 +11,6 @@ scripts
 *.js.map
 local.settings.json
 readme.md
-teamsapp.local.yml
-teamsapp.yml
+m365agents.local.yml
+m365agents.yml
 tsconfig.json
