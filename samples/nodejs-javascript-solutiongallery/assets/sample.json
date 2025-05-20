@@ -3,16 +3,16 @@
     "name": "pnp-graph-connector-nodejs-javascript-solutiongallery",
     "source": "pnp",
     "title": "Ingest Microsoft 365 and Power Platform community samples using JavaScript and Node.js",
-    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest sample solutions from the Microsoft 365 and Power Platform community sample gallery. It gives you a very convenient way to search for and reference community samples right from your tenant!",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-solutiongallery",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-solutiongallery",
+    "shortDescription": "This sample contains a Copilot connector that shows how to ingest sample solutions from the Microsoft 365 and Power Platform community sample gallery. It gives you a very convenient way to search for and reference community samples right from your tenant!",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-javascript-solutiongallery",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-javascript-solutiongallery",
     "longDescription": [
-      "This sample contains a Microsoft Graph connector that shows how to ingest sample solutions from the Microsoft 365 and Power Platform community sample gallery. It gives you a very convenient way to search for and reference community samples right from your tenant!"
+      "This sample contains a Copilot connector that shows how to ingest sample solutions from the Microsoft 365 and Power Platform community sample gallery. It gives you a very convenient way to search for and reference community samples right from your tenant!"
     ],
     "creationDateTime": "2023-10-02",
     "updateDateTime": "2024-03-12",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,31 +38,31 @@
       {
         "type": "image",
         "order": 50,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-rich.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-rich.png",
         "alt": "Microsoft 365 and Power Platform community rate limit samples displayed in Microsoft Search"
       },
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-rate-limit.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-rate-limit.png",
         "alt": "Microsoft 365 and Power Platform community rate limit samples displayed in Microsoft Search"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-message-extension.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-message-extension.png",
         "alt": "Microsoft 365 and Power Platform community Microsoft Teams message extension samples displayed in Microsoft Search"
       },
       {
         "type": "image",
         "order": 300,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-chat-gpt.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/sample-chat-gpt.png",
         "alt": "Microsoft 365 and Power Platform community Chat GPT samples displayed in Microsoft Search"
       },
       {
         "type": "image",
         "order": 400,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/content.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-javascript-solutiongallery/assets/content.png",
         "alt": "Sample Solution Gallery content displayed in Visual Studio Code"
       }
     ],
@@ -85,13 +85,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       },
       {

@@ -22,7 +22,7 @@
       },
       "url": {
         "type": "string",
-        "pattern": "https:\/\/github.com\/pnp\/graph-connectors-samples\/tree\/main\/samples\/.*"
+        "pattern": "https:\/\/github.com\/pnp\/copilot-connectors-samples\/tree\/main\/samples\/.*"
       },
       "creationDateTime": {
         "type": "string",

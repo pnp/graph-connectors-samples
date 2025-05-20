@@ -2,11 +2,11 @@
 
 ## Summary
 
-This sample demonstrates how you can ingest GitHub issues, pull requests, and commits into Microsoft Graph using a Graph connector. The sample is written in TypeScript and runs on Azure Functions. Data is ingested by using a GitHub webhook to send events to the Azure Function HTTP trigger.
+This sample demonstrates how you can ingest GitHub issues, pull requests, and commits into Microsoft Graph using a Copilot connector. The sample is written in TypeScript and runs on Azure Functions. Data is ingested by using a GitHub webhook to send events to the Azure Function HTTP trigger.
 
 ![Solution architecture](./assets/solution-overview.png)
 
-Once the Graph connector is enabled in Microsoft Search, you can use Microsoft Search and Copilot to search for GitHub issues, pull requests, and commits.
+Once the Copilot connector is enabled in Microsoft Search, you can use Microsoft Search and Copilot to search for GitHub issues, pull requests, and commits.
 
 ![Use case](./assets/use-case.png)
 
@@ -22,7 +22,7 @@ Version|Date|Comments
 
 ## Prerequisites
 
-* Microsoft tenant with a Microsoft 365 subscription (this will allow up to 50 million items to be ingested through Graph connectors). You can also use a [Microsoft 365 developer subscription](https://developer.microsoft.com/microsoft-365/dev-program)
+* Microsoft tenant with a Microsoft 365 subscription (this will allow up to 50 million items to be ingested through Copilot connectors). You can also use a [Microsoft 365 developer subscription](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Node@20](https://nodejs.org) or later
 
   ```bash
@@ -75,12 +75,12 @@ Version|Date|Comments
   ```bash
   # create the app registration
   az login
-  az ad app create --display-name "GitHub Graph connector"
+  az ad app create --display-name "GitHub Copilot connector"
   ```
 
   > Take note of the **appId** value from the output as this will be required shortly.
 
-* Grant the app registration the required permissions to create an external connection (Graph connector) and items.
+* Grant the app registration the required permissions to create an external connection (Copilot connector) and items.
 
   ```bash
   # give app the permissions to create an external connection and items
@@ -101,7 +101,7 @@ Version|Date|Comments
 
 ### Running the sample
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-github) then unzip it)
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-typescript-github) then unzip it)
 * In the command line, navigate to the `nodejs-typescript-github` folder and install the dependencies
 
   ```bash
@@ -140,15 +140,15 @@ Version|Date|Comments
   func start
   ```
 
-### Creating the Graph connector
+### Creating the Copilot connector
 
-* From the previous step, you may notice on there are three functions running, you need to browse to the **createConnection** endpoint to create a Graph connector on `http://localhost:7071/api/createConnection`
+* From the previous step, you may notice on there are three functions running, you need to browse to the **createConnection** endpoint to create a Copilot connector on `http://localhost:7071/api/createConnection`
 
 > This can take upwards of 15 minutes for the connection to be created
 
-### Enabling the Graph connector in search results
+### Enabling the Copilot connector in search results
 
-Once created, you Enable the Graph connector in Search & intelligence data sources
+Once created, you Enable the Copilot connector in Search & intelligence data sources
 
 * Go to the [Search & intelligence data sources](https://admin.microsoft.com/?source=applauncher#/MicrosoftSearch/connectors) page
 * Find the **GitHub** connection in the table, and in the **Required actions** column, select **Include Connector Results** and confirm the prompt
@@ -156,7 +156,7 @@ Once created, you Enable the Graph connector in Search & intelligence data sourc
 
 ![Search & Intelligence Data Sources](./assets/search-sources.png)
 
-### Testing the Graph connector
+### Testing the Copilot connector
 
 * Make some changes to a GitHub repository that you have the webhook configured for (e.g. create an issue, pull request, or commit)
 * Wait a few minutes for the changes to be ingested
@@ -173,7 +173,7 @@ Overall, this sample demonstrates the following:
 
 Looking a bit deeper, this sample shows how you can use the Webhook feature to handle events from GitHub and ingest them into Microsoft Graph instead of crawling a data source periodically. This differs from crawling GitHub in the following ways:
 
-* **Real-time updates**: The Graph connector is updated in real-time as events occur in GitHub
+* **Real-time updates**: The Copilot connector is updated in real-time as events occur in GitHub
 * **Customizable**: You can choose which events to ingest and how to handle them
 * **Scoped**: You can scope the connector to only ingest data from specific repositories rather than all repositories
 
@@ -181,11 +181,11 @@ Looking a bit deeper, this sample shows how you can use the Webhook feature to h
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%20nodejs-typescript-github%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%20nodejs-typescript-github%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

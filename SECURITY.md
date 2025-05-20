@@ -12,8 +12,8 @@ All code samples in this repository are intended for education purposes only and
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, please [create an issue](https://github.com/pnp/graph-connectors-samples/issues/new/choose) and tag the issue as `vulnerability-suspected`.
+To report a vulnerability, please [create an issue](https://github.com/pnp/copilot-connectors-samples/issues/new/choose) and tag the issue as `vulnerability-suspected`.
 
 Upon receipt of the issue, we will flag the sample as having a suspected vulnerability and request the support from the community to identify and resolve, if possible, the issue.
 
-![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/SECURITY.md)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-connectors-samples/SECURITY.md)

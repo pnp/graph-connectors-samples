@@ -4,7 +4,7 @@
     "steps": [
       {
         "file": "appPackage/manifest.json",
-        "description": "To enable the simplified admin experience in the Teams admin center, you'll need an app manifest file. The app manifest is packaged and uploaded to Teams admin center then published.\r\n\r\nThis file contains the information required by the admin center to allow admins to enable, or disable a connector from the admin center from a Graph connector tab on the app screen.\r\n\r\n- `webApplicationInfo`\r\n- `graphConnector.notificationUrl`\r\n\r\nThe app manifest must use `v1.13` schema, or higher.",
+        "description": "To enable the simplified admin experience in the Teams admin center, you'll need an app manifest file. The app manifest is packaged and uploaded to Teams admin center then published.\r\n\r\nThis file contains the information required by the admin center to allow admins to enable, or disable a connector from the admin center from a Copilot connector tab on the app screen.\r\n\r\n- `webApplicationInfo`\r\n- `graphConnector.notificationUrl`\r\n\r\nThe app manifest must use `v1.13` schema, or higher.",
         "line": 1
       },
       {

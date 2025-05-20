@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample contains a Microsoft Graph connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!
+This sample contains a Copilot connector that shows how to bring IBM DB2 sales data located on the IBM Cloud to Microsoft 365. It gives you a very convenient way to search in Client Orders right from your tenant!
 
 ![IBMDB2](assets/preview01.png)
 
@@ -27,7 +27,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2) then unzip it)
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2) then unzip it)
 - Make the setup script executable, by running `chmod +x ./setup.sh`
 - Run the setup script: `./setup.sh`. When finished, it will create a local `env.js` file with information about the AAD app, required to run the code
 - Restore dependencies: `npm install`
@@ -52,11 +52,11 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-javascript-IBMDB2%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-javascript-IBMDB2%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

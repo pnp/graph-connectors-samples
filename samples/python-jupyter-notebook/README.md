@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample contains a Microsoft Graph connector built using Python & employing Jupyter Notebooks. It will demonstrate how to ingest files that in our case is on the public Internet or could very well be in an accessible SaaS application. Our example uses the Microsoft Graph ChangeLog which captures the addition, updates, and deletions of properties and methods for the various Microsoft Graph endpoints.  For each entry into the ChangeLog, it extracts several key elements as well as the summary, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization through the various Search hubs in the M365 App, SharePoint, Viva Platform, and ContextIQ the latter two being in preview.
+This sample contains a Copilot connector built using Python & employing Jupyter Notebooks. It will demonstrate how to ingest files that in our case is on the public Internet or could very well be in an accessible SaaS application. Our example uses the Microsoft Graph ChangeLog which captures the addition, updates, and deletions of properties and methods for the various Microsoft Graph endpoints.  For each entry into the ChangeLog, it extracts several key elements as well as the summary, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization through the various Search hubs in the M365 App, SharePoint, Viva Platform, and ContextIQ the latter two being in preview.
 
 ![Ingested files displayed in Microsoft Search search results](assets/1_search_results.png)
 
@@ -65,7 +65,7 @@ Version|Date|Comments
 
 ## Features
 
-This sample shows how to ingest items from an RSS feed into Microsoft 365. The sample refernces the site [Microsoft Graph ChangeLog](https://developer.microsoft.com/en-us/graph/changelog) specifically its [RSS Feed](https://developer.microsoft.com/en-us/graph/changelog/rss). These files are prepared, parsed and ingested by this sample Custom Microsoft Graph connector.
+This sample shows how to ingest items from an RSS feed into Microsoft 365. The sample refernces the site [Microsoft Graph ChangeLog](https://developer.microsoft.com/en-us/graph/changelog) specifically its [RSS Feed](https://developer.microsoft.com/en-us/graph/changelog/rss). These files are prepared, parsed and ingested by this sample Custom Copilot connector.
 
 The sample illustrates the following concepts:
 
@@ -103,11 +103,11 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%python-jupyter-notebook%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%python-jupyter-notebook%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

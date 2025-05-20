@@ -3,16 +3,16 @@
     "name": "pnp-graph-connector-json-restcountries",
     "source": "pnp",
     "title": "Ingest REST Countries content using PowerShell",
-    "shortDescription": "This sample contains a Microsoft Graph connector built in PowerShell that shows how to ingest REST Countries (https://restcountries.com/) content. For each country, it extracts the metadata from the REST API (https://restcountries.com/v3.1/all), maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-json-restcountries",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/powershell-json-restcountries",
+    "shortDescription": "This sample contains a Copilot connector built in PowerShell that shows how to ingest REST Countries (https://restcountries.com/) content. For each country, it extracts the metadata from the REST API (https://restcountries.com/v3.1/all), maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/powershell-json-restcountries",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/powershell-json-restcountries",
     "longDescription": [
-      "This sample contains a Microsoft Graph connector built in PowerShell that shows how to ingest REST Countries (https://restcountries.com/) content. For each country, it extracts the metadata from the REST API (https://restcountries.com/v3.1/all), maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+      "This sample contains a Copilot connector built in PowerShell that shows how to ingest REST Countries (https://restcountries.com/) content. For each country, it extracts the metadata from the REST API (https://restcountries.com/v3.1/all), maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2023-11-28",
     "updateDateTime": "2023-11-28",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,7 +38,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/powershell-json-restcountries/assets/screenshot.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/powershell-json-restcountries/assets/screenshot.png",
         "alt": "REST Countries content displayed in Microsoft Search search results"
       }
     ],
@@ -56,13 +56,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       }
     ]

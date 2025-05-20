@@ -25,7 +25,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web) then unzip it)
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web) then unzip it)
 
 * Create an app registration, and grant it the following permissions:
   * ExternalConnection.ReadWrite.OwnedBy
@@ -38,7 +38,7 @@ Version|Date|Comments
 
 Extended description of the contents of the sample. What elements does it include? What concepts does illustrate? What type of content is it processing?
 
-Using this sample you can use the Microsoft Graph connector to:
+Using this sample you can use the Copilot connector to:
 
 * Ingest data from a JSON file
 * Making it searchable in Microsoft Search
@@ -49,11 +49,11 @@ Using this sample you can use the Microsoft Graph connector to:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%20dotnet-csharp-json-from-web%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%20dotnet-csharp-json-from-web%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

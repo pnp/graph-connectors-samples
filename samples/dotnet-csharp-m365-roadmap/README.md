@@ -1,11 +1,11 @@
-# Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors using C# and .NET
+# Ingest M365 Roadmap content in Microsoft 365 using Copilot connectors using C# and .NET
 
 ## Summary
 
-This sample contains a Microsoft Graph connector that shows how to Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors. For each file, it M365 Roadmap content, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
+This sample contains a Copilot connector that shows how to Ingest M365 Roadmap content in Microsoft 365 using Copilot connectors. For each file, it M365 Roadmap content, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
 
-![M365 Roadmap Graph Connector](./assets/M365-Roadmap-Graph-Connector01.png)
-![M365 Roadmap Graph Connector](./assets/M365-Roadmap-Graph-Connector02.png)
+![M365 Roadmap Copilot connector](./assets/M365-Roadmap-Graph-Connector01.png)
+![M365 Roadmap Copilot connector](./assets/M365-Roadmap-Graph-Connector02.png)
 
 
 ## Contributors
@@ -31,7 +31,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap) then unzip it)
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap) then unzip it)
 - add the information about the Entra ID app in user secrets
   - dotnet user-secrets init
   - dotnet user-secrets set "EntraId:ClientId" "[application id]"
@@ -49,6 +49,6 @@ Version|Date|Comments
 
 ## Features
 
-This sample shows how to Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors using C# and .NET
+This sample shows how to Ingest M365 Roadmap content in Microsoft 365 using Copilot connectors using C# and .NET
 
 ![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-graph-connector-dotnet-csharp-m365-roadmap)

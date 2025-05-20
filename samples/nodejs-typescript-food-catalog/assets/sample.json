@@ -3,16 +3,16 @@
     "name": "pnp-graph-connector-nodejs-typescript-food-catalog",
     "source": "pnp",
     "title": "Ingest custom API data using TypeScript, Node.js and Microsoft 365 Agents Toolkit for Visual Studio Code",
-    "shortDescription": "This sample project uses Microsoft 365 Agents Toolkit to simplify the process of creating a Microsoft Graph connector that ingests data from a custom API to Microsoft Graph",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-food-catalog",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-food-catalog",
+    "shortDescription": "This sample project uses Microsoft 365 Agents Toolkit to simplify the process of creating a Copilot connector that ingests data from a custom API to Microsoft Graph",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-typescript-food-catalog",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-typescript-food-catalog",
     "longDescription": [
-      "This sample project uses Microsoft 365 Agents Toolkit for Visual Studio Code to simplify the process of creating a Microsoft Graph connector that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the simplified admin experience which means that admins can toggle the connector on and off from the Microsoft Teams admin center."
+      "This sample project uses Microsoft 365 Agents Toolkit for Visual Studio Code to simplify the process of creating a Copilot connector that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the simplified admin experience which means that admins can toggle the connector on and off from the Microsoft Teams admin center."
     ],
     "creationDateTime": "2023-11-02",
     "updateDateTime": "2025-02-21",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot",
       "Microsoft 365 Agents Toolkit"
@@ -39,13 +39,13 @@
       {
         "type": "image",
         "order": 50,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-food-catalog/assets/content.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-typescript-food-catalog/assets/content.png",
         "alt": "Items ingested from the custom API displayed in Microsoft Search"
       },
       {
         "type": "image",
         "order": 50,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-food-catalog/assets/tac.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-typescript-food-catalog/assets/tac.png",
         "alt": "Simplified admin experience in Microsoft Teams admin center"
       }
     ],
@@ -63,13 +63,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       },
       {

@@ -78,7 +78,7 @@ When you submit a new sample, please follow these guidelines:
 Here's a high-level process for submitting new samples or updates to existing ones.
 
 1. Sign the Contributor License Agreement (see below)
-2. Fork this repository [pnp/graph-connectors-samples](https://github.com/pnp/graph-connectors-samples) to your GitHub account
+2. Fork this repository [pnp/copilot-connectors-samples](https://github.com/pnp/copilot-connectors-samples) to your GitHub account
 3. Create a new branch from the `main` branch for your fork for the contribution
 4. Include your changes to your branch
 5. Commit your changes using descriptive commit message. These are used to track changes on the repositories for monthly communications
@@ -87,17 +87,17 @@ Here's a high-level process for submitting new samples or updates to existing on
 
 Before you submit your pull request consider the following guidelines:
 
-* Search [GitHub](https://github.com/pnp/graph-connectors-samples/pulls) for an open or closed Pull Request which relates to your submission. You don't want to duplicate effort.
-* Make sure you have a link in your local cloned fork to the [pnp/graph-connectors-samples](https://github.com/pnp/graph-connectors-samples):
+* Search [GitHub](https://github.com/pnp/copilot-connectors-samples/pulls) for an open or closed Pull Request which relates to your submission. You don't want to duplicate effort.
+* Make sure you have a link in your local cloned fork to the [pnp/copilot-connectors-samples](https://github.com/pnp/copilot-connectors-samples):
 
   ```shell
   # check if you have a remote pointing to the Microsoft repo:
   git remote -v
 
-  # if you see a pair of remotes (fetch & pull) that point to https://github.com/pnp/graph-connectors-samples, you're ok... otherwise you need to add one
+  # if you see a pair of remotes (fetch & pull) that point to https://github.com/pnp/copilot-connectors-samples, you're ok... otherwise you need to add one
 
   # add a new remote named "upstream" and point to the Microsoft repo
-  git remote add upstream https://github.com/pnp/graph-connectors-samples.git
+  git remote add upstream https://github.com/pnp/copilot-connectors-samples.git
   ```
 
 * Make your changes in a new git branch:
@@ -106,7 +106,7 @@ Before you submit your pull request consider the following guidelines:
   git checkout -b my-api main
   ```
 
-* Ensure your fork is updated and not behind the upstream **graph-connectors-samples** repo. Refer to these resources for more information on syncing your repo:
+* Ensure your fork is updated and not behind the upstream **copilot-connectors-samples** repo. Refer to these resources for more information on syncing your repo:
   * [GitHub Help: Syncing a Fork](https://help.github.com/articles/syncing-a-fork/)
   * [Keep Your Forked Git Repo Updated with Changes from the Original Upstream Repo](http://www.andrewconnell.com/blog/keep-your-forked-git-repo-updated-with-changes-from-the-original-upstream-repo)
   * For a quick cheat sheet:
@@ -115,7 +115,7 @@ Before you submit your pull request consider the following guidelines:
     # assuming you are in the folder of your locally cloned fork....
     git checkout main
 
-    # assuming you have a remote named `upstream` pointing official **graph-connectors-samples** repo
+    # assuming you have a remote named `upstream` pointing official **copilot-connectors-samples** repo
     git fetch upstream
 
     # update your local main to be a mirror of what's in the main repo
@@ -138,23 +138,23 @@ Before you submit your pull request consider the following guidelines:
 
 If the sample you wish to contribute is stored in your own GitHub repository, you can use the following steps to merge it with this repository:
 
-* Fork the `graph-connectors-samples` repository from GitHub
+* Fork the `copilot-connectors-samples` repository from GitHub
 * Create a local git repository
 
     ```shell
-    md graph-connectors-samples
-    cd graph-connectors-samples
+    md copilot-connectors-samples
+    cd copilot-connectors-samples
     git init
     ```
 
-* Pull your forked copy of `graph-connectors-samples` into your local repository
+* Pull your forked copy of `copilot-connectors-samples` into your local repository
 
     ```shell
-    git remote add origin https://github.com/yourgitaccount/graph-connectors-samples.git
+    git remote add origin https://github.com/yourgitaccount/copilot-connectors-samples.git
     git pull origin main
     ```
 
-* Pull your other project from GitHub into the `samples` folder of your local copy of `graph-connectors-samples`
+* Pull your other project from GitHub into the `samples` folder of your local copy of `copilot-connectors-samples`
 
     ```shell
     git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git main
@@ -176,4 +176,4 @@ Thank you for your contribution.
 
 > Sharing is caring.
 
-![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/CONTRIBUTING.md)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-connectors-samples/CONTRIBUTING.md)

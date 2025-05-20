@@ -1,4 +1,4 @@
-# Azure Logic Apps Graph Connector Sample for ServiceNow
+# Azure Logic Apps Copilot connector Sample for ServiceNow
 
 ## Summary
 
@@ -82,28 +82,28 @@ az deployment group create --name LaDeployment --resource-group $appName --templ
 
 ## Features
 
-Using this sample you can use the Microsoft Graph connector to:
+Using this sample you can use the Copilot connector to:
 
 * Return Service Now Service Catalog entries
 * Keep this updated as low code solution in Logic Apps
 
-This graph connector will hook up to ServiceNow to return the Service Catalog entries as an external item in the Microsoft Graph which can be used for both Microsoft Search and Microsoft Copilot.
+This Copilot connector will hook up to ServiceNow to return the Service Catalog entries as an external item in the Microsoft Graph which can be used for both Microsoft Search and Microsoft Copilot.
 
 Two Logic Apps are created by the template:
 - Setup - configures the External Connection to ServiceNow and the related schema for the Service Catalog entries
 - Search - returns the catalog entries and adds them to the index
 
-The search is manually triggered by default but can be updated easily to run on a timer. The logic is intentionally basic to allow the focus on the Graph Connectors but could be updated to add additional logic to ensure that not all items are updated on every run.
+The search is manually triggered by default but can be updated easily to run on a timer. The logic is intentionally basic to allow the focus on the Copilot connectors but could be updated to add additional logic to ensure that not all items are updated on every run.
 
 ## Help
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%powershell-markdown%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%powershell-markdown%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

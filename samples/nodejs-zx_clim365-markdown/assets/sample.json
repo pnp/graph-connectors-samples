@@ -4,15 +4,15 @@
     "source": "pnp",
     "title": "Ingest local markdown content using CLI for Microsoft 365, zx and Node.js",
     "shortDescription": "This sample contains a sample zx script using CLI for Microsoft 365 that shows how to create an external connection with a schema and ingest external content to it. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-zx_clim365-markdown",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-zx_clim365-markdown",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-zx_clim365-markdown",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-zx_clim365-markdown",
     "longDescription": [
       "This sample contains a sample zx script using CLI for Microsoft 365 that shows how to create an external connection with a schema and ingest external content to it. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2024-09-21",
     "updateDateTime": "2024-09-21",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,14 +38,14 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-zx_clim365-markdown/assets/screenshot.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-zx_clim365-markdown/assets/screenshot.png",
         "alt": "External content displayed in Microsoft Search search results, visualized using a custom Adaptive Card"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-zx_clim365-markdown/assets/content.png",
-        "alt": "Markdown content with front matter metadata that's ingested with the sample Microsoft Graph connector"
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-zx_clim365-markdown/assets/content.png",
+        "alt": "Markdown content with front matter metadata that's ingested with the sample Copilot connector"
       }
     ],
     "authors": [
@@ -57,13 +57,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       },
       {

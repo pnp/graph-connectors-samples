@@ -2,7 +2,7 @@
 
 ## Summary
 
-This example includes a Microsoft Graph connector demonstrating the ingestion of Microsoft Learn Catalog API modules into Microsoft 365. It retrieves details about each module and associated metadata using the Microsoft Learn Catalog API, aligns them with the external connection's schema, and ingests the content while preserving both the content itself and its metadata. The ingested content is configured to be accessible to all members within the organization.
+This example includes a Copilot connector demonstrating the ingestion of Microsoft Learn Catalog API modules into Microsoft 365. It retrieves details about each module and associated metadata using the Microsoft Learn Catalog API, aligns them with the external connection's schema, and ingests the content while preserving both the content itself and its metadata. The ingested content is configured to be accessible to all members within the organization.
 
 ## Architecture
 
@@ -43,7 +43,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-learncatalogconnector) then unzip it)
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-learncatalogconnector) then unzip it)
 - Run the setup script: `./setup.ps1`. When finished, it will display ClientID, ClientSecret and TenantID. Copy these into local.settings.json file
 - Build the project: `dotnet build`  
 - Publish the Azure functions
@@ -65,7 +65,7 @@ Version|Date|Comments
 
 7. Click on the button to grant the necessary permissions.
 
-8. Scroll down to the **Microsoft Graph Connector** section.
+8. Scroll down to the **Copilot connector** section.
 
 9. Find the **Connection status** toggle.
 
@@ -79,7 +79,7 @@ Version|Date|Comments
 ## Features
 
 
-This example includes a Microsoft Graph connector demonstrating the ingestion of Microsoft Learn Catalog API modules into Microsoft 365. It retrieves details about each module and associated metadata using the Microsoft Learn Catalog API, aligns them with the external connection's schema, and ingests the content while preserving both the content itself and its metadata. The ingested content is configured to be accessible to all members within the organization.
+This example includes a Copilot connector demonstrating the ingestion of Microsoft Learn Catalog API modules into Microsoft 365. It retrieves details about each module and associated metadata using the Microsoft Learn Catalog API, aligns them with the external connection's schema, and ingests the content while preserving both the content itself and its metadata. The ingested content is configured to be accessible to all members within the organization.
 
 The sample illustrates the following concepts:
 
@@ -97,11 +97,11 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%dotnet-csharp-graphdocs%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%dotnet-csharp-graphdocs%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

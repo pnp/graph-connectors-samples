@@ -2,17 +2,17 @@
   {
     "name": "pnp-graph-connector-azure-logicapps-servicenow",
     "source": "pnp",
-    "title": "Azure Logic Apps Graph Connector Sample for ServiceNow",
+    "title": "Azure Logic Apps Copilot connector Sample for ServiceNow",
     "shortDescription": "Sample for creating Microsoft Search custom indexes from ServiceNow content (currently set for the catalogue but changeable to be what is required) using Azure Logic Apps.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/azure-logicapps-servicenow",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/azure-logicapps-servicenow",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/azure-logicapps-servicenow",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/azure-logicapps-servicenow",
     "longDescription": [
       "Sample for creating Microsoft Search custom indexes from ServiceNow content (currently set for the catalogue but changeable to be what is required) using Azure Logic Apps."
     ],
     "creationDateTime": "2023-11-10",
     "updateDateTime": "2023-11-10",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,13 +38,13 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/azure-logicapps-servicenow/assets/screenshot.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/azure-logicapps-servicenow/assets/screenshot.png",
         "alt": "Local markdown files displayed in Microsoft Search search results"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/azure-logicapps-servicenow/assets/setup-logic-app.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/azure-logicapps-servicenow/assets/setup-logic-app.png",
         "alt": "Setup Logic App in Azure"
       }
     ],
@@ -57,13 +57,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       }
     ]

@@ -19,8 +19,8 @@
     "full": "${{APP_NAME}}-${{TEAMSFX_ENV}}"
   },
   "description": {
-    "short": "Policy Management Graph connector",
-    "full": "Teams Toolkit sample for a Policy Management system using Graph Connector"
+    "short": "Policy Management Copilot connector",
+    "full": "Teams Toolkit sample for a Policy Management system using Copilot connector"
   },
   "accentColor": "#FFFFFF",
   "composeExtensions": [],

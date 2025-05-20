@@ -3,16 +3,16 @@
     "name": "pnp-graph-connector-dotnet-csharp-json-from-web",
     "source": "pnp",
     "title": "Ingest JSON content from the web using .NET and C#",
-    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web",
+    "shortDescription": "This sample contains a Copilot connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone.",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-json-from-web",
     "longDescription": [
-      "This sample contains a Microsoft Graph connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone."
+      "This sample contains a Copilot connector that shows how to ingest JSON content. it scrapes a JSON file that contains every blog post on blog.dan-toft.dk and ingests it to a custom connector making it searchable for everyone."
     ],
     "creationDateTime": "2023-10-29",
     "updateDateTime": "2023-10-29",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,7 +38,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-json-from-web/assets/screenshot.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/dotnet-csharp-json-from-web/assets/screenshot.png",
         "alt": "External content displayed in Microsoft Search search results, visualized using a custom Adaptive Card"
       }
     ],
@@ -51,13 +51,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       }
     ]

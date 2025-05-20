@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
+This sample contains a Copilot connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.
 
 ![Microsoft Graph docs displayed in Microsoft Search search results](assets/screenshot.png)
 
@@ -24,7 +24,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs) then unzip it)
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs) then unzip it)
 - Run the setup script: `./setup.sh`. When finished, it creates information about the Entra app registration in the `src/env.js` file that's excluded from source control
 - Install dependencies: `npm i`
 - Build the project: `npm run build`
@@ -42,7 +42,7 @@ Version|Date|Comments
 
 ## Features
 
-This sample shows how to ingest local Microsoft Graph docs content with its front matter metadata to Microsoft 365. The sample contains a content folder with several Microsoft Graph docs articles. These files are parsed and ingested by the sample Microsoft Graph connector.
+This sample shows how to ingest local Microsoft Graph docs content with its front matter metadata to Microsoft 365. The sample contains a content folder with several Microsoft Graph docs articles. These files are parsed and ingested by the sample Copilot connector.
 
 The sample illustrates the following concepts:
 
@@ -58,11 +58,11 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-graphdocs%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-graphdocs%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

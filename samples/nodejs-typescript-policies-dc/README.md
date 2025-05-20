@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content. It also offers a declarative copilot to consume its content.
+This sample project uses Teams Toolkit for Visual Studio Code to simplify the process of creating a [Copilot connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content. It also offers a declarative copilot to consume its content.
 
 > [!WARNING]  
 > This samples uses private preview capabilities of Copilot for Microsoft 365. You need to have access to the private preview to use this sample.
@@ -45,7 +45,7 @@ Version|Date|Comments
 - Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
 - Select the declarative copilot named `Policy copilot`
 - Use one of the suggested prompts
-- A response from your declarative copilot will showcase the data ingested by the Graph connector.
+- A response from your declarative copilot will showcase the data ingested by the Copilot connector.
 
 ![Empty connector copilot](./assets/connector-copilot.png)
 
@@ -59,7 +59,7 @@ Version|Date|Comments
 - A table will display available connections. In the **Required actions** column, select the link to **Include Connector Results** and confirm the prompt
 - Navigate to [Microsoft365.com/chat](https://www.microsoft365.com/chat)
 - Use the following prompt: `What is the interest rate policy on Tatooine?`
-- A response from Copilot for Microsoft 365 will showcase the data ingested by the Graph connector.
+- A response from Copilot for Microsoft 365 will showcase the data ingested by the Copilot connector.
 
 ![Empty connector copilot](./assets/connector-copilot-results.png)
 
@@ -80,11 +80,11 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-policies-dc%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-policies-dc%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

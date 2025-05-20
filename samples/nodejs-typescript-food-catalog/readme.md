@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample project uses Microsoft 365 Agents Toolkit for Visual Studio Code to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the [simplified admin experience](https://learn.microsoft.com/graph/connecting-external-content-deploy-teams) which means that admins can toggle the connector on and off from the Microsoft Teams admin center.
+This sample project uses Microsoft 365 Agents Toolkit for Visual Studio Code to simplify the process of creating a [Copilot connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the [simplified admin experience](https://learn.microsoft.com/graph/connecting-external-content-deploy-teams) which means that admins can toggle the connector on and off from the Microsoft Teams admin center.
 
 > ℹ️ Sample data is taken from [Open Food Facts API](https://openfoodfacts.github.io/openfoodfacts-server/api/).
 
@@ -46,7 +46,7 @@ Version|Date|Comments
 - Press <kbd>F5</kbd>, follow the sign in prompts
 - Wait for all tasks to complete
 
-### 2. Enable Graph connector
+### 2. Enable Copilot connector
 
 - In a web browser, navigate to the [Microsoft Teams Admin Center](https://admin.teams.microsoft.com)
 - Open the [Manage apps](https://admin.teams.microsoft.com/policies/manage-apps) section
@@ -54,7 +54,7 @@ Version|Date|Comments
 - Select the app in the table to open the app details page
 - Select `Publish` and confirm the prompt. You will been taken back to the `All apps` page and a confirmation banner will be displayed
 - Search for `Foodsie-local` and open the app details page
-- Select the `Graph Connector` tab
+- Select the `Copilot connector` tab
 - A banner will be displayed. Click `Grant permissions`, this will open a permissions consent page in a pop-up window. Confirm the permissions. This will automatically toggle the connection status to on and start the setup process which includes:
   - creating an external connection
   - provisioning the schema
@@ -100,7 +100,7 @@ When the process is complete you will see a table confirming that the connection
 
 - Navigate to [Microsoft365.com](https://www.microsoft365.com)
 - Enter `chocolate` into the search bar
-- Items will be shown from the data ingested by the Graph connector in the search results.
+- Items will be shown from the data ingested by the Copilot connector in the search results.
 
 ![Data from custom API displayed in Microsoft Search](./assets/content.png)
 
@@ -165,14 +165,14 @@ Person(user, "Microsoft 365 user")
   
 Boundary(bM365, "Microsoft Cloud") {
     System(microsoft365, "Microsoft 365")
-    System(connector, "Food Products DB connector", "Microsoft Graph connector")
+    System(connector, "Food Products DB connector", "Copilot connector")
 }
 
 Boundary(bLOB, "Line of Business") {
     System_Ext(externalContent, "Food Products DB", "Contains information about food products")
 }
 
-Rel(admin, microsoft365, "Manages the Microsoft Graph connector")
+Rel(admin, microsoft365, "Manages the Copilot connector")
 UpdateRelStyle(admin, microsoft365, $offsetX="-225", $offsetY="-40")
 Rel(user, microsoft365, "Uses Microsoft 365 to find relevant information")
 UpdateRelStyle(user, microsoft365, $offsetX="80", $offsetY="-40")
@@ -199,7 +199,7 @@ Boundary(c1, "Food Products DB connector") {
     ContainerQueue(queue, "Queues", "Azure Queue Storage", "Configuration- and crawl messages")
 }
 
-Rel(admin, microsoft365, "Toggles Microsoft Graph connector status", "Teams Admin Center")
+Rel(admin, microsoft365, "Toggles Copilot connector status", "Teams Admin Center")
 UpdateRelStyle(admin, microsoft365, $offsetY="10", $offsetX="-55")
 Rel(microsoft365, api, "Sends connector status notification", "HTTP")
 UpdateRelStyle(microsoft365, api, $offsetX="-170")
@@ -511,11 +511,11 @@ DELETE api/products/{id}
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-food-catalog%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%nodejs-typescript-food-catalog%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

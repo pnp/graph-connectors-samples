@@ -2,17 +2,17 @@
   {
     "name": "pnp-graph-connector-dotnet-csharp-m365-roadmap",
     "source": "pnp",
-    "title": "Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors using C# and .NET",
-    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap",
+    "title": "Ingest M365 Roadmap content in Microsoft 365 using Copilot connectors using C# and .NET",
+    "shortDescription": "This sample contains a Copilot connector that shows how to Ingest M365 Roadmap content in Microsoft 365 using Copilot connectors.",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/dotnet-csharp-m365-roadmap",
     "longDescription": [
-      "This sample contains a Microsoft Graph connector that shows how to Ingest M365 Roadmap content in Microsoft 365 using Microsoft Graph connectors."
+      "This sample contains a Copilot connector that shows how to Ingest M365 Roadmap content in Microsoft 365 using Copilot connectors."
     ],
     "creationDateTime": "2024-02-18",
     "updateDateTime": "2024-02-18",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,14 +38,14 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector01.png",
-        "alt": "M365 Roadmap Graph Connector"
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector01.png",
+        "alt": "M365 Roadmap Copilot connector"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector02.png",
-        "alt": "M365 Roadmap Graph Connector"
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/dotnet-csharp-m365-roadmap/assets/M365-Roadmap-Graph-Connector02.png",
+        "alt": "M365 Roadmap Copilot connector"
       }
     ],
     "authors": [
@@ -57,13 +57,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       }
     ]

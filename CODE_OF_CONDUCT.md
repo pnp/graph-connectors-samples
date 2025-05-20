@@ -6,4 +6,4 @@ For more information, see the [Code of Conduct FAQ](https://opensource.microsoft
 
 Remember that this repository is maintained by community members who volunteer their time to help. Be courteous and patient.
 
-![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/CODE_OF_CONDUCT.md)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-connectors-samples/CODE_OF_CONDUCT.md)

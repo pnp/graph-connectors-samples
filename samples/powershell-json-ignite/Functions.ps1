@@ -39,7 +39,7 @@ function SetupGraphConnectorEntraId{
     )
 
     ##TODO Check Config file or display name exists for the connector
-    Write-Host "Checking Graph Connector for Entra ID..." -ForegroundColor Blue
+    Write-Host "Checking Copilot connector for Entra ID..." -ForegroundColor Blue
 
     Connect-MgGraph -Scopes AppRoleAssignment.ReadWrite.All,Application.ReadWrite.All -NoWelcome
 
@@ -60,7 +60,7 @@ function SetupGraphConnectorEntraId{
     $result = Get-MgApplication -Filter "DisplayName eq '$($DisplayName)'"
 
     if(!$result){
-        Write-Host "Creating Graph Connector for Entra ID..." -NoNewline -ForegroundColor Blue
+        Write-Host "Creating Copilot connector for Entra ID..." -NoNewline -ForegroundColor Blue
          # create the application
         $app = New-MgApplication -DisplayName $DisplayName -RequiredResourceAccess $requiredResourceAccess
 

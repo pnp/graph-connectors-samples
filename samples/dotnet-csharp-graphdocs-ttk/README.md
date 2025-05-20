@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample project uses Teams Toolkit for Visual Studio to simplify the process of creating a [Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the [simplified admin experience](https://learn.microsoft.com/graph/connecting-external-content-deploy-teams) which means that admins can toggle the connector on and off from the Microsoft Teams admin center.
+This sample project uses Teams Toolkit for Visual Studio to simplify the process of creating a [Copilot connector](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) that ingests data from a custom API to Microsoft Graph. It provides an end to end example of creating the connector, ingesting content and refreshing the ingested content on a schedule. It also includes the [simplified admin experience](https://learn.microsoft.com/graph/connecting-external-content-deploy-teams) which means that admins can toggle the connector on and off from the Microsoft Teams admin center.
 
 ![Markdown content from custom API displayed in Microsoft Search](./assets/content.png)
 
@@ -27,8 +27,8 @@ Version|Date|Comments
 
 You can run this sample in two ways:
 
-1. **Debug locally against a Microsoft 365 tenant** where you package the project as a Teams app and deploy it to Microsoft 365. You run the Graph connector locally and expose it across the internet using a dev tunnel.
-1. **Deploy to Azure and test against a Microsoft 365 tenant** which is what you'd do when you're ready to deploy your Graph connector to production.
+1. **Debug locally against a Microsoft 365 tenant** where you package the project as a Teams app and deploy it to Microsoft 365. You run the Copilot connector locally and expose it across the internet using a dev tunnel.
+1. **Deploy to Azure and test against a Microsoft 365 tenant** which is what you'd do when you're ready to deploy your Copilot connector to production.
 
 ## Debug locally against a real Microsoft 365 tenant
 
@@ -67,7 +67,7 @@ You can run this sample in two ways:
 - Open a command prompt and change the working directory to the project directory
 - Run `devproxy --config-file documentsapirc.json` to start Dev Proxy and simulate the custom API
 
-### 6. Enable Graph connector
+### 6. Enable Copilot connector
 
 - In a web browser, navigate to the [Microsoft Teams Admin Center](https://admin.teams.microsoft.com)
 - Open the [Manage apps](https://admin.teams.microsoft.com/policies/manage-apps) section
@@ -75,7 +75,7 @@ You can run this sample in two ways:
 - Select the app in the table to open the app details page
 - Select `Publish` and confirm the prompt. You will been taken back to the `All apps` page and a confirmation banner will be displayed
 - Search for `GraphDocsConnector-local` and open the app details page
-- Select the `Graph Connector` tab
+- Select the `Copilot connector` tab
 - A banner will be displayed. Click `Grant permissions`, this will open a permissions consent page in a pop-up window. Confirm the permissions. This will automatically toggle the connection status to on and start the setup process which includes:
   - creating an external connection
   - provisioning the schema
@@ -116,13 +116,13 @@ When the process is complete you will see a table confirming that the connection
 
 - Navigate to [Microsoft365.com](https://www.microsoft365.com)
 - Enter `paging` into the search bar
-- Items will be shown from the data ingested by the Graph connector in the search results
+- Items will be shown from the data ingested by the Copilot connector in the search results
 
 ![Markdown content from custom API displayed in Microsoft Search](./assets/content.png)
 
 ## Deploy to Azure and test against a real Microsoft 365 tenant
 
-> This path assumes that you are deploying the Graph connector to an environment that doesn't already contain a connection with the ID `msgraphdocs` and that you have provisioned your own custom API and protected it with Microsoft Entra ID authentication.
+> This path assumes that you are deploying the Copilot connector to an environment that doesn't already contain a connection with the ID `msgraphdocs` and that you have provisioned your own custom API and protected it with Microsoft Entra ID authentication.
 
 ### 1. Update custom API endpoint
 
@@ -147,7 +147,7 @@ When the process is complete you will see a table confirming that the connection
 - Expand the `Teams Toolkit` menu and select `Deploy to the Cloud`
 - In the warning prompt, select `Deploy` to deploy the function code
 
-### 4. Enable Graph connector
+### 4. Enable Copilot connector
 
 - In a web browser, navigate to the [Microsoft Teams Admin Center](https://admin.teams.microsoft.com)
 - Open the [Manage apps](https://admin.teams.microsoft.com/policies/manage-apps) section
@@ -155,7 +155,7 @@ When the process is complete you will see a table confirming that the connection
 - Select the app in the table to open the app details page
 - Select `Publish` and confirm the prompt. You will been taken back to the `All apps` page and a confirmation banner will be displayed
 - Search for `GraphDocsConnector-dev` and open the app details page
-- Select the `Graph Connector` tab
+- Select the `Copilot connector` tab
 - A banner will be displayed. Click `Grant permissions`, this will open a permissions consent page in a pop-up window. Confirm the permissions. This will automatically toggle the connection status to on and start the setup process which includes:
   - creating an external connection
   - provisioning the schema
@@ -192,7 +192,7 @@ When the process is complete you will see a table confirming that the connection
 
 - Navigate to [Microsoft365.com](https://www.microsoft365.com)
 - Enter `paging` into the search bar
-- Items will be shown from the data ingested by the Graph connector in the search results
+- Items will be shown from the data ingested by the Copilot connector in the search results
 
 ## Features
 
@@ -214,11 +214,11 @@ The sample illustrates the following concepts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%dotnet-csharp-graphdocs-ttk%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%dotnet-csharp-graphdocs-ttk%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

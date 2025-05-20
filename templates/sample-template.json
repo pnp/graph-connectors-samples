@@ -4,15 +4,15 @@
     "source": "pnp",
     "title": "YOUR-SAMPLE-TITLE",
     "shortDescription": "YOUR-SHORT-DESCRIPTION",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/YOUR-SAMPLE-NAME",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/YOUR-SAMPLE-NAME",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/YOUR-SAMPLE-NAME",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/YOUR-SAMPLE-NAME",
     "longDescription": [
       "YOUR-SHORT-DESCRIPTION"
     ],
     "creationDateTime": "2023-09-29",
     "updateDateTime": "2023-09-29",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph"
     ],
     "metadata": [
@@ -37,14 +37,14 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/YOUR-SAMPLE-NAME/assets/YOUR-IMAGE-NAME-HERE",
-        "alt": "Microsoft Graph connector ingesting x"
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/YOUR-SAMPLE-NAME/assets/YOUR-IMAGE-NAME-HERE",
+        "alt": "Copilot connector ingesting x"
       },
       {
         "type": "video",
         "order": 101,
         "url": "https://www.youtube.com/embed/FS-_0KENJkI",
-        "alt": "Microsoft Graph connector ingesting x"
+        "alt": "Copilot connector ingesting x"
       }
     ],
     "authors": [
@@ -56,13 +56,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       }
     ]

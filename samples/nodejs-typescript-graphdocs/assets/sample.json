@@ -3,16 +3,16 @@
     "name": "pnp-graph-connector-nodejs-typescript-graphdocs",
     "source": "pnp",
     "title": "Ingest local Microsoft Graph docs content using TypeScript on Node.js",
-    "shortDescription": "This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
-    "url": "https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs",
+    "shortDescription": "This sample contains a Copilot connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization.",
+    "url": "https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/nodejs-typescript-graphdocs",
     "longDescription": [
-      "This sample contains a Microsoft Graph connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
+      "This sample contains a Copilot connector that shows how to ingest local Microsoft Graph docs content into Microsoft 365. For each file, it extracts the metadata from front matter, maps them to the external connection's schema and ingests the content retaining the content and metadata. The ingested content is set to be visible to everyone in the organization."
     ],
     "creationDateTime": "2024-07-11",
     "updateDateTime": "2024-08-13",
     "products": [
-      "Microsoft Graph connectors",
+      "Copilot connectors",
       "Microsoft Graph",
       "Microsoft 365 Copilot"
     ],
@@ -38,14 +38,14 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-graphdocs/assets/screenshot.png",
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-typescript-graphdocs/assets/screenshot.png",
         "alt": "Microsoft Graph docs displayed in Microsoft Search search results"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/graph-connectors-samples/raw/main/samples/nodejs-typescript-graphdocs/assets/content.png",
-        "alt": "Markdown content with front matter metadata that's ingested with the sample Microsoft Graph connector"
+        "url": "https://github.com/pnp/copilot-connectors-samples/raw/main/samples/nodejs-typescript-graphdocs/assets/content.png",
+        "alt": "Markdown content with front matter metadata that's ingested with the sample Copilot connector"
       }
     ],
     "authors": [
@@ -57,13 +57,13 @@
     ],
     "references": [
       {
-        "name": "Microsoft Graph connectors overview",
-        "description": "Learn more what Microsoft Graph connectors are and when you'd use them.",
+        "name": "Copilot connectors overview",
+        "description": "Learn more what Copilot connectors are and when you'd use them.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-connectors-overview"
       },
       {
-        "name": "Build your first custom Microsoft Graph connector",
-        "description": "Learn how to build your first custom Microsoft Graph connector using .NET.",
+        "name": "Build your first custom Copilot connector",
+        "description": "Learn how to build your first custom Copilot connector using .NET.",
         "url": "https://learn.microsoft.com/graph/connecting-external-content-build-quickstart"
       },
       {

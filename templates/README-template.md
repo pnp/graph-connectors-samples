@@ -2,13 +2,13 @@
 
 <!--
 This is how you want the sample to appear in the samples browser.
-When naming your sample, try to give it a friendly name that describes what it does. Avoid using terms like `Microsoft Graph connector` and `sample` -- because that's what all the samples in this repo are all about.
+When naming your sample, try to give it a friendly name that describes what it does. Avoid using terms like `Copilot connector` and `sample` -- because that's what all the samples in this repo are all about.
 
 GOOD 👍:
   Ingesting markdown content to Microsoft 365
 BAD 👎:
   graph-connector-import
-  Sample code that shows how to build a Microsoft Graph connector that ingests content from markdown files to Microsoft 365
+  Sample code that shows how to build a Copilot connector that ingests content from markdown files to Microsoft 365
 -->
 
 ## Summary
@@ -57,21 +57,21 @@ For commands, use the `code syntax`. For button labels, page names, dialog names
 
 As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
 
-We have basic documentation about Microsoft Graph connectors and how to build them that you can reference on top of any additional steps that your sample needs:
+We have basic documentation about Copilot connectors and how to build them that you can reference on top of any additional steps that your sample needs:
 
-* [Microsoft Graph connectors overview](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview)
-* [Build your first custom Microsoft Graph connector](https://learn.microsoft.com/graph/connecting-external-content-build-quickstart)
+* [Copilot connectors overview](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview)
+* [Build your first custom Copilot connector](https://learn.microsoft.com/graph/connecting-external-content-build-quickstart)
 
 -->
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/YOUR-SOLUTION-NAME) then unzip it)
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-connectors-samples/tree/main/samples/YOUR-SOLUTION-NAME) then unzip it)
 * ...provide further instructions
 
 ## Features
 
 Extended description of the contents of the sample. What elements does it include? What concepts does illustrate? What type of content is it processing?
 
-Using this sample you can use the Microsoft Graph connector to:
+Using this sample you can use the Copilot connector to:
 
 * objective 1
 * objective 2
@@ -115,11 +115,11 @@ Or:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/graph-connectors-samples/issues?q=label%3A%22sample%3A%20YOUR-SOLUTION-NAME%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-connectors-samples/issues?q=label%3A%22sample%3A%20YOUR-SOLUTION-NAME%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/graph-connectors-samples/issues/new).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Disclaimer
 

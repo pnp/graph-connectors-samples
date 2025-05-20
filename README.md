@@ -1,12 +1,12 @@
-# Microsoft Graph connectors samples
+# Copilot connectors samples
 
-This repository contains [Microsoft Graph connectors](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) samples.
+This repository contains [Copilot connectors](https://learn.microsoft.com/graph/connecting-external-content-connectors-overview) samples.
 
-> We welcome community contributions to the `samples` folder in this repository for demonstrating different use cases with Microsoft Graph connectors. If you've built a connector to ingest data from a specific type of data or you've got an interesting concept that you'd like to show, please share your work and help others!
+> We welcome community contributions to the `samples` folder in this repository for demonstrating different use cases with Copilot connectors. If you've built a connector to ingest data from a specific type of data or you've got an interesting concept that you'd like to show, please share your work and help others!
 
 ## Have issues or questions?
 
-If you've got questions or experience an issue with any of the samples in this repo, please [create an issue](https://github.com/pnp/graph-connectors-samples/issues/new).
+If you've got questions or experience an issue with any of the samples in this repo, please [create an issue](https://github.com/pnp/copilot-connectors-samples/issues/new).
 
 ## Authors
 
@@ -24,4 +24,4 @@ This repository has adopted the [Microsoft Open Source Code of Conduct](https://
 
 > Sharing is caring!
 
-![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/README.md_)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-connectors-samples/README.md_)

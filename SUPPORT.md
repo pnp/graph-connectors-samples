@@ -1,8 +1,8 @@
 # Support Guidelines
 
-The Microsoft Graph connectors samples repository is maintained by the [Microsoft 365 and Power Platform community](https://aka.ms/m365pnp), who all volunteer their time.
+The Copilot connectors samples repository is maintained by the [Microsoft 365 and Power Platform community](https://aka.ms/m365pnp), who all volunteer their time.
 
-We track bugs, user questions, suggestions and sample requests through [GitHub issues](https://github.com/pnp/graph-connectors-samples/issues).
+We track bugs, user questions, suggestions and sample requests through [GitHub issues](https://github.com/pnp/copilot-connectors-samples/issues).
 
 Please help out as you can in response to issues and user questions.
 
@@ -12,11 +12,11 @@ Please help out as you can in response to issues and user questions.
 
 ### How to report a bug
 
-We use GitHub to track issues. To report a bug, [open a new issue](https://github.com/pnp/graph-connectors-samples/issues/new/choose). Please include all the information that might be relevant, including instructions for reproducing the bug.
+We use GitHub to track issues. To report a bug, [open a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new/choose). Please include all the information that might be relevant, including instructions for reproducing the bug.
 
 ### Where can I ask for help?
 
-We use GitHub issues to support user questions. To ask a question, [open a new issue](https://github.com/pnp/graph-connectors-samples/issues/new/choose) and select the question template.
+We use GitHub issues to support user questions. To ask a question, [open a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new/choose) and select the question template.
 
 ### How to submit changes
 
@@ -24,6 +24,6 @@ Please see our [Contributing Guidance](./CONTRIBUTING.md).
 
 ### How to request an enhancement or a new sample
 
-To request a new sample or an enhancement to an existing one, [open a new issue](https://github.com/pnp/graph-connectors-samples/issues/new/choose).
+To request a new sample or an enhancement to an existing one, [open a new issue](https://github.com/pnp/copilot-connectors-samples/issues/new/choose).
 
-![](https://m365-visitor-stats.azurewebsites.net/graph-connectors-samples/SUPPORT.md)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-connectors-samples/SUPPORT.md)
