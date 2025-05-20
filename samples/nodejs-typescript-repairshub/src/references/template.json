@@ -1,0 +1,59 @@
+{
+  "type": "AdaptiveCard",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/DefaultMRTIcon.png",
+              "size": "Small",
+              "horizontalAlignment": "Center",
+              "altText": "Result logo"
+            }
+          ],
+          "height": "stretch"
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${title}",
+              "color": "Accent",
+              "size": "Medium",
+              "weight": "Bolder"
+            },
+            {
+              "type": "TextBlock",
+              "text": "**${assignedTo}** modified on ${date}",
+              "spacing": "Small",
+              "$when": "${assignedTo!='' && date!=''}"
+            },
+            {
+              "type": "TextBlock",
+              "text": "${abstract}",
+              "wrap": true,
+              "maxLines": 3,
+              "spacing": "Medium"
+            },
+            {
+              "type": "TextBlock",
+              "text": "${id} ${assignedTo}",
+              "isVisible": false
+            }
+          ],
+          "horizontalAlignment": "Center",
+          "spacing": "Medium"
+        }
+      ]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "id",
+    "type": "String",
+    "isQueryable": "true",
+    "isSearchable": "true",
+    "isRetrievable": "true"
+  },
+  {
+    "name": "title",
+    "type": "String",
+    "isQueryable": "true",
+    "isSearchable": "true",
+    "isRetrievable": "true", 
+    "labels": ["title"]
+  },
+  {
+    "name": "description",
+    "type": "String",
+    "isQueryable": "true",
+    "isSearchable": "true",
+    "isRetrievable": "true"
+  },
+  {
+    "name": "assignedTo",
+    "type": "String",
+    "isQueryable": "true",
+    "isSearchable": "true",
+    "isRetrievable": "true"
+  },
+  {
+    "name": "date",
+    "type": "String",
+    "isQueryable": "true",
+    "isSearchable": "true",
+    "isRetrievable": "true"
+  },
+  {
+    "name": "iconUrl",
+    "type": "String",
+    "isQueryable": "true",
+    "isSearchable": "true",
+    "isRetrievable": "true", 
+    "labels": ["iconUrl"]
+  }
+]
